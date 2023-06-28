@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/CustomFieldCreatedContextOptionsList",
+  "definitions": {
+    "CustomFieldCreatedContextOptionsList": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"options": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/CustomFieldContextOption"}
+      }}
+    },
+    "CustomFieldContextOption": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "value",
+        "disabled"
+      ],
+      "properties": {
+        "optionId": {"type": "string"},
+        "disabled": {"type": "boolean"},
+        "id": {"type": "string"},
+        "value": {"type": "string"}
+      }
+    }
+  }
+}

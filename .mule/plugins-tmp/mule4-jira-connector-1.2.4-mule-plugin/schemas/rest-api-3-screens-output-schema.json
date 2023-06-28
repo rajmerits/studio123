@@ -1,0 +1,106 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "scope": {
+      "project": {},
+      "type": "PROJECT"
+    },
+    "name": "<string>",
+    "description": "<string>",
+    "id": 21
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "The root schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "scope": {
+          "project": {},
+          "type": "PROJECT"
+        },
+        "name": "<string>",
+        "description": "<string>",
+        "id": 21
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "id",
+        "name",
+        "description",
+        "scope"
+      ],
+      "properties": {
+        "scope": {
+          "default": {},
+          "examples": [{
+            "project": {},
+            "type": "PROJECT"
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The scope schema",
+          "required": [
+            "type",
+            "project"
+          ],
+          "properties": {
+            "project": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The project schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/scope/properties/project"
+            },
+            "type": {
+              "default": "",
+              "examples": ["PROJECT"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The type schema",
+              "$id": "#/items/anyOf/0/properties/scope/properties/type"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/scope"
+        },
+        "name": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The name schema",
+          "$id": "#/items/anyOf/0/properties/name"
+        },
+        "description": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The description schema",
+          "$id": "#/items/anyOf/0/properties/description"
+        },
+        "id": {
+          "default": 0,
+          "examples": [21],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "integer",
+          "title": "The id schema",
+          "$id": "#/items/anyOf/0/properties/id"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/JQLReferenceData",
+  "definitions": {
+    "JQLReferenceData": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "visibleFieldNames": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/FieldReferenceData"}
+        },
+        "visibleFunctionNames": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/FunctionReferenceData"}
+        },
+        "jqlReservedWords": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "FunctionReferenceData": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "types": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "displayName": {"type": "string"},
+        "value": {"type": "string"},
+        "isList": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false"
+          ]
+        }
+      }
+    },
+    "FieldReferenceData": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "cfid": {"type": "string"},
+        "auto": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false"
+          ]
+        },
+        "types": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "operators": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "displayName": {"type": "string"},
+        "orderable": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false"
+          ]
+        },
+        "value": {"type": "string"},
+        "searchable": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/StatusDetails"}
+    },
+    "StatusCategory": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "colorName": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "StatusDetails": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "description": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "iconUrl": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "statusCategory": {
+          "allOf": [{"$ref": "#/definitions/StatusCategory"}],
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

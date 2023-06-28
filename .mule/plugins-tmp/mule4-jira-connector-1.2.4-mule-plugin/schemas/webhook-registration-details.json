@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/WebhookRegistrationDetails",
+  "definitions": {
+    "WebhookRegistrationDetails": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "webhooks",
+        "url"
+      ],
+      "properties": {
+        "webhooks": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/WebhookDetails"}
+        },
+        "url": {"type": "string"}
+      }
+    },
+    "WebhookDetails": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "jqlFilter",
+        "events"
+      ],
+      "properties": {
+        "jqlFilter": {"type": "string"},
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "jira:issue_created",
+              "jira:issue_updated",
+              "jira:issue_deleted",
+              "comment_created",
+              "comment_updated",
+              "comment_deleted",
+              "issue_property_set",
+              "issue_property_deleted"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

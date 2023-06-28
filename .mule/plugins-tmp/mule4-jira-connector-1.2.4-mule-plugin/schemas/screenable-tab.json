@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ScreenableTab",
+  "definitions": {
+    "ScreenableTab": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

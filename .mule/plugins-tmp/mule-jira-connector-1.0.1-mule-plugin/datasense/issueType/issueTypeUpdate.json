@@ -1,0 +1,38 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "IssueType Update Schema",
+  "properties": {
+    "avatarId": {
+      "$id": "#/properties/avatarId",
+      "type": "integer",
+      "title": "The Avatarid Schema",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "name"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "The Description Schema",
+      "default": "",
+      "examples": [
+        "description"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

@@ -1,0 +1,1726 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "components": [{
+      "leadUserName": "<string>",
+      "description": "<string>",
+      "project": "<string>",
+      "lead": {},
+      "isAssigneeTypeValid": true,
+      "realAssigneeType": "PROJECT_DEFAULT",
+      "name": "<string>",
+      "self": "<string>",
+      "realAssignee": {},
+      "id": "<string>",
+      "assigneeType": "PROJECT_DEFAULT",
+      "assignee": {},
+      "projectId": 51
+    }],
+    "roles": {},
+    "description": "<string>",
+    "isPrivate": true,
+    "uuid": "<string>",
+    "deletedBy": {
+      "avatarUrls": {},
+      "displayName": "<string>",
+      "accountType": "atlassian",
+      "active": true,
+      "timeZone": "<string>",
+      "groups": {},
+      "locale": "<string>",
+      "accountId": "<string>",
+      "emailAddress": "<string>",
+      "expand": "<string>",
+      "name": "<string>",
+      "self": "<string>",
+      "key": "<string>",
+      "applicationRoles": {}
+    },
+    "issueTypes": [{
+      "avatarId": 34,
+      "hierarchyLevel": 34,
+      "scope": {},
+      "name": "<string>",
+      "self": "<string>",
+      "description": "<string>",
+      "entityId": "<string>",
+      "id": "<string>",
+      "iconUrl": "<string>",
+      "subtask": true
+    }],
+    "archived": true,
+    "projectCategory": {
+      "name": "<string>",
+      "self": "<string>",
+      "description": "<string>",
+      "id": "<string>"
+    },
+    "permissions": {"canEdit": true},
+    "id": "<string>",
+    "assigneeType": "PROJECT_LEAD",
+    "projectTypeKey": "software",
+    "archivedBy": {
+      "avatarUrls": {},
+      "displayName": "<string>",
+      "accountType": "atlassian",
+      "active": true,
+      "timeZone": "<string>",
+      "groups": {},
+      "locale": "<string>",
+      "accountId": "<string>",
+      "emailAddress": "<string>",
+      "expand": "<string>",
+      "name": "<string>",
+      "self": "<string>",
+      "key": "<string>",
+      "applicationRoles": {}
+    },
+    "key": "<string>",
+    "email": "<string>",
+    "archivedDate": "<string>",
+    "retentionTillDate": "<string>",
+    "avatarUrls": {
+      "48x48": "<string>",
+      "24x24": "<string>",
+      "16x16": "<string>",
+      "32x32": "<string>"
+    },
+    "favourite": true,
+    "lead": {
+      "avatarUrls": {},
+      "displayName": "<string>",
+      "accountType": "atlassian",
+      "active": true,
+      "timeZone": "<string>",
+      "groups": {},
+      "locale": "<string>",
+      "accountId": "<string>",
+      "emailAddress": "<string>",
+      "expand": "<string>",
+      "name": "<string>",
+      "self": "<string>",
+      "key": "<string>",
+      "applicationRoles": {}
+    },
+    "url": "<string>",
+    "insight": {
+      "totalIssueCount": 18,
+      "lastIssueUpdateTime": "<string>"
+    },
+    "expand": "<string>",
+    "deleted": true,
+    "simplified": true,
+    "versions": [{
+      "releaseDate": "<string>",
+      "description": "<string>",
+      "project": "<string>",
+      "archived": true,
+      "expand": "<string>",
+      "operations": [{}],
+      "overdue": true,
+      "name": "<string>",
+      "self": "<string>",
+      "moveUnfixedIssuesTo": "<string>",
+      "userReleaseDate": "<string>",
+      "id": "<string>",
+      "userStartDate": "<string>",
+      "projectId": 130,
+      "released": true,
+      "startDate": "<string>",
+      "issuesStatusForFixVersion": {}
+    }],
+    "deletedDate": "<string>",
+    "issueTypeHierarchy": {"level": [{}]},
+    "name": "<string>",
+    "self": "<string>",
+    "style": "classic",
+    "properties": {}
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "The root schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "components": [{
+          "leadUserName": "<string>",
+          "description": "<string>",
+          "project": "<string>",
+          "lead": {},
+          "isAssigneeTypeValid": true,
+          "realAssigneeType": "PROJECT_DEFAULT",
+          "name": "<string>",
+          "self": "<string>",
+          "realAssignee": {},
+          "id": "<string>",
+          "assigneeType": "PROJECT_DEFAULT",
+          "assignee": {},
+          "projectId": 51
+        }],
+        "roles": {},
+        "description": "<string>",
+        "isPrivate": true,
+        "uuid": "<string>",
+        "deletedBy": {
+          "avatarUrls": {},
+          "displayName": "<string>",
+          "accountType": "atlassian",
+          "active": true,
+          "timeZone": "<string>",
+          "groups": {},
+          "locale": "<string>",
+          "accountId": "<string>",
+          "emailAddress": "<string>",
+          "expand": "<string>",
+          "name": "<string>",
+          "self": "<string>",
+          "key": "<string>",
+          "applicationRoles": {}
+        },
+        "issueTypes": [{
+          "avatarId": 34,
+          "hierarchyLevel": 34,
+          "scope": {},
+          "name": "<string>",
+          "self": "<string>",
+          "description": "<string>",
+          "entityId": "<string>",
+          "id": "<string>",
+          "iconUrl": "<string>",
+          "subtask": true
+        }],
+        "archived": true,
+        "projectCategory": {
+          "name": "<string>",
+          "self": "<string>",
+          "description": "<string>",
+          "id": "<string>"
+        },
+        "permissions": {"canEdit": true},
+        "id": "<string>",
+        "assigneeType": "PROJECT_LEAD",
+        "projectTypeKey": "software",
+        "archivedBy": {
+          "avatarUrls": {},
+          "displayName": "<string>",
+          "accountType": "atlassian",
+          "active": true,
+          "timeZone": "<string>",
+          "groups": {},
+          "locale": "<string>",
+          "accountId": "<string>",
+          "emailAddress": "<string>",
+          "expand": "<string>",
+          "name": "<string>",
+          "self": "<string>",
+          "key": "<string>",
+          "applicationRoles": {}
+        },
+        "key": "<string>",
+        "email": "<string>",
+        "archivedDate": "<string>",
+        "retentionTillDate": "<string>",
+        "avatarUrls": {
+          "48x48": "<string>",
+          "24x24": "<string>",
+          "16x16": "<string>",
+          "32x32": "<string>"
+        },
+        "favourite": true,
+        "lead": {
+          "avatarUrls": {},
+          "displayName": "<string>",
+          "accountType": "atlassian",
+          "active": true,
+          "timeZone": "<string>",
+          "groups": {},
+          "locale": "<string>",
+          "accountId": "<string>",
+          "emailAddress": "<string>",
+          "expand": "<string>",
+          "name": "<string>",
+          "self": "<string>",
+          "key": "<string>",
+          "applicationRoles": {}
+        },
+        "url": "<string>",
+        "insight": {
+          "totalIssueCount": 18,
+          "lastIssueUpdateTime": "<string>"
+        },
+        "expand": "<string>",
+        "deleted": true,
+        "simplified": true,
+        "versions": [{
+          "releaseDate": "<string>",
+          "description": "<string>",
+          "project": "<string>",
+          "archived": true,
+          "expand": "<string>",
+          "operations": [{}],
+          "overdue": true,
+          "name": "<string>",
+          "self": "<string>",
+          "moveUnfixedIssuesTo": "<string>",
+          "userReleaseDate": "<string>",
+          "id": "<string>",
+          "userStartDate": "<string>",
+          "projectId": 130,
+          "released": true,
+          "startDate": "<string>",
+          "issuesStatusForFixVersion": {}
+        }],
+        "deletedDate": "<string>",
+        "issueTypeHierarchy": {"level": [{}]},
+        "name": "<string>",
+        "self": "<string>",
+        "style": "classic",
+        "properties": {}
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "expand",
+        "self",
+        "id",
+        "key",
+        "description",
+        "lead",
+        "components",
+        "issueTypes",
+        "url",
+        "email",
+        "assigneeType",
+        "versions",
+        "name",
+        "roles",
+        "avatarUrls",
+        "projectCategory",
+        "projectTypeKey",
+        "simplified",
+        "style",
+        "favourite",
+        "isPrivate",
+        "issueTypeHierarchy",
+        "permissions",
+        "properties",
+        "uuid",
+        "insight",
+        "deleted",
+        "retentionTillDate",
+        "deletedDate",
+        "deletedBy",
+        "archived",
+        "archivedDate",
+        "archivedBy"
+      ],
+      "properties": {
+        "components": {
+          "default": [],
+          "examples": [[{
+            "leadUserName": "<string>",
+            "description": "<string>",
+            "project": "<string>",
+            "lead": {},
+            "isAssigneeTypeValid": true,
+            "realAssigneeType": "PROJECT_DEFAULT",
+            "name": "<string>",
+            "self": "<string>",
+            "realAssignee": {},
+            "id": "<string>",
+            "assigneeType": "PROJECT_DEFAULT",
+            "assignee": {},
+            "projectId": 51
+          }]],
+          "additionalItems": true,
+          "description": "An explanation about the purpose of this instance.",
+          "type": "array",
+          "title": "The components schema",
+          "items": {
+            "anyOf": [{
+              "default": {},
+              "examples": [{
+                "leadUserName": "<string>",
+                "description": "<string>",
+                "project": "<string>",
+                "lead": {},
+                "isAssigneeTypeValid": true,
+                "realAssigneeType": "PROJECT_DEFAULT",
+                "name": "<string>",
+                "self": "<string>",
+                "realAssignee": {},
+                "id": "<string>",
+                "assigneeType": "PROJECT_DEFAULT",
+                "assignee": {},
+                "projectId": 51
+              }],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The first anyOf schema",
+              "required": [
+                "self",
+                "id",
+                "name",
+                "description",
+                "lead",
+                "leadUserName",
+                "assigneeType",
+                "assignee",
+                "realAssigneeType",
+                "realAssignee",
+                "isAssigneeTypeValid",
+                "project",
+                "projectId"
+              ],
+              "properties": {
+                "leadUserName": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The leadUserName schema",
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/leadUserName"
+                },
+                "description": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The description schema",
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/description"
+                },
+                "project": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The project schema",
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/project"
+                },
+                "lead": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The lead schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/lead"
+                },
+                "isAssigneeTypeValid": {
+                  "default": false,
+                  "examples": [true],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "boolean",
+                  "title": "The isAssigneeTypeValid schema",
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/isAssigneeTypeValid"
+                },
+                "realAssigneeType": {
+                  "default": "",
+                  "examples": ["PROJECT_DEFAULT"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The realAssigneeType schema",
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/realAssigneeType"
+                },
+                "name": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The name schema",
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/name"
+                },
+                "self": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The self schema",
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/self"
+                },
+                "realAssignee": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The realAssignee schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/realAssignee"
+                },
+                "id": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The id schema",
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/id"
+                },
+                "assigneeType": {
+                  "default": "",
+                  "examples": ["PROJECT_DEFAULT"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The assigneeType schema",
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/assigneeType"
+                },
+                "assignee": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The assignee schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/assignee"
+                },
+                "projectId": {
+                  "default": 0,
+                  "examples": [51],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "integer",
+                  "title": "The projectId schema",
+                  "$id": "#/items/anyOf/0/properties/components/items/anyOf/0/properties/projectId"
+                }
+              },
+              "$id": "#/items/anyOf/0/properties/components/items/anyOf/0"
+            }],
+            "$id": "#/items/anyOf/0/properties/components/items"
+          },
+          "$id": "#/items/anyOf/0/properties/components"
+        },
+        "roles": {
+          "default": {},
+          "examples": [{}],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The roles schema",
+          "required": [],
+          "$id": "#/items/anyOf/0/properties/roles"
+        },
+        "description": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The description schema",
+          "$id": "#/items/anyOf/0/properties/description"
+        },
+        "isPrivate": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The isPrivate schema",
+          "$id": "#/items/anyOf/0/properties/isPrivate"
+        },
+        "uuid": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The uuid schema",
+          "$id": "#/items/anyOf/0/properties/uuid"
+        },
+        "deletedBy": {
+          "default": {},
+          "examples": [{
+            "avatarUrls": {},
+            "displayName": "<string>",
+            "accountType": "atlassian",
+            "active": true,
+            "timeZone": "<string>",
+            "groups": {},
+            "locale": "<string>",
+            "accountId": "<string>",
+            "emailAddress": "<string>",
+            "expand": "<string>",
+            "name": "<string>",
+            "self": "<string>",
+            "key": "<string>",
+            "applicationRoles": {}
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The deletedBy schema",
+          "required": [
+            "self",
+            "key",
+            "accountId",
+            "accountType",
+            "name",
+            "emailAddress",
+            "avatarUrls",
+            "displayName",
+            "active",
+            "timeZone",
+            "locale",
+            "groups",
+            "applicationRoles",
+            "expand"
+          ],
+          "properties": {
+            "avatarUrls": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The avatarUrls schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/avatarUrls"
+            },
+            "displayName": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The displayName schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/displayName"
+            },
+            "accountType": {
+              "default": "",
+              "examples": ["atlassian"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountType schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/accountType"
+            },
+            "active": {
+              "default": false,
+              "examples": [true],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "boolean",
+              "title": "The active schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/active"
+            },
+            "timeZone": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The timeZone schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/timeZone"
+            },
+            "groups": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The groups schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/groups"
+            },
+            "locale": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The locale schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/locale"
+            },
+            "accountId": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountId schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/accountId"
+            },
+            "emailAddress": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The emailAddress schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/emailAddress"
+            },
+            "expand": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The expand schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/expand"
+            },
+            "name": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The name schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/name"
+            },
+            "self": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The self schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/self"
+            },
+            "key": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The key schema",
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/key"
+            },
+            "applicationRoles": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The applicationRoles schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/deletedBy/properties/applicationRoles"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/deletedBy"
+        },
+        "issueTypes": {
+          "default": [],
+          "examples": [[{
+            "avatarId": 34,
+            "hierarchyLevel": 34,
+            "scope": {},
+            "name": "<string>",
+            "self": "<string>",
+            "description": "<string>",
+            "entityId": "<string>",
+            "id": "<string>",
+            "iconUrl": "<string>",
+            "subtask": true
+          }]],
+          "additionalItems": true,
+          "description": "An explanation about the purpose of this instance.",
+          "type": "array",
+          "title": "The issueTypes schema",
+          "items": {
+            "anyOf": [{
+              "default": {},
+              "examples": [{
+                "avatarId": 34,
+                "hierarchyLevel": 34,
+                "scope": {},
+                "name": "<string>",
+                "self": "<string>",
+                "description": "<string>",
+                "entityId": "<string>",
+                "id": "<string>",
+                "iconUrl": "<string>",
+                "subtask": true
+              }],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The first anyOf schema",
+              "required": [
+                "self",
+                "id",
+                "description",
+                "iconUrl",
+                "name",
+                "subtask",
+                "avatarId",
+                "entityId",
+                "hierarchyLevel",
+                "scope"
+              ],
+              "properties": {
+                "avatarId": {
+                  "default": 0,
+                  "examples": [34],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "integer",
+                  "title": "The avatarId schema",
+                  "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0/properties/avatarId"
+                },
+                "hierarchyLevel": {
+                  "default": 0,
+                  "examples": [34],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "integer",
+                  "title": "The hierarchyLevel schema",
+                  "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0/properties/hierarchyLevel"
+                },
+                "scope": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The scope schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0/properties/scope"
+                },
+                "name": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The name schema",
+                  "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0/properties/name"
+                },
+                "self": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The self schema",
+                  "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0/properties/self"
+                },
+                "description": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The description schema",
+                  "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0/properties/description"
+                },
+                "entityId": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The entityId schema",
+                  "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0/properties/entityId"
+                },
+                "id": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The id schema",
+                  "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0/properties/id"
+                },
+                "iconUrl": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The iconUrl schema",
+                  "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0/properties/iconUrl"
+                },
+                "subtask": {
+                  "default": false,
+                  "examples": [true],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "boolean",
+                  "title": "The subtask schema",
+                  "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0/properties/subtask"
+                }
+              },
+              "$id": "#/items/anyOf/0/properties/issueTypes/items/anyOf/0"
+            }],
+            "$id": "#/items/anyOf/0/properties/issueTypes/items"
+          },
+          "$id": "#/items/anyOf/0/properties/issueTypes"
+        },
+        "archived": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The archived schema",
+          "$id": "#/items/anyOf/0/properties/archived"
+        },
+        "projectCategory": {
+          "default": {},
+          "examples": [{
+            "name": "<string>",
+            "self": "<string>",
+            "description": "<string>",
+            "id": "<string>"
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The projectCategory schema",
+          "required": [
+            "self",
+            "id",
+            "name",
+            "description"
+          ],
+          "properties": {
+            "name": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The name schema",
+              "$id": "#/items/anyOf/0/properties/projectCategory/properties/name"
+            },
+            "self": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The self schema",
+              "$id": "#/items/anyOf/0/properties/projectCategory/properties/self"
+            },
+            "description": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The description schema",
+              "$id": "#/items/anyOf/0/properties/projectCategory/properties/description"
+            },
+            "id": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The id schema",
+              "$id": "#/items/anyOf/0/properties/projectCategory/properties/id"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/projectCategory"
+        },
+        "permissions": {
+          "default": {},
+          "examples": [{"canEdit": true}],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The permissions schema",
+          "required": ["canEdit"],
+          "properties": {"canEdit": {
+            "default": false,
+            "examples": [true],
+            "description": "An explanation about the purpose of this instance.",
+            "type": "boolean",
+            "title": "The canEdit schema",
+            "$id": "#/items/anyOf/0/properties/permissions/properties/canEdit"
+          }},
+          "$id": "#/items/anyOf/0/properties/permissions"
+        },
+        "id": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The id schema",
+          "$id": "#/items/anyOf/0/properties/id"
+        },
+        "assigneeType": {
+          "default": "",
+          "examples": ["PROJECT_LEAD"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The assigneeType schema",
+          "$id": "#/items/anyOf/0/properties/assigneeType"
+        },
+        "projectTypeKey": {
+          "default": "",
+          "examples": ["software"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The projectTypeKey schema",
+          "$id": "#/items/anyOf/0/properties/projectTypeKey"
+        },
+        "archivedBy": {
+          "default": {},
+          "examples": [{
+            "avatarUrls": {},
+            "displayName": "<string>",
+            "accountType": "atlassian",
+            "active": true,
+            "timeZone": "<string>",
+            "groups": {},
+            "locale": "<string>",
+            "accountId": "<string>",
+            "emailAddress": "<string>",
+            "expand": "<string>",
+            "name": "<string>",
+            "self": "<string>",
+            "key": "<string>",
+            "applicationRoles": {}
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The archivedBy schema",
+          "required": [
+            "self",
+            "key",
+            "accountId",
+            "accountType",
+            "name",
+            "emailAddress",
+            "avatarUrls",
+            "displayName",
+            "active",
+            "timeZone",
+            "locale",
+            "groups",
+            "applicationRoles",
+            "expand"
+          ],
+          "properties": {
+            "avatarUrls": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The avatarUrls schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/avatarUrls"
+            },
+            "displayName": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The displayName schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/displayName"
+            },
+            "accountType": {
+              "default": "",
+              "examples": ["atlassian"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountType schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/accountType"
+            },
+            "active": {
+              "default": false,
+              "examples": [true],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "boolean",
+              "title": "The active schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/active"
+            },
+            "timeZone": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The timeZone schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/timeZone"
+            },
+            "groups": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The groups schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/groups"
+            },
+            "locale": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The locale schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/locale"
+            },
+            "accountId": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountId schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/accountId"
+            },
+            "emailAddress": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The emailAddress schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/emailAddress"
+            },
+            "expand": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The expand schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/expand"
+            },
+            "name": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The name schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/name"
+            },
+            "self": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The self schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/self"
+            },
+            "key": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The key schema",
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/key"
+            },
+            "applicationRoles": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The applicationRoles schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/archivedBy/properties/applicationRoles"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/archivedBy"
+        },
+        "key": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The key schema",
+          "$id": "#/items/anyOf/0/properties/key"
+        },
+        "email": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The email schema",
+          "$id": "#/items/anyOf/0/properties/email"
+        },
+        "archivedDate": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The archivedDate schema",
+          "$id": "#/items/anyOf/0/properties/archivedDate"
+        },
+        "retentionTillDate": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The retentionTillDate schema",
+          "$id": "#/items/anyOf/0/properties/retentionTillDate"
+        },
+        "avatarUrls": {
+          "default": {},
+          "examples": [{
+            "48x48": "<string>",
+            "24x24": "<string>",
+            "16x16": "<string>",
+            "32x32": "<string>"
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The avatarUrls schema",
+          "required": [
+            "16x16",
+            "24x24",
+            "32x32",
+            "48x48"
+          ],
+          "properties": {
+            "48x48": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The 48x48 schema",
+              "$id": "#/items/anyOf/0/properties/avatarUrls/properties/48x48"
+            },
+            "24x24": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The 24x24 schema",
+              "$id": "#/items/anyOf/0/properties/avatarUrls/properties/24x24"
+            },
+            "16x16": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The 16x16 schema",
+              "$id": "#/items/anyOf/0/properties/avatarUrls/properties/16x16"
+            },
+            "32x32": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The 32x32 schema",
+              "$id": "#/items/anyOf/0/properties/avatarUrls/properties/32x32"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/avatarUrls"
+        },
+        "favourite": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The favourite schema",
+          "$id": "#/items/anyOf/0/properties/favourite"
+        },
+        "lead": {
+          "default": {},
+          "examples": [{
+            "avatarUrls": {},
+            "displayName": "<string>",
+            "accountType": "atlassian",
+            "active": true,
+            "timeZone": "<string>",
+            "groups": {},
+            "locale": "<string>",
+            "accountId": "<string>",
+            "emailAddress": "<string>",
+            "expand": "<string>",
+            "name": "<string>",
+            "self": "<string>",
+            "key": "<string>",
+            "applicationRoles": {}
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The lead schema",
+          "required": [
+            "self",
+            "key",
+            "accountId",
+            "accountType",
+            "name",
+            "emailAddress",
+            "avatarUrls",
+            "displayName",
+            "active",
+            "timeZone",
+            "locale",
+            "groups",
+            "applicationRoles",
+            "expand"
+          ],
+          "properties": {
+            "avatarUrls": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The avatarUrls schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/lead/properties/avatarUrls"
+            },
+            "displayName": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The displayName schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/displayName"
+            },
+            "accountType": {
+              "default": "",
+              "examples": ["atlassian"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountType schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/accountType"
+            },
+            "active": {
+              "default": false,
+              "examples": [true],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "boolean",
+              "title": "The active schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/active"
+            },
+            "timeZone": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The timeZone schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/timeZone"
+            },
+            "groups": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The groups schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/lead/properties/groups"
+            },
+            "locale": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The locale schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/locale"
+            },
+            "accountId": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountId schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/accountId"
+            },
+            "emailAddress": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The emailAddress schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/emailAddress"
+            },
+            "expand": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The expand schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/expand"
+            },
+            "name": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The name schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/name"
+            },
+            "self": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The self schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/self"
+            },
+            "key": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The key schema",
+              "$id": "#/items/anyOf/0/properties/lead/properties/key"
+            },
+            "applicationRoles": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The applicationRoles schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/lead/properties/applicationRoles"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/lead"
+        },
+        "url": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The url schema",
+          "$id": "#/items/anyOf/0/properties/url"
+        },
+        "insight": {
+          "default": {},
+          "examples": [{
+            "totalIssueCount": 18,
+            "lastIssueUpdateTime": "<string>"
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The insight schema",
+          "required": [
+            "totalIssueCount",
+            "lastIssueUpdateTime"
+          ],
+          "properties": {
+            "totalIssueCount": {
+              "default": 0,
+              "examples": [18],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "integer",
+              "title": "The totalIssueCount schema",
+              "$id": "#/items/anyOf/0/properties/insight/properties/totalIssueCount"
+            },
+            "lastIssueUpdateTime": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The lastIssueUpdateTime schema",
+              "$id": "#/items/anyOf/0/properties/insight/properties/lastIssueUpdateTime"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/insight"
+        },
+        "expand": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The expand schema",
+          "$id": "#/items/anyOf/0/properties/expand"
+        },
+        "deleted": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The deleted schema",
+          "$id": "#/items/anyOf/0/properties/deleted"
+        },
+        "simplified": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The simplified schema",
+          "$id": "#/items/anyOf/0/properties/simplified"
+        },
+        "versions": {
+          "default": [],
+          "examples": [[{
+            "releaseDate": "<string>",
+            "description": "<string>",
+            "project": "<string>",
+            "archived": true,
+            "expand": "<string>",
+            "operations": [{}],
+            "overdue": true,
+            "name": "<string>",
+            "self": "<string>",
+            "moveUnfixedIssuesTo": "<string>",
+            "userReleaseDate": "<string>",
+            "id": "<string>",
+            "userStartDate": "<string>",
+            "projectId": 130,
+            "released": true,
+            "startDate": "<string>",
+            "issuesStatusForFixVersion": {}
+          }]],
+          "additionalItems": true,
+          "description": "An explanation about the purpose of this instance.",
+          "type": "array",
+          "title": "The versions schema",
+          "items": {
+            "anyOf": [{
+              "default": {},
+              "examples": [{
+                "releaseDate": "<string>",
+                "description": "<string>",
+                "project": "<string>",
+                "archived": true,
+                "expand": "<string>",
+                "operations": [{}],
+                "overdue": true,
+                "name": "<string>",
+                "self": "<string>",
+                "moveUnfixedIssuesTo": "<string>",
+                "userReleaseDate": "<string>",
+                "id": "<string>",
+                "userStartDate": "<string>",
+                "projectId": 130,
+                "released": true,
+                "startDate": "<string>",
+                "issuesStatusForFixVersion": {}
+              }],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The first anyOf schema",
+              "required": [
+                "expand",
+                "self",
+                "id",
+                "description",
+                "name",
+                "archived",
+                "released",
+                "startDate",
+                "releaseDate",
+                "overdue",
+                "userStartDate",
+                "userReleaseDate",
+                "project",
+                "projectId",
+                "moveUnfixedIssuesTo",
+                "operations",
+                "issuesStatusForFixVersion"
+              ],
+              "properties": {
+                "releaseDate": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The releaseDate schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/releaseDate"
+                },
+                "description": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The description schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/description"
+                },
+                "project": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The project schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/project"
+                },
+                "archived": {
+                  "default": false,
+                  "examples": [true],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "boolean",
+                  "title": "The archived schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/archived"
+                },
+                "expand": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The expand schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/expand"
+                },
+                "operations": {
+                  "default": [],
+                  "examples": [[{}]],
+                  "additionalItems": true,
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "array",
+                  "title": "The operations schema",
+                  "items": {
+                    "anyOf": [{
+                      "default": {},
+                      "examples": [{}],
+                      "description": "An explanation about the purpose of this instance.",
+                      "additionalProperties": true,
+                      "type": "object",
+                      "title": "The first anyOf schema",
+                      "required": [],
+                      "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/operations/items/anyOf/0"
+                    }],
+                    "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/operations/items"
+                  },
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/operations"
+                },
+                "overdue": {
+                  "default": false,
+                  "examples": [true],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "boolean",
+                  "title": "The overdue schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/overdue"
+                },
+                "name": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The name schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/name"
+                },
+                "self": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The self schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/self"
+                },
+                "moveUnfixedIssuesTo": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The moveUnfixedIssuesTo schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/moveUnfixedIssuesTo"
+                },
+                "userReleaseDate": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The userReleaseDate schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/userReleaseDate"
+                },
+                "id": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The id schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/id"
+                },
+                "userStartDate": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The userStartDate schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/userStartDate"
+                },
+                "projectId": {
+                  "default": 0,
+                  "examples": [130],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "integer",
+                  "title": "The projectId schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/projectId"
+                },
+                "released": {
+                  "default": false,
+                  "examples": [true],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "boolean",
+                  "title": "The released schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/released"
+                },
+                "startDate": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The startDate schema",
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/startDate"
+                },
+                "issuesStatusForFixVersion": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The issuesStatusForFixVersion schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0/properties/issuesStatusForFixVersion"
+                }
+              },
+              "$id": "#/items/anyOf/0/properties/versions/items/anyOf/0"
+            }],
+            "$id": "#/items/anyOf/0/properties/versions/items"
+          },
+          "$id": "#/items/anyOf/0/properties/versions"
+        },
+        "deletedDate": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The deletedDate schema",
+          "$id": "#/items/anyOf/0/properties/deletedDate"
+        },
+        "issueTypeHierarchy": {
+          "default": {},
+          "examples": [{"level": [{}]}],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The issueTypeHierarchy schema",
+          "required": ["level"],
+          "properties": {"level": {
+            "default": [],
+            "examples": [[{}]],
+            "additionalItems": true,
+            "description": "An explanation about the purpose of this instance.",
+            "type": "array",
+            "title": "The level schema",
+            "items": {
+              "anyOf": [{
+                "default": {},
+                "examples": [{}],
+                "description": "An explanation about the purpose of this instance.",
+                "additionalProperties": true,
+                "type": "object",
+                "title": "The first anyOf schema",
+                "required": [],
+                "$id": "#/items/anyOf/0/properties/issueTypeHierarchy/properties/level/items/anyOf/0"
+              }],
+              "$id": "#/items/anyOf/0/properties/issueTypeHierarchy/properties/level/items"
+            },
+            "$id": "#/items/anyOf/0/properties/issueTypeHierarchy/properties/level"
+          }},
+          "$id": "#/items/anyOf/0/properties/issueTypeHierarchy"
+        },
+        "name": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The name schema",
+          "$id": "#/items/anyOf/0/properties/name"
+        },
+        "self": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The self schema",
+          "$id": "#/items/anyOf/0/properties/self"
+        },
+        "style": {
+          "default": "",
+          "examples": ["classic"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The style schema",
+          "$id": "#/items/anyOf/0/properties/style"
+        },
+        "properties": {
+          "default": {},
+          "examples": [{}],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The properties schema",
+          "required": [],
+          "$id": "#/items/anyOf/0/properties/properties"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

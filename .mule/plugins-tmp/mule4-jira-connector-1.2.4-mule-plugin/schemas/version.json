@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Version",
+  "definitions": {
+    "Version": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "version"
+      },
+      "properties": {
+        "expand": {
+          "type": "string",
+          "xml": {
+            "attribute": true
+          }
+        },
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "released": {
+          "type": "boolean"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "releaseDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "overdue": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "userStartDate": {
+          "type": "string",
+          "readOnly": true
+        },
+        "userReleaseDate": {
+          "type": "string",
+          "readOnly": true
+        },
+        "project": {
+          "type": "string"
+        },
+        "projectId": {
+          "type": "number",
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "moveUnfixedIssuesTo": {
+          "type": "string",
+          "format": "uri"
+        },
+        "operations": {
+          "items": {
+            "$ref": "#/definitions/SimpleLink"
+          },
+          "type": "array",
+          "readOnly": true
+        },
+        "issuesStatusForFixVersion": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/VersionIssuesStatus"
+            }
+          ]
+        }
+      }
+    },
+    "SimpleLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "link"
+      },
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "styleClass": {
+          "type": "string"
+        },
+        "iconClass": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        }
+      }
+    },
+    "VersionIssuesStatus": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "unmapped": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "toDo": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "inProgress": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "done": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        }
+      }
+    }
+  }
+}

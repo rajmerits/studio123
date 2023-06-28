@@ -1,0 +1,64 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "name",
+    "description",
+    "project"
+  ],
+  "properties": {
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "The Description Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "leadAccountId": {
+      "$id": "#/properties/leadAccountId",
+      "type": "string",
+      "title": "The Leadaccountid Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "assigneeType": {
+      "$id": "#/properties/assigneeType",
+      "type": "string",
+      "title": "The Assigneetype Schema",
+      "default": "PROJECT_DEFAULT",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "project": {
+      "$id": "#/properties/project",
+      "type": "string",
+      "title": "The Project Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

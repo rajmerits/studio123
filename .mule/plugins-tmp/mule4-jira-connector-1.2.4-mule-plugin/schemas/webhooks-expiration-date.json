@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/WebhooksExpirationDate",
+  "definitions": {"WebhooksExpirationDate": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["expirationDate"],
+    "properties": {"expirationDate": {
+      "maximum": 9.223372036854776E+18,
+      "readOnly": true,
+      "type": "number",
+      "minimum": -9.223372036854776E+18
+    }}
+  }}
+}

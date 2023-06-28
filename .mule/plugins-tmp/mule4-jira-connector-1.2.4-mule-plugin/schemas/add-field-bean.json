@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AddFieldBean",
+  "definitions": {"AddFieldBean": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["fieldId"],
+    "properties": {"fieldId": {"type": "string"}}
+  }}
+}

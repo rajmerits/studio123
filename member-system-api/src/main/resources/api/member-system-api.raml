@@ -1,0 +1,180 @@
+#%RAML 1.0
+title: Member-System-API
+
+traits:
+  clientidenforcement: !include exchange_modules/5d104a4e-1852-4ad3-9138-7c0f777e7706/fragment-common-traits/1.0.0/clientidenforcement-trait.raml
+  commonheaders: !include /exchange_modules/5d104a4e-1852-4ad3-9138-7c0f777e7706/fragment-common-traits/1.0.0/common-header-trait.raml
+  memberqueryparams: !include exchange_modules/5d104a4e-1852-4ad3-9138-7c0f777e7706/fragment-common-traits/1.0.0/member-get-queryparameters-trait.raml
+
+types:
+  memberDetails: !include /exchange_modules/5d104a4e-1852-4ad3-9138-7c0f777e7706/fragment-common-datatypes/1.0.0/member/member-details-dataType.raml
+  memberPatchdetailsrequest: !include exchange_modules/5d104a4e-1852-4ad3-9138-7c0f777e7706/fragment-common-datatypes/1.0.0/member/member-body-patchdetails-dataType.raml
+  memberlistdatatype: !include exchange_modules/5d104a4e-1852-4ad3-9138-7c0f777e7706/fragment-common-datatypes/1.0.0/member/member-get-memberlist-response-dataType.raml
+  postMemberdetailsresponse: !include  exchange_modules/5d104a4e-1852-4ad3-9138-7c0f777e7706/fragment-common-datatypes/1.0.0/member/member-post-patch-details-response-dataType.raml
+  commonError: !include exchange_modules/5d104a4e-1852-4ad3-9138-7c0f777e7706/fragment-common-datatypes/1.0.0/common/error-response-dataType.raml
+
+/members:
+  post:
+    is:
+      - commonheaders
+      - clientidenforcement
+    body:
+      application/json:
+        type: memberPatchdetailsrequest
+        example: !include /example/member-post-body-example.json           
+    responses:
+      200:
+        body:
+          application/json:
+            type: postMemberdetailsresponse
+            example: !include /example/member-post-200response.json             
+      400:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/400error.json             
+      401:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/401error.json             
+      404:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/404error.json
+      500:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/500error.json                  
+  get:
+    is:
+      - commonheaders
+      - clientidenforcement
+      - memberqueryparams
+    responses:
+      200:
+        body:
+          application/json:
+            type: memberlistdatatype
+            example: !include /example/member-get-200response.json             
+      400:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/400error.json              
+      401:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/401error.json             
+      404:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/404error.json                          
+      500:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/500error.json                 
+  /{memberId}:
+   get:
+    is:
+      - commonheaders
+      - clientidenforcement
+    responses:
+      200:
+        body:
+          application/json:
+            type: memberDetails
+            example: !include /example/{memberid}-get-200response.json              
+      400:
+          body:
+            application/json:
+              type: commonError
+              example: !include /example/400error.json              
+      404:
+          body:
+            application/json:
+              type: commonError
+              example: !include /example/404error.json               
+      500:
+          body:
+            application/json:
+              type: commonError
+              example: !include /example/500error.json                  
+   patch:
+    is:
+      - commonheaders
+      - clientidenforcement
+    body:
+      application/json:
+        type: memberPatchdetailsrequest
+        example: !include /example/patch-body-example.json           
+    responses:
+      200:
+        body:
+          application/json:
+            type: postMemberdetailsresponse
+            example: !include /example/patch-200.json                  
+      400:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/400error.json            
+      401:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/401error.json             
+      404:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/404error.json       
+      500:
+        body:
+          application/json:
+            type: commonError
+            example: !include /example/500error.json
+  /sync:
+    post:
+      is:
+        - commonheaders
+        - clientidenforcement
+      body:
+        application/json:
+          type: memberPatchdetailsrequest
+          example: !include  /example/Sync-body-example.json           
+      responses:
+        200:
+          body:
+            application/json:
+              type: postMemberdetailsresponse
+              example: !include /example/sync post 200.json             
+        400:
+          body:
+            application/json:
+              type: commonError
+              example: !include /example/400error.json             
+        401:
+          body:
+            application/json:
+              type: commonError
+              example: !include /example/401error.json             
+        404:
+          body:
+            application/json:
+              type: commonError
+              example: !include /example/404error.json       
+        500:
+          body:
+            application/json:
+              type: commonError
+              example: !include /example/500error.json
+                      
+
+            
+    

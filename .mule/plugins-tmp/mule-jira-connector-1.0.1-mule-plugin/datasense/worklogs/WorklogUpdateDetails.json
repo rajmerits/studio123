@@ -1,0 +1,169 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "Worklog update details",
+  "required": [
+    "timeSpent",
+    "timeSpentSeconds",
+    "visibility",
+    "comment",
+    "started"
+  ],
+  "properties": {
+    "timeSpent": {
+      "$id": "#/properties/timeSpent ",
+      "type": "string",
+      "title": "The Timespent  Schema",
+      "default": "",
+      "examples": [
+        "3h 20m"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "timeSpentSeconds": {
+      "$id": "#/properties/timeSpentSeconds",
+      "type": "integer",
+      "title": "The Timespentseconds Schema",
+      "default": 0,
+      "examples": [
+        12000
+      ]
+    },
+    "visibility": {
+      "$id": "#/properties/visibility",
+      "type": "object",
+      "title": "The Visibility Schema",
+      "required": [
+        "type",
+        "value"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/visibility/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "group"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "value": {
+          "$id": "#/properties/visibility/properties/value",
+          "type": "string",
+          "title": "The Value Schema",
+          "default": "",
+          "examples": [
+            "jira-developers"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "comment": {
+      "$id": "#/properties/comment",
+      "type": "object",
+      "title": "The Comment Schema",
+      "required": [
+        "type",
+        "version",
+        "content"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/comment/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "doc"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "version": {
+          "$id": "#/properties/comment/properties/version",
+          "type": "integer",
+          "title": "The Version Schema",
+          "default": 0,
+          "examples": [
+            1
+          ]
+        },
+        "content": {
+          "$id": "#/properties/comment/properties/content",
+          "type": "array",
+          "title": "The Content Schema",
+          "items": {
+            "$id": "#/properties/comment/properties/content/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "type",
+              "content"
+            ],
+            "properties": {
+              "type": {
+                "$id": "#/properties/comment/properties/content/items/properties/type",
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "examples": [
+                  "paragraph"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "content": {
+                "$id": "#/properties/comment/properties/content/items/properties/content",
+                "type": "array",
+                "title": "The Content Schema",
+                "items": {
+                  "$id": "#/properties/comment/properties/content/items/properties/content/items",
+                  "type": "object",
+                  "title": "The Items Schema",
+                  "required": [
+                    "text",
+                    "type"
+                  ],
+                  "properties": {
+                    "text": {
+                      "$id": "#/properties/comment/properties/content/items/properties/content/items/properties/text",
+                      "type": "string",
+                      "title": "The Text Schema",
+                      "default": "",
+                      "examples": [
+                        "I did some work here."
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "type": {
+                      "$id": "#/properties/comment/properties/content/items/properties/content/items/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema",
+                      "default": "",
+                      "examples": [
+                        "text"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "started": {
+      "$id": "#/properties/started",
+      "type": "string",
+      "title": "The Started Schema",
+      "default": "",
+      "examples": [
+        "2019-11-04T03:48:29.894+0000"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

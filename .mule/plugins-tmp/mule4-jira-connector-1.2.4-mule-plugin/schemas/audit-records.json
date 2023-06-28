@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AuditRecords",
+  "definitions": {
+    "AssociatedItemBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "parentName": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "typeName": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "parentId": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "AuditRecordBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "summary": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "changedValues": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/ChangedValueBean"}
+        },
+        "objectItem": {"$ref": "#/definitions/AssociatedItemBean"},
+        "created": {
+          "format": "date-time",
+          "readOnly": true,
+          "type": "string"
+        },
+        "authorKey": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "eventSource": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "description": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "associatedItems": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/AssociatedItemBean"}
+        },
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "category": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "remoteAddress": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "AuditRecords": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "total": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "offset": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "records": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/AuditRecordBean"}
+        },
+        "limit": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        }
+      }
+    },
+    "ChangedValueBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "changedTo": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "fieldName": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "changedFrom": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    }
+  }
+}

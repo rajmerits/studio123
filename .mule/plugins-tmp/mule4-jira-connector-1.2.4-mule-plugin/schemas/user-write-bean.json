@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/UserWriteBean",
+  "definitions": {"UserWriteBean": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": [
+      "emailAddress",
+      "displayName"
+    ],
+    "properties": {
+      "applicationKeys": {
+        "type": "array",
+        "items": {"type": "string"}
+      },
+      "notification": {"type": "string"},
+      "password": {"type": "string"},
+      "emailAddress": {"type": "string"},
+      "displayName": {"type": "string"},
+      "name": {"type": "string"},
+      "self": {
+        "readOnly": true,
+        "type": "string"
+      },
+      "key": {"type": "string"}
+    }
+  }}
+}

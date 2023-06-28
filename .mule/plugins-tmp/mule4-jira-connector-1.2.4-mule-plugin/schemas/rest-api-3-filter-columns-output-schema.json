@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/ColumnItem"}
+    },
+    "ColumnItem": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "label": {"type": "string"},
+        "value": {"type": "string"}
+      }
+    }
+  }
+}

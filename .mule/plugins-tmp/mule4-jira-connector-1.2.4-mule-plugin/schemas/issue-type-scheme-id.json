@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueTypeSchemeID",
+  "definitions": {"IssueTypeSchemeID": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["issueTypeSchemeId"],
+    "properties": {"issueTypeSchemeId": {
+      "readOnly": true,
+      "type": "string"
+    }}
+  }}
+}

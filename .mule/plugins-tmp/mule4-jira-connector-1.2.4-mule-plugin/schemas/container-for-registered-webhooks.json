@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ContainerForRegisteredWebhooks",
+  "definitions": {
+    "ContainerForRegisteredWebhooks": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"webhookRegistrationResult": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/RegisteredWebhook"}
+      }}
+    },
+    "RegisteredWebhook": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "createdWebhookId": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "errors": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}

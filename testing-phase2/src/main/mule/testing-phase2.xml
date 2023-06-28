@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jira="http://www.mulesoft.org/schema/mule/jira" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:custom-connecter="http://www.mulesoft.org/schema/mule/custom-connecter"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/custom-connecter http://www.mulesoft.org/schema/mule/custom-connecter/current/mule-custom-connecter.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/jira http://www.mulesoft.org/schema/mule/jira/current/mule-jira.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="5e66eca5-b65e-4055-8604-0abd08d02b40" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<custom-connecter:config name="Custom_connecter_Config" doc:name="Custom-connecter Config" doc:id="3e335c67-47c6-4e41-b489-68f7b3478c21" property_host="jira-uat.spotify.net"/>
+	<flow name="testing-phase2Flow" doc:id="79e271e0-7465-44f8-b9fe-6a1e2615d13d" >
+		<http:listener doc:name="Listener" doc:id="88d3e697-1bef-4a48-a5e5-95292c5ff91c" config-ref="HTTP_Listener_config" path="/test"/>
+		<custom-connecter:create-issue-by-id doc:name="Create issue by id" doc:id="b5cbae4f-03d7-43d0-a306-79543b835d37" id="2" username="jirauat" password="spotify123" config-ref="Custom_connecter_Config"/>
+		<ee:transform doc:name="Transform Message" doc:id="869aa36e-a61d-461f-871c-89f2ae648a4f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<jira:create-issue doc:name="Issues - Create" doc:id="14ecb890-13fc-4283-8a6e-57b050fa0790" />
+		<jira:add-attachment doc:name="Attachments - Add" doc:id="60efa699-549e-498a-8894-ef2c1c8ebc95" />
+		<jira:delete-attachment doc:name="Attachments - Delete" doc:id="833df666-689e-48b8-96c9-5694953c2145" />
+	</flow>
+</mule>

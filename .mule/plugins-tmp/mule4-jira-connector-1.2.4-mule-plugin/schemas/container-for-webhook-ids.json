@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ContainerForWebhookIDs",
+  "definitions": {"ContainerForWebhookIDs": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["webhookIds"],
+    "properties": {"webhookIds": {
+      "type": "array",
+      "items": {
+        "maximum": 9.223372036854776E+18,
+        "type": "number",
+        "minimum": -9.223372036854776E+18
+      }
+    }}
+  }}
+}

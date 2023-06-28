@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "object",
+      "example": {
+        "id": "2126917",
+        "key": "ITO-38309",
+        "self": "https://jira-uat.spotify.net/rest/api/2/issue/2126917"
+      },
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "2126917"
+        },
+        "key": {
+          "type": "string",
+          "example": "ITO-38309"
+        },
+        "self": {
+          "type": "string",
+          "example": "https://jira-uat.spotify.net/rest/api/2/issue/2126917"
+        }
+      }
+    }
+  }
+}

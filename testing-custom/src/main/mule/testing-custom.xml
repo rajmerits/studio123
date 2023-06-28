@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:rest="http://www.mulesoft.org/schema/mule/rest" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/rest http://www.mulesoft.org/schema/mule/rest/current/mule-rest.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b94d06ff-82f2-4bf1-bf7f-dcbfb7433d87" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<rest:config name="REST_Config" protocol="HTTPS" doc:name="REST Config" doc:id="a0270d7b-a067-4074-85bb-89ec07ca0f16" host="reqres.in" basepath='/api/users/2' />
+	<flow name="testing-customFlow" doc:id="1057ae7e-f5ab-4ee2-8c74-435ed0d6772b" >
+		<http:listener doc:name="Listener" doc:id="b72c7022-e9a2-45ec-8cdb-d745be64905e" config-ref="HTTP_Listener_config" path="/test"/>
+		<rest:get doc:name="Get" doc:id="1a3f0373-89c9-4042-a5ca-dabef985eec4" config-ref="REST_Config"/>
+		<logger level="INFO" doc:name="Logger" doc:id="f537ff7d-1ca7-4af8-a491-edc06ef8ce03" message="#[payload]"/>
+	</flow>
+</mule>

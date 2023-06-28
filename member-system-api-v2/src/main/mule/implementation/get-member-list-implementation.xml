@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="get-member-list-implementationFlow" doc:id="04469b16-db03-41d5-8a30-6d876ea0fb5d" >
+		<logger level="INFO" doc:name="Logger" doc:id="7f70f27f-66d5-46d3-b0bb-57cc6678aa41" message="get member list impl"/>
+	</flow>
+</mule>

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueLinkType",
+  "definitions": {"IssueLinkType": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "inward": {"type": "string"},
+      "name": {"type": "string"},
+      "self": {
+        "format": "uri",
+        "readOnly": true,
+        "type": "string"
+      },
+      "id": {"type": "string"},
+      "outward": {"type": "string"}
+    }
+  }}
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ConnectModules",
+  "definitions": {
+    "ConnectModule": {
+      "additionalProperties": true,
+      "type": "object"
+    },
+    "ConnectModules": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": ["modules"],
+      "properties": {"modules": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/ConnectModule"}
+      }}
+    }
+  }
+}

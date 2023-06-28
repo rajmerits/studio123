@@ -1,0 +1,207 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/User",
+  "definitions": {
+    "GroupName": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "AvatarUrlsBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "48x48": {
+          "format": "uri",
+          "type": "string"
+        },
+        "24x24": {
+          "format": "uri",
+          "type": "string"
+        },
+        "16x16": {
+          "format": "uri",
+          "type": "string"
+        },
+        "32x32": {
+          "format": "uri",
+          "type": "string"
+        }
+      }
+    },
+    "User": {
+      "xml": {"name": "user"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "avatarUrls": {
+          "allOf": [{"$ref": "#/definitions/AvatarUrlsBean"}],
+          "readOnly": true
+        },
+        "displayName": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "accountType": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "atlassian",
+            "app",
+            "customer",
+            "unknown"
+          ]
+        },
+        "active": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "timeZone": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "groups": {
+          "allOf": [{"$ref": "#/definitions/SimpleListWrapperGroupName"}],
+          "readOnly": true
+        },
+        "locale": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "accountId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "emailAddress": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "expand": {
+          "xml": {"attribute": true},
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {"type": "string"},
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "key": {"type": "string"},
+        "applicationRoles": {
+          "allOf": [{"$ref": "#/definitions/SimpleListWrapperApplicationRole"}],
+          "readOnly": true
+        }
+      }
+    },
+    "SimpleListWrapperApplicationRole": {
+      "xml": {"name": "list"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "pagingCallback": {"$ref": "#/definitions/ListWrapperCallbackApplicationRole"},
+        "size": {
+          "xml": {"attribute": true},
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "max-results": {
+          "xml": {
+            "name": "max-results",
+            "attribute": true
+          },
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "callback": {"$ref": "#/definitions/ListWrapperCallbackApplicationRole"},
+        "items": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/ApplicationRole"}
+        }
+      }
+    },
+    "ListWrapperCallbackGroupName": {
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ListWrapperCallbackApplicationRole": {
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ApplicationRole": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "numberOfSeats": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "userCount": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "userCountDescription": {"type": "string"},
+        "defaultGroups": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "hasUnlimitedSeats": {"type": "boolean"},
+        "name": {"type": "string"},
+        "groups": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "remainingSeats": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "key": {"type": "string"},
+        "selectedByDefault": {"type": "boolean"},
+        "defined": {"type": "boolean"},
+        "platform": {"type": "boolean"}
+      }
+    },
+    "SimpleListWrapperGroupName": {
+      "xml": {"name": "list"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "pagingCallback": {"$ref": "#/definitions/ListWrapperCallbackGroupName"},
+        "size": {
+          "xml": {"attribute": true},
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "max-results": {
+          "xml": {
+            "name": "max-results",
+            "attribute": true
+          },
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "callback": {"$ref": "#/definitions/ListWrapperCallbackGroupName"},
+        "items": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/GroupName"}
+        }
+      }
+    }
+  }
+}

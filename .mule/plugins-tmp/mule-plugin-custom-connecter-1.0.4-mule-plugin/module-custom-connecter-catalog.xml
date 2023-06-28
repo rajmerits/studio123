@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogs xmlns="http://www.mulesoft.org/schema/mule/types" >
+
+                <catalog name="create-issue-by-id-request-type" format="application/json">
+        <schema format="application/json+schema" location="./create-issue-by-id-request-data-schema.json" />
+    </catalog>
+        
+            <catalog name="create-issue-by-id-response-type" format="application/json">
+        <schema format="application/json+schema" location="./create-issue-by-id-response-data-schema.json" />
+    </catalog>
+        
+            
+    
+    <catalog name="request-streaming-mode-enum" format="application/json">
+        <schema format="application/json+schema" location="./request-streaming-mode-enum.json" />
+    </catalog>
+
+    <catalog name="java" format="application/java">
+            <schema format="application/classloader"/>
+    </catalog>
+
+</catalogs>

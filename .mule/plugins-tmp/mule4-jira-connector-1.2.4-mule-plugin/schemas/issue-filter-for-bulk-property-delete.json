@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueFilterForBulkPropertyDelete",
+  "definitions": {"IssueFilterForBulkPropertyDelete": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "entityIds": {
+        "uniqueItems": true,
+        "type": "array",
+        "items": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      },
+      "currentValue": {}
+    }
+  }}
+}

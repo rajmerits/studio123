@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/UpdateCustomFieldDetails",
+  "definitions": {"UpdateCustomFieldDetails": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "searcherKey": {
+        "type": "string",
+        "enum": [
+          "com.atlassian.jira.plugin.system.customfieldtypes:cascadingselectsearcher",
+          "com.atlassian.jira.plugin.system.customfieldtypes:daterange",
+          "com.atlassian.jira.plugin.system.customfieldtypes:datetimerange",
+          "com.atlassian.jira.plugin.system.customfieldtypes:exactnumber",
+          "com.atlassian.jira.plugin.system.customfieldtypes:exacttextsearcher",
+          "com.atlassian.jira.plugin.system.customfieldtypes:grouppickersearcher",
+          "com.atlassian.jira.plugin.system.customfieldtypes:labelsearcher",
+          "com.atlassian.jira.plugin.system.customfieldtypes:multiselectsearcher",
+          "com.atlassian.jira.plugin.system.customfieldtypes:numberrange",
+          "com.atlassian.jira.plugin.system.customfieldtypes:projectsearcher",
+          "com.atlassian.jira.plugin.system.customfieldtypes:textsearcher",
+          "com.atlassian.jira.plugin.system.customfieldtypes:userpickergroupsearcher",
+          "com.atlassian.jira.plugin.system.customfieldtypes:versionsearcher"
+        ]
+      },
+      "name": {"type": "string"},
+      "description": {"type": "string"}
+    }
+  }}
+}

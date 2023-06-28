@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/BulkPermissionGrants",
+  "definitions": {
+    "BulkPermissionGrants": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "projectPermissions",
+        "globalPermissions"
+      ],
+      "properties": {
+        "globalPermissions": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "projectPermissions": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/BulkProjectPermissionGrants"}
+        }
+      }
+    },
+    "BulkProjectPermissionGrants": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "permission",
+        "issues",
+        "projects"
+      ],
+      "properties": {
+        "projects": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "maximum": 9.223372036854776E+18,
+            "type": "number",
+            "minimum": -9.223372036854776E+18
+          }
+        },
+        "permission": {"type": "string"},
+        "issues": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "maximum": 9.223372036854776E+18,
+            "type": "number",
+            "minimum": -9.223372036854776E+18
+          }
+        }
+      }
+    }
+  }
+}

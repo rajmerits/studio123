@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AutoCompleteSuggestions",
+  "definitions": {
+    "AutoCompleteSuggestions": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"results": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/AutoCompleteSuggestion"}
+      }}
+    },
+    "AutoCompleteSuggestion": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "displayName": {"type": "string"},
+        "value": {"type": "string"}
+      }
+    }
+  }
+}

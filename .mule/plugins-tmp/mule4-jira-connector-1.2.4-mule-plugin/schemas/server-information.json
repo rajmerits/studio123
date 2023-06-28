@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ServerInformation",
+  "definitions": {
+    "ServerInformation": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "healthChecks": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/HealthCheckResult"}
+        },
+        "baseUrl": {"type": "string"},
+        "deploymentType": {"type": "string"},
+        "scmInfo": {"type": "string"},
+        "serverTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "buildDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "serverTitle": {"type": "string"},
+        "version": {"type": "string"},
+        "buildNumber": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "versionNumbers": {
+          "type": "array",
+          "items": {
+            "maximum": 2147483647,
+            "type": "integer",
+            "minimum": -2147483648
+          }
+        }
+      }
+    },
+    "HealthCheckResult": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "description": {"type": "string"},
+        "passed": {"type": "boolean"}
+      }
+    }
+  }
+}

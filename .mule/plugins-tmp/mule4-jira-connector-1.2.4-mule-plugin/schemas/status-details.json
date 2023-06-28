@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/StatusDetails",
+  "definitions": {
+    "StatusDetails": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "self": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true
+        },
+        "iconUrl": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "statusCategory": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/StatusCategory"
+            }
+          ]
+        }
+      }
+    },
+    "StatusCategory": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "self": {
+          "type": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "key": {
+          "type": "string",
+          "readOnly": true
+        },
+        "colorName": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

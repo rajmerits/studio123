@@ -1,0 +1,498 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "owner": {
+      "avatarUrls": {},
+      "displayName": "<string>",
+      "accountType": "atlassian",
+      "active": true,
+      "timeZone": "<string>",
+      "groups": {},
+      "locale": "<string>",
+      "accountId": "<string>",
+      "emailAddress": "<string>",
+      "expand": "<string>",
+      "name": "<string>",
+      "self": "<string>",
+      "key": "<string>",
+      "applicationRoles": {}
+    },
+    "subscriptions": [{
+      "id": 34,
+      "user": {},
+      "group": {}
+    }],
+    "jql": "<string>",
+    "favouritedCount": 96,
+    "name": "<string>",
+    "viewUrl": "<string>",
+    "self": "<string>",
+    "description": "<string>",
+    "searchUrl": "<string>",
+    "id": "<string>",
+    "sharePermissions": [{
+      "role": {},
+      "project": {},
+      "id": 46,
+      "type": "group",
+      "group": {}
+    }],
+    "favourite": true
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "The root schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "owner": {
+          "avatarUrls": {},
+          "displayName": "<string>",
+          "accountType": "atlassian",
+          "active": true,
+          "timeZone": "<string>",
+          "groups": {},
+          "locale": "<string>",
+          "accountId": "<string>",
+          "emailAddress": "<string>",
+          "expand": "<string>",
+          "name": "<string>",
+          "self": "<string>",
+          "key": "<string>",
+          "applicationRoles": {}
+        },
+        "subscriptions": [{
+          "id": 34,
+          "user": {},
+          "group": {}
+        }],
+        "jql": "<string>",
+        "favouritedCount": 96,
+        "name": "<string>",
+        "viewUrl": "<string>",
+        "self": "<string>",
+        "description": "<string>",
+        "searchUrl": "<string>",
+        "id": "<string>",
+        "sharePermissions": [{
+          "role": {},
+          "project": {},
+          "id": 46,
+          "type": "group",
+          "group": {}
+        }],
+        "favourite": true
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "self",
+        "id",
+        "name",
+        "description",
+        "owner",
+        "jql",
+        "viewUrl",
+        "searchUrl",
+        "favourite",
+        "favouritedCount",
+        "sharePermissions",
+        "subscriptions"
+      ],
+      "properties": {
+        "owner": {
+          "default": {},
+          "examples": [{
+            "avatarUrls": {},
+            "displayName": "<string>",
+            "accountType": "atlassian",
+            "active": true,
+            "timeZone": "<string>",
+            "groups": {},
+            "locale": "<string>",
+            "accountId": "<string>",
+            "emailAddress": "<string>",
+            "expand": "<string>",
+            "name": "<string>",
+            "self": "<string>",
+            "key": "<string>",
+            "applicationRoles": {}
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The owner schema",
+          "required": [
+            "self",
+            "key",
+            "accountId",
+            "accountType",
+            "name",
+            "emailAddress",
+            "avatarUrls",
+            "displayName",
+            "active",
+            "timeZone",
+            "locale",
+            "groups",
+            "applicationRoles",
+            "expand"
+          ],
+          "properties": {
+            "avatarUrls": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The avatarUrls schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/owner/properties/avatarUrls"
+            },
+            "displayName": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The displayName schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/displayName"
+            },
+            "accountType": {
+              "default": "",
+              "examples": ["atlassian"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountType schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/accountType"
+            },
+            "active": {
+              "default": false,
+              "examples": [true],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "boolean",
+              "title": "The active schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/active"
+            },
+            "timeZone": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The timeZone schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/timeZone"
+            },
+            "groups": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The groups schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/owner/properties/groups"
+            },
+            "locale": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The locale schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/locale"
+            },
+            "accountId": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountId schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/accountId"
+            },
+            "emailAddress": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The emailAddress schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/emailAddress"
+            },
+            "expand": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The expand schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/expand"
+            },
+            "name": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The name schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/name"
+            },
+            "self": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The self schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/self"
+            },
+            "key": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The key schema",
+              "$id": "#/items/anyOf/0/properties/owner/properties/key"
+            },
+            "applicationRoles": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The applicationRoles schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/owner/properties/applicationRoles"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/owner"
+        },
+        "subscriptions": {
+          "default": [],
+          "examples": [[{
+            "id": 34,
+            "user": {},
+            "group": {}
+          }]],
+          "additionalItems": true,
+          "description": "An explanation about the purpose of this instance.",
+          "type": "array",
+          "title": "The subscriptions schema",
+          "items": {
+            "anyOf": [{
+              "default": {},
+              "examples": [{
+                "id": 34,
+                "user": {},
+                "group": {}
+              }],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The first anyOf schema",
+              "required": [
+                "id",
+                "user",
+                "group"
+              ],
+              "properties": {
+                "id": {
+                  "default": 0,
+                  "examples": [34],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "integer",
+                  "title": "The id schema",
+                  "$id": "#/items/anyOf/0/properties/subscriptions/items/anyOf/0/properties/id"
+                },
+                "user": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The user schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/subscriptions/items/anyOf/0/properties/user"
+                },
+                "group": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The group schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/subscriptions/items/anyOf/0/properties/group"
+                }
+              },
+              "$id": "#/items/anyOf/0/properties/subscriptions/items/anyOf/0"
+            }],
+            "$id": "#/items/anyOf/0/properties/subscriptions/items"
+          },
+          "$id": "#/items/anyOf/0/properties/subscriptions"
+        },
+        "jql": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The jql schema",
+          "$id": "#/items/anyOf/0/properties/jql"
+        },
+        "favouritedCount": {
+          "default": 0,
+          "examples": [96],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "integer",
+          "title": "The favouritedCount schema",
+          "$id": "#/items/anyOf/0/properties/favouritedCount"
+        },
+        "name": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The name schema",
+          "$id": "#/items/anyOf/0/properties/name"
+        },
+        "viewUrl": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The viewUrl schema",
+          "$id": "#/items/anyOf/0/properties/viewUrl"
+        },
+        "self": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The self schema",
+          "$id": "#/items/anyOf/0/properties/self"
+        },
+        "description": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The description schema",
+          "$id": "#/items/anyOf/0/properties/description"
+        },
+        "searchUrl": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The searchUrl schema",
+          "$id": "#/items/anyOf/0/properties/searchUrl"
+        },
+        "id": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The id schema",
+          "$id": "#/items/anyOf/0/properties/id"
+        },
+        "sharePermissions": {
+          "default": [],
+          "examples": [[{
+            "role": {},
+            "project": {},
+            "id": 46,
+            "type": "group",
+            "group": {}
+          }]],
+          "additionalItems": true,
+          "description": "An explanation about the purpose of this instance.",
+          "type": "array",
+          "title": "The sharePermissions schema",
+          "items": {
+            "anyOf": [{
+              "default": {},
+              "examples": [{
+                "role": {},
+                "project": {},
+                "id": 46,
+                "type": "group",
+                "group": {}
+              }],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The first anyOf schema",
+              "required": [
+                "id",
+                "type",
+                "project",
+                "role",
+                "group"
+              ],
+              "properties": {
+                "role": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The role schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/sharePermissions/items/anyOf/0/properties/role"
+                },
+                "project": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The project schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/sharePermissions/items/anyOf/0/properties/project"
+                },
+                "id": {
+                  "default": 0,
+                  "examples": [46],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "integer",
+                  "title": "The id schema",
+                  "$id": "#/items/anyOf/0/properties/sharePermissions/items/anyOf/0/properties/id"
+                },
+                "type": {
+                  "default": "",
+                  "examples": ["group"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The type schema",
+                  "$id": "#/items/anyOf/0/properties/sharePermissions/items/anyOf/0/properties/type"
+                },
+                "group": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The group schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/sharePermissions/items/anyOf/0/properties/group"
+                }
+              },
+              "$id": "#/items/anyOf/0/properties/sharePermissions/items/anyOf/0"
+            }],
+            "$id": "#/items/anyOf/0/properties/sharePermissions/items"
+          },
+          "$id": "#/items/anyOf/0/properties/sharePermissions"
+        },
+        "favourite": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The favourite schema",
+          "$id": "#/items/anyOf/0/properties/favourite"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

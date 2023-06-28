@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/FoundUsersAndGroups",
+  "definitions": {
+    "FoundUsers": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "total": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "header": {"type": "string"},
+        "users": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/UserPickerUser"}
+        }
+      }
+    },
+    "FoundGroup": {
+      "xml": {"name": "group"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "groupId": {"type": "string"},
+        "name": {"type": "string"},
+        "html": {"type": "string"},
+        "labels": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/GroupLabel"}
+        }
+      }
+    },
+    "GroupLabel": {
+      "xml": {"name": "grouplabel"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "text": {"type": "string"},
+        "title": {"type": "string"},
+        "type": {
+          "type": "string",
+          "enum": [
+            "ADMIN",
+            "SINGLE",
+            "MULTIPLE"
+          ]
+        }
+      }
+    },
+    "FoundGroups": {
+      "xml": {"name": "groupsuggestions"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "total": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "header": {"type": "string"},
+        "groups": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/FoundGroup"}
+        }
+      }
+    },
+    "FoundUsersAndGroups": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "groups": {"$ref": "#/definitions/FoundGroups"},
+        "users": {"$ref": "#/definitions/FoundUsers"}
+      }
+    },
+    "UserPickerUser": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "accountId": {"type": "string"},
+        "avatarUrl": {
+          "format": "uri",
+          "type": "string"
+        },
+        "displayName": {"type": "string"},
+        "name": {"type": "string"},
+        "html": {"type": "string"},
+        "key": {"type": "string"}
+      }
+    }
+  }
+}

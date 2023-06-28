@@ -1,0 +1,473 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "historyMetadata": {
+      "emailDescription": "<string>",
+      "actor": {},
+      "extraData": {},
+      "activityDescriptionKey": "<string>",
+      "emailDescriptionKey": "<string>",
+      "descriptionKey": "<string>",
+      "description": "<string>",
+      "generator": {},
+      "cause": {},
+      "activityDescription": "<string>",
+      "type": "<string>"
+    },
+    "author": {
+      "accountId": "<string>",
+      "emailAddress": "<string>",
+      "avatarUrls": {},
+      "displayName": "<string>",
+      "accountType": "<string>",
+      "name": "<string>",
+      "self": "<string>",
+      "active": true,
+      "timeZone": "<string>",
+      "key": "<string>"
+    },
+    "created": "<string>",
+    "id": "<string>",
+    "items": [{
+      "field": "<string>",
+      "from": "<string>",
+      "toString": "<string>",
+      "fromString": "<string>",
+      "to": "<string>",
+      "fieldtype": "<string>",
+      "fieldId": "<string>"
+    }]
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "Get Change Logs Schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "historyMetadata": {
+          "emailDescription": "<string>",
+          "actor": {},
+          "extraData": {},
+          "activityDescriptionKey": "<string>",
+          "emailDescriptionKey": "<string>",
+          "descriptionKey": "<string>",
+          "description": "<string>",
+          "generator": {},
+          "cause": {},
+          "activityDescription": "<string>",
+          "type": "<string>"
+        },
+        "author": {
+          "accountId": "<string>",
+          "emailAddress": "<string>",
+          "avatarUrls": {},
+          "displayName": "<string>",
+          "accountType": "<string>",
+          "name": "<string>",
+          "self": "<string>",
+          "active": true,
+          "timeZone": "<string>",
+          "key": "<string>"
+        },
+        "created": "<string>",
+        "id": "<string>",
+        "items": [{
+          "field": "<string>",
+          "from": "<string>",
+          "toString": "<string>",
+          "fromString": "<string>",
+          "to": "<string>",
+          "fieldtype": "<string>",
+          "fieldId": "<string>"
+        }]
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "id",
+        "author",
+        "created",
+        "items",
+        "historyMetadata"
+      ],
+      "properties": {
+        "historyMetadata": {
+          "default": {},
+          "examples": [{
+            "emailDescription": "<string>",
+            "actor": {},
+            "extraData": {},
+            "activityDescriptionKey": "<string>",
+            "emailDescriptionKey": "<string>",
+            "descriptionKey": "<string>",
+            "description": "<string>",
+            "generator": {},
+            "cause": {},
+            "activityDescription": "<string>",
+            "type": "<string>"
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The historyMetadata schema",
+          "required": [
+            "type",
+            "description",
+            "descriptionKey",
+            "activityDescription",
+            "activityDescriptionKey",
+            "emailDescription",
+            "emailDescriptionKey",
+            "actor",
+            "generator",
+            "cause",
+            "extraData"
+          ],
+          "properties": {
+            "emailDescription": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The emailDescription schema",
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/emailDescription"
+            },
+            "actor": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The actor schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/actor"
+            },
+            "extraData": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The extraData schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/extraData"
+            },
+            "activityDescriptionKey": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The activityDescriptionKey schema",
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/activityDescriptionKey"
+            },
+            "emailDescriptionKey": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The emailDescriptionKey schema",
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/emailDescriptionKey"
+            },
+            "descriptionKey": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The descriptionKey schema",
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/descriptionKey"
+            },
+            "description": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The description schema",
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/description"
+            },
+            "generator": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The generator schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/generator"
+            },
+            "cause": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The cause schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/cause"
+            },
+            "activityDescription": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The activityDescription schema",
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/activityDescription"
+            },
+            "type": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The type schema",
+              "$id": "#/items/anyOf/0/properties/historyMetadata/properties/type"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/historyMetadata"
+        },
+        "author": {
+          "default": {},
+          "examples": [{
+            "accountId": "<string>",
+            "emailAddress": "<string>",
+            "avatarUrls": {},
+            "displayName": "<string>",
+            "accountType": "<string>",
+            "name": "<string>",
+            "self": "<string>",
+            "active": true,
+            "timeZone": "<string>",
+            "key": "<string>"
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The author schema",
+          "required": [
+            "self",
+            "name",
+            "key",
+            "accountId",
+            "emailAddress",
+            "avatarUrls",
+            "displayName",
+            "active",
+            "timeZone",
+            "accountType"
+          ],
+          "properties": {
+            "accountId": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountId schema",
+              "$id": "#/items/anyOf/0/properties/author/properties/accountId"
+            },
+            "emailAddress": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The emailAddress schema",
+              "$id": "#/items/anyOf/0/properties/author/properties/emailAddress"
+            },
+            "avatarUrls": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The avatarUrls schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/author/properties/avatarUrls"
+            },
+            "displayName": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The displayName schema",
+              "$id": "#/items/anyOf/0/properties/author/properties/displayName"
+            },
+            "accountType": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountType schema",
+              "$id": "#/items/anyOf/0/properties/author/properties/accountType"
+            },
+            "name": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The name schema",
+              "$id": "#/items/anyOf/0/properties/author/properties/name"
+            },
+            "self": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The self schema",
+              "$id": "#/items/anyOf/0/properties/author/properties/self"
+            },
+            "active": {
+              "default": false,
+              "examples": [true],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "boolean",
+              "title": "The active schema",
+              "$id": "#/items/anyOf/0/properties/author/properties/active"
+            },
+            "timeZone": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The timeZone schema",
+              "$id": "#/items/anyOf/0/properties/author/properties/timeZone"
+            },
+            "key": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The key schema",
+              "$id": "#/items/anyOf/0/properties/author/properties/key"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/author"
+        },
+        "created": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The created schema",
+          "$id": "#/items/anyOf/0/properties/created"
+        },
+        "id": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The id schema",
+          "$id": "#/items/anyOf/0/properties/id"
+        },
+        "items": {
+          "default": [],
+          "examples": [[{
+            "field": "<string>",
+            "from": "<string>",
+            "toString": "<string>",
+            "fromString": "<string>",
+            "to": "<string>",
+            "fieldtype": "<string>",
+            "fieldId": "<string>"
+          }]],
+          "additionalItems": true,
+          "description": "An explanation about the purpose of this instance.",
+          "type": "array",
+          "title": "The items schema",
+          "items": {
+            "anyOf": [{
+              "default": {},
+              "examples": [{
+                "field": "<string>",
+                "from": "<string>",
+                "toString": "<string>",
+                "fromString": "<string>",
+                "to": "<string>",
+                "fieldtype": "<string>",
+                "fieldId": "<string>"
+              }],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The first anyOf schema",
+              "required": [
+                "field",
+                "fieldtype",
+                "fieldId",
+                "from",
+                "fromString",
+                "to",
+                "toString"
+              ],
+              "properties": {
+                "field": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The field schema",
+                  "$id": "#/items/anyOf/0/properties/items/items/anyOf/0/properties/field"
+                },
+                "from": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The from schema",
+                  "$id": "#/items/anyOf/0/properties/items/items/anyOf/0/properties/from"
+                },
+                "toString": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The toString schema",
+                  "$id": "#/items/anyOf/0/properties/items/items/anyOf/0/properties/toString"
+                },
+                "fromString": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The fromString schema",
+                  "$id": "#/items/anyOf/0/properties/items/items/anyOf/0/properties/fromString"
+                },
+                "to": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The to schema",
+                  "$id": "#/items/anyOf/0/properties/items/items/anyOf/0/properties/to"
+                },
+                "fieldtype": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The fieldtype schema",
+                  "$id": "#/items/anyOf/0/properties/items/items/anyOf/0/properties/fieldtype"
+                },
+                "fieldId": {
+                  "default": "",
+                  "examples": ["<string>"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The fieldId schema",
+                  "$id": "#/items/anyOf/0/properties/items/items/anyOf/0/properties/fieldId"
+                }
+              },
+              "$id": "#/items/anyOf/0/properties/items/items/anyOf/0"
+            }],
+            "$id": "#/items/anyOf/0/properties/items/items"
+          },
+          "$id": "#/items/anyOf/0/properties/items"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

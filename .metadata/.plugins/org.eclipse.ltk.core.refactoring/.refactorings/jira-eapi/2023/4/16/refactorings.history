@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;jira-eapi/src/main/resources/properties.yaml&apos; to &apos;local.yaml&apos;" description="Rename resource &apos;properties.yaml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/properties.yaml" name="local.yaml" stamp="1681798183426" updateReferences="true"/>
+</session>

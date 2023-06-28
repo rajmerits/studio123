@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/FailedWebhooks",
+  "definitions": {
+    "FailedWebhooks": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "values",
+        "maxResults"
+      ],
+      "properties": {
+        "next": {
+          "format": "uri",
+          "type": "string"
+        },
+        "maxResults": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "values": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/FailedWebhook"}
+        }
+      }
+    },
+    "FailedWebhook": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "url",
+        "failureTime"
+      ],
+      "properties": {
+        "id": {"type": "string"},
+        "failureTime": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "body": {"type": "string"},
+        "url": {"type": "string"}
+      }
+    }
+  }
+}

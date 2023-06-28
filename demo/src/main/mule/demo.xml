@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="cb119303-18a9-4b2f-8b87-101436bd6a7c" >
+		<http:request-connection >
+			<http:authentication >
+				<http:basic-authentication username="ITEquipmentJira" password="Byjesar669azeH" />
+			</http:authentication>
+		</http:request-connection>
+	</http:request-config>
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="a501e384-2f78-45c7-82f8-7f441e71bb64" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<flow name="demoFlow" doc:id="59c6a93a-086e-468c-929b-4ebd46e1121a" >
+		<http:listener doc:name="Listener" doc:id="24278b4c-a2d6-4730-bdce-057fa1c4c503" config-ref="HTTP_Listener_config" path="/demo"/>
+		<logger level="INFO" doc:name="Logger" doc:id="40c987bc-1300-4552-a635-31adbeaa714a" />
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="41f81f02-c886-4457-8fdd-bdf7fbb77e6a" />
+		<http:request method="POST" doc:name="Request" doc:id="7522627e-1c3a-4c26-92d4-e4654b99a71c" config-ref="HTTP_Request_configuration" url="https://jira-uat.spotify.net/rest/api/2/issue"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b148507c-9923-4227-a05d-f38eec5be8e7" />
+	</flow>
+</mule>

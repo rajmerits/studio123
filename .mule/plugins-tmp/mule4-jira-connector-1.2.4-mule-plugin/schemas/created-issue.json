@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/CreatedIssue",
+  "definitions": {
+    "ErrorCollection": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "errorMessages": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "errors": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "status": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        }
+      }
+    },
+    "NestedResponse": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "errorCollection": {"$ref": "#/definitions/ErrorCollection"},
+        "status": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        }
+      }
+    },
+    "CreatedIssue": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "transition": {
+          "allOf": [{"$ref": "#/definitions/NestedResponse"}],
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

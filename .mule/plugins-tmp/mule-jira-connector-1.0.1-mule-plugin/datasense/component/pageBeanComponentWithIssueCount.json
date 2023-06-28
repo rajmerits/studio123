@@ -1,0 +1,567 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "#/properties/values",
+  "type": "array",
+  "title": "The Values Schema",
+  "items": {
+    "$id": "#/properties/values/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "issueCount",
+      "self",
+      "description",
+      "project",
+      "projectId",
+      "assigneeType",
+      "lead",
+      "realAssignee",
+      "isAssigneeTypeValid",
+      "assignee",
+      "realAssigneeType",
+      "name",
+      "id"
+    ],
+    "properties": {
+      "issueCount": {
+        "$id": "#/properties/values/items/properties/issueCount",
+        "type": "integer",
+        "title": "The Issuecount Schema",
+        "default": 0,
+        "examples": [
+          34
+        ]
+      },
+      "self": {
+        "$id": "#/properties/values/items/properties/self",
+        "type": "string",
+        "title": "The Self Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "description": {
+        "$id": "#/properties/values/items/properties/description",
+        "type": "string",
+        "title": "The Description Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "project": {
+        "$id": "#/properties/values/items/properties/project",
+        "type": "string",
+        "title": "The Project Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "projectId": {
+        "$id": "#/properties/values/items/properties/projectId",
+        "type": "integer",
+        "title": "The Projectid Schema",
+        "default": 0,
+        "examples": [
+          9
+        ]
+      },
+      "assigneeType": {
+        "$id": "#/properties/values/items/properties/assigneeType",
+        "type": "string",
+        "title": "The Assigneetype Schema",
+        "default": "",
+        "examples": [
+          "PROJECT_DEFAULT"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "lead": {
+        "$id": "#/properties/values/items/properties/lead",
+        "type": "object",
+        "title": "The Lead Schema",
+        "required": [
+          "self",
+          "key",
+          "accountId",
+          "accountType",
+          "name",
+          "emailAddress",
+          "avatarUrls",
+          "displayName",
+          "active",
+          "timeZone",
+          "locale",
+          "groups",
+          "applicationRoles",
+          "expand"
+        ],
+        "properties": {
+          "self": {
+            "$id": "#/properties/values/items/properties/lead/properties/self",
+            "type": "string",
+            "title": "The Self Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "key": {
+            "$id": "#/properties/values/items/properties/lead/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountId": {
+            "$id": "#/properties/values/items/properties/lead/properties/accountId",
+            "type": "string",
+            "title": "The Accountid Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountType": {
+            "$id": "#/properties/values/items/properties/lead/properties/accountType",
+            "type": "string",
+            "title": "The Accounttype Schema",
+            "default": "",
+            "examples": [
+              "atlassian"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/values/items/properties/lead/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "emailAddress": {
+            "$id": "#/properties/values/items/properties/lead/properties/emailAddress",
+            "type": "string",
+            "title": "The Emailaddress Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "avatarUrls": {
+            "$id": "#/properties/values/items/properties/lead/properties/avatarUrls",
+            "type": "object",
+            "title": "The Avatarurls Schema"
+          },
+          "displayName": {
+            "$id": "#/properties/values/items/properties/lead/properties/displayName",
+            "type": "string",
+            "title": "The Displayname Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "active": {
+            "$id": "#/properties/values/items/properties/lead/properties/active",
+            "type": "boolean",
+            "title": "The Active Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "timeZone": {
+            "$id": "#/properties/values/items/properties/lead/properties/timeZone",
+            "type": "string",
+            "title": "The Timezone Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "locale": {
+            "$id": "#/properties/values/items/properties/lead/properties/locale",
+            "type": "string",
+            "title": "The Locale Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "groups": {
+            "$id": "#/properties/values/items/properties/lead/properties/groups",
+            "type": "object",
+            "title": "The Groups Schema"
+          },
+          "applicationRoles": {
+            "$id": "#/properties/values/items/properties/lead/properties/applicationRoles",
+            "type": "object",
+            "title": "The Applicationroles Schema"
+          },
+          "expand": {
+            "$id": "#/properties/values/items/properties/lead/properties/expand",
+            "type": "string",
+            "title": "The Expand Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "realAssignee": {
+        "$id": "#/properties/values/items/properties/realAssignee",
+        "type": "object",
+        "title": "The Realassignee Schema",
+        "required": [
+          "self",
+          "key",
+          "accountId",
+          "accountType",
+          "name",
+          "emailAddress",
+          "avatarUrls",
+          "displayName",
+          "active",
+          "timeZone",
+          "locale",
+          "groups",
+          "applicationRoles",
+          "expand"
+        ],
+        "properties": {
+          "self": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/self",
+            "type": "string",
+            "title": "The Self Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "key": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountId": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/accountId",
+            "type": "string",
+            "title": "The Accountid Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountType": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/accountType",
+            "type": "string",
+            "title": "The Accounttype Schema",
+            "default": "",
+            "examples": [
+              "atlassian"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "emailAddress": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/emailAddress",
+            "type": "string",
+            "title": "The Emailaddress Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "avatarUrls": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/avatarUrls",
+            "type": "object",
+            "title": "The Avatarurls Schema"
+          },
+          "displayName": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/displayName",
+            "type": "string",
+            "title": "The Displayname Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "active": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/active",
+            "type": "boolean",
+            "title": "The Active Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "timeZone": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/timeZone",
+            "type": "string",
+            "title": "The Timezone Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "locale": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/locale",
+            "type": "string",
+            "title": "The Locale Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "groups": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/groups",
+            "type": "object",
+            "title": "The Groups Schema"
+          },
+          "applicationRoles": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/applicationRoles",
+            "type": "object",
+            "title": "The Applicationroles Schema"
+          },
+          "expand": {
+            "$id": "#/properties/values/items/properties/realAssignee/properties/expand",
+            "type": "string",
+            "title": "The Expand Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "isAssigneeTypeValid": {
+        "$id": "#/properties/values/items/properties/isAssigneeTypeValid",
+        "type": "boolean",
+        "title": "The Isassigneetypevalid Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "assignee": {
+        "$id": "#/properties/values/items/properties/assignee",
+        "type": "object",
+        "title": "The Assignee Schema",
+        "required": [
+          "self",
+          "key",
+          "accountId",
+          "accountType",
+          "name",
+          "emailAddress",
+          "avatarUrls",
+          "displayName",
+          "active",
+          "timeZone",
+          "locale",
+          "groups",
+          "applicationRoles",
+          "expand"
+        ],
+        "properties": {
+          "self": {
+            "$id": "#/properties/values/items/properties/assignee/properties/self",
+            "type": "string",
+            "title": "The Self Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "key": {
+            "$id": "#/properties/values/items/properties/assignee/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountId": {
+            "$id": "#/properties/values/items/properties/assignee/properties/accountId",
+            "type": "string",
+            "title": "The Accountid Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountType": {
+            "$id": "#/properties/values/items/properties/assignee/properties/accountType",
+            "type": "string",
+            "title": "The Accounttype Schema",
+            "default": "",
+            "examples": [
+              "atlassian"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/values/items/properties/assignee/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "emailAddress": {
+            "$id": "#/properties/values/items/properties/assignee/properties/emailAddress",
+            "type": "string",
+            "title": "The Emailaddress Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "avatarUrls": {
+            "$id": "#/properties/values/items/properties/assignee/properties/avatarUrls",
+            "type": "object",
+            "title": "The Avatarurls Schema"
+          },
+          "displayName": {
+            "$id": "#/properties/values/items/properties/assignee/properties/displayName",
+            "type": "string",
+            "title": "The Displayname Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "active": {
+            "$id": "#/properties/values/items/properties/assignee/properties/active",
+            "type": "boolean",
+            "title": "The Active Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "timeZone": {
+            "$id": "#/properties/values/items/properties/assignee/properties/timeZone",
+            "type": "string",
+            "title": "The Timezone Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "locale": {
+            "$id": "#/properties/values/items/properties/assignee/properties/locale",
+            "type": "string",
+            "title": "The Locale Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "groups": {
+            "$id": "#/properties/values/items/properties/assignee/properties/groups",
+            "type": "object",
+            "title": "The Groups Schema"
+          },
+          "applicationRoles": {
+            "$id": "#/properties/values/items/properties/assignee/properties/applicationRoles",
+            "type": "object",
+            "title": "The Applicationroles Schema"
+          },
+          "expand": {
+            "$id": "#/properties/values/items/properties/assignee/properties/expand",
+            "type": "string",
+            "title": "The Expand Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "realAssigneeType": {
+        "$id": "#/properties/values/items/properties/realAssigneeType",
+        "type": "string",
+        "title": "The Realassigneetype Schema",
+        "default": "",
+        "examples": [
+          "PROJECT_DEFAULT"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "name": {
+        "$id": "#/properties/values/items/properties/name",
+        "type": "string",
+        "title": "The Name Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "id": {
+        "$id": "#/properties/values/items/properties/id",
+        "type": "string",
+        "title": "The Id Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      }
+    }
+  }
+}

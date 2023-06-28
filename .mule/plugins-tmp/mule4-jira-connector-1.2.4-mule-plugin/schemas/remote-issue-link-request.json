@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/RemoteIssueLinkRequest",
+  "definitions": {
+    "Status": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "icon": {"allOf": [{"$ref": "#/definitions/Icon"}]},
+        "resolved": {"type": "boolean"}
+      }
+    },
+    "RemoteObject": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "url",
+        "title"
+      ],
+      "properties": {
+        "summary": {"type": "string"},
+        "icon": {"allOf": [{"$ref": "#/definitions/Icon"}]},
+        "title": {"type": "string"},
+        "url": {"type": "string"},
+        "status": {"allOf": [{"$ref": "#/definitions/Status"}]}
+      }
+    },
+    "RemoteIssueLinkRequest": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": ["object"],
+      "properties": {
+        "application": {"allOf": [{"$ref": "#/definitions/Application"}]},
+        "globalId": {"type": "string"},
+        "relationship": {"type": "string"},
+        "object": {"allOf": [{"$ref": "#/definitions/RemoteObject"}]}
+      }
+    },
+    "Icon": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "url16x16": {"type": "string"},
+        "link": {"type": "string"},
+        "title": {"type": "string"}
+      }
+    },
+    "Application": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "type": {"type": "string"}
+      }
+    }
+  }
+}

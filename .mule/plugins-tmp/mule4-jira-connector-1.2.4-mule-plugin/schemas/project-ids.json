@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ProjectIds",
+  "definitions": {"ProjectIds": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["projectIds"],
+    "properties": {"projectIds": {
+      "type": "array",
+      "items": {"type": "string"}
+    }}
+  }}
+}

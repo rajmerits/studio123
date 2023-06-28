@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Permissions",
+  "definitions": {"Permissions": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {"permissions": {
+      "readOnly": true,
+      "additionalProperties": true,
+      "type": "object"
+    }}
+  }}
+}

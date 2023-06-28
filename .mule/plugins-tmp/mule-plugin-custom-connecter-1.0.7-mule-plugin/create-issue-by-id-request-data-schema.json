@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "object",
+      "example": {
+        "fields": {
+          "project": {
+            "key": "ITO"
+          },
+          "summary": "Demo Issue in JIRA",
+          "description": "Creating of an issue using project keys and issue type names using the REST API",
+          "issuetype": {
+            "name": "Task"
+          },
+          "customfield_23515": "Brad",
+          "customfield_18127": "costcentre123",
+          "customfield_14511": "test123@gmail.com",
+          "customfield_14512": "+91 9876543210",
+          "customfield_19402": "English",
+          "customfield_14204": "Home",
+          "customfield_18611": "2022-01-01",
+          "customfield_23516": "+91 1234567890",
+          "customfield_24401": "notes abc",
+          "customfield_18610": "ITEquipmentJira",
+          "customfield_18612": "India",
+          "customfield_18613": "Delhi",
+          "customfield_23513": "Brad Pitt",
+          "customfield_18719": "INL123",
+          "customfield_23700": "Mumbai, India",
+          "customfield_23518": "https://jira-uat.spotify.net/rest/api/2/issue/2077009",
+          "customfield_18608": {
+            "id": "Permanent"
+          }
+        }
+      },
+      "additionalProperties": true,
+      "properties": {
+        "fields": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "project": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "example": "ITO"
+                }
+              }
+            },
+            "summary": {
+              "type": "string",
+              "example": "Demo Issue in JIRA 1233"
+            },
+            "description": {
+              "type": "string",
+              "example": "Creating of an issue using project keys and issue type names using the REST API"
+            },
+            "issuetype": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Task"
+                }
+              }
+            },
+            "customfield_23515": {
+              "type": "string",
+              "example": "Brad"
+            },
+            "customfield_18127": {
+              "type": "string",
+              "example": "costcentre123"
+            },
+            "customfield_14511": {
+              "type": "string",
+              "example": "test123@gmail.com"
+            },
+            "customfield_14512": {
+              "type": "string",
+              "example": "+91 9876543210"
+            },
+            "customfield_19402": {
+              "type": "string",
+              "example": "English"
+            },
+            "customfield_14204": {
+              "type": "string",
+              "example": "Home"
+            },
+            "customfield_18611": {
+              "type": "string",
+              "example": "2022-01-01"
+            },
+            "customfield_23516": {
+              "type": "string",
+              "example": "+91 1234567890"
+            },
+            "customfield_24401": {
+              "type": "string",
+              "example": "notes abc"
+            },
+            "customfield_18610": {
+              "type": "string",
+              "example": "ITEquipmentJira"
+            },
+            "customfield_18612": {
+              "type": "string",
+              "example": "India"
+            },
+            "customfield_18613": {
+              "type": "string",
+              "example": "Delhi"
+            },
+            "customfield_23513": {
+              "type": "string",
+              "example": "Brad Pitt"
+            },
+            "customfield_18719": {
+              "type": "string",
+              "example": "INL123"
+            },
+            "customfield_23700": {
+              "type": "string",
+              "example": "Mumbai, India"
+            },
+            "customfield_23518": {
+              "type": "string",
+              "example": "https://jira-uat.spotify.net/rest/api/2/issue/2077009"
+            },
+            "customfield_18608": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "20332"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueTypeUpdateBean",
+  "definitions": {"IssueTypeUpdateBean": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "avatarId": {
+        "maximum": 9.223372036854776E+18,
+        "type": "number",
+        "minimum": -9.223372036854776E+18
+      },
+      "name": {"type": "string"},
+      "description": {"type": "string"}
+    }
+  }}
+}

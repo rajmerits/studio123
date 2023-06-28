@@ -1,0 +1,2576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension-documentation>
+    <configs>
+        <config name="config">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="expirationPolicy">
+                    <description><![CDATA[Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit.]]></description>
+                </parameter>
+            </parameters>
+        </config>
+    </configs>
+    <connections>
+        <connection name="basicAuthentication">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="connectionTimeout">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="connectionTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="maxConnections">
+                    <description><![CDATA[The maximum number of outbound connections that will be kept open at the same time. By default the number of connections is unlimited.]]></description>
+                </parameter>
+                <parameter name="streamResponse">
+                    <description><![CDATA[Whether or not received responses should be streamed, meaning processing will continue as soon as all headers are parsed and the body streamed as it arrives. When enabled, the response MUST be eventually read since depending on the configured buffer size it may not fit into memory and processing will stop until space is available.]]></description>
+                </parameter>
+                <parameter name="responseBufferSize">
+                    <description><![CDATA[The space in bytes for the buffer where the HTTP response will be stored.]]></description>
+                </parameter>
+                <parameter name="tlsContext">
+                    <description><![CDATA[Protocol to use for communication. Valid values are HTTP and HTTPS. Default value is HTTP. When using HTTPS the HTTP communication is going to be secured using TLS / SSL. If HTTPS was configured as protocol then the user needs to configure at least the keystore in the tls:context child element of this listener-config.]]></description>
+                </parameter>
+                <parameter name="proxyConfig">
+                    <description><![CDATA[Http Proxy configuration for the connector]]></description>
+                </parameter>
+                <parameter name="serverUrl">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="username">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="apiToken">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="reconnection">
+                    <description><![CDATA[When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy]]></description>
+                </parameter>
+            </parameters>
+        </connection>
+        <connection name="oauth-config">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="connectionTimeout">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="connectionTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="maxConnections">
+                    <description><![CDATA[The maximum number of outbound connections that will be kept open at the same time. By default the number of connections is unlimited.]]></description>
+                </parameter>
+                <parameter name="streamResponse">
+                    <description><![CDATA[Whether or not received responses should be streamed, meaning processing will continue as soon as all headers are parsed and the body streamed as it arrives. When enabled, the response MUST be eventually read since depending on the configured buffer size it may not fit into memory and processing will stop until space is available.]]></description>
+                </parameter>
+                <parameter name="responseBufferSize">
+                    <description><![CDATA[The space in bytes for the buffer where the HTTP response will be stored.]]></description>
+                </parameter>
+                <parameter name="tlsContext">
+                    <description><![CDATA[Protocol to use for communication. Valid values are HTTP and HTTPS. Default value is HTTP. When using HTTPS the HTTP communication is going to be secured using TLS / SSL. If HTTPS was configured as protocol then the user needs to configure at least the keystore in the tls:context child element of this listener-config.]]></description>
+                </parameter>
+                <parameter name="proxyConfig">
+                    <description><![CDATA[Http Proxy configuration for the connector]]></description>
+                </parameter>
+                <parameter name="audience">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="prompt">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="reconnection">
+                    <description><![CDATA[When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy]]></description>
+                </parameter>
+                <parameter name="consumerKey">
+                    <description><![CDATA[The OAuth consumerKey as registered with the service provider]]></description>
+                </parameter>
+                <parameter name="consumerSecret">
+                    <description><![CDATA[The OAuth consumerSecret as registered with the service provider]]></description>
+                </parameter>
+                <parameter name="authorizationUrl">
+                    <description><![CDATA[The service provider's authorization endpoint URL]]></description>
+                </parameter>
+                <parameter name="accessTokenUrl">
+                    <description><![CDATA[The service provider's accessToken endpoint URL]]></description>
+                </parameter>
+                <parameter name="scopes">
+                    <description><![CDATA[The OAuth scopes to be requested during the dance. If not provided, it will default to those in the annotation]]></description>
+                </parameter>
+                <parameter name="resourceOwnerId">
+                    <description><![CDATA[The resourceOwnerId which each component should use if it doesn't reference otherwise.]]></description>
+                </parameter>
+                <parameter name="before">
+                    <description><![CDATA[The name of a flow to be executed right before starting the OAuth dance]]></description>
+                </parameter>
+                <parameter name="after">
+                    <description><![CDATA[The name of a flow to be executed right after an accessToken has been received]]></description>
+                </parameter>
+                <parameter name="listenerConfig">
+                    <description><![CDATA[A reference to a <http:listener-config /> to be used in order to create the listener that will catch the access token callback endpoint.]]></description>
+                </parameter>
+                <parameter name="callbackPath">
+                    <description><![CDATA[The path of the access token callback endpoint]]></description>
+                </parameter>
+                <parameter name="authorizePath">
+                    <description><![CDATA[The path of the local http endpoint which triggers the OAuth dance]]></description>
+                </parameter>
+                <parameter name="externalCallbackUrl">
+                    <description><![CDATA[If the callback endpoint is behind a proxy or should be accessed through a non direct URL, use this parameter to tell the OAuth provider the URL it should use to access the callback]]></description>
+                </parameter>
+                <parameter name="objectStore">
+                    <description><![CDATA[A reference to the object store that should be used to store each resource owner id's data. If not specified, runtime will automatically provision the default one.]]></description>
+                </parameter>
+            </parameters>
+        </connection>
+    </connections>
+    <extension name="Jira">
+        <description><![CDATA[The JIRA Rest Connector functions within a Mule application as a secure opening through which you can access - and act upon - your information in Jira.]]></description>
+        <parameters/>
+    </extension>
+    <operations>
+        <operation name="addAttachment">
+            <description><![CDATA[Adds one or more attachments to an issue.]]></description>
+            <parameters>
+                <parameter name="issueKeyOrId">
+                    <description><![CDATA[The ID or key of the issue that attachments are added to.]]></description>
+                </parameter>
+                <parameter name="attachmentContent">
+                    <description><![CDATA[Content of the attachment which will be added to the issue.]]></description>
+                </parameter>
+                <parameter name="fileName">
+                    <description><![CDATA[File name of the uploaded attachment]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="addIssueComment">
+            <description><![CDATA[Adds a comment to an issue.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="body">
+                    <description><![CDATA[The comment text in Atlassian Document Format.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[List of expand options to include additional information in the response.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="addIssueVote">
+            <description><![CDATA[Adds the user's vote to an issue. This is the equivalent of the user clicking Vote on an issue in Jira. This operation requires the Allow users to vote on issues option to be ON.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="addIssueWatcher">
+            <description><![CDATA[Adds a user as a watcher of an issue by passing the account ID of the user. This operation requires the Allow users to watch issues option to be ON.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="accountId">
+                    <description><![CDATA[The ID of user, if no user is specified the calling user is added.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="addUserToGroup">
+            <description><![CDATA[Adds a user to a group.]]></description>
+            <parameters>
+                <parameter name="groupName">
+                    <description><![CDATA[The name of the group (case sensitive).]]></description>
+                </parameter>
+                <parameter name="accountId">
+                    <description><![CDATA[The account ID of the user, which uniquely identifies the user across all Atlassian products.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="addWorklog">
+            <description><![CDATA[Adds a worklog to an issue. <p> Time tracking must be enabled in Jira, otherwise this operation returns an error. <p> This operation can be accessed anonymously. <p> Permissions required: <p> Browse projects and Work on issues project permission for the project that the issue is in. If issue-level security is configured, issue-level security permission to view the issue. <p> App scope required: WRITE]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[An ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="worklogContent">
+                    <description><![CDATA[A content of the worklog to be added]]></description>
+                </parameter>
+                <parameter name="notifyUsers">
+                    <description><![CDATA[Indicates whether a notification email about the update is sent to all watchers.]]></description>
+                </parameter>
+                <parameter name="adjustEstimate">
+                    <description><![CDATA[Defines how to update the issue's time estimate.]]></description>
+                </parameter>
+                <parameter name="newEstimate">
+                    <description><![CDATA[Sets the issue's remaining time estimate, for example 2d 4h. Required for Adjust Estimate NEW.]]></description>
+                </parameter>
+                <parameter name="reduceBy">
+                    <description><![CDATA[Amount to reduce the issue's remaining estimate by. For example 2d 4h. Required for Adjust Estimate MANUAL.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[A list of expand options]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="assignIssue">
+            <description><![CDATA[Assigns an issue to a user. <p> Use this operation when the calling user does not have the Edit Issues permission but has the Assign issue permission for the project that the issue is in. <p> If or accountId is set to: <p> "-1", the issue is assigned to the default assignee for the project. null, the issue is set to unassigned. <p> This operation can be accessed anonymously. <p> Permissions required: <p> Browse Projects and Assign Issues project permission for the project that the issue is in. If issue-level security is configured, issue-level security permission to view the issue. <p> App scope required: WRITE]]></description>
+            <parameters>
+                <parameter name="issueKeyOrId">
+                    <description><![CDATA[An ID or key of the issue to be assigned.]]></description>
+                </parameter>
+                <parameter name="userAccountId">
+                    <description><![CDATA[An account ID of the user, which uniquely identifies the user across all Atlassian products.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="bulkCreateIssue">
+            <description><![CDATA[Creates issues and, where the option to create subtasks is enabled in Jira, subtasks. <p> Transitions may be applied, to move the issues or subtasks to a workflow step other than the default start step, and issue properties set. <p> The content of each issue or subtask is defined using update and fields. The fields that can be set in the issue or subtask are determined using the Get create issue metadata. These are the same fields that appear on the issues' create screens. Note that the description, environment, and any textarea type custom fields (multi-line text fields) take Atlassian Document Format content. Single line custom fields (textfield) accept a string and don't handle Atlassian Document Format content. <p> Creating a subtask differs from creating an issue as follows: <p> issueType must be set to a subtask issue type (use Get create issue metadata to find subtask issue types). parent the must contain the ID or key of the parent issue. <p> Permissions required: <p> Browse projects and Create issues project permissions for the project in which each issue or subtask is created. <p> App scope required: WRITE]]></description>
+            <parameters>
+                <parameter name="issuesContent">
+                    <description><![CDATA[A body of a list of issues to be created.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createComponent">
+            <description><![CDATA[Creates a component. Use components to provide containers for issues within a project.]]></description>
+            <parameters>
+                <parameter name="createComponentContent">
+                    <description><![CDATA[Details about a project component.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createGroup">
+            <description><![CDATA[Creates a group.]]></description>
+            <parameters>
+                <parameter name="groupName">
+                    <description><![CDATA[The name of the group to be created.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createIssue">
+            <description><![CDATA[Creates an issue or, where the option to create subtasks is enabled in Jira, a subtask. A transition may be applied, to move the issue or subtask to a workflow step other than the default start step, and issue properties set. <p> Creating a subtask differs from creating an issue as follows: <p> issueType must be set to a subtask issue type. parent MUST contain the ID or key of the parent issue. <p> A parent MAY be supplied for any issue provided both parent and child are members of the same next-gen project. In a classic project the parent field is only valid for subtasks. <p> Permissions required: Browse projects and Create issues project permissions for the project in which the issue or subtask is created. <p> App scope required: WRITE]]></description>
+            <parameters>
+                <parameter name="content">
+                    <description><![CDATA[A body of an issue to be created.]]></description>
+                </parameter>
+                <parameter name="updateHistory">
+                    <description><![CDATA[Indicates whether the project in which the issue is created is added to the user's Recently viewed project list.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createIssueLink">
+            <description><![CDATA[Creates a link between two issues. Use this operation to indicate a relationship between two issues and optionally add a comment to the from (outward) issue. To use this resource the site must have Issue Linking enabled.Creates an issue type and adds it to the default issue type scheme.]]></description>
+            <parameters>
+                <parameter name="issueLinkContent">
+                    <description><![CDATA[Parameters needed for creating an issue link.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createIssueLinkType">
+            <description><![CDATA[Creates an issue link type. <p> Use this operation to create descriptions of the reasons why issues are linked. <p> The issue link type consists of a name and descriptions for a link's inward and outward relationships. <p> To use this operation, the site must have issue linking enabled.]]></description>
+            <parameters>
+                <parameter name="createIssueLinkContent">
+                    <description><![CDATA[Parameters needed for creating an issue link type]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createIssueType">
+            <description><![CDATA[Creates an issue type and adds it to the default issue type scheme.]]></description>
+            <parameters>
+                <parameter name="createIssueTypeContent">
+                    <description><![CDATA[Parameters needed for creating an issue type.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createOrUpdateIssueRemoteLink">
+            <description><![CDATA[Creates or updates a remote issue link for an issue <p> This operation requires issue linking to be active. If a globalId is provided and a remote issue link with that global ID is found it is updated. Any fields without values in the request are set to null.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="issueRemoteLinkContent">
+                    <description><![CDATA[Content needed for creating or updating issue remote link.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createProject">
+            <description><![CDATA[Creates a project based on a project type template.]]></description>
+            <parameters>
+                <parameter name="createProjectContent">
+                    <description><![CDATA[Body of HTTP request according to the metadata and API schema definition.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createProjectCategory">
+            <description><![CDATA[Creates a project category.]]></description>
+            <parameters>
+                <parameter name="createProjectCategoryContent">
+                    <description><![CDATA[Parameters needed for creating a project category.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createUser">
+            <description><![CDATA[Creates a user. This resource is retained for legacy compatibility and will be deprecated once more suitable alternative is available. Include field "password" : "password1234!" to set password a for the user, otherwise it will automatically generated. When using the option not to set but generate a password, include field. "notification" : "true" to ensure the user that their account is created, this email includes a link for the user to set their password. Note that if the notification isn't sent for a generated password, the user will need to be sent a reset password request from Jira.]]></description>
+            <parameters>
+                <parameter name="userContent">
+                    <description><![CDATA[Parameters needed for creating an user.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="createVersion">
+            <description><![CDATA[Creates a project version.]]></description>
+            <parameters>
+                <parameter name="createVersionContent">
+                    <description><![CDATA[Body of HTTP request according to the metadata and API schema definition.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteAndReplaceVersion">
+            <description><![CDATA[Deletes a project version.]]></description>
+            <parameters>
+                <parameter name="id">
+                    <description><![CDATA[The ID of the version.]]></description>
+                </parameter>
+                <parameter name="deleteAndReplaceVersionContent">
+                    <description><![CDATA[Body of HTTP request according to the metadata and API schema definition.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteAttachment">
+            <description><![CDATA[Deletes an attachment from an issue.]]></description>
+            <parameters>
+                <parameter name="attachmentId">
+                    <description><![CDATA[The ID of the attachment.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteComponent">
+            <description><![CDATA[Deletes a component.]]></description>
+            <parameters>
+                <parameter name="id">
+                    <description><![CDATA[The ID of the component.]]></description>
+                </parameter>
+                <parameter name="moveIssuesTo">
+                    <description><![CDATA[The ID of the component to replace the deleted component. If this value is null no replacement is made.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteGroup">
+            <description><![CDATA[Deletes a group.]]></description>
+            <parameters>
+                <parameter name="groupName">
+                    <description><![CDATA[The name of the group.]]></description>
+                </parameter>
+                <parameter name="swapGroup">
+                    <description><![CDATA[The group to transfer restrictions to. Only comments and worklogs are transferred. If restrictions are not transferred, comments and worklogs are inaccessible after the deletion.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteIssue">
+            <description><![CDATA[Deletes an issue. <p> An issue cannot be deleted if it has one or more subtasks. To delete an issue with subtasks, set deleteSubtasks. This causes the issue's subtasks to be deleted with the issue. <p> This operation can be accessed anonymously. <p> Permissions required: <p> Browse projects and Delete issues project permission for the project containing the issue. If issue-level security is configured, issue-level security permission to view the issue. <p> App scope required: DELETE]]></description>
+            <parameters>
+                <parameter name="issueKeyOrId">
+                    <description><![CDATA[An ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="deleteSubtasks">
+                    <description><![CDATA[Indicates whether the issue's subtasks are deleted when the issue is deleted.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteIssueComment">
+            <description><![CDATA[Adds a comment to an issue.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="commentId">
+                    <description><![CDATA[The ID of the comment.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteIssueLink">
+            <description><![CDATA[Deletes an issue link.]]></description>
+            <parameters>
+                <parameter name="issueLinkId">
+                    <description><![CDATA[The ID of the issue link.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteIssueLinkType">
+            <description><![CDATA[Deletes an issue link type. <p> To use this operation, the site must have issue linking enabled.]]></description>
+            <parameters>
+                <parameter name="issueLinkTypeId">
+                    <description><![CDATA[Id of issueLinkType to be deleted.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteIssueRemoteLink">
+            <description><![CDATA[Deletes a remote issue link from an issue <p> This operation requires issue linking to be active.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="globalId">
+                    <description><![CDATA[The global ID of the remote issue link.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteIssueType">
+            <description><![CDATA[Deletes the issue type. If the issue type is in use, all usages are updated with the alternative issue type]]></description>
+            <parameters>
+                <parameter name="issueTypeId">
+                    <description><![CDATA[Id of the issue type to be deleted]]></description>
+                </parameter>
+                <parameter name="alternativeIssueTypeId">
+                    <description><![CDATA[Id of the alternative issue type when issue type is in use]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteIssueVote">
+            <description><![CDATA[Deletes a user's vote from an issue. This is the equivalent of the user clicking Unvote on an issue in Jira. This operation requires the Allow users to vote on issues option to be ON.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteIssueWatcher">
+            <description><![CDATA[Deletes a user as a watcher of an issue. This operation requires the Allow users to watch issues option to be ON.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="accountId">
+                    <description><![CDATA[The ID of user, if no user is specified the calling user is added.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteProject">
+            <description><![CDATA[Deletes a project.]]></description>
+            <parameters>
+                <parameter name="projectKeyOrId">
+                    <description><![CDATA[The project ID or project key (case sensitive).]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteProjectCategory">
+            <description><![CDATA[Deletes a project category.]]></description>
+            <parameters>
+                <parameter name="categoryId">
+                    <description><![CDATA[ID of the project category to delete.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteUser">
+            <description><![CDATA[Deletes information about user.]]></description>
+            <parameters>
+                <parameter name="accountId">
+                    <description><![CDATA[The unique identifier of user in all Atllasian products.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteUserFromGroup">
+            <description><![CDATA[Removes a user from a group.]]></description>
+            <parameters>
+                <parameter name="groupName">
+                    <description><![CDATA[The name of the group.]]></description>
+                </parameter>
+                <parameter name="accountId">
+                    <description><![CDATA[The accountId of the user, which uniquely identifies the user across all Atlassian products.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="deleteWorklog">
+            <description><![CDATA[Deletes a worklog from an issue. <p> Time tracking must be enabled in Jira, otherwise this operation returns an error. <p> This operation can be accessed anonymously. <p> Permissions required: Browse projects project permission for the project that the issue is in. If issue-level security is configured, issue-level security permission to view the issue. Delete all worklogs project permission to delete any worklog or Delete own worklogs to delete worklogs created by the user, If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to. <p> App scope required: DELETE]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[An ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="worklogId">
+                    <description><![CDATA[The ID of the worklog.]]></description>
+                </parameter>
+                <parameter name="notifyUsers">
+                    <description><![CDATA[Indicates whether a notification email about the update is sent to all watchers.]]></description>
+                </parameter>
+                <parameter name="adjustEstimate">
+                    <description><![CDATA[Defines how to update the issue's time estimate.]]></description>
+                </parameter>
+                <parameter name="newEstimate">
+                    <description><![CDATA[Sets the issue's remaining time estimate, for example 2d 4h. Required for Adjust Estimate NEW.]]></description>
+                </parameter>
+                <parameter name="increaseBy">
+                    <description><![CDATA[Amount to increase the issue's remaining estimate by. For example 2d 4h. Required for Adjust Estimate MANUAL.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="findGroups">
+            <description><![CDATA[Returns a list of groups whose names contain a query string. A list of group names can be provided to exclude groups from the results. The list returns with the groups sorted. If no groups match the list criteria, an empty list is returned.]]></description>
+            <parameters>
+                <parameter name="query">
+                    <description><![CDATA[The string to find in group names.]]></description>
+                </parameter>
+                <parameter name="maxResults">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="excludeOptions">
+                    <description><![CDATA[A group to exclude from the result. Provide only values without keys or ampersands.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllAttachmentsFromIssue">
+            <description><![CDATA[Returns metadata of all attachments contained in specific issue.]]></description>
+            <parameters>
+                <parameter name="issueKeyOrId">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllIssueComments">
+            <description><![CDATA[Returns all comments for an issue.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="pageSize">
+                    <description><![CDATA[The maximum number of items to return per page. The maximum is 100.]]></description>
+                </parameter>
+                <parameter name="orderBy">
+                    <description><![CDATA[The field to order returned comments by.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[List of expand options to include additional information in the response.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllIssueLRemoteLinks">
+            <description><![CDATA[Returns the remote issue links for an issue. <p> This operation requires issue linking to be active.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="globalId">
+                    <description><![CDATA[The global ID of the remote issue link.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllIssueLinkTypes">
+            <description><![CDATA[Returns a list of all issue link types visible to the user <p> To use this operation, the site must have issue linking enabled.]]></description>
+            <parameters>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllIssueTypesForUser">
+            <description><![CDATA[Returns a list of all issue types visible to the user.]]></description>
+            <parameters>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllPriorities">
+            <description><![CDATA[Returns the list of all issue priorities.]]></description>
+            <parameters>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllProjectCategories">
+            <description><![CDATA[Returns all project categories.]]></description>
+            <parameters>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllProjectVersions">
+            <description><![CDATA[Returns all versions in a project.]]></description>
+            <parameters>
+                <parameter name="projectIdOrKey">
+                    <description><![CDATA[The project ID or project key (case sensitive).]]></description>
+                </parameter>
+                <parameter name="pageSize">
+                    <description><![CDATA[The maximum number of items to return per page. The maximum is 50.]]></description>
+                </parameter>
+                <parameter name="orderBy">
+                    <description><![CDATA[Order the results by one of the following fields: description, issueCount, lead ane name.]]></description>
+                </parameter>
+                <parameter name="query">
+                    <description><![CDATA[Filter the results using a literal string. Projects with a matching key or name are returned (case insensitive).]]></description>
+                </parameter>
+                <parameter name="status">
+                    <description><![CDATA[A list of status values used to filter the results by version status. This parameter accepts a comma-separated list. The status values are released, unreleased, and archived.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[List of expand options to include additional information in the response.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllProjects">
+            <description><![CDATA[Returns projects visible to the user.]]></description>
+            <parameters>
+                <parameter name="pageSize">
+                    <description><![CDATA[The maximum number of items to return per page. The maximum is 50.]]></description>
+                </parameter>
+                <parameter name="orderBy">
+                    <description><![CDATA[Order the results by one of the following fields: description, issueCount, lead ane name.]]></description>
+                </parameter>
+                <parameter name="query">
+                    <description><![CDATA[Filter the results using a literal string. Projects with a matching key or name are returned (case insensitive).]]></description>
+                </parameter>
+                <parameter name="typeKey">
+                    <description><![CDATA[Orders results by the project type. This parameter accepts a comma-separated list. Valid values are business, service_desk, and software.]]></description>
+                </parameter>
+                <parameter name="categoryId">
+                    <description><![CDATA[The ID of the project's category. A complete list of category IDs is found using the Get all project categories operation.]]></description>
+                </parameter>
+                <parameter name="searchBy">
+                    <description><![CDATA[Parameter to describe search criteria. Default: key, name]]></description>
+                </parameter>
+                <parameter name="action">
+                    <description><![CDATA[Filter results by projects for which the user can view, browse or edit the project. Default: view]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[List of expand options to include additional information in the response.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllStatuses">
+            <description><![CDATA[Returns a list of all statuses associated with workflows.]]></description>
+            <parameters>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAllWorklogs">
+            <description><![CDATA[Returns all worklogs for an issue. <p> Time tracking must be enabled in Jira, otherwise this operation returns an error. For more information, see Configuring time tracking. <p> This operation can be accessed anonymously. <p> Permissions required: Workloads are only returned where the user has Browse projects project permission for the project that the issue is in. If issue-level security is configured, issue-level security permission to view the issue. If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to. <p> App scope required: READ]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[An ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="pageSize">
+                    <description><![CDATA[The maximum number of items to return per page. The maximum is 1048576.]]></description>
+                </parameter>
+                <parameter name="startedAfter">
+                    <description><![CDATA[The worklog start date and time, in UNIX timestamp format, after which worklogs are returned.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[A list of expand options]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAlternativeIssueTypes">
+            <description><![CDATA[Returns a list of issue types that can be used to replace the issue type. The alternative issue types are those assigned to the same workflow scheme, field configuration scheme, and screen scheme.]]></description>
+            <parameters>
+                <parameter name="issueTypeId">
+                    <description><![CDATA[Id of the issue type used to match its alternatives.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAttachment">
+            <description><![CDATA[Returns the attachment associated with specified ID.]]></description>
+            <parameters>
+                <parameter name="attachmentId">
+                    <description><![CDATA[The ID of the attachment.]]></description>
+                </parameter>
+                <parameter name="outputMimeType">
+                    <description><![CDATA[The mime type of the payload that this operation outputs.]]></description>
+                </parameter>
+                <parameter name="outputEncoding">
+                    <description><![CDATA[The encoding of the payload that this operation outputs.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getAttachmentMetadata">
+            <description><![CDATA[Returns the metadata for an attachment. Note that the attachment itself is not returned.]]></description>
+            <parameters>
+                <parameter name="attachmentId">
+                    <description><![CDATA[The ID of the attachment.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getComponent">
+            <description><![CDATA[Returns a component.]]></description>
+            <parameters>
+                <parameter name="id">
+                    <description><![CDATA[The ID of the component.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getComponentsInProject">
+            <description><![CDATA[Returns a paginated representation of all components in a project. See the Get project components resource if you want to get a full list of versions without pagination.]]></description>
+            <parameters>
+                <parameter name="projectKeyOrId">
+                    <description><![CDATA[The project ID or project key (case sensitive).]]></description>
+                </parameter>
+                <parameter name="pageSize">
+                    <description><![CDATA[The maximum number of items to return per page. The maximum is 50.]]></description>
+                </parameter>
+                <parameter name="orderBy">
+                    <description><![CDATA[Order the results by one of the following fields: description, issueCount, lead ane name.]]></description>
+                </parameter>
+                <parameter name="query">
+                    <description><![CDATA[Filter the results using a literal string. Components with a matching name or description are returned (case insensitive).]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getCurrentUser">
+            <description><![CDATA[Returns details for the current user.]]></description>
+            <parameters>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getIssue">
+            <description><![CDATA[Returns the details for an issue. <p> The issue is identified by its ID or key, however, if the identifier doesn't match an issue, a case-insensitive search and check for moved issues is performed. If a matching issue is found its details are returned. The issue key returned in the response is the key of the issue found. <p> This operation can be accessed anonymously. <p> Permissions required: <p> Browse projects project permission for the project that the issue is in. If issue-level security is configured, issue-level security permission to view the issue. <p> App scope required: READ]]></description>
+            <parameters>
+                <parameter name="issueKeyOrId">
+                    <description><![CDATA[An ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="fields">
+                    <description><![CDATA[A list of fields to return for the issue.]]></description>
+                </parameter>
+                <parameter name="fieldsByKeys">
+                    <description><![CDATA[Indicates whether fields in fields are referenced by keys rather than IDs.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[A list of expand options.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getIssueComment">
+            <description><![CDATA[Returns a comment for an particular issue.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="commentId">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[List of expand options to include additional information in the response.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getIssueLink">
+            <description><![CDATA[Returns an issue link.]]></description>
+            <parameters>
+                <parameter name="issueLinkId">
+                    <description><![CDATA[The ID of the issue link.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getIssueLinkType">
+            <description><![CDATA[Returns an issue link type. <p> To use this operation, the site must have issue linking enabled.]]></description>
+            <parameters>
+                <parameter name="issueLinkTypeId">
+                    <description><![CDATA[Id of issueLinkType to be returned.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getIssueType">
+            <description><![CDATA[Returns a full representation of the issue type with given id.]]></description>
+            <parameters>
+                <parameter name="issueTypeId">
+                    <description><![CDATA[Id of the issue type to return.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getIssueVotes">
+            <description><![CDATA[Returns details about the votes on an issue. This operation requires the Allow users to vote on issues option to be ON.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getIssueWatchers">
+            <description><![CDATA[Returns the watchers for an issue. This operation requires the Allow users to watch issues option to be ON.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getPriority">
+            <description><![CDATA[Returns an issue priority.]]></description>
+            <parameters>
+                <parameter name="priorityId">
+                    <description><![CDATA[The ID of the issue priority.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getProject">
+            <description><![CDATA[Returns the project details for a project.]]></description>
+            <parameters>
+                <parameter name="projectKeyOrId">
+                    <description><![CDATA[The project ID or project key (case sensitive).]]></description>
+                </parameter>
+                <parameter name="properties">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[List of expand options to include additional information in the response.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getProjectCategory">
+            <description><![CDATA[Returns a project category.]]></description>
+            <parameters>
+                <parameter name="categoryId">
+                    <description><![CDATA[The ID of the project category.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getStatus">
+            <description><![CDATA[Returns a status. The status must be associated with a workflow to be returned. <p> If a name is used on more than one status, only the status found first is returned. Therefore, identifying the status by its ID may be preferable.]]></description>
+            <parameters>
+                <parameter name="idOrName">
+                    <description><![CDATA[The ID or name of the status.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getUser">
+            <description><![CDATA[Returns information about user]]></description>
+            <parameters>
+                <parameter name="accountId">
+                    <description><![CDATA[The accountId of the user, which uniquely identifies the user across all Atlassian products, this field is required.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[List of expand options to include additional information about users in the response. Expand options include: - "groups" includes all groups and nested groups to which the user belongs. - "applicationRoles" includes details of all the applications to which the user has access.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getUsersAssignableToIssues">
+            <description><![CDATA[Returns a list of users that can be assigned to an issue. Use this operation to find the list of users who can be assigned to: <p> - A new issue, by providing the projectKeyOrId. - An updated issue, by providing the issueKey. - To an issue during a transition (workflow action), by providing the issueKey and the transition id in actionDescriptorId, you can obtain the IDs of an issue's valid transitions using the transitions option in the expand parameter of Get issue. - In all these cases, you can pass an accountId to determine if a user can be assigned to an issue.]]></description>
+            <parameters>
+                <parameter name="sessionId">
+                    <description><![CDATA[The sessionId of this request. SessionId is the same until the assignee is set.]]></description>
+                </parameter>
+                <parameter name="actionDescriptorId">
+                    <description><![CDATA[The ID of the transition.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="query">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="accountId">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="projectId">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="issueKey">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getUsersAssignableToProjects">
+            <description><![CDATA[Returns a list of users who can be assigned issues in one or more projects. <p> The list may be restricted to users whose attributes match a string.]]></description>
+            <parameters>
+                <parameter name="projectKeys">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="query">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="accountId">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getUsersInGroup">
+            <description><![CDATA[Returns all users in a group. Note that users are ordered by username, however the username is not returned in the results due to privacy reasons.]]></description>
+            <parameters>
+                <parameter name="groupName">
+                    <description><![CDATA[The name of the group.]]></description>
+                </parameter>
+                <parameter name="includeInactiveUsers">
+                    <description><![CDATA[Include inactive users.]]></description>
+                </parameter>
+                <parameter name="pageSize">
+                    <description><![CDATA[The maximum number of items to return per page. The maximum is 50.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getVersion">
+            <description><![CDATA[Returns the project details for a project.]]></description>
+            <parameters>
+                <parameter name="id">
+                    <description><![CDATA[The ID of the version.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[List of expand options to include additional information in the response.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="getWorklog">
+            <description><![CDATA[Returns a worklog. <p> Time tracking must be enabled in Jira, otherwise this operation returns an error. <p> This operation can be accessed anonymously. <p> Permissions required: <p> Browse projects project permission for the project that the issue is in. If issue-level security is configured, issue-level security permission to view the issue. If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to. <p> App scope required: READ]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[An ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="worklogId">
+                    <description><![CDATA[The ID of the worklog.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[A list of expand options]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="jqlSearch">
+            <description><![CDATA[Searches for issues using JQL.]]></description>
+            <parameters>
+                <parameter name="jql">
+                    <description><![CDATA[A JQL expression.]]></description>
+                </parameter>
+                <parameter name="pageSize">
+                    <description><![CDATA[The maximum number of items to return per page. The default is 50 and the maximum is 100.]]></description>
+                </parameter>
+                <parameter name="properties">
+                    <description><![CDATA[A list of up to 5 issue properties to include in the results.]]></description>
+                </parameter>
+                <parameter name="fields">
+                    <description><![CDATA[A list of fields to return for each issue.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[A list of expand fields. Use expand to include additional information about issues in the response.]]></description>
+                </parameter>
+                <parameter name="validateQuery">
+                    <description><![CDATA[Determines how to validate the JQL query and treat the validation results.]]></description>
+                </parameter>
+                <parameter name="fieldsByKeys">
+                    <description><![CDATA[Reference fields by their key (rather than ID). The default is false.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="notify">
+            <description><![CDATA[Creates an email notification for an issue and adds it to the mail queue. <p> Permissions required: <p> Browse Projects project permission for the project that the issue is in. If issue-level security is configured, issue-level security permission to view the issue. <p> App scope required: WRITE]]></description>
+            <parameters>
+                <parameter name="issueKeyOrId">
+                    <description><![CDATA[An ID or key of the issue to be assigned.]]></description>
+                </parameter>
+                <parameter name="notificationContent">
+                    <description><![CDATA[Details about a notification.]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="searchUsers">
+            <description><![CDATA[Returns a list of users that match the provided search string and property. This API is designed to return a small number of users with a flexible search query. As such, the sum of startAt and maxResults must be less than 1000. If the sum is greater, only results up to the 1000th result will be returned.]]></description>
+            <parameters>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="query">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="accountId">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="property">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="unauthorize">
+            <description><![CDATA[Deletes all the access token information of a given resource owner id so that it's impossible to execute any operation for that user without doing the authorization dance again]]></description>
+            <parameters>
+                <parameter name="resourceOwnerId">
+                    <description><![CDATA[The id of the resource owner which access should be invalidated]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="updateComponent">
+            <description><![CDATA[Updates a component. Any fields included in the request are overwritten. If leadAccountId is an empty string ("") the component lead is removed.]]></description>
+            <parameters>
+                <parameter name="id">
+                    <description><![CDATA[The ID of the component.]]></description>
+                </parameter>
+                <parameter name="updateComponentContent">
+                    <description><![CDATA[Details about a project component.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="updateIssue">
+            <description><![CDATA[Edits an issue. A transition may be applied and issue properties updated as part of the edit. <p> The edits to the issue's fields are defined using update and fields. Note that the description, environment, and any textarea type custom fields (multi-line text fields) take Atlassian Document Format content. Single line custom fields (textfield) accept a string and don't handle Atlassian Document Format content. <p> This operation can be accessed anonymously. <p> Permissions required: <p> Browse projects and Edit issues project permission for the project that the issue is in. If issue-level security is configured, issue-level security permission to view the issue. <p> App scope required: WRITE]]></description>
+            <parameters>
+                <parameter name="issueKeyOrId">
+                    <description><![CDATA[An ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="content">
+                    <description><![CDATA[An issue update details.]]></description>
+                </parameter>
+                <parameter name="notifyUsers">
+                    <description><![CDATA[Indicates whether a notification email about the update is sent to all watchers.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="updateIssueComment">
+            <description><![CDATA[Updates a given comment.]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[The ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="commentId">
+                    <description><![CDATA[The ID of the comment.]]></description>
+                </parameter>
+                <parameter name="issueCommentContent">
+                    <description><![CDATA[The comment text in Atlassian Document Format.]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[List of expand options to include additional information in the response.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="updateIssueLinkType">
+            <description><![CDATA[Updates an issue link type. <p> To use this operation, the site must have issue linking enabled.]]></description>
+            <parameters>
+                <parameter name="issueLinkTypeId">
+                    <description><![CDATA[Id of issue link type to be updated]]></description>
+                </parameter>
+                <parameter name="updateIssueLinkContent">
+                    <description><![CDATA[Parameters needed for updating an issue link type]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="updateIssueType">
+            <description><![CDATA[Updates the issue type based on given id.]]></description>
+            <parameters>
+                <parameter name="issueTypeId">
+                    <description><![CDATA[Id of issue type to be updated.]]></description>
+                </parameter>
+                <parameter name="updateIssueTypeContent">
+                    <description><![CDATA[Parameters needed for updating an issue type.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="updateProject">
+            <description><![CDATA[Updates the project details of a project.]]></description>
+            <parameters>
+                <parameter name="projectKeyOrId">
+                    <description><![CDATA[The project ID or project key (case sensitive).]]></description>
+                </parameter>
+                <parameter name="updateProjectContent">
+                    <description><![CDATA[Body of HTTP request according to the metadata and API schema definition.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="updateProjectCategory">
+            <description><![CDATA[Updates a project category.]]></description>
+            <parameters>
+                <parameter name="updateProjectCategoryContent">
+                    <description><![CDATA[Parameters needed for updating a project category.]]></description>
+                </parameter>
+                <parameter name="categoryId">
+                    <description><![CDATA[ID of the project category to update.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="updateVersion">
+            <description><![CDATA[Updates a project version.]]></description>
+            <parameters>
+                <parameter name="id">
+                    <description><![CDATA[The ID of the version.]]></description>
+                </parameter>
+                <parameter name="updateVersionContent">
+                    <description><![CDATA[Body of HTTP request according to the metadata and API schema definition.]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="updateWorklog">
+            <description><![CDATA[Updates a worklog. <p> Time tracking must be enabled in Jira, otherwise this operation returns an error. <p> This operation can be accessed anonymously. <p> Permissions required: <p> Browse projects project permission for the project that the issue is in. If issue-level security is configured, issue-level security permission to view the issue. Edit all worklogs project permission to update any worklog or Edit own worklogs to update worklogs created by the user. If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to. <p> App scope required: WRITE]]></description>
+            <parameters>
+                <parameter name="issueIdOrKey">
+                    <description><![CDATA[An ID or key of the issue.]]></description>
+                </parameter>
+                <parameter name="worklogId">
+                    <description><![CDATA[The ID of the worklog.]]></description>
+                </parameter>
+                <parameter name="worklogContent">
+                    <description><![CDATA[A content of the worklog update]]></description>
+                </parameter>
+                <parameter name="notifyUsers">
+                    <description><![CDATA[Indicates whether a notification email about the update is sent to all watchers.]]></description>
+                </parameter>
+                <parameter name="adjustEstimate">
+                    <description><![CDATA[Defines how to update the issue's time estimate.]]></description>
+                </parameter>
+                <parameter name="newEstimate">
+                    <description><![CDATA[Sets the issue's remaining time estimate, for example 2d 4h. Required for Adjust Estimate NEW]]></description>
+                </parameter>
+                <parameter name="expandOptions">
+                    <description><![CDATA[A list of expand options]]></description>
+                </parameter>
+                <parameter name="streamingStrategy">
+                    <description><![CDATA[Configure if repeatable streams should be used and their behaviour]]></description>
+                </parameter>
+                <parameter name="responseTimeout">
+                    <description><![CDATA[Connection timeout for the request]]></description>
+                </parameter>
+                <parameter name="responseTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+    </operations>
+    <sources/>
+    <types>
+        <type name="org.hotovo.jira.api.attributes.AttachmentAttributes">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="contentType">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="fileName">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="size">
+                    <description><![CDATA[]]></description>
+                </parameter>
+            </parameters>
+        </type>
+        <type name="org.hotovo.jira.api.proxy.HttpProxyConfiguration">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="host">
+                    <description><![CDATA[Host where the proxy requests will be sent.]]></description>
+                </parameter>
+                <parameter name="port">
+                    <description><![CDATA[Port where the proxy requests will be sent.]]></description>
+                </parameter>
+                <parameter name="username">
+                    <description><![CDATA[The username to authenticate against the proxy.]]></description>
+                </parameter>
+                <parameter name="password">
+                    <description><![CDATA[The password to authenticate against the proxy.]]></description>
+                </parameter>
+                <parameter name="nonProxyHosts">
+                    <description><![CDATA[A list of hosts against which the proxy should not be used.]]></description>
+                </parameter>
+                <parameter name="ntlmDomain">
+                    <description><![CDATA[The domain to authenticate against the proxy.]]></description>
+                </parameter>
+            </parameters>
+        </type>
+    </types>
+</extension-documentation>

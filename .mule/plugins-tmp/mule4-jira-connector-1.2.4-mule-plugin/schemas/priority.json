@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Priority",
+  "definitions": {
+    "Priority": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "self": {
+          "type": "string"
+        },
+        "statusColor": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

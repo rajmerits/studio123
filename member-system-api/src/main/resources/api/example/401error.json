@@ -1,0 +1,10 @@
+{
+  "msg": "failed operation",
+  "code": 401,
+  "success": false,
+  "error": {
+    "type": "UNAUTHORIZED",
+    "title": "Unauthorized",
+    "details": "This endpoint requires all requests to be authenticated"
+  }
+}

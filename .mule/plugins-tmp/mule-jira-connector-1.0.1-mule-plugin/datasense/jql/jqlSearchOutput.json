@@ -1,0 +1,1727 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "JQL Search Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "properties": {
+      "expand": {
+        "$id": "#/items/properties/expand",
+        "type": "string",
+        "title": "The Expand Schema",
+        "default": "",
+        "examples": [
+          ""
+        ],
+        "pattern": "^(.*)$"
+      },
+      "id": {
+        "$id": "#/items/properties/id",
+        "type": "string",
+        "title": "The Id Schema",
+        "default": "",
+        "examples": [
+          "10002"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "self": {
+        "$id": "#/items/properties/self",
+        "type": "string",
+        "title": "The Self Schema",
+        "default": "",
+        "examples": [
+          "https://your-domain.atlassian.net/rest/api/3/issue/10002"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "key": {
+        "$id": "#/items/properties/key",
+        "type": "string",
+        "title": "The Key Schema",
+        "default": "",
+        "examples": [
+          "ED-1"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "fields": {
+        "$id": "#/items/properties/fields",
+        "type": "object",
+        "title": "The Fields Schema",
+        "required": [
+          "watcher",
+          "attachment",
+          "sub-tasks",
+          "description",
+          "project",
+          "comment",
+          "issuelinks",
+          "worklog",
+          "updated",
+          "timetracking"
+        ],
+        "properties": {
+          "watcher": {
+            "$id": "#/items/properties/fields/properties/watcher",
+            "type": "object",
+            "title": "The Watcher Schema",
+            "required": [
+              "self",
+              "isWatching",
+              "watchCount",
+              "watchers"
+            ],
+            "properties": {
+              "self": {
+                "$id": "#/items/properties/fields/properties/watcher/properties/self",
+                "type": "string",
+                "title": "The Self Schema",
+                "default": "",
+                "examples": [
+                  "https://your-domain.atlassian.net/rest/api/3/issue/EX-1/watchers"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "isWatching": {
+                "$id": "#/items/properties/fields/properties/watcher/properties/isWatching",
+                "type": "boolean",
+                "title": "The Iswatching Schema",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              },
+              "watchCount": {
+                "$id": "#/items/properties/fields/properties/watcher/properties/watchCount",
+                "type": "integer",
+                "title": "The Watchcount Schema",
+                "default": 0,
+                "examples": [
+                  1
+                ]
+              },
+              "watchers": {
+                "$id": "#/items/properties/fields/properties/watcher/properties/watchers",
+                "type": "array",
+                "title": "The Watchers Schema",
+                "items": {
+                  "$id": "#/items/properties/fields/properties/watcher/properties/watchers/items",
+                  "type": "object",
+                  "title": "The Items Schema",
+                  "required": [
+                    "self",
+                    "accountId",
+                    "displayName",
+                    "active"
+                  ],
+                  "properties": {
+                    "self": {
+                      "$id": "#/items/properties/fields/properties/watcher/properties/watchers/items/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "http://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "accountId": {
+                      "$id": "#/items/properties/fields/properties/watcher/properties/watchers/items/properties/accountId",
+                      "type": "string",
+                      "title": "The Accountid Schema",
+                      "default": "",
+                      "examples": [
+                        "5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "displayName": {
+                      "$id": "#/items/properties/fields/properties/watcher/properties/watchers/items/properties/displayName",
+                      "type": "string",
+                      "title": "The Displayname Schema",
+                      "default": "",
+                      "examples": [
+                        "Mia Krystof"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "active": {
+                      "$id": "#/items/properties/fields/properties/watcher/properties/watchers/items/properties/active",
+                      "type": "boolean",
+                      "title": "The Active Schema",
+                      "default": false,
+                      "examples": [
+                        false
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "attachment": {
+            "$id": "#/items/properties/fields/properties/attachment",
+            "type": "array",
+            "title": "The Attachment Schema",
+            "items": {
+              "$id": "#/items/properties/fields/properties/attachment/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "id",
+                "self",
+                "filename",
+                "author",
+                "created",
+                "size",
+                "mimeType",
+                "content",
+                "thumbnail"
+              ],
+              "properties": {
+                "id": {
+                  "$id": "#/items/properties/fields/properties/attachment/items/properties/id",
+                  "type": "integer",
+                  "title": "The Id Schema",
+                  "default": 0,
+                  "examples": [
+                    10000
+                  ]
+                },
+                "self": {
+                  "$id": "#/items/properties/fields/properties/attachment/items/properties/self",
+                  "type": "string",
+                  "title": "The Self Schema",
+                  "default": "",
+                  "examples": [
+                    "https://your-domain.atlassian.net/rest/api/3/attachments/10000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "filename": {
+                  "$id": "#/items/properties/fields/properties/attachment/items/properties/filename",
+                  "type": "string",
+                  "title": "The Filename Schema",
+                  "default": "",
+                  "examples": [
+                    "picture.jpg"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "author": {
+                  "$id": "#/items/properties/fields/properties/attachment/items/properties/author",
+                  "type": "object",
+                  "title": "The Author Schema",
+                  "required": [
+                    "self",
+                    "key",
+                    "accountId",
+                    "name",
+                    "avatarUrls",
+                    "displayName",
+                    "active"
+                  ],
+                  "properties": {
+                    "self": {
+                      "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "https://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "key": {
+                      "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/key",
+                      "type": "string",
+                      "title": "The Key Schema",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "accountId": {
+                      "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/accountId",
+                      "type": "string",
+                      "title": "The Accountid Schema",
+                      "default": "",
+                      "examples": [
+                        "5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "name": {
+                      "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/name",
+                      "type": "string",
+                      "title": "The Name Schema",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "avatarUrls": {
+                      "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/avatarUrls",
+                      "type": "object",
+                      "title": "The Avatarurls Schema",
+                      "required": [
+                        "48x48",
+                        "24x24",
+                        "16x16",
+                        "32x32"
+                      ],
+                      "properties": {
+                        "48x48": {
+                          "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/avatarUrls/properties/48x48",
+                          "type": "string",
+                          "title": "The 48x48 Schema",
+                          "default": "",
+                          "examples": [
+                            "https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=48&s=48"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "24x24": {
+                          "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/avatarUrls/properties/24x24",
+                          "type": "string",
+                          "title": "The 24x24 Schema",
+                          "default": "",
+                          "examples": [
+                            "https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=24&s=24"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "16x16": {
+                          "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/avatarUrls/properties/16x16",
+                          "type": "string",
+                          "title": "The 16x16 Schema",
+                          "default": "",
+                          "examples": [
+                            "https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=16&s=16"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "32x32": {
+                          "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/avatarUrls/properties/32x32",
+                          "type": "string",
+                          "title": "The 32x32 Schema",
+                          "default": "",
+                          "examples": [
+                            "https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=32&s=32"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    },
+                    "displayName": {
+                      "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/displayName",
+                      "type": "string",
+                      "title": "The Displayname Schema",
+                      "default": "",
+                      "examples": [
+                        "Mia Krystof"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "active": {
+                      "$id": "#/items/properties/fields/properties/attachment/items/properties/author/properties/active",
+                      "type": "boolean",
+                      "title": "The Active Schema",
+                      "default": false,
+                      "examples": [
+                        false
+                      ]
+                    }
+                  }
+                },
+                "created": {
+                  "$id": "#/items/properties/fields/properties/attachment/items/properties/created",
+                  "type": "string",
+                  "title": "The Created Schema",
+                  "default": "",
+                  "examples": [
+                    "2019-12-03T06:07:58.001+0000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "size": {
+                  "$id": "#/items/properties/fields/properties/attachment/items/properties/size",
+                  "type": "integer",
+                  "title": "The Size Schema",
+                  "default": 0,
+                  "examples": [
+                    23123
+                  ]
+                },
+                "mimeType": {
+                  "$id": "#/items/properties/fields/properties/attachment/items/properties/mimeType",
+                  "type": "string",
+                  "title": "The Mimetype Schema",
+                  "default": "",
+                  "examples": [
+                    "image/jpeg"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "content": {
+                  "$id": "#/items/properties/fields/properties/attachment/items/properties/content",
+                  "type": "string",
+                  "title": "The Content Schema",
+                  "default": "",
+                  "examples": [
+                    "https://your-domain.atlassian.net/jira/attachments/10000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "thumbnail": {
+                  "$id": "#/items/properties/fields/properties/attachment/items/properties/thumbnail",
+                  "type": "string",
+                  "title": "The Thumbnail Schema",
+                  "default": "",
+                  "examples": [
+                    "https://your-domain.atlassian.net/jira/secure/thumbnail/10000"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            }
+          },
+          "sub-tasks": {
+            "$id": "#/items/properties/fields/properties/sub-tasks",
+            "type": "array",
+            "title": "The Sub-tasks Schema",
+            "items": {
+              "$id": "#/items/properties/fields/properties/sub-tasks/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "id",
+                "type",
+                "outwardIssue"
+              ],
+              "properties": {
+                "id": {
+                  "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "10000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "type": {
+                  "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/type",
+                  "type": "object",
+                  "title": "The Type Schema",
+                  "required": [
+                    "id",
+                    "name",
+                    "inward",
+                    "outward"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/type/properties/id",
+                      "type": "string",
+                      "title": "The Id Schema",
+                      "default": "",
+                      "examples": [
+                        "10000"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "name": {
+                      "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/type/properties/name",
+                      "type": "string",
+                      "title": "The Name Schema",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "inward": {
+                      "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/type/properties/inward",
+                      "type": "string",
+                      "title": "The Inward Schema",
+                      "default": "",
+                      "examples": [
+                        "Parent"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "outward": {
+                      "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/type/properties/outward",
+                      "type": "string",
+                      "title": "The Outward Schema",
+                      "default": "",
+                      "examples": [
+                        "Sub-task"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                },
+                "outwardIssue": {
+                  "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/outwardIssue",
+                  "type": "object",
+                  "title": "The Outwardissue Schema",
+                  "required": [
+                    "id",
+                    "key",
+                    "self",
+                    "fields"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/outwardIssue/properties/id",
+                      "type": "string",
+                      "title": "The Id Schema",
+                      "default": "",
+                      "examples": [
+                        "10003"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "key": {
+                      "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/outwardIssue/properties/key",
+                      "type": "string",
+                      "title": "The Key Schema",
+                      "default": "",
+                      "examples": [
+                        "ED-2"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "self": {
+                      "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/outwardIssue/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "https://your-domain.atlassian.net/rest/api/3/issue/ED-2"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "fields": {
+                      "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/outwardIssue/properties/fields",
+                      "type": "object",
+                      "title": "The Fields Schema",
+                      "required": [
+                        "status"
+                      ],
+                      "properties": {
+                        "status": {
+                          "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/outwardIssue/properties/fields/properties/status",
+                          "type": "object",
+                          "title": "The Status Schema",
+                          "required": [
+                            "iconUrl",
+                            "name"
+                          ],
+                          "properties": {
+                            "iconUrl": {
+                              "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/outwardIssue/properties/fields/properties/status/properties/iconUrl",
+                              "type": "string",
+                              "title": "The Iconurl Schema",
+                              "default": "",
+                              "examples": [
+                                "https://your-domain.atlassian.net/images/icons/statuses/open.png"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "name": {
+                              "$id": "#/items/properties/fields/properties/sub-tasks/items/properties/outwardIssue/properties/fields/properties/status/properties/name",
+                              "type": "string",
+                              "title": "The Name Schema",
+                              "default": "",
+                              "examples": [
+                                "Open"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": {
+            "$id": "#/items/properties/fields/properties/description",
+            "type": "object",
+            "title": "The Description Schema",
+            "required": [
+              "type",
+              "version",
+              "content"
+            ],
+            "properties": {
+              "type": {
+                "$id": "#/items/properties/fields/properties/description/properties/type",
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "examples": [
+                  "doc"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "version": {
+                "$id": "#/items/properties/fields/properties/description/properties/version",
+                "type": "integer",
+                "title": "The Version Schema",
+                "default": 0,
+                "examples": [
+                  1
+                ]
+              },
+              "content": {
+                "$id": "#/items/properties/fields/properties/description/properties/content",
+                "type": "array",
+                "title": "The Content Schema",
+                "items": {
+                  "$id": "#/items/properties/fields/properties/description/properties/content/items",
+                  "type": "object",
+                  "title": "The Items Schema",
+                  "required": [
+                    "type",
+                    "content"
+                  ],
+                  "properties": {
+                    "type": {
+                      "$id": "#/items/properties/fields/properties/description/properties/content/items/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema",
+                      "default": "",
+                      "examples": [
+                        "paragraph"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "content": {
+                      "$id": "#/items/properties/fields/properties/description/properties/content/items/properties/content",
+                      "type": "array",
+                      "title": "The Content Schema",
+                      "items": {
+                        "$id": "#/items/properties/fields/properties/description/properties/content/items/properties/content/items",
+                        "type": "object",
+                        "title": "The Items Schema",
+                        "required": [
+                          "type",
+                          "text"
+                        ],
+                        "properties": {
+                          "type": {
+                            "$id": "#/items/properties/fields/properties/description/properties/content/items/properties/content/items/properties/type",
+                            "type": "string",
+                            "title": "The Type Schema",
+                            "default": "",
+                            "examples": [
+                              "text"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "text": {
+                            "$id": "#/items/properties/fields/properties/description/properties/content/items/properties/content/items/properties/text",
+                            "type": "string",
+                            "title": "The Text Schema",
+                            "default": "",
+                            "examples": [
+                              "Main order flow broken"
+                            ],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "project": {
+            "$id": "#/items/properties/fields/properties/project",
+            "type": "object",
+            "title": "The Project Schema",
+            "required": [
+              "self",
+              "id",
+              "key",
+              "name",
+              "avatarUrls",
+              "projectCategory",
+              "simplified",
+              "style",
+              "insight"
+            ],
+            "properties": {
+              "self": {
+                "$id": "#/items/properties/fields/properties/project/properties/self",
+                "type": "string",
+                "title": "The Self Schema",
+                "default": "",
+                "examples": [
+                  "https://your-domain.atlassian.net/rest/api/3/project/EX"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "id": {
+                "$id": "#/items/properties/fields/properties/project/properties/id",
+                "type": "string",
+                "title": "The Id Schema",
+                "default": "",
+                "examples": [
+                  "10000"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "key": {
+                "$id": "#/items/properties/fields/properties/project/properties/key",
+                "type": "string",
+                "title": "The Key Schema",
+                "default": "",
+                "examples": [
+                  "EX"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "name": {
+                "$id": "#/items/properties/fields/properties/project/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "examples": [
+                  "Example"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "avatarUrls": {
+                "$id": "#/items/properties/fields/properties/project/properties/avatarUrls",
+                "type": "object",
+                "title": "The Avatarurls Schema",
+                "required": [
+                  "48x48",
+                  "24x24",
+                  "16x16",
+                  "32x32"
+                ],
+                "properties": {
+                  "48x48": {
+                    "$id": "#/items/properties/fields/properties/project/properties/avatarUrls/properties/48x48",
+                    "type": "string",
+                    "title": "The 48x48 Schema",
+                    "default": "",
+                    "examples": [
+                      "https://your-domain.atlassian.net/secure/projectavatar?size=large&pid=10000"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "24x24": {
+                    "$id": "#/items/properties/fields/properties/project/properties/avatarUrls/properties/24x24",
+                    "type": "string",
+                    "title": "The 24x24 Schema",
+                    "default": "",
+                    "examples": [
+                      "https://your-domain.atlassian.net/secure/projectavatar?size=small&pid=10000"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "16x16": {
+                    "$id": "#/items/properties/fields/properties/project/properties/avatarUrls/properties/16x16",
+                    "type": "string",
+                    "title": "The 16x16 Schema",
+                    "default": "",
+                    "examples": [
+                      "https://your-domain.atlassian.net/secure/projectavatar?size=xsmall&pid=10000"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "32x32": {
+                    "$id": "#/items/properties/fields/properties/project/properties/avatarUrls/properties/32x32",
+                    "type": "string",
+                    "title": "The 32x32 Schema",
+                    "default": "",
+                    "examples": [
+                      "https://your-domain.atlassian.net/secure/projectavatar?size=medium&pid=10000"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "projectCategory": {
+                "$id": "#/items/properties/fields/properties/project/properties/projectCategory",
+                "type": "object",
+                "title": "The Projectcategory Schema",
+                "required": [
+                  "self",
+                  "id",
+                  "name",
+                  "description"
+                ],
+                "properties": {
+                  "self": {
+                    "$id": "#/items/properties/fields/properties/project/properties/projectCategory/properties/self",
+                    "type": "string",
+                    "title": "The Self Schema",
+                    "default": "",
+                    "examples": [
+                      "https://your-domain.atlassian.net/rest/api/3/projectCategory/10000"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "id": {
+                    "$id": "#/items/properties/fields/properties/project/properties/projectCategory/properties/id",
+                    "type": "string",
+                    "title": "The Id Schema",
+                    "default": "",
+                    "examples": [
+                      "10000"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "name": {
+                    "$id": "#/items/properties/fields/properties/project/properties/projectCategory/properties/name",
+                    "type": "string",
+                    "title": "The Name Schema",
+                    "default": "",
+                    "examples": [
+                      "FIRST"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "description": {
+                    "$id": "#/items/properties/fields/properties/project/properties/projectCategory/properties/description",
+                    "type": "string",
+                    "title": "The Description Schema",
+                    "default": "",
+                    "examples": [
+                      "First Project Category"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "simplified": {
+                "$id": "#/items/properties/fields/properties/project/properties/simplified",
+                "type": "boolean",
+                "title": "The Simplified Schema",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              },
+              "style": {
+                "$id": "#/items/properties/fields/properties/project/properties/style",
+                "type": "string",
+                "title": "The Style Schema",
+                "default": "",
+                "examples": [
+                  "classic"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "insight": {
+                "$id": "#/items/properties/fields/properties/project/properties/insight",
+                "type": "object",
+                "title": "The Insight Schema",
+                "required": [
+                  "totalIssueCount",
+                  "lastIssueUpdateTime"
+                ],
+                "properties": {
+                  "totalIssueCount": {
+                    "$id": "#/items/properties/fields/properties/project/properties/insight/properties/totalIssueCount",
+                    "type": "integer",
+                    "title": "The Totalissuecount Schema",
+                    "default": 0,
+                    "examples": [
+                      100
+                    ]
+                  },
+                  "lastIssueUpdateTime": {
+                    "$id": "#/items/properties/fields/properties/project/properties/insight/properties/lastIssueUpdateTime",
+                    "type": "string",
+                    "title": "The Lastissueupdatetime Schema",
+                    "default": "",
+                    "examples": [
+                      "2019-12-03T06:07:55.835+0000"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            }
+          },
+          "comment": {
+            "$id": "#/items/properties/fields/properties/comment",
+            "type": "array",
+            "title": "The Comment Schema",
+            "items": {
+              "$id": "#/items/properties/fields/properties/comment/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "self",
+                "id",
+                "author",
+                "body",
+                "updateAuthor",
+                "created",
+                "updated",
+                "visibility"
+              ],
+              "properties": {
+                "self": {
+                  "$id": "#/items/properties/fields/properties/comment/items/properties/self",
+                  "type": "string",
+                  "title": "The Self Schema",
+                  "default": "",
+                  "examples": [
+                    "https://your-domain.atlassian.net/rest/api/3/issue/10010/comment/10000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "id": {
+                  "$id": "#/items/properties/fields/properties/comment/items/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "10000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "author": {
+                  "$id": "#/items/properties/fields/properties/comment/items/properties/author",
+                  "type": "object",
+                  "title": "The Author Schema",
+                  "required": [
+                    "self",
+                    "accountId",
+                    "displayName",
+                    "active"
+                  ],
+                  "properties": {
+                    "self": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/author/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "http://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "accountId": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/author/properties/accountId",
+                      "type": "string",
+                      "title": "The Accountid Schema",
+                      "default": "",
+                      "examples": [
+                        "5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "displayName": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/author/properties/displayName",
+                      "type": "string",
+                      "title": "The Displayname Schema",
+                      "default": "",
+                      "examples": [
+                        "Mia Krystof"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "active": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/author/properties/active",
+                      "type": "boolean",
+                      "title": "The Active Schema",
+                      "default": false,
+                      "examples": [
+                        false
+                      ]
+                    }
+                  }
+                },
+                "body": {
+                  "$id": "#/items/properties/fields/properties/comment/items/properties/body",
+                  "type": "object",
+                  "title": "The Body Schema",
+                  "required": [
+                    "type",
+                    "version",
+                    "content"
+                  ],
+                  "properties": {
+                    "type": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/body/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema",
+                      "default": "",
+                      "examples": [
+                        "doc"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "version": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/body/properties/version",
+                      "type": "integer",
+                      "title": "The Version Schema",
+                      "default": 0,
+                      "examples": [
+                        1
+                      ]
+                    },
+                    "content": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/body/properties/content",
+                      "type": "array",
+                      "title": "The Content Schema",
+                      "items": {
+                        "$id": "#/items/properties/fields/properties/comment/items/properties/body/properties/content/items",
+                        "type": "object",
+                        "title": "The Items Schema",
+                        "required": [
+                          "type",
+                          "content"
+                        ],
+                        "properties": {
+                          "type": {
+                            "$id": "#/items/properties/fields/properties/comment/items/properties/body/properties/content/items/properties/type",
+                            "type": "string",
+                            "title": "The Type Schema",
+                            "default": "",
+                            "examples": [
+                              "paragraph"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "content": {
+                            "$id": "#/items/properties/fields/properties/comment/items/properties/body/properties/content/items/properties/content",
+                            "type": "array",
+                            "title": "The Content Schema",
+                            "items": {
+                              "$id": "#/items/properties/fields/properties/comment/items/properties/body/properties/content/items/properties/content/items",
+                              "type": "object",
+                              "title": "The Items Schema",
+                              "required": [
+                                "type",
+                                "text"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "$id": "#/items/properties/fields/properties/comment/items/properties/body/properties/content/items/properties/content/items/properties/type",
+                                  "type": "string",
+                                  "title": "The Type Schema",
+                                  "default": "",
+                                  "examples": [
+                                    "text"
+                                  ],
+                                  "pattern": "^(.*)$"
+                                },
+                                "text": {
+                                  "$id": "#/items/properties/fields/properties/comment/items/properties/body/properties/content/items/properties/content/items/properties/text",
+                                  "type": "string",
+                                  "title": "The Text Schema",
+                                  "default": "",
+                                  "examples": [
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper."
+                                  ],
+                                  "pattern": "^(.*)$"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "updateAuthor": {
+                  "$id": "#/items/properties/fields/properties/comment/items/properties/updateAuthor",
+                  "type": "object",
+                  "title": "The Updateauthor Schema",
+                  "required": [
+                    "self",
+                    "accountId",
+                    "displayName",
+                    "active"
+                  ],
+                  "properties": {
+                    "self": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/updateAuthor/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "http://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "accountId": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/updateAuthor/properties/accountId",
+                      "type": "string",
+                      "title": "The Accountid Schema",
+                      "default": "",
+                      "examples": [
+                        "5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "displayName": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/updateAuthor/properties/displayName",
+                      "type": "string",
+                      "title": "The Displayname Schema",
+                      "default": "",
+                      "examples": [
+                        "Mia Krystof"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "active": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/updateAuthor/properties/active",
+                      "type": "boolean",
+                      "title": "The Active Schema",
+                      "default": false,
+                      "examples": [
+                        false
+                      ]
+                    }
+                  }
+                },
+                "created": {
+                  "$id": "#/items/properties/fields/properties/comment/items/properties/created",
+                  "type": "string",
+                  "title": "The Created Schema",
+                  "default": "",
+                  "examples": [
+                    "2019-12-03T06:07:56.458+0000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "updated": {
+                  "$id": "#/items/properties/fields/properties/comment/items/properties/updated",
+                  "type": "string",
+                  "title": "The Updated Schema",
+                  "default": "",
+                  "examples": [
+                    "2019-12-03T06:07:56.458+0000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "visibility": {
+                  "$id": "#/items/properties/fields/properties/comment/items/properties/visibility",
+                  "type": "object",
+                  "title": "The Visibility Schema",
+                  "required": [
+                    "type",
+                    "value"
+                  ],
+                  "properties": {
+                    "type": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/visibility/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema",
+                      "default": "",
+                      "examples": [
+                        "role"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "value": {
+                      "$id": "#/items/properties/fields/properties/comment/items/properties/visibility/properties/value",
+                      "type": "string",
+                      "title": "The Value Schema",
+                      "default": "",
+                      "examples": [
+                        "Administrators"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "issuelinks": {
+            "$id": "#/items/properties/fields/properties/issuelinks",
+            "type": "array",
+            "title": "The Issuelinks Schema",
+            "items": {
+              "$id": "#/items/properties/fields/properties/issuelinks/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "id",
+                "type",
+                "outwardIssue"
+              ],
+              "properties": {
+                "id": {
+                  "$id": "#/items/properties/fields/properties/issuelinks/items/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "10001"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "type": {
+                  "$id": "#/items/properties/fields/properties/issuelinks/items/properties/type",
+                  "type": "object",
+                  "title": "The Type Schema",
+                  "required": [
+                    "id",
+                    "name",
+                    "inward",
+                    "outward"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$id": "#/items/properties/fields/properties/issuelinks/items/properties/type/properties/id",
+                      "type": "string",
+                      "title": "The Id Schema",
+                      "default": "",
+                      "examples": [
+                        "10000"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "name": {
+                      "$id": "#/items/properties/fields/properties/issuelinks/items/properties/type/properties/name",
+                      "type": "string",
+                      "title": "The Name Schema",
+                      "default": "",
+                      "examples": [
+                        "Dependent"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "inward": {
+                      "$id": "#/items/properties/fields/properties/issuelinks/items/properties/type/properties/inward",
+                      "type": "string",
+                      "title": "The Inward Schema",
+                      "default": "",
+                      "examples": [
+                        "depends on"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "outward": {
+                      "$id": "#/items/properties/fields/properties/issuelinks/items/properties/type/properties/outward",
+                      "type": "string",
+                      "title": "The Outward Schema",
+                      "default": "",
+                      "examples": [
+                        "is depended by"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                },
+                "outwardIssue": {
+                  "$id": "#/items/properties/fields/properties/issuelinks/items/properties/outwardIssue",
+                  "type": "object",
+                  "title": "The Outwardissue Schema",
+                  "required": [
+                    "id",
+                    "key",
+                    "self",
+                    "fields"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$id": "#/items/properties/fields/properties/issuelinks/items/properties/outwardIssue/properties/id",
+                      "type": "string",
+                      "title": "The Id Schema",
+                      "default": "",
+                      "examples": [
+                        "10004L"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "key": {
+                      "$id": "#/items/properties/fields/properties/issuelinks/items/properties/outwardIssue/properties/key",
+                      "type": "string",
+                      "title": "The Key Schema",
+                      "default": "",
+                      "examples": [
+                        "PR-2"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "self": {
+                      "$id": "#/items/properties/fields/properties/issuelinks/items/properties/outwardIssue/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "https://your-domain.atlassian.net/rest/api/3/issue/PR-2"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "fields": {
+                      "$id": "#/items/properties/fields/properties/issuelinks/items/properties/outwardIssue/properties/fields",
+                      "type": "object",
+                      "title": "The Fields Schema",
+                      "required": [
+                        "status"
+                      ],
+                      "properties": {
+                        "status": {
+                          "$id": "#/items/properties/fields/properties/issuelinks/items/properties/outwardIssue/properties/fields/properties/status",
+                          "type": "object",
+                          "title": "The Status Schema",
+                          "required": [
+                            "iconUrl",
+                            "name"
+                          ],
+                          "properties": {
+                            "iconUrl": {
+                              "$id": "#/items/properties/fields/properties/issuelinks/items/properties/outwardIssue/properties/fields/properties/status/properties/iconUrl",
+                              "type": "string",
+                              "title": "The Iconurl Schema",
+                              "default": "",
+                              "examples": [
+                                "https://your-domain.atlassian.net/images/icons/statuses/open.png"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "name": {
+                              "$id": "#/items/properties/fields/properties/issuelinks/items/properties/outwardIssue/properties/fields/properties/status/properties/name",
+                              "type": "string",
+                              "title": "The Name Schema",
+                              "default": "",
+                              "examples": [
+                                "Open"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "worklog": {
+            "$id": "#/items/properties/fields/properties/worklog",
+            "type": "array",
+            "title": "The Worklog Schema",
+            "items": {
+              "$id": "#/items/properties/fields/properties/worklog/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "self",
+                "author",
+                "updateAuthor",
+                "comment",
+                "updated",
+                "visibility",
+                "started",
+                "timeSpent",
+                "timeSpentSeconds",
+                "id",
+                "issueId"
+              ],
+              "properties": {
+                "self": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/self",
+                  "type": "string",
+                  "title": "The Self Schema",
+                  "default": "",
+                  "examples": [
+                    "https://your-domain.atlassian.net/rest/api/3/issue/10010/worklog/10000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "author": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/author",
+                  "type": "object",
+                  "title": "The Author Schema",
+                  "required": [
+                    "self",
+                    "accountId",
+                    "displayName",
+                    "active"
+                  ],
+                  "properties": {
+                    "self": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/author/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "http://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "accountId": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/author/properties/accountId",
+                      "type": "string",
+                      "title": "The Accountid Schema",
+                      "default": "",
+                      "examples": [
+                        "5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "displayName": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/author/properties/displayName",
+                      "type": "string",
+                      "title": "The Displayname Schema",
+                      "default": "",
+                      "examples": [
+                        "Mia Krystof"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "active": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/author/properties/active",
+                      "type": "boolean",
+                      "title": "The Active Schema",
+                      "default": false,
+                      "examples": [
+                        false
+                      ]
+                    }
+                  }
+                },
+                "updateAuthor": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/updateAuthor",
+                  "type": "object",
+                  "title": "The Updateauthor Schema",
+                  "required": [
+                    "self",
+                    "accountId",
+                    "displayName",
+                    "active"
+                  ],
+                  "properties": {
+                    "self": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/updateAuthor/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "http://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "accountId": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/updateAuthor/properties/accountId",
+                      "type": "string",
+                      "title": "The Accountid Schema",
+                      "default": "",
+                      "examples": [
+                        "5b10a2844c20165700ede21g"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "displayName": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/updateAuthor/properties/displayName",
+                      "type": "string",
+                      "title": "The Displayname Schema",
+                      "default": "",
+                      "examples": [
+                        "Mia Krystof"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "active": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/updateAuthor/properties/active",
+                      "type": "boolean",
+                      "title": "The Active Schema",
+                      "default": false,
+                      "examples": [
+                        false
+                      ]
+                    }
+                  }
+                },
+                "comment": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/comment",
+                  "type": "object",
+                  "title": "The Comment Schema",
+                  "required": [
+                    "type",
+                    "version",
+                    "content"
+                  ],
+                  "properties": {
+                    "type": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/comment/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema",
+                      "default": "",
+                      "examples": [
+                        "doc"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "version": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/comment/properties/version",
+                      "type": "integer",
+                      "title": "The Version Schema",
+                      "default": 0,
+                      "examples": [
+                        1
+                      ]
+                    },
+                    "content": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/comment/properties/content",
+                      "type": "array",
+                      "title": "The Content Schema",
+                      "items": {
+                        "$id": "#/items/properties/fields/properties/worklog/items/properties/comment/properties/content/items",
+                        "type": "object",
+                        "title": "The Items Schema",
+                        "required": [
+                          "type",
+                          "content"
+                        ],
+                        "properties": {
+                          "type": {
+                            "$id": "#/items/properties/fields/properties/worklog/items/properties/comment/properties/content/items/properties/type",
+                            "type": "string",
+                            "title": "The Type Schema",
+                            "default": "",
+                            "examples": [
+                              "paragraph"
+                            ],
+                            "pattern": "^(.*)$"
+                          },
+                          "content": {
+                            "$id": "#/items/properties/fields/properties/worklog/items/properties/comment/properties/content/items/properties/content",
+                            "type": "array",
+                            "title": "The Content Schema",
+                            "items": {
+                              "$id": "#/items/properties/fields/properties/worklog/items/properties/comment/properties/content/items/properties/content/items",
+                              "type": "object",
+                              "title": "The Items Schema",
+                              "required": [
+                                "type",
+                                "text"
+                              ],
+                              "properties": {
+                                "type": {
+                                  "$id": "#/items/properties/fields/properties/worklog/items/properties/comment/properties/content/items/properties/content/items/properties/type",
+                                  "type": "string",
+                                  "title": "The Type Schema",
+                                  "default": "",
+                                  "examples": [
+                                    "text"
+                                  ],
+                                  "pattern": "^(.*)$"
+                                },
+                                "text": {
+                                  "$id": "#/items/properties/fields/properties/worklog/items/properties/comment/properties/content/items/properties/content/items/properties/text",
+                                  "type": "string",
+                                  "title": "The Text Schema",
+                                  "default": "",
+                                  "examples": [
+                                    "I did some work here."
+                                  ],
+                                  "pattern": "^(.*)$"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "updated": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/updated",
+                  "type": "string",
+                  "title": "The Updated Schema",
+                  "default": "",
+                  "examples": [
+                    "2019-12-03T06:07:56.867+0000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "visibility": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/visibility",
+                  "type": "object",
+                  "title": "The Visibility Schema",
+                  "required": [
+                    "type",
+                    "value"
+                  ],
+                  "properties": {
+                    "type": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/visibility/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema",
+                      "default": "",
+                      "examples": [
+                        "group"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "value": {
+                      "$id": "#/items/properties/fields/properties/worklog/items/properties/visibility/properties/value",
+                      "type": "string",
+                      "title": "The Value Schema",
+                      "default": "",
+                      "examples": [
+                        "jira-developers"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                },
+                "started": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/started",
+                  "type": "string",
+                  "title": "The Started Schema",
+                  "default": "",
+                  "examples": [
+                    "2019-12-03T06:07:56.866+0000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "timeSpent": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/timeSpent",
+                  "type": "string",
+                  "title": "The Timespent Schema",
+                  "default": "",
+                  "examples": [
+                    "3h 20m"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "timeSpentSeconds": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/timeSpentSeconds",
+                  "type": "integer",
+                  "title": "The Timespentseconds Schema",
+                  "default": 0,
+                  "examples": [
+                    12000
+                  ]
+                },
+                "id": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "100028"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "issueId": {
+                  "$id": "#/items/properties/fields/properties/worklog/items/properties/issueId",
+                  "type": "string",
+                  "title": "The Issueid Schema",
+                  "default": "",
+                  "examples": [
+                    "10002"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            }
+          },
+          "updated": {
+            "$id": "#/items/properties/fields/properties/updated",
+            "type": "integer",
+            "title": "The Updated Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "timetracking": {
+            "$id": "#/items/properties/fields/properties/timetracking",
+            "type": "object",
+            "title": "The Timetracking Schema",
+            "required": [
+              "originalEstimate",
+              "remainingEstimate",
+              "timeSpent",
+              "originalEstimateSeconds",
+              "remainingEstimateSeconds",
+              "timeSpentSeconds"
+            ],
+            "properties": {
+              "originalEstimate": {
+                "$id": "#/items/properties/fields/properties/timetracking/properties/originalEstimate",
+                "type": "string",
+                "title": "The Originalestimate Schema",
+                "default": "",
+                "examples": [
+                  "10m"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "remainingEstimate": {
+                "$id": "#/items/properties/fields/properties/timetracking/properties/remainingEstimate",
+                "type": "string",
+                "title": "The Remainingestimate Schema",
+                "default": "",
+                "examples": [
+                  "3m"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "timeSpent": {
+                "$id": "#/items/properties/fields/properties/timetracking/properties/timeSpent",
+                "type": "string",
+                "title": "The Timespent Schema",
+                "default": "",
+                "examples": [
+                  "6m"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "originalEstimateSeconds": {
+                "$id": "#/items/properties/fields/properties/timetracking/properties/originalEstimateSeconds",
+                "type": "integer",
+                "title": "The Originalestimateseconds Schema",
+                "default": 0,
+                "examples": [
+                  600
+                ]
+              },
+              "remainingEstimateSeconds": {
+                "$id": "#/items/properties/fields/properties/timetracking/properties/remainingEstimateSeconds",
+                "type": "integer",
+                "title": "The Remainingestimateseconds Schema",
+                "default": 0,
+                "examples": [
+                  200
+                ]
+              },
+              "timeSpentSeconds": {
+                "$id": "#/items/properties/fields/properties/timetracking/properties/timeSpentSeconds",
+                "type": "integer",
+                "title": "The Timespentseconds Schema",
+                "default": 0,
+                "examples": [
+                  400
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

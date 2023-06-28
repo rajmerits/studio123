@@ -1,0 +1,120 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "id": 99,
+    "value": "<string>",
+    "config": {
+      "scope": {},
+      "attributes": ["notSelectable"]
+    },
+    "properties": {}
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "The root schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "id": 99,
+        "value": "<string>",
+        "config": {
+          "scope": {},
+          "attributes": ["notSelectable"]
+        },
+        "properties": {}
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "id",
+        "value",
+        "properties",
+        "config"
+      ],
+      "properties": {
+        "id": {
+          "default": 0,
+          "examples": [99],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "integer",
+          "title": "The id schema",
+          "$id": "#/items/anyOf/0/properties/id"
+        },
+        "value": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The value schema",
+          "$id": "#/items/anyOf/0/properties/value"
+        },
+        "config": {
+          "default": {},
+          "examples": [{
+            "scope": {},
+            "attributes": ["notSelectable"]
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The config schema",
+          "required": [
+            "scope",
+            "attributes"
+          ],
+          "properties": {
+            "scope": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The scope schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/config/properties/scope"
+            },
+            "attributes": {
+              "default": [],
+              "examples": [["notSelectable"]],
+              "additionalItems": true,
+              "description": "An explanation about the purpose of this instance.",
+              "type": "array",
+              "title": "The attributes schema",
+              "items": {
+                "anyOf": [{
+                  "default": "",
+                  "examples": ["notSelectable"],
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "string",
+                  "title": "The first anyOf schema",
+                  "$id": "#/items/anyOf/0/properties/config/properties/attributes/items/anyOf/0"
+                }],
+                "$id": "#/items/anyOf/0/properties/config/properties/attributes/items"
+              },
+              "$id": "#/items/anyOf/0/properties/config/properties/attributes"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/config"
+        },
+        "properties": {
+          "default": {},
+          "examples": [{}],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The properties schema",
+          "required": [],
+          "$id": "#/items/anyOf/0/properties/properties"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PageBeanCustomFieldContextDefaultValue",
+  "definitions": {
+    "PageBeanCustomFieldContextDefaultValue": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "total": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "isLast": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "nextPage": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "values": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/CustomFieldContextDefaultValue"}
+        },
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "startAt": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "CustomFieldContextDefaultValueSingleOption": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "contextId",
+        "optionId",
+        "type"
+      ],
+      "properties": {
+        "contextId": {"type": "string"},
+        "optionId": {"type": "string"},
+        "type": {"type": "string"}
+      }
+    },
+    "CustomFieldContextDefaultValueMultipleOption": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "contextId",
+        "optionIds",
+        "type"
+      ],
+      "properties": {
+        "contextId": {"type": "string"},
+        "type": {"type": "string"},
+        "optionIds": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "CustomFieldContextDefaultValue": {
+      "oneOf": [
+        {"$ref": "#/definitions/CustomFieldContextDefaultValueCascadingOption"},
+        {"$ref": "#/definitions/CustomFieldContextDefaultValueMultipleOption"},
+        {"$ref": "#/definitions/CustomFieldContextDefaultValueSingleOption"}
+      ],
+      "additionalProperties": false,
+      "type": "object",
+      "discriminator": "type"
+    },
+    "CustomFieldContextDefaultValueCascadingOption": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "contextId",
+        "optionId",
+        "type"
+      ],
+      "properties": {
+        "contextId": {"type": "string"},
+        "optionId": {"type": "string"},
+        "type": {"type": "string"},
+        "cascadingOptionId": {"type": "string"}
+      }
+    }
+  }
+}

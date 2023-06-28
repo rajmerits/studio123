@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/Attachment"}
+    },
+    "AvatarUrlsBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "48x48": {
+          "format": "uri",
+          "type": "string"
+        },
+        "24x24": {
+          "format": "uri",
+          "type": "string"
+        },
+        "16x16": {
+          "format": "uri",
+          "type": "string"
+        },
+        "32x32": {
+          "format": "uri",
+          "type": "string"
+        }
+      }
+    },
+    "UserDetails": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "emailAddress": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "avatarUrls": {
+          "allOf": [{"$ref": "#/definitions/AvatarUrlsBean"}],
+          "readOnly": true
+        },
+        "displayName": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "accountType": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "active": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "timeZone": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "Attachment": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "thumbnail": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "filename": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "size": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "author": {
+          "allOf": [{"$ref": "#/definitions/UserDetails"}],
+          "readOnly": true
+        },
+        "created": {
+          "format": "date-time",
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "mimeType": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "content": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    }
+  }
+}

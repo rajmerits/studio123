@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="custom-connecter"
+        prefix="custom-connecter"
+        namespace="http://www.mulesoft.org/schema/mule/custom-connecter"
+        doc:description="This API is for generate the customConnector"
+        xmlns="http://www.mulesoft.org/schema/mule/module"
+        xmlns:mule="http://www.mulesoft.org/schema/mule/core"
+        xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+        xmlns:http="http://www.mulesoft.org/schema/mule/http"
+        
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+           http://www.mulesoft.org/schema/mule/module http://www.mulesoft.org/schema/mule/module/current/mule-module.xsd
+           http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+           
+           http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+
+
+    <property name="property_host" displayName="host" type="string" defaultValue="test1-d1oj1h.5sc6y6-4.usa-e2.cloudhub.io" summary="Host for consuming API"/>
+    <property name="property_port" displayName="port" type="string" defaultValue="443" summary="Port for consuming API"/>
+    <property name="property_basePath" displayName="basePath" type="string" defaultValue="/api" summary="Basepath for consuming API"/>
+    <property name="property_protocol" displayName="protocol" type="string" defaultValue="HTTPS" summary="Protocol for consuming API"/>
+
+        <property name="property_proxyConfig" displayName="Proxy Config Reference" type="string" use="OPTIONAL" summary="Proxy config reference" tab="Proxy"/>
+        <property name="property_responseTimeout" displayName="Response timeout" type="string" defaultValue="10000" summary="Maximum time in milliseconds that the request element will block the execution of the flow waiting for the HTTP response."/>
+
+    
+    
+
+    <http:request-config
+name="custom-connecter-httpreq-config" xmlns:connection="true"
+responseTimeout="#[vars.property_responseTimeout]"
+basePath="#[vars.property_basePath]">
+<http:request-connection
+host="#[vars.property_host]"
+protocol="#[vars.property_protocol]"
+port="#[vars.property_port]"
+proxyConfig="#[vars.property_proxyConfig]"
+>
+</http:request-connection>
+</http:request-config>
+
+
+
+
+    <operation name="create-issue-by-id"  >
+        <parameters>
+                            <parameter name="create-issue-by-id-request-data" type="create-issue-by-id-request-type" use="REQUIRED" role="PRIMARY" />
+                                        <parameter name="id"
+                                        type="string"
+                                        use="REQUIRED"                    />
+                            <parameter name="username"
+                                        type="string"
+                                        use="OPTIONAL"                    />
+                            <parameter name="password"
+                                        type="string"
+                                        use="OPTIONAL"                    />
+                                    <parameter name="request-streaming-mode" displayName="Request streaming mode" type="request-streaming-mode-enum" use="OPTIONAL" tab="Advanced" />
+        </parameters>
+        <body>
+                <http:request config-ref="custom-connecter-httpreq-config"
+              path="/rest/api/{id}/issue"
+              method="POST"
+              requestStreamingMode='#[vars["request-streaming-mode"]]'
+>
+                <mule:error-mapping sourceType="HTTP:PARSING" targetType="CUSTOM-CONNECTER:PARSING" />
+            <mule:error-mapping sourceType="HTTP:TIMEOUT" targetType="CUSTOM-CONNECTER:TIMEOUT" />
+            <mule:error-mapping sourceType="HTTP:SECURITY" targetType="CUSTOM-CONNECTER:SECURITY" />
+            <mule:error-mapping sourceType="HTTP:CONNECTIVITY" targetType="CUSTOM-CONNECTER:CONNECTIVITY" />
+            <mule:error-mapping sourceType="HTTP:BAD_REQUEST" targetType="CUSTOM-CONNECTER:BAD_REQUEST" />
+            <mule:error-mapping sourceType="HTTP:UNAUTHORIZED" targetType="CUSTOM-CONNECTER:UNAUTHORIZED" />
+            <mule:error-mapping sourceType="HTTP:FORBIDDEN" targetType="CUSTOM-CONNECTER:FORBIDDEN" />
+            <mule:error-mapping sourceType="HTTP:METHOD_NOT_ALLOWED" targetType="CUSTOM-CONNECTER:METHOD_NOT_ALLOWED" />
+            <mule:error-mapping sourceType="HTTP:NOT_FOUND" targetType="CUSTOM-CONNECTER:NOT_FOUND" />
+            <mule:error-mapping sourceType="HTTP:NOT_ACCEPTABLE" targetType="CUSTOM-CONNECTER:NOT_ACCEPTABLE" />
+            <mule:error-mapping sourceType="HTTP:UNSUPPORTED_MEDIA_TYPE" targetType="CUSTOM-CONNECTER:UNSUPPORTED_MEDIA_TYPE" />
+            <mule:error-mapping sourceType="HTTP:TOO_MANY_REQUESTS" targetType="CUSTOM-CONNECTER:TOO_MANY_REQUESTS" />
+            <mule:error-mapping sourceType="HTTP:INTERNAL_SERVER_ERROR" targetType="CUSTOM-CONNECTER:INTERNAL_SERVER_ERROR" />
+            <mule:error-mapping sourceType="HTTP:SERVICE_UNAVAILABLE" targetType="CUSTOM-CONNECTER:SERVICE_UNAVAILABLE" />
+            <mule:error-mapping sourceType="HTTP:RETRY_EXHAUSTED" targetType="CUSTOM-CONNECTER:RETRY_EXHAUSTED" />
+                <http:body>
+            <![CDATA[#[output application/json --- vars['create-issue-by-id-request-data']]
+]]>
+        </http:body>
+    
+            <http:headers>
+            <![CDATA[#[ ( { 'Accept': 'application/json' } ++ { 'username': vars['username'] } ++ { 'password': vars['password'] } ) filterObject $ != null ]]]>
+        </http:headers>
+                <http:uri-params>
+            <![CDATA[#[ { 'id': vars['id'] } filterObject $ != null ]]]>
+        </http:uri-params>
+        </http:request>
+    <mule:set-payload value="#[payload]" mimeType="application/json" />
+        </body>
+                    <output type="create-issue-by-id-response-type" />
+                <output-attributes type="java::org.mule.extension.http.api.HttpResponseAttributes" />
+
+        <errors>
+                            <error type="PARSING"/>
+                            <error type="TIMEOUT"/>
+                            <error type="SECURITY"/>
+                            <error type="CONNECTIVITY"/>
+                            <error type="BAD_REQUEST"/>
+                            <error type="UNAUTHORIZED"/>
+                            <error type="FORBIDDEN"/>
+                            <error type="METHOD_NOT_ALLOWED"/>
+                            <error type="NOT_FOUND"/>
+                            <error type="NOT_ACCEPTABLE"/>
+                            <error type="UNSUPPORTED_MEDIA_TYPE"/>
+                            <error type="TOO_MANY_REQUESTS"/>
+                            <error type="INTERNAL_SERVER_ERROR"/>
+                            <error type="SERVICE_UNAVAILABLE"/>
+                            <error type="RETRY_EXHAUSTED"/>
+                    </errors>
+    </operation>
+
+</module>

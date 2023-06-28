@@ -1,0 +1,31 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Identifiers for a project.",
+  "additionalProperties": false,
+  "required": [
+    "self",
+    "id",
+    "key"
+  ],
+  "properties": {
+    "self": {
+      "type": "string",
+      "description": "The URL of the created project.",
+      "readOnly": true,
+      "format": "uri"
+    },
+    "id": {
+      "type": "integer",
+      "description": "The ID of the created project.",
+      "readOnly": true,
+      "format": "int64"
+    },
+    "key": {
+      "type": "string",
+      "description": "The key of the created project.",
+      "readOnly": true
+    }
+  }
+}

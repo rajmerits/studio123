@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd 
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+    <flow name="membersystemapi-main">
+        <http:listener path="/api/*" config-ref="membersystemapi-httpListenerConfig">
+            <http:response statusCode="#[vars.httpStatus default 200]">
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:response>
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body><![CDATA[#[payload]]]></http:body>
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:error-response>
+        </http:listener>
+        <ee:transform doc:name="Transform Message" doc:id="1cd5724b-6766-4b54-aed9-01d75becc6ef" >
+			<ee:message >
+			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="requestPayload" ><![CDATA[%dw 2.0
+output application/json
+---
+if((payload == null) or (payload == ""))("") else(payload)]]></ee:set-variable>
+				<ee:set-variable variableName="requestHeader" ><![CDATA[%dw 2.0
+output application/json
+---
+attributes.headers]]></ee:set-variable>
+				<ee:set-variable variableName="requestQueryParam" ><![CDATA[%dw 2.0
+output application/json
+---
+attributes.queryparams]]></ee:set-variable>
+				<ee:set-variable variableName="requestUriparam" ><![CDATA[%dw 2.0
+output application/json
+---
+attributes.uriParams]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+		<apikit:router config-ref="membersystemapi-config"/>
+        <error-handler ref="globalError">
+
+        </error-handler>
+    </flow>
+    <flow name="membersystemapi-console">
+        <http:listener path="/console/*" config-ref="membersystemapi-httpListenerConfig">
+            <http:response statusCode="#[vars.httpStatus default 200]">
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:response>
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body><![CDATA[#[payload]]]></http:body>
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:error-response>
+        </http:listener>
+        <apikit:console config-ref="membersystemapi-config"/>
+        <error-handler>
+            <on-error-propagate type="APIKIT:NOT_FOUND">
+                <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Resource not found"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">404</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+        </error-handler>
+    </flow>
+    <flow name="patch:\members\(member_Id):application\json:membersystemapi-config">
+        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core">
+            <ee:variables>
+                <ee:set-variable variableName="member_Id">attributes.uriParams.'member_Id'</ee:set-variable>
+            </ee:variables>
+        </ee:transform>
+        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+  msg: "successful operation",
+  code: 200,
+  data: {
+    memberId: "Mdsah8734873"
+  },
+  success: true
+}]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="29886bed-e50b-4bbb-a76c-3c574a4eae97" name="update-member-implementationFlow"/>
+    </flow>
+    <flow name="get:\members:membersystemapi-config">
+		<logger level="INFO" doc:name="Request Logger for get member list" doc:id="b4c0304d-c825-40a6-a171-fa3efb49e373" message="Request received for get member SAPI for transactionId: #[ vars.requestHeader.'X-Cms-TransactionId']"/>
+		<flow-ref doc:name="Flow Reference" doc:id="4f0b590d-46fa-4f0c-aa91-6f86a9ee54ab" name="get-member-details-implementationFlow"/>
+		<logger level="INFO" doc:name="Responce Logger for get member" doc:id="35b247e2-e856-47ec-9b24-02a46360c387" message="Responce sent for get member SAPI for transactionId: #[ vars.requestHeader.'X-Cms-TransactionId']"/>
+    </flow>
+    <flow name="get:\members\(member_Id):membersystemapi-config">
+        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core">
+            <ee:variables>
+                <ee:set-variable variableName="member_Id">attributes.uriParams.'member_Id'</ee:set-variable>
+            </ee:variables>
+        </ee:transform>
+        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+  firstName: "Naveen",
+  lastName: "Raj",
+  maritalStatus: "Unmarried",
+  title: "Mr",
+  gender: "Male",
+  occupation: "Engineer",
+  registrationChannel: "WFC_MP",
+  preferredName: "Nav",
+  identity: {
+    password: "testing",
+    phoneCountry: "86",
+    phoneNumber: "18888888887",
+    email: "emailNaveen001@email.com"
+  },
+  address: {
+    country: "India",
+    city: "HongKong",
+    area: "CentralAndWesternDistrict",
+    province: "HongKongIsland",
+    placeOfResidence: "12/3 Kamaraj Street"
+  }
+}]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="2d394845-3b3a-4a28-bf28-96b2d4873942" name="get-member-details-implementationFlow"/>
+    </flow>
+    <flow name="post:\members:application\json:membersystemapi-config">
+		<logger level="INFO" doc:name="Request Logger for post member" doc:id="63dc5fbf-9b89-43ff-92f7-889028293262" message="Request received for post member SAPI for transactionId: #[ vars.requestHeader.'X-Cms-TransactionId']"/>
+		<flow-ref doc:name="post-memeber-implementation" doc:id="cdeef140-ceb6-48e0-9170-c06424e265de" name="post-member-implementationFlow"/>
+		<logger level="INFO" doc:name="Responce Logger for post member" doc:id="dcca6213-237e-4d49-916d-258d0f7e263e" message="Responce sent for post member SAPI for transactionId: #[ vars.requestHeader.'X-Cms-TransactionId']"/>
+    </flow>
+    <flow name="post:\members\sync:application\json:membersystemapi-config">
+        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+  msg: "successful operation",
+  code: 200,
+  data: {
+    memberId: "Mdsah8734873"
+  },
+  success: true
+}]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="55a82651-adde-4936-b977-3e7eaef95455" name="post-member-sync-implementationFlow"/>
+    </flow>
+</mule>

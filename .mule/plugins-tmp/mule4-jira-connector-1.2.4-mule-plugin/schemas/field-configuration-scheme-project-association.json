@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/FieldConfigurationSchemeProjectAssociation",
+  "definitions": {"FieldConfigurationSchemeProjectAssociation": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["projectId"],
+    "properties": {
+      "fieldConfigurationSchemeId": {"type": "string"},
+      "projectId": {"type": "string"}
+    }
+  }}
+}

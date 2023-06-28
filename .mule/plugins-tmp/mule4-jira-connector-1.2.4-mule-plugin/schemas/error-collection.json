@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ErrorCollection",
+  "definitions": {"ErrorCollection": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "errorMessages": {
+        "type": "array",
+        "items": {"type": "string"}
+      },
+      "errors": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "status": {
+        "maximum": 2147483647,
+        "type": "integer",
+        "minimum": -2147483648
+      }
+    }
+  }}
+}

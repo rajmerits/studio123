@@ -1,0 +1,83 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  firstName:
+    required: true
+    type: string
+    example: "raja"
+  lastName:
+    required: false
+    type: string
+    example: "sekhar"
+  maritalStatus:
+    required: false
+    type: string
+    example: "married"
+  title:
+    required: true
+    type: string
+    enum:
+      - Mr
+      - Mrs
+    example: "Mr"
+  gender:
+    description: This element will define gender of customer only.
+    required: true
+    type: string
+    example: "Male"
+  occupation:
+    description: This element will define occupation of customer.
+    required: true
+    type: string
+    example: "EI specialist"
+  preferredName:
+    required: false
+    type: string
+    example: "raja"
+  identity:
+    description: This element will define occupationof customer.
+    required: true
+    type: object
+    properties:
+      password:
+        required: true
+        type: string
+        example: "@sekhar123"
+      phoneCountry:
+        required: true
+        type: string
+        example: "+91"
+      phoneNumber:
+        required: true
+        type: string
+        example: "9705507254"
+      email:
+        required: true
+        type: string
+        example: "rajasekahr@gmail.com"
+  address:
+      description: This element will define adress of element.
+      required: true
+      type: object
+      properties:
+        country: 
+          required: true
+          type: string
+          example: "India"
+        city:
+          required: true
+          type: string
+          example: "Hyderabad"
+        area:
+          required: true
+          type: string
+          example: "kondapur"
+        province:
+          required: true
+          type: string
+          example: "0967584"
+        placeOfResidence:
+          required: true
+          type: string
+          example: "sai kesava towers"

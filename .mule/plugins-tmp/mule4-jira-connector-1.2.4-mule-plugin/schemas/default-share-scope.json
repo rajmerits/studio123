@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/DefaultShareScope",
+  "definitions": {"DefaultShareScope": {
+    "xml": {"name": "defaultShareScope"},
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["scope"],
+    "properties": {"scope": {
+      "type": "string",
+      "enum": [
+        "GLOBAL",
+        "AUTHENTICATED",
+        "PRIVATE"
+      ]
+    }}
+  }}
+}

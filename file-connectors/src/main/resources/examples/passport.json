@@ -1,0 +1,38 @@
+{
+
+    "employeeId": "113949",
+
+    
+
+    "visaDetails":{
+
+        "visaId": "7895763933",
+
+        "visaIdType": "Work Permit",
+
+        "countryCode": "SWE",
+
+        "issuedDate": "2017-03-04",
+
+        "expirationDate": "2024-03-03"
+
+    },
+
+    "passportDetails":{
+
+        "passportId": "734899123",
+
+        "passportIdType": "Regular_blue_cover",
+
+        "countryCode": "SWE",
+
+        "issuedDate": "2018-03-04",
+
+        "expirationDate": "2024-03-03"
+
+    }
+    
+	}
+
+
+    

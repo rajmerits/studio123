@@ -1,0 +1,359 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "originalDefaultWorkflow": "<string>",
+    "description": "<string>",
+    "issueTypes": {},
+    "originalIssueTypeMappings": {},
+    "defaultWorkflow": "<string>",
+    "updateDraftIfNeeded": true,
+    "draft": true,
+    "name": "<string>",
+    "self": "<string>",
+    "lastModifiedUser": {
+      "avatarUrls": {},
+      "displayName": "<string>",
+      "accountType": "atlassian",
+      "active": true,
+      "timeZone": "<string>",
+      "groups": {},
+      "locale": "<string>",
+      "accountId": "<string>",
+      "emailAddress": "<string>",
+      "expand": "<string>",
+      "name": "<string>",
+      "self": "<string>",
+      "key": "<string>",
+      "applicationRoles": {}
+    },
+    "id": 30,
+    "lastModified": "<string>",
+    "issueTypeMappings": {}
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "The root schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "originalDefaultWorkflow": "<string>",
+        "description": "<string>",
+        "issueTypes": {},
+        "originalIssueTypeMappings": {},
+        "defaultWorkflow": "<string>",
+        "updateDraftIfNeeded": true,
+        "draft": true,
+        "name": "<string>",
+        "self": "<string>",
+        "lastModifiedUser": {
+          "avatarUrls": {},
+          "displayName": "<string>",
+          "accountType": "atlassian",
+          "active": true,
+          "timeZone": "<string>",
+          "groups": {},
+          "locale": "<string>",
+          "accountId": "<string>",
+          "emailAddress": "<string>",
+          "expand": "<string>",
+          "name": "<string>",
+          "self": "<string>",
+          "key": "<string>",
+          "applicationRoles": {}
+        },
+        "id": 30,
+        "lastModified": "<string>",
+        "issueTypeMappings": {}
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "id",
+        "name",
+        "description",
+        "defaultWorkflow",
+        "issueTypeMappings",
+        "originalDefaultWorkflow",
+        "originalIssueTypeMappings",
+        "draft",
+        "lastModifiedUser",
+        "lastModified",
+        "self",
+        "updateDraftIfNeeded",
+        "issueTypes"
+      ],
+      "properties": {
+        "originalDefaultWorkflow": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The originalDefaultWorkflow schema",
+          "$id": "#/items/anyOf/0/properties/originalDefaultWorkflow"
+        },
+        "description": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The description schema",
+          "$id": "#/items/anyOf/0/properties/description"
+        },
+        "issueTypes": {
+          "default": {},
+          "examples": [{}],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The issueTypes schema",
+          "required": [],
+          "$id": "#/items/anyOf/0/properties/issueTypes"
+        },
+        "originalIssueTypeMappings": {
+          "default": {},
+          "examples": [{}],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The originalIssueTypeMappings schema",
+          "required": [],
+          "$id": "#/items/anyOf/0/properties/originalIssueTypeMappings"
+        },
+        "defaultWorkflow": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The defaultWorkflow schema",
+          "$id": "#/items/anyOf/0/properties/defaultWorkflow"
+        },
+        "updateDraftIfNeeded": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The updateDraftIfNeeded schema",
+          "$id": "#/items/anyOf/0/properties/updateDraftIfNeeded"
+        },
+        "draft": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The draft schema",
+          "$id": "#/items/anyOf/0/properties/draft"
+        },
+        "name": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The name schema",
+          "$id": "#/items/anyOf/0/properties/name"
+        },
+        "self": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The self schema",
+          "$id": "#/items/anyOf/0/properties/self"
+        },
+        "lastModifiedUser": {
+          "default": {},
+          "examples": [{
+            "avatarUrls": {},
+            "displayName": "<string>",
+            "accountType": "atlassian",
+            "active": true,
+            "timeZone": "<string>",
+            "groups": {},
+            "locale": "<string>",
+            "accountId": "<string>",
+            "emailAddress": "<string>",
+            "expand": "<string>",
+            "name": "<string>",
+            "self": "<string>",
+            "key": "<string>",
+            "applicationRoles": {}
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The lastModifiedUser schema",
+          "required": [
+            "self",
+            "key",
+            "accountId",
+            "accountType",
+            "name",
+            "emailAddress",
+            "avatarUrls",
+            "displayName",
+            "active",
+            "timeZone",
+            "locale",
+            "groups",
+            "applicationRoles",
+            "expand"
+          ],
+          "properties": {
+            "avatarUrls": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The avatarUrls schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/avatarUrls"
+            },
+            "displayName": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The displayName schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/displayName"
+            },
+            "accountType": {
+              "default": "",
+              "examples": ["atlassian"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountType schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/accountType"
+            },
+            "active": {
+              "default": false,
+              "examples": [true],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "boolean",
+              "title": "The active schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/active"
+            },
+            "timeZone": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The timeZone schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/timeZone"
+            },
+            "groups": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The groups schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/groups"
+            },
+            "locale": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The locale schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/locale"
+            },
+            "accountId": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The accountId schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/accountId"
+            },
+            "emailAddress": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The emailAddress schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/emailAddress"
+            },
+            "expand": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The expand schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/expand"
+            },
+            "name": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The name schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/name"
+            },
+            "self": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The self schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/self"
+            },
+            "key": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The key schema",
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/key"
+            },
+            "applicationRoles": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The applicationRoles schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/lastModifiedUser/properties/applicationRoles"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/lastModifiedUser"
+        },
+        "id": {
+          "default": 0,
+          "examples": [30],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "integer",
+          "title": "The id schema",
+          "$id": "#/items/anyOf/0/properties/id"
+        },
+        "lastModified": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The lastModified schema",
+          "$id": "#/items/anyOf/0/properties/lastModified"
+        },
+        "issueTypeMappings": {
+          "default": {},
+          "examples": [{}],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The issueTypeMappings schema",
+          "required": [],
+          "$id": "#/items/anyOf/0/properties/issueTypeMappings"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

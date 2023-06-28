@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Transitions",
+  "definitions": {
+    "StatusCategory": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "colorName": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "Transitions": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "expand": {
+          "xml": {"attribute": true},
+          "readOnly": true,
+          "type": "string"
+        },
+        "transitions": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/IssueTransition"}
+        }
+      }
+    },
+    "StatusDetails": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "description": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "iconUrl": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "statusCategory": {
+          "allOf": [{"$ref": "#/definitions/StatusCategory"}],
+          "readOnly": true
+        }
+      }
+    },
+    "IssueTransition": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "hasScreen": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "isAvailable": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "expand": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "isGlobal": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "isInitial": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "looped": {"type": "boolean"},
+        "id": {"type": "string"},
+        "to": {
+          "allOf": [{"$ref": "#/definitions/StatusDetails"}],
+          "readOnly": true
+        },
+        "isConditional": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "fields": {
+          "readOnly": true,
+          "additionalProperties": true,
+          "type": "object"
+        }
+      }
+    }
+  }
+}

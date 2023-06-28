@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="workday-demoFlow" doc:id="38543049-a1fd-4572-b88a-431ddc6f8896" >
+		<ee:transform doc:name="Transform Message" doc:id="e09a2920-1d8e-4752-8606-3a369c02ee05" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 urn:com.workday/bsvc
+---
+{
+	ns0#Change_Government_IDs_Response: {
+		ns0#Government_Identifier_Event_Reference: {
+			ns0#ID: payload.ns0#Change_Government_IDs_Request.ns0#Change_Government_IDs_Data.ns0#Government_Identification_data.ns0#Government_ID as String
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/GroupName"}
+    },
+    "GroupName": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    }
+  }
+}

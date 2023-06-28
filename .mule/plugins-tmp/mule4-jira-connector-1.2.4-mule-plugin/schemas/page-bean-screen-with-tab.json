@@ -1,0 +1,187 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PageBeanScreenWithTab",
+  "definitions": {
+    "ProjectForScope": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "simplified": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "avatarUrls": {
+          "allOf": [{"$ref": "#/definitions/AvatarUrlsBean"}],
+          "readOnly": true
+        },
+        "projectCategory": {
+          "allOf": [{"$ref": "#/definitions/UpdatedProjectCategory"}],
+          "readOnly": true
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {"type": "string"},
+        "projectTypeKey": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "software",
+            "service_desk",
+            "business"
+          ]
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "AvatarUrlsBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "48x48": {
+          "format": "uri",
+          "type": "string"
+        },
+        "24x24": {
+          "format": "uri",
+          "type": "string"
+        },
+        "16x16": {
+          "format": "uri",
+          "type": "string"
+        },
+        "32x32": {
+          "format": "uri",
+          "type": "string"
+        }
+      }
+    },
+    "PageBeanScreenWithTab": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "total": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "isLast": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "nextPage": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "values": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/ScreenWithTab"}
+        },
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "startAt": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "Scope": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "project": {
+          "allOf": [{"$ref": "#/definitions/ProjectForScope"}],
+          "readOnly": true
+        },
+        "type": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "PROJECT",
+            "TEMPLATE"
+          ]
+        }
+      }
+    },
+    "ScreenableTab": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string"},
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "UpdatedProjectCategory": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "description": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "ScreenWithTab": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "tab": {"allOf": [{"$ref": "#/definitions/ScreenableTab"}]},
+        "scope": {"allOf": [{"$ref": "#/definitions/Scope"}]},
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "description": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    }
+  }
+}

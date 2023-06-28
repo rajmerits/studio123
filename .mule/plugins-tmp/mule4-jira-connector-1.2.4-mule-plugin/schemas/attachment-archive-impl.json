@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AttachmentArchiveImpl",
+  "definitions": {
+    "AttachmentArchiveEntry": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "entryIndex": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "size": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "name": {"type": "string"},
+        "mediaType": {"type": "string"},
+        "abbreviatedName": {"type": "string"}
+      }
+    },
+    "AttachmentArchiveImpl": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "totalEntryCount": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "entries": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/AttachmentArchiveEntry"}
+        }
+      }
+    }
+  }
+}

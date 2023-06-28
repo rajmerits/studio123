@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/FieldDetails"}
+    },
+    "ProjectForScope": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "simplified": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "avatarUrls": {
+          "allOf": [{"$ref": "#/definitions/AvatarUrlsBean"}],
+          "readOnly": true
+        },
+        "projectCategory": {
+          "allOf": [{"$ref": "#/definitions/UpdatedProjectCategory"}],
+          "readOnly": true
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {"type": "string"},
+        "projectTypeKey": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "software",
+            "service_desk",
+            "business"
+          ]
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "AvatarUrlsBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "48x48": {
+          "format": "uri",
+          "type": "string"
+        },
+        "24x24": {
+          "format": "uri",
+          "type": "string"
+        },
+        "16x16": {
+          "format": "uri",
+          "type": "string"
+        },
+        "32x32": {
+          "format": "uri",
+          "type": "string"
+        }
+      }
+    },
+    "Scope": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "project": {
+          "allOf": [{"$ref": "#/definitions/ProjectForScope"}],
+          "readOnly": true
+        },
+        "type": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "PROJECT",
+            "TEMPLATE"
+          ]
+        }
+      }
+    },
+    "FieldDetails": {
+      "xml": {"name": "field"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "schema": {"allOf": [{"$ref": "#/definitions/JsonTypeBean"}]},
+        "navigable": {"type": "boolean"},
+        "orderable": {"type": "boolean"},
+        "custom": {"type": "boolean"},
+        "scope": {"allOf": [{"$ref": "#/definitions/Scope"}]},
+        "name": {"type": "string"},
+        "clauseNames": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "id": {"type": "string"},
+        "key": {"type": "string"},
+        "searchable": {"type": "boolean"}
+      }
+    },
+    "JsonTypeBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "system": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "configuration": {
+          "readOnly": true,
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "custom": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "type": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "items": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "customId": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "UpdatedProjectCategory": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "description": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    }
+  }
+}

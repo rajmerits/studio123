@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssuePickerSuggestions",
+  "definitions": {
+    "IssuePickerSuggestions": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"sections": {
+        "readOnly": true,
+        "type": "array",
+        "items": {"$ref": "#/definitions/IssuePickerSuggestionsIssueType"}
+      }}
+    },
+    "IssuePickerSuggestionsIssueType": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "msg": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "sub": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "label": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "issues": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/SuggestedIssue"}
+        }
+      }
+    },
+    "SuggestedIssue": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "summary": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "img": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "keyHtml": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "summaryText": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    }
+  }
+}

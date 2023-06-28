@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueLinkTypes",
+  "definitions": {
+    "IssueLinkType": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "inward": {"type": "string"},
+        "name": {"type": "string"},
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {"type": "string"},
+        "outward": {"type": "string"}
+      }
+    },
+    "IssueLinkTypes": {
+      "xml": {"name": "issueLinkTypes"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"issueLinkTypes": {
+        "xml": {"name": "issueLinkTypes"},
+        "readOnly": true,
+        "type": "array",
+        "items": {"$ref": "#/definitions/IssueLinkType"}
+      }}
+    }
+  }
+}

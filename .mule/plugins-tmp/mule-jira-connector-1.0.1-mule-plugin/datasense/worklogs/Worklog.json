@@ -1,0 +1,480 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "Worklog",
+  "required": [
+    "self",
+    "author",
+    "updateAuthor",
+    "created",
+    "updated",
+    "visibility",
+    "started",
+    "timeSpent",
+    "timeSpentSeconds",
+    "id",
+    "issueId",
+    "properties"
+  ],
+  "properties": {
+    "self": {
+      "$id": "#/properties/self",
+      "type": "string",
+      "title": "The Self Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "author": {
+      "$id": "#/properties/author",
+      "type": "object",
+      "title": "The Author Schema",
+      "required": [
+        "self",
+        "name",
+        "key",
+        "accountId",
+        "emailAddress",
+        "avatarUrls",
+        "displayName",
+        "active",
+        "timeZone",
+        "accountType"
+      ],
+      "properties": {
+        "self": {
+          "$id": "#/properties/author/properties/self",
+          "type": "string",
+          "title": "The Self Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/author/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "key": {
+          "$id": "#/properties/author/properties/key",
+          "type": "string",
+          "title": "The Key Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "accountId": {
+          "$id": "#/properties/author/properties/accountId",
+          "type": "string",
+          "title": "The Accountid Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "emailAddress": {
+          "$id": "#/properties/author/properties/emailAddress",
+          "type": "string",
+          "title": "The Emailaddress Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "avatarUrls": {
+          "$id": "#/properties/author/properties/avatarUrls",
+          "type": "object",
+          "title": "The Avatarurls Schema",
+          "required": [
+            "16x16",
+            "24x24",
+            "32x32",
+            "48x48"
+          ],
+          "properties": {
+            "16x16": {
+              "$id": "#/properties/author/properties/avatarUrls/properties/16x16",
+              "type": "string",
+              "title": "The 16x16 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "24x24": {
+              "$id": "#/properties/author/properties/avatarUrls/properties/24x24",
+              "type": "string",
+              "title": "The 24x24 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "32x32": {
+              "$id": "#/properties/author/properties/avatarUrls/properties/32x32",
+              "type": "string",
+              "title": "The 32x32 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "48x48": {
+              "$id": "#/properties/author/properties/avatarUrls/properties/48x48",
+              "type": "string",
+              "title": "The 48x48 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "displayName": {
+          "$id": "#/properties/author/properties/displayName",
+          "type": "string",
+          "title": "The Displayname Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "active": {
+          "$id": "#/properties/author/properties/active",
+          "type": "boolean",
+          "title": "The Active Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "timeZone": {
+          "$id": "#/properties/author/properties/timeZone",
+          "type": "string",
+          "title": "The Timezone Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "accountType": {
+          "$id": "#/properties/author/properties/accountType",
+          "type": "string",
+          "title": "The Accounttype Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "updateAuthor": {
+      "$id": "#/properties/updateAuthor",
+      "type": "object",
+      "title": "The Updateauthor Schema",
+      "required": [
+        "self",
+        "name",
+        "key",
+        "accountId",
+        "emailAddress",
+        "avatarUrls",
+        "displayName",
+        "active",
+        "timeZone",
+        "accountType"
+      ],
+      "properties": {
+        "self": {
+          "$id": "#/properties/updateAuthor/properties/self",
+          "type": "string",
+          "title": "The Self Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/updateAuthor/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "key": {
+          "$id": "#/properties/updateAuthor/properties/key",
+          "type": "string",
+          "title": "The Key Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "accountId": {
+          "$id": "#/properties/updateAuthor/properties/accountId",
+          "type": "string",
+          "title": "The Accountid Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "emailAddress": {
+          "$id": "#/properties/updateAuthor/properties/emailAddress",
+          "type": "string",
+          "title": "The Emailaddress Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "avatarUrls": {
+          "$id": "#/properties/updateAuthor/properties/avatarUrls",
+          "type": "object",
+          "title": "The Avatarurls Schema",
+          "required": [
+            "16x16",
+            "24x24",
+            "32x32",
+            "48x48"
+          ],
+          "properties": {
+            "16x16": {
+              "$id": "#/properties/updateAuthor/properties/avatarUrls/properties/16x16",
+              "type": "string",
+              "title": "The 16x16 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "24x24": {
+              "$id": "#/properties/updateAuthor/properties/avatarUrls/properties/24x24",
+              "type": "string",
+              "title": "The 24x24 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "32x32": {
+              "$id": "#/properties/updateAuthor/properties/avatarUrls/properties/32x32",
+              "type": "string",
+              "title": "The 32x32 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "48x48": {
+              "$id": "#/properties/updateAuthor/properties/avatarUrls/properties/48x48",
+              "type": "string",
+              "title": "The 48x48 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "displayName": {
+          "$id": "#/properties/updateAuthor/properties/displayName",
+          "type": "string",
+          "title": "The Displayname Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "active": {
+          "$id": "#/properties/updateAuthor/properties/active",
+          "type": "boolean",
+          "title": "The Active Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "timeZone": {
+          "$id": "#/properties/updateAuthor/properties/timeZone",
+          "type": "string",
+          "title": "The Timezone Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "accountType": {
+          "$id": "#/properties/updateAuthor/properties/accountType",
+          "type": "string",
+          "title": "The Accounttype Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "created": {
+      "$id": "#/properties/created",
+      "type": "string",
+      "title": "The Created Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "updated": {
+      "$id": "#/properties/updated",
+      "type": "string",
+      "title": "The Updated Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "visibility": {
+      "$id": "#/properties/visibility",
+      "type": "object",
+      "title": "The Visibility Schema",
+      "required": [
+        "type",
+        "value"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/visibility/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "group"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "value": {
+          "$id": "#/properties/visibility/properties/value",
+          "type": "string",
+          "title": "The Value Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "started": {
+      "$id": "#/properties/started",
+      "type": "string",
+      "title": "The Started Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "timeSpent": {
+      "$id": "#/properties/timeSpent",
+      "type": "string",
+      "title": "The Timespent Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "timeSpentSeconds": {
+      "$id": "#/properties/timeSpentSeconds",
+      "type": "integer",
+      "title": "The Timespentseconds Schema",
+      "default": 0,
+      "examples": [
+        192
+      ]
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The Id Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "issueId": {
+      "$id": "#/properties/issueId",
+      "type": "string",
+      "title": "The Issueid Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "properties": {
+      "$id": "#/properties/properties",
+      "type": "array",
+      "title": "The Properties Schema",
+      "items": {
+        "$id": "#/properties/properties/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "key"
+        ],
+        "properties": {
+          "key": {
+            "$id": "#/properties/properties/items/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

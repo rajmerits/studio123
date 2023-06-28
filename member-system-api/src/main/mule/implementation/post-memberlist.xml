@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="post-memberlistFlow" doc:id="f0a5c947-bda0-4673-bf3e-d054774ef348" >
+		<logger level="INFO" doc:name="Logger" doc:id="fb49f5a9-e022-4d3c-a7b8-00fd33087fc0" />
+	</flow>
+</mule>

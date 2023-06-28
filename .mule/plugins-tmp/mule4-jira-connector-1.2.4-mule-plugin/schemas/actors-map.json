@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ActorsMap",
+  "definitions": {"ActorsMap": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "user": {
+        "type": "array",
+        "items": {"type": "string"}
+      },
+      "group": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    }
+  }}
+}

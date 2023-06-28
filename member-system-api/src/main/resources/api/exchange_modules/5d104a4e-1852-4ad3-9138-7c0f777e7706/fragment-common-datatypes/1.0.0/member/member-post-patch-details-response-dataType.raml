@@ -1,0 +1,20 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  msg:
+    required: true
+    type: string
+  code:
+    required: true
+    type: integer
+  data:
+    required: true
+    type: object
+    properties:
+      memberId:
+        required: true
+        type: string 
+  success:
+    required: true
+    type: string

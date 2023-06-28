@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/UnrestrictedUserEmail",
+  "definitions": {"UnrestrictedUserEmail": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "accountId": {"type": "string"},
+      "email": {"type": "string"}
+    }
+  }}
+}

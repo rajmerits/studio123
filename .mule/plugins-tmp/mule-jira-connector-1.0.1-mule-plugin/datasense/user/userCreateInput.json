@@ -1,0 +1,444 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "User create input schema",
+  "required": [
+    "emailAddress",
+    "displayName"
+  ],
+  "properties": {
+    "self": {
+      "$id": "#/properties/self",
+      "type": "string",
+      "title": "The Self Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "key": {
+      "$id": "#/properties/key",
+      "type": "string",
+      "title": "The Key Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "accountId": {
+      "$id": "#/properties/accountId",
+      "type": "string",
+      "title": "The Accountid Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "accountType": {
+      "$id": "#/properties/accountType",
+      "type": "string",
+      "title": "The Accounttype Schema",
+      "default": "",
+      "examples": [
+        "atlassian"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "emailAddress": {
+      "$id": "#/properties/emailAddress",
+      "type": "string",
+      "title": "The Emailaddress Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "avatarUrls": {
+      "$id": "#/properties/avatarUrls",
+      "type": "object",
+      "title": "The Avatarurls Schema",
+      "required": [
+        "16x16",
+        "24x24",
+        "32x32",
+        "48x48"
+      ],
+      "properties": {
+        "16x16": {
+          "$id": "#/properties/avatarUrls/properties/16x16",
+          "type": "string",
+          "title": "The 16x16 Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "24x24": {
+          "$id": "#/properties/avatarUrls/properties/24x24",
+          "type": "string",
+          "title": "The 24x24 Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "32x32": {
+          "$id": "#/properties/avatarUrls/properties/32x32",
+          "type": "string",
+          "title": "The 32x32 Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "48x48": {
+          "$id": "#/properties/avatarUrls/properties/48x48",
+          "type": "string",
+          "title": "The 48x48 Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "displayName": {
+      "$id": "#/properties/displayName",
+      "type": "string",
+      "title": "The Displayname Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "active": {
+      "$id": "#/properties/active",
+      "type": "boolean",
+      "title": "The Active Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "timeZone": {
+      "$id": "#/properties/timeZone",
+      "type": "string",
+      "title": "The Timezone Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "locale": {
+      "$id": "#/properties/locale",
+      "type": "string",
+      "title": "The Locale Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "groups": {
+      "$id": "#/properties/groups",
+      "type": "object",
+      "title": "The Groups Schema",
+      "required": [
+        "size",
+        "items",
+        "pagingCallback",
+        "callback",
+        "max-results"
+      ],
+      "properties": {
+        "size": {
+          "$id": "#/properties/groups/properties/size",
+          "type": "integer",
+          "title": "The Size Schema",
+          "default": 0,
+          "examples": [
+            2154
+          ]
+        },
+        "items": {
+          "$id": "#/properties/groups/properties/items",
+          "type": "array",
+          "title": "The Items Schema",
+          "items": {
+            "$id": "#/properties/groups/properties/items/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "name",
+              "self"
+            ],
+            "properties": {
+              "name": {
+                "$id": "#/properties/groups/properties/items/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "examples": [
+                  "string"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "self": {
+                "$id": "#/properties/groups/properties/items/items/properties/self",
+                "type": "string",
+                "title": "The Self Schema",
+                "default": "",
+                "examples": [
+                  "string"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        },
+        "pagingCallback": {
+          "$id": "#/properties/groups/properties/pagingCallback",
+          "type": "object",
+          "title": "The Pagingcallback Schema"
+        },
+        "callback": {
+          "$id": "#/properties/groups/properties/callback",
+          "type": "object",
+          "title": "The Callback Schema"
+        },
+        "max-results": {
+          "$id": "#/properties/groups/properties/max-results",
+          "type": "integer",
+          "title": "The Max-results Schema",
+          "default": 0,
+          "examples": [
+            2154
+          ]
+        }
+      }
+    },
+    "applicationRoles": {
+      "$id": "#/properties/applicationRoles",
+      "type": "object",
+      "title": "The Applicationroles Schema",
+      "required": [
+        "size",
+        "items",
+        "pagingCallback",
+        "callback",
+        "max-results"
+      ],
+      "properties": {
+        "size": {
+          "$id": "#/properties/applicationRoles/properties/size",
+          "type": "integer",
+          "title": "The Size Schema",
+          "default": 0,
+          "examples": [
+            2154
+          ]
+        },
+        "items": {
+          "$id": "#/properties/applicationRoles/properties/items",
+          "type": "array",
+          "title": "The Items Schema",
+          "items": {
+            "$id": "#/properties/applicationRoles/properties/items/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "key",
+              "groups",
+              "name",
+              "defaultGroups",
+              "selectedByDefault",
+              "defined",
+              "numberOfSeats",
+              "remainingSeats",
+              "userCount",
+              "userCountDescription",
+              "hasUnlimitedSeats",
+              "platform"
+            ],
+            "properties": {
+              "key": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/key",
+                "type": "string",
+                "title": "The Key Schema",
+                "default": "",
+                "examples": [
+                  "string"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "groups": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/groups",
+                "type": "array",
+                "title": "The Groups Schema",
+                "items": {
+                  "$id": "#/properties/applicationRoles/properties/items/items/properties/groups/items",
+                  "type": "string",
+                  "title": "The Items Schema",
+                  "default": "",
+                  "examples": [
+                    "string"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              },
+              "name": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "examples": [
+                  "string"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "defaultGroups": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/defaultGroups",
+                "type": "array",
+                "title": "The Defaultgroups Schema",
+                "items": {
+                  "$id": "#/properties/applicationRoles/properties/items/items/properties/defaultGroups/items",
+                  "type": "string",
+                  "title": "The Items Schema",
+                  "default": "",
+                  "examples": [
+                    "string"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              },
+              "selectedByDefault": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/selectedByDefault",
+                "type": "boolean",
+                "title": "The Selectedbydefault Schema",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              },
+              "defined": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/defined",
+                "type": "boolean",
+                "title": "The Defined Schema",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              },
+              "numberOfSeats": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/numberOfSeats",
+                "type": "integer",
+                "title": "The Numberofseats Schema",
+                "default": 0,
+                "examples": [
+                  43
+                ]
+              },
+              "remainingSeats": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/remainingSeats",
+                "type": "integer",
+                "title": "The Remainingseats Schema",
+                "default": 0,
+                "examples": [
+                  45
+                ]
+              },
+              "userCount": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/userCount",
+                "type": "integer",
+                "title": "The Usercount Schema",
+                "default": 0,
+                "examples": [
+                  50
+                ]
+              },
+              "userCountDescription": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/userCountDescription",
+                "type": "string",
+                "title": "The Usercountdescription Schema",
+                "default": "",
+                "examples": [
+                  "string"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "hasUnlimitedSeats": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/hasUnlimitedSeats",
+                "type": "boolean",
+                "title": "The Hasunlimitedseats Schema",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              },
+              "platform": {
+                "$id": "#/properties/applicationRoles/properties/items/items/properties/platform",
+                "type": "boolean",
+                "title": "The Platform Schema",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              }
+            }
+          }
+        },
+        "pagingCallback": {
+          "$id": "#/properties/applicationRoles/properties/pagingCallback",
+          "type": "object",
+          "title": "The Pagingcallback Schema"
+        },
+        "callback": {
+          "$id": "#/properties/applicationRoles/properties/callback",
+          "type": "object",
+          "title": "The Callback Schema"
+        },
+        "max-results": {
+          "$id": "#/properties/applicationRoles/properties/max-results",
+          "type": "integer",
+          "title": "The Max-results Schema",
+          "default": 0,
+          "examples": [
+            2154
+          ]
+        }
+      }
+    },
+    "expand": {
+      "$id": "#/properties/expand",
+      "type": "string",
+      "title": "The Expand Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

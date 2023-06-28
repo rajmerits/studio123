@@ -1,0 +1,10 @@
+{
+  "msg": "failed operation",
+  "code": 500,
+  "success": false,
+  "error": {
+    "type": "SERVER_ERROR",
+    "title": "Internal server error",
+    "details": "The server encountered an unexpected condition which prevented it from fulfilling the request"
+  }
+}

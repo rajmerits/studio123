@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PermissionGrants",
+  "definitions": {
+    "PermissionGrant": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "holder": {"allOf": [{"$ref": "#/definitions/PermissionHolder"}]},
+        "permission": {"type": "string"},
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "PermissionHolder": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "expand": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "parameter": {"type": "string"},
+        "type": {"type": "string"}
+      }
+    },
+    "PermissionGrants": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "expand": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "permissions": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/PermissionGrant"}
+        }
+      }
+    }
+  }
+}

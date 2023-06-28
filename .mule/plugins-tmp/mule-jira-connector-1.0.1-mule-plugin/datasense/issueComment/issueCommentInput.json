@@ -1,0 +1,161 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "Create Update Issue comment schema",
+  "required": [
+    "body",
+  ],
+  "properties": {
+    "visibility": {
+      "$id": "#/properties/visibility",
+      "type": "object",
+      "title": "The Visibility Schema",
+      "required": [
+        "type",
+        "value"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/visibility/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "role"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "value": {
+          "$id": "#/properties/visibility/properties/value",
+          "type": "string",
+          "title": "The Value Schema",
+          "default": "",
+          "examples": [
+            "Administrators"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "body": {
+      "$id": "#/properties/body",
+      "type": "object",
+      "title": "The Body Schema",
+      "required": [
+        "type",
+        "version",
+        "content"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/body/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "doc"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "version": {
+          "$id": "#/properties/body/properties/version",
+          "type": "integer",
+          "title": "The Version Schema",
+          "default": 0,
+          "examples": [
+            1
+          ]
+        },
+        "content": {
+          "$id": "#/properties/body/properties/content",
+          "type": "array",
+          "title": "The Content Schema",
+          "items": {
+            "$id": "#/properties/body/properties/content/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "type",
+              "content"
+            ],
+            "properties": {
+              "type": {
+                "$id": "#/properties/body/properties/content/items/properties/type",
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "examples": [
+                  "paragraph"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "content": {
+                "$id": "#/properties/body/properties/content/items/properties/content",
+                "type": "array",
+                "title": "The Content Schema",
+                "items": {
+                  "$id": "#/properties/body/properties/content/items/properties/content/items",
+                  "type": "object",
+                  "title": "The Items Schema",
+                  "required": [
+                    "text",
+                    "type"
+                  ],
+                  "properties": {
+                    "text": {
+                      "$id": "#/properties/body/properties/content/items/properties/content/items/properties/text",
+                      "type": "string",
+                      "title": "The Text Schema",
+                      "default": "",
+                      "examples": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper."
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "type": {
+                      "$id": "#/properties/body/properties/content/items/properties/content/items/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema",
+                      "default": "",
+                      "examples": [
+                        "text"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "properties": {
+      "$id": "#/properties/properties",
+      "type": "array",
+      "title": "The Properties Schema",
+      "items": {
+        "$id": "#/properties/properties/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "key"
+        ],
+        "properties": {
+          "key": {
+            "$id": "#/properties/properties/items/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+              "string"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

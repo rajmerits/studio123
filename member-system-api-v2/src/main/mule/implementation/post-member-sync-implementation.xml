@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="post-member-sync-implementationFlow" doc:id="80d39a5e-ecd7-4127-9d44-37e40190a13a" >
+		<logger level="INFO" doc:name="Logger" doc:id="b553bf98-49a8-4781-94d6-cbde9c109091" message="post membar sync impl"/>
+	</flow>
+</mule>

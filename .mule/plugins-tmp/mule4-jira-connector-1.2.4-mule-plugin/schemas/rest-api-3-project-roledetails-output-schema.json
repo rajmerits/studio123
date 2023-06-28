@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/ProjectRoleDetails"}
+    },
+    "ProjectForScope": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "simplified": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "avatarUrls": {
+          "allOf": [{"$ref": "#/definitions/AvatarUrlsBean"}],
+          "readOnly": true
+        },
+        "projectCategory": {
+          "allOf": [{"$ref": "#/definitions/UpdatedProjectCategory"}],
+          "readOnly": true
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {"type": "string"},
+        "projectTypeKey": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "software",
+            "service_desk",
+            "business"
+          ]
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "AvatarUrlsBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "48x48": {
+          "format": "uri",
+          "type": "string"
+        },
+        "24x24": {
+          "format": "uri",
+          "type": "string"
+        },
+        "16x16": {
+          "format": "uri",
+          "type": "string"
+        },
+        "32x32": {
+          "format": "uri",
+          "type": "string"
+        }
+      }
+    },
+    "ProjectRoleDetails": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "roleConfigurable": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "default": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "scope": {
+          "allOf": [{"$ref": "#/definitions/Scope"}],
+          "readOnly": true
+        },
+        "name": {"type": "string"},
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "description": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "admin": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "translatedName": {"type": "string"}
+      }
+    },
+    "Scope": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "project": {
+          "allOf": [{"$ref": "#/definitions/ProjectForScope"}],
+          "readOnly": true
+        },
+        "type": {
+          "readOnly": true,
+          "type": "string",
+          "enum": [
+            "PROJECT",
+            "TEMPLATE"
+          ]
+        }
+      }
+    },
+    "UpdatedProjectCategory": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "description": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    }
+  }
+}

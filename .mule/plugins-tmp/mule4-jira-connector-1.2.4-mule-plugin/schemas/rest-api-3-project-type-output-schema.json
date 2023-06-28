@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/ProjectType"}
+    },
+    "ProjectType": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "descriptionI18nKey": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "color": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "icon": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "formattedKey": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/OrderOfCustomFieldOptions",
+  "definitions": {"OrderOfCustomFieldOptions": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["customFieldOptionIds"],
+    "properties": {
+      "after": {"type": "string"},
+      "position": {
+        "type": "string",
+        "enum": [
+          "First",
+          "Last"
+        ]
+      },
+      "customFieldOptionIds": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    }
+  }}
+}

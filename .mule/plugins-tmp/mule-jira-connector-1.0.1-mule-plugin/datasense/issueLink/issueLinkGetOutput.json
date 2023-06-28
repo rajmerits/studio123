@@ -1,0 +1,831 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "Get IssueLink Output Schema",
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The Id Schema",
+      "default": "",
+      "examples": [
+        "10001"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "type": {
+      "$id": "#/properties/type",
+      "type": "object",
+      "title": "The Type Schema",
+      "required": [
+        "id",
+        "name",
+        "inward",
+        "outward",
+        "self"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/type/properties/id",
+          "type": "string",
+          "title": "The Id Schema",
+          "default": "",
+          "examples": [
+            "1000"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/type/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "Duplicate"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "inward": {
+          "$id": "#/properties/type/properties/inward",
+          "type": "string",
+          "title": "The Inward Schema",
+          "default": "",
+          "examples": [
+            "Duplicated by"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "outward": {
+          "$id": "#/properties/type/properties/outward",
+          "type": "string",
+          "title": "The Outward Schema",
+          "default": "",
+          "examples": [
+            "Duplicates"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "self": {
+          "$id": "#/properties/type/properties/self",
+          "type": "string",
+          "title": "The Self Schema",
+          "default": "",
+          "examples": [
+            "http://your-domain.atlassian.net/rest/api/3/issueLinkType/1000"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "inwardIssue": {
+      "$id": "#/properties/inwardIssue",
+      "type": "object",
+      "title": "The Inwardissue Schema",
+      "required": [
+        "id",
+        "key",
+        "self",
+        "fields"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/inwardIssue/properties/id",
+          "type": "string",
+          "title": "The Id Schema",
+          "default": "",
+          "examples": [
+            "10004"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "key": {
+          "$id": "#/properties/inwardIssue/properties/key",
+          "type": "string",
+          "title": "The Key Schema",
+          "default": "",
+          "examples": [
+            "PR-3"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "self": {
+          "$id": "#/properties/inwardIssue/properties/self",
+          "type": "string",
+          "title": "The Self Schema",
+          "default": "",
+          "examples": [
+            "http://your-domain.atlassian.net/rest/api/3/issue/PR-3"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "fields": {
+          "$id": "#/properties/inwardIssue/properties/fields",
+          "type": "object",
+          "title": "The Fields Schema",
+          "required": [
+            "status",
+            "priority",
+            "issuetype"
+          ],
+          "properties": {
+            "status": {
+              "$id": "#/properties/inwardIssue/properties/fields/properties/status",
+              "type": "object",
+              "title": "The Status Schema",
+              "required": [
+                "self",
+                "description",
+                "iconUrl",
+                "name",
+                "id",
+                "statusCategory"
+              ],
+              "properties": {
+                "self": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/status/properties/self",
+                  "type": "string",
+                  "title": "The Self Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/rest/api/3/status/5"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "description": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/status/properties/description",
+                  "type": "string",
+                  "title": "The Description Schema",
+                  "default": "",
+                  "examples": [
+                    "The issue is closed."
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "iconUrl": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/status/properties/iconUrl",
+                  "type": "string",
+                  "title": "The Iconurl Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/images/icons/closed.gif"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "name": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/status/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "Closed"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "id": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/status/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "5"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "statusCategory": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/status/properties/statusCategory",
+                  "type": "object",
+                  "title": "The Statuscategory Schema",
+                  "required": [
+                    "self",
+                    "id",
+                    "key",
+                    "colorName"
+                  ],
+                  "properties": {
+                    "self": {
+                      "$id": "#/properties/inwardIssue/properties/fields/properties/status/properties/statusCategory/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "http://your-domain.atlassian.net/rest/api/3/statuscategory/9"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "id": {
+                      "$id": "#/properties/inwardIssue/properties/fields/properties/status/properties/statusCategory/properties/id",
+                      "type": "integer",
+                      "title": "The Id Schema",
+                      "default": 0,
+                      "examples": [
+                        9
+                      ]
+                    },
+                    "key": {
+                      "$id": "#/properties/inwardIssue/properties/fields/properties/status/properties/statusCategory/properties/key",
+                      "type": "string",
+                      "title": "The Key Schema",
+                      "default": "",
+                      "examples": [
+                        "completed"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "colorName": {
+                      "$id": "#/properties/inwardIssue/properties/fields/properties/status/properties/statusCategory/properties/colorName",
+                      "type": "string",
+                      "title": "The Colorname Schema",
+                      "default": "",
+                      "examples": [
+                        "green"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            },
+            "priority": {
+              "$id": "#/properties/inwardIssue/properties/fields/properties/priority",
+              "type": "object",
+              "title": "The Priority Schema",
+              "required": [
+                "self",
+                "statusColor",
+                "description",
+                "iconUrl",
+                "name",
+                "id"
+              ],
+              "properties": {
+                "self": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/priority/properties/self",
+                  "type": "string",
+                  "title": "The Self Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/rest/api/3/priority/5"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "statusColor": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/priority/properties/statusColor",
+                  "type": "string",
+                  "title": "The Statuscolor Schema",
+                  "default": "",
+                  "examples": [
+                    "#cfcfcf"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "description": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/priority/properties/description",
+                  "type": "string",
+                  "title": "The Description Schema",
+                  "default": "",
+                  "examples": [
+                    "Very little impact."
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "iconUrl": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/priority/properties/iconUrl",
+                  "type": "string",
+                  "title": "The Iconurl Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/images/icons/priorities/trivial.png"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "name": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/priority/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "Trivial"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "id": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/priority/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "2"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            },
+            "issuetype": {
+              "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype",
+              "type": "object",
+              "title": "The Issuetype Schema",
+              "required": [
+                "self",
+                "id",
+                "description",
+                "iconUrl",
+                "name",
+                "subtask",
+                "avatarId",
+                "entityId",
+                "scope"
+              ],
+              "properties": {
+                "self": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/self",
+                  "type": "string",
+                  "title": "The Self Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/rest/api/3/issueType/1"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "id": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "1"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "description": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/description",
+                  "type": "string",
+                  "title": "The Description Schema",
+                  "default": "",
+                  "examples": [
+                    "A problem with the software."
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "iconUrl": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/iconUrl",
+                  "type": "string",
+                  "title": "The Iconurl Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype\","
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "name": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "Bug"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "subtask": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/subtask",
+                  "type": "boolean",
+                  "title": "The Subtask Schema",
+                  "default": false,
+                  "examples": [
+                    false
+                  ]
+                },
+                "avatarId": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/avatarId",
+                  "type": "integer",
+                  "title": "The Avatarid Schema",
+                  "default": 0,
+                  "examples": [
+                    10002
+                  ]
+                },
+                "entityId": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/entityId",
+                  "type": "string",
+                  "title": "The Entityid Schema",
+                  "default": "",
+                  "examples": [
+                    "9d7dd6f7-e8b6-4247-954b-7b2c9b2a5ba2"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "scope": {
+                  "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/scope",
+                  "type": "object",
+                  "title": "The Scope Schema",
+                  "required": [
+                    "type",
+                    "project"
+                  ],
+                  "properties": {
+                    "type": {
+                      "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/scope/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema",
+                      "default": "",
+                      "examples": [
+                        "PROJECT"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "project": {
+                      "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/scope/properties/project",
+                      "type": "object",
+                      "title": "The Project Schema",
+                      "required": [
+                        "id",
+                        "key",
+                        "name"
+                      ],
+                      "properties": {
+                        "id": {
+                          "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/scope/properties/project/properties/id",
+                          "type": "string",
+                          "title": "The Id Schema",
+                          "default": "",
+                          "examples": [
+                            "10000"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "key": {
+                          "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/scope/properties/project/properties/key",
+                          "type": "string",
+                          "title": "The Key Schema",
+                          "default": "",
+                          "examples": [
+                            "KEY"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "name": {
+                          "$id": "#/properties/inwardIssue/properties/fields/properties/issuetype/properties/scope/properties/project/properties/name",
+                          "type": "string",
+                          "title": "The Name Schema",
+                          "default": "",
+                          "examples": [
+                            "Next Gen Project"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "outwardIssue": {
+      "$id": "#/properties/outwardIssue",
+      "type": "object",
+      "title": "The Outwardissue Schema",
+      "required": [
+        "id",
+        "key",
+        "self",
+        "fields"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/outwardIssue/properties/id",
+          "type": "string",
+          "title": "The Id Schema",
+          "default": "",
+          "examples": [
+            "10004L"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "key": {
+          "$id": "#/properties/outwardIssue/properties/key",
+          "type": "string",
+          "title": "The Key Schema",
+          "default": "",
+          "examples": [
+            "PR-2"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "self": {
+          "$id": "#/properties/outwardIssue/properties/self",
+          "type": "string",
+          "title": "The Self Schema",
+          "default": "",
+          "examples": [
+            "http://your-domain.atlassian.net/rest/api/3/issue/PR-2"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "fields": {
+          "$id": "#/properties/outwardIssue/properties/fields",
+          "type": "object",
+          "title": "The Fields Schema",
+          "required": [
+            "status",
+            "priority",
+            "issuetype"
+          ],
+          "properties": {
+            "status": {
+              "$id": "#/properties/outwardIssue/properties/fields/properties/status",
+              "type": "object",
+              "title": "The Status Schema",
+              "required": [
+                "self",
+                "description",
+                "iconUrl",
+                "name",
+                "id",
+                "statusCategory"
+              ],
+              "properties": {
+                "self": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/self",
+                  "type": "string",
+                  "title": "The Self Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/rest/api/3/status/10000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "description": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/description",
+                  "type": "string",
+                  "title": "The Description Schema",
+                  "default": "",
+                  "examples": [
+                    "The issue is currently being worked on."
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "iconUrl": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/iconUrl",
+                  "type": "string",
+                  "title": "The Iconurl Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/images/icons/progress.gif"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "name": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "In Progress"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "id": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "10000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "statusCategory": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/statusCategory",
+                  "type": "object",
+                  "title": "The Statuscategory Schema",
+                  "required": [
+                    "self",
+                    "id",
+                    "key",
+                    "colorName",
+                    "name"
+                  ],
+                  "properties": {
+                    "self": {
+                      "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/statusCategory/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "http://your-domain.atlassian.net/rest/api/3/statuscategory/1"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "id": {
+                      "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/statusCategory/properties/id",
+                      "type": "integer",
+                      "title": "The Id Schema",
+                      "default": 0,
+                      "examples": [
+                        1
+                      ]
+                    },
+                    "key": {
+                      "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/statusCategory/properties/key",
+                      "type": "string",
+                      "title": "The Key Schema",
+                      "default": "",
+                      "examples": [
+                        "in-flight"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "colorName": {
+                      "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/statusCategory/properties/colorName",
+                      "type": "string",
+                      "title": "The Colorname Schema",
+                      "default": "",
+                      "examples": [
+                        "yellow"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "name": {
+                      "$id": "#/properties/outwardIssue/properties/fields/properties/status/properties/statusCategory/properties/name",
+                      "type": "string",
+                      "title": "The Name Schema",
+                      "default": "",
+                      "examples": [
+                        "In Progress"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            },
+            "priority": {
+              "$id": "#/properties/outwardIssue/properties/fields/properties/priority",
+              "type": "object",
+              "title": "The Priority Schema",
+              "required": [
+                "self",
+                "statusColor",
+                "description",
+                "iconUrl",
+                "name",
+                "id"
+              ],
+              "properties": {
+                "self": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/priority/properties/self",
+                  "type": "string",
+                  "title": "The Self Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/rest/api/3/priority/3"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "statusColor": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/priority/properties/statusColor",
+                  "type": "string",
+                  "title": "The Statuscolor Schema",
+                  "default": "",
+                  "examples": [
+                    "#009900"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "description": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/priority/properties/description",
+                  "type": "string",
+                  "title": "The Description Schema",
+                  "default": "",
+                  "examples": [
+                    "Major loss of function."
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "iconUrl": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/priority/properties/iconUrl",
+                  "type": "string",
+                  "title": "The Iconurl Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/images/icons/priorities/major.png"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "name": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/priority/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "Major"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "id": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/priority/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "1"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            },
+            "issuetype": {
+              "$id": "#/properties/outwardIssue/properties/fields/properties/issuetype",
+              "type": "object",
+              "title": "The Issuetype Schema",
+              "required": [
+                "self",
+                "id",
+                "description",
+                "iconUrl",
+                "name",
+                "subtask",
+                "avatarId"
+              ],
+              "properties": {
+                "self": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/issuetype/properties/self",
+                  "type": "string",
+                  "title": "The Self Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net/rest/api/3/issueType/3"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "id": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/issuetype/properties/id",
+                  "type": "string",
+                  "title": "The Id Schema",
+                  "default": "",
+                  "examples": [
+                    "3"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "description": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/issuetype/properties/description",
+                  "type": "string",
+                  "title": "The Description Schema",
+                  "default": "",
+                  "examples": [
+                    "A task that needs to be done."
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "iconUrl": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/issuetype/properties/iconUrl",
+                  "type": "string",
+                  "title": "The Iconurl Schema",
+                  "default": "",
+                  "examples": [
+                    "http://your-domain.atlassian.net//secure/viewavatar?size=xsmall&avatarId=10299&avatarType=issuetype\","
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "name": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/issuetype/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "Task"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "subtask": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/issuetype/properties/subtask",
+                  "type": "boolean",
+                  "title": "The Subtask Schema",
+                  "default": false,
+                  "examples": [
+                    false
+                  ]
+                },
+                "avatarId": {
+                  "$id": "#/properties/outwardIssue/properties/fields/properties/issuetype/properties/avatarId",
+                  "type": "integer",
+                  "title": "The Avatarid Schema",
+                  "default": 0,
+                  "examples": [
+                    1
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

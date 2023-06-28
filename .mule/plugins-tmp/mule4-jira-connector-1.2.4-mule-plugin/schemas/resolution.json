@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Resolution",
+  "definitions": {
+    "Resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "resolution"
+      },
+      "properties": {
+        "self": {
+          "type": "string",
+          "format": "uri"
+        },
+        "id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

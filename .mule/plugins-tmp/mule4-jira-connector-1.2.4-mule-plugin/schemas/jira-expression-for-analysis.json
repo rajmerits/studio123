@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/JiraExpressionForAnalysis",
+  "definitions": {"JiraExpressionForAnalysis": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["expressions"],
+    "properties": {
+      "contextVariables": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "expressions": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    }
+  }}
+}

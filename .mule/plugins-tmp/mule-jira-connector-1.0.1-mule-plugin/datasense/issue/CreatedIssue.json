@@ -1,0 +1,106 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "title": "CreatedIssue",
+    "required": [
+        "id",
+        "key",
+        "self",
+        "transition"
+    ],
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The Id Schema",
+            "default": "",
+            "examples": [
+                "<string>"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "key": {
+            "$id": "#/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+                "<string>"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "self": {
+            "$id": "#/properties/self",
+            "type": "string",
+            "title": "The Self Schema",
+            "default": "",
+            "examples": [
+                "<string>"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "transition": {
+            "$id": "#/properties/transition",
+            "type": "object",
+            "title": "The Transition Schema",
+            "required": [
+                "status",
+                "errorCollection"
+            ],
+            "properties": {
+                "status": {
+                    "$id": "#/properties/transition/properties/status",
+                    "type": "integer",
+                    "title": "The Status Schema",
+                    "default": 0,
+                    "examples": [
+                        2154
+                    ]
+                },
+                "errorCollection": {
+                    "$id": "#/properties/transition/properties/errorCollection",
+                    "type": "object",
+                    "title": "The Errorcollection Schema",
+                    "required": [
+                        "errorMessages",
+                        "errors",
+                        "status"
+                    ],
+                    "properties": {
+                        "errorMessages": {
+                            "$id": "#/properties/transition/properties/errorCollection/properties/errorMessages",
+                            "type": "array",
+                            "title": "The Errormessages Schema",
+                            "items": {
+                                "$id": "#/properties/transition/properties/errorCollection/properties/errorMessages/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "default": "",
+                                "examples": [
+                                    "<string>"
+                                ],
+                                "pattern": "^(.*)$"
+                            }
+                        },
+                        "errors": {
+                            "$id": "#/properties/transition/properties/errorCollection/properties/errors",
+                            "type": "object",
+                            "title": "The Errors Schema"
+                        },
+                        "status": {
+                            "$id": "#/properties/transition/properties/errorCollection/properties/status",
+                            "type": "integer",
+                            "title": "The Status Schema",
+                            "default": 0,
+                            "examples": [
+                                2154
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

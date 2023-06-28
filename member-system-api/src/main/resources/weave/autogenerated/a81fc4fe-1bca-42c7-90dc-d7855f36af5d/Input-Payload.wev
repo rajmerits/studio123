@@ -1,0 +1,26 @@
+%dw 2.0
+
+type auto_a81fc4fe_1bca_42c7_90dc_d7855f36af5d_Input_Payload = {|
+  firstName: String, 
+  lastName: String, 
+  maritalStatus: String, 
+  title: String, 
+  gender: String, 
+  occupation: String, 
+  registrationChannel: String, 
+  preferredName: String, 
+  identity: {|
+    password: String, 
+    phoneCountry: String, 
+    phoneNumber: String, 
+    email: String
+  |}, 
+  address: {|
+    country: String, 
+    city: String, 
+    area: String, 
+    province: String, 
+    placeOfResidence: String
+  |}
+|}
+

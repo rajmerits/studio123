@@ -1,0 +1,1371 @@
+{
+  "minMuleVersion": "4.1.1",
+  "extensionModel": {
+    "types": [{
+      "format": "java",
+      "annotations": {
+        "classInformation": {
+          "implementedInterfaces": [],
+          "parent": "org.mule.extension.http.api.HttpAttributes",
+          "classname": "org.mule.extension.http.api.HttpResponseAttributes",
+          "hasDefaultConstructor": false,
+          "isInstantiable": false,
+          "isFinal": false,
+          "genericTypes": [],
+          "isInterface": false,
+          "isAbstract": false,
+          "isMap": false
+        },
+        "typeId": "org.mule.extension.http.api.HttpResponseAttributes"
+      },
+      "type": "Object",
+      "fields": [
+        {
+          "annotations": {"visibility": "READ_ONLY"},
+          "model": {
+            "annotations": {"classInformation": {
+              "implementedInterfaces": [
+                "java.util.Map",
+                "java.io.Serializable"
+              ],
+              "parent": "",
+              "classname": "org.mule.runtime.api.util.MultiMap",
+              "hasDefaultConstructor": true,
+              "isInstantiable": true,
+              "isFinal": false,
+              "genericTypes": [
+                "java.lang.String",
+                "java.lang.String"
+              ],
+              "isInterface": false,
+              "isAbstract": false,
+              "isMap": true
+            }},
+            "type": "Object",
+            "fields": [],
+            "open": {"type": "String"}
+          },
+          "key": {"name": "headers"}
+        },
+        {
+          "annotations": {"visibility": "READ_ONLY"},
+          "model": {"type": "String"},
+          "key": {"name": "reasonPhrase"}
+        },
+        {
+          "annotations": {"visibility": "READ_ONLY"},
+          "model": {
+            "annotations": {
+              "classInformation": {
+                "implementedInterfaces": [],
+                "parent": "",
+                "classname": "int",
+                "hasDefaultConstructor": false,
+                "isInstantiable": false,
+                "isFinal": true,
+                "genericTypes": [],
+                "isInterface": false,
+                "isAbstract": true,
+                "isMap": false
+              },
+              "int": {}
+            },
+            "type": "Number"
+          },
+          "key": {"name": "statusCode"}
+        }
+      ]
+    }],
+    "messageSources": [],
+    "functions": [],
+    "configurations": [{
+      "externalLibraryModels": [],
+      "operations": [
+        {
+          "displayModel": {},
+          "semanticTerms": [],
+          "kind": "operation",
+          "executionType": "CPU_LITE",
+          "description": "",
+          "modelProperties": {},
+          "parameterGroupModels": [
+            {
+              "name": "General",
+              "description": "",
+              "modelProperties": {},
+              "parameters": [
+                {
+                  "displayModel": {},
+                  "semanticTerms": [],
+                  "role": "PRIMARY_CONTENT",
+                  "defaultValue": "#[payload]",
+                  "description": "",
+                  "modelProperties": {},
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "required": false,
+                  "expressionSupport": "SUPPORTED",
+                  "fieldValueProviderModels": [],
+                  "hasDynamicType": false,
+                  "isConfigOverride": false,
+                  "dslConfiguration": {
+                    "allowTopLevelDefinition": false,
+                    "allowsInlineDefinition": true,
+                    "allowsReferences": false
+                  },
+                  "name": "create-issue-request-data",
+                  "layoutModel": {
+                    "password": false,
+                    "tabName": "General",
+                    "query": false,
+                    "text": false
+                  },
+                  "allowedStereotypeModels": [],
+                  "isComponentId": false
+                },
+                {
+                  "displayModel": {"displayName": "Request streaming mode"},
+                  "semanticTerms": [],
+                  "role": "BEHAVIOUR",
+                  "description": "",
+                  "modelProperties": {},
+                  "type": {
+                    "format": "json",
+                    "annotations": {"enum": {
+                      "values": [
+                        "AUTO",
+                        "NEVER",
+                        "ALWAYS"
+                      ],
+                      "type": "[Ljava.lang.String;"
+                    }},
+                    "type": "String"
+                  },
+                  "required": false,
+                  "expressionSupport": "SUPPORTED",
+                  "fieldValueProviderModels": [],
+                  "hasDynamicType": false,
+                  "isConfigOverride": false,
+                  "dslConfiguration": {
+                    "allowTopLevelDefinition": false,
+                    "allowsInlineDefinition": false,
+                    "allowsReferences": false
+                  },
+                  "name": "request-streaming-mode",
+                  "layoutModel": {
+                    "password": false,
+                    "tabName": "Advanced",
+                    "query": false,
+                    "text": false
+                  },
+                  "allowedStereotypeModels": [],
+                  "isComponentId": false
+                },
+                {
+                  "semanticTerms": [],
+                  "role": "BEHAVIOUR",
+                  "description": "The name of the configuration to be used to execute this component",
+                  "modelProperties": {},
+                  "type": {
+                    "format": "java",
+                    "annotations": {
+                      "classInformation": {
+                        "implementedInterfaces": [],
+                        "parent": "",
+                        "classname": "org.mule.runtime.extension.api.runtime.config.ConfigurationProvider",
+                        "hasDefaultConstructor": false,
+                        "isInstantiable": false,
+                        "isFinal": false,
+                        "genericTypes": [],
+                        "isInterface": true,
+                        "isAbstract": true,
+                        "isMap": false
+                      },
+                      "typeId": "org.mule.runtime.extension.api.runtime.config.ConfigurationProvider"
+                    },
+                    "type": "Object",
+                    "fields": []
+                  },
+                  "required": true,
+                  "expressionSupport": "NOT_SUPPORTED",
+                  "fieldValueProviderModels": [],
+                  "hasDynamicType": false,
+                  "isConfigOverride": false,
+                  "dslConfiguration": {
+                    "allowTopLevelDefinition": false,
+                    "allowsInlineDefinition": false,
+                    "allowsReferences": true
+                  },
+                  "name": "config-ref",
+                  "allowedStereotypeModels": [{
+                    "parent": {
+                      "namespace": "MULE",
+                      "type": "MODULE_CONFIG"
+                    },
+                    "namespace": "JIRA-EAPI",
+                    "type": "CONFIG"
+                  }],
+                  "isComponentId": false
+                }
+              ],
+              "exclusiveParametersModels": [],
+              "showInDsl": false
+            },
+            {
+              "name": "Output",
+              "description": "",
+              "modelProperties": {},
+              "parameters": [
+                {
+                  "displayModel": {"displayName": "Target Variable"},
+                  "semanticTerms": [],
+                  "role": "BEHAVIOUR",
+                  "description": "The name of a variable on which the operation's output will be placed",
+                  "modelProperties": {},
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "required": false,
+                  "expressionSupport": "NOT_SUPPORTED",
+                  "fieldValueProviderModels": [],
+                  "hasDynamicType": false,
+                  "isConfigOverride": false,
+                  "dslConfiguration": {
+                    "allowTopLevelDefinition": false,
+                    "allowsInlineDefinition": false,
+                    "allowsReferences": false
+                  },
+                  "name": "target",
+                  "layoutModel": {
+                    "password": false,
+                    "tabName": "Advanced",
+                    "query": false,
+                    "text": false
+                  },
+                  "allowedStereotypeModels": [],
+                  "isComponentId": false
+                },
+                {
+                  "displayModel": {"displayName": "Target Value"},
+                  "semanticTerms": [],
+                  "role": "BEHAVIOUR",
+                  "defaultValue": "#[payload]",
+                  "description": "An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable",
+                  "modelProperties": {},
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "required": false,
+                  "expressionSupport": "REQUIRED",
+                  "fieldValueProviderModels": [],
+                  "hasDynamicType": false,
+                  "isConfigOverride": false,
+                  "dslConfiguration": {
+                    "allowTopLevelDefinition": false,
+                    "allowsInlineDefinition": false,
+                    "allowsReferences": false
+                  },
+                  "name": "targetValue",
+                  "layoutModel": {
+                    "password": false,
+                    "tabName": "Advanced",
+                    "query": false,
+                    "text": false
+                  },
+                  "allowedStereotypeModels": [],
+                  "isComponentId": false
+                }
+              ],
+              "exclusiveParametersModels": [],
+              "showInDsl": false
+            },
+            {
+              "name": "Error Mappings",
+              "description": "",
+              "modelProperties": {},
+              "parameters": [{
+                "semanticTerms": [],
+                "role": "BEHAVIOUR",
+                "description": "Set of error mappings",
+                "modelProperties": {
+                  "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {"sequence": 12},
+                  "org.mule.runtime.extension.api.property.QNameModelProperty": {"value": {
+                    "localPart": "error-mappings",
+                    "prefix": "mule",
+                    "namespaceURI": "http://www.mulesoft.org/schema/mule/core"
+                  }},
+                  "sinceMuleVersion": {"version": "4.4.0"}
+                },
+                "type": {
+                  "item": {
+                    "annotations": {
+                      "infrastructureType": {},
+                      "typeId": "errorMapping"
+                    },
+                    "type": "Object",
+                    "fields": [
+                      {
+                        "model": {
+                          "format": {
+                            "validMimeTypes": ["text/plain"],
+                            "id": "text",
+                            "label": "Text"
+                          },
+                          "annotations": {
+                            "typeId": "errorTypeMatcher",
+                            "enum": {
+                              "values": [
+                                "ANY",
+                                "REDELIVERY_EXHAUSTED",
+                                "TRANSFORMATION",
+                                "EXPRESSION",
+                                "SECURITY",
+                                "CLIENT_SECURITY",
+                                "SERVER_SECURITY",
+                                "ROUTING",
+                                "CONNECTIVITY",
+                                "RETRY_EXHAUSTED",
+                                "TIMEOUT"
+                              ],
+                              "type": "[Ljava.lang.String;"
+                            }
+                          },
+                          "type": "String"
+                        },
+                        "key": {"name": "source"}
+                      },
+                      {
+                        "model": {
+                          "format": {
+                            "validMimeTypes": ["text/plain"],
+                            "id": "text",
+                            "label": "Text"
+                          },
+                          "annotations": {"typeId": "errorTypeDefinition"},
+                          "type": "String"
+                        },
+                        "key": {
+                          "name": "target",
+                          "required": "true"
+                        }
+                      }
+                    ]
+                  },
+                  "format": "java",
+                  "annotations": {
+                    "typeDsl": {
+                      "allowTopLevelDefinition": false,
+                      "allowInlineDefinition": true
+                    },
+                    "infrastructureType": {},
+                    "description": {"value": "Determines that an error thrown by this operation should be mapped to another"}
+                  },
+                  "type": "Array"
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED",
+                "fieldValueProviderModels": [],
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": false
+                },
+                "name": "errorMappings",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Error Mapping",
+                  "query": false,
+                  "text": false
+                },
+                "allowedStereotypeModels": [],
+                "isComponentId": false
+              }],
+              "exclusiveParametersModels": [],
+              "showInDsl": false
+            }
+          ],
+          "output": {
+            "hasDynamicType": false,
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "Any"
+            }
+          },
+          "outputAttributes": {
+            "hasDynamicType": false,
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "@ref:org.mule.extension.http.api.HttpResponseAttributes"
+            }
+          },
+          "supportsStreaming": false,
+          "requiresConnection": false,
+          "blocking": true,
+          "name": "create-issue",
+          "stereotype": {
+            "parent": {
+              "parent": {
+                "namespace": "MULE",
+                "type": "PROCESSOR"
+              },
+              "namespace": "JIRA-EAPI",
+              "type": "PROCESSOR"
+            },
+            "namespace": "JIRA-EAPI",
+            "type": "CREATE-ISSUE"
+          },
+          "nestedComponents": [],
+          "transactional": false,
+          "notifications": [],
+          "errors": [
+            "JIRA-EAPI:PARSING",
+            "JIRA-EAPI:TOO_MANY_REQUESTS",
+            "JIRA-EAPI:TIMEOUT",
+            "JIRA-EAPI:SERVICE_UNAVAILABLE",
+            "JIRA-EAPI:RETRY_EXHAUSTED",
+            "JIRA-EAPI:SECURITY",
+            "JIRA-EAPI:UNAUTHORIZED",
+            "JIRA-EAPI:NOT_ACCEPTABLE",
+            "JIRA-EAPI:INTERNAL_SERVER_ERROR",
+            "JIRA-EAPI:METHOD_NOT_ALLOWED",
+            "JIRA-EAPI:NOT_FOUND",
+            "JIRA-EAPI:UNSUPPORTED_MEDIA_TYPE",
+            "JIRA-EAPI:FORBIDDEN",
+            "JIRA-EAPI:CONNECTIVITY",
+            "JIRA-EAPI:BAD_REQUEST"
+          ]
+        },
+        {
+          "displayModel": {},
+          "semanticTerms": [],
+          "kind": "operation",
+          "executionType": "CPU_LITE",
+          "description": "",
+          "modelProperties": {},
+          "parameterGroupModels": [
+            {
+              "name": "General",
+              "description": "",
+              "modelProperties": {},
+              "parameters": [
+                {
+                  "displayModel": {},
+                  "semanticTerms": [],
+                  "role": "BEHAVIOUR",
+                  "description": "",
+                  "modelProperties": {},
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "required": true,
+                  "expressionSupport": "SUPPORTED",
+                  "fieldValueProviderModels": [],
+                  "hasDynamicType": false,
+                  "isConfigOverride": false,
+                  "dslConfiguration": {
+                    "allowTopLevelDefinition": false,
+                    "allowsInlineDefinition": false,
+                    "allowsReferences": false
+                  },
+                  "name": "issue-id",
+                  "layoutModel": {
+                    "password": false,
+                    "tabName": "General",
+                    "query": false,
+                    "text": false
+                  },
+                  "allowedStereotypeModels": [],
+                  "isComponentId": false
+                },
+                {
+                  "displayModel": {"displayName": "Request streaming mode"},
+                  "semanticTerms": [],
+                  "role": "BEHAVIOUR",
+                  "description": "",
+                  "modelProperties": {},
+                  "type": {
+                    "format": "json",
+                    "annotations": {"enum": {
+                      "values": [
+                        "AUTO",
+                        "NEVER",
+                        "ALWAYS"
+                      ],
+                      "type": "[Ljava.lang.String;"
+                    }},
+                    "type": "String"
+                  },
+                  "required": false,
+                  "expressionSupport": "SUPPORTED",
+                  "fieldValueProviderModels": [],
+                  "hasDynamicType": false,
+                  "isConfigOverride": false,
+                  "dslConfiguration": {
+                    "allowTopLevelDefinition": false,
+                    "allowsInlineDefinition": false,
+                    "allowsReferences": false
+                  },
+                  "name": "request-streaming-mode",
+                  "layoutModel": {
+                    "password": false,
+                    "tabName": "Advanced",
+                    "query": false,
+                    "text": false
+                  },
+                  "allowedStereotypeModels": [],
+                  "isComponentId": false
+                },
+                {
+                  "semanticTerms": [],
+                  "role": "BEHAVIOUR",
+                  "description": "The name of the configuration to be used to execute this component",
+                  "modelProperties": {},
+                  "type": {
+                    "format": "java",
+                    "annotations": {
+                      "classInformation": {
+                        "implementedInterfaces": [],
+                        "parent": "",
+                        "classname": "org.mule.runtime.extension.api.runtime.config.ConfigurationProvider",
+                        "hasDefaultConstructor": false,
+                        "isInstantiable": false,
+                        "isFinal": false,
+                        "genericTypes": [],
+                        "isInterface": true,
+                        "isAbstract": true,
+                        "isMap": false
+                      },
+                      "typeId": "org.mule.runtime.extension.api.runtime.config.ConfigurationProvider"
+                    },
+                    "type": "Object",
+                    "fields": []
+                  },
+                  "required": true,
+                  "expressionSupport": "NOT_SUPPORTED",
+                  "fieldValueProviderModels": [],
+                  "hasDynamicType": false,
+                  "isConfigOverride": false,
+                  "dslConfiguration": {
+                    "allowTopLevelDefinition": false,
+                    "allowsInlineDefinition": false,
+                    "allowsReferences": true
+                  },
+                  "name": "config-ref",
+                  "allowedStereotypeModels": [{
+                    "parent": {
+                      "namespace": "MULE",
+                      "type": "MODULE_CONFIG"
+                    },
+                    "namespace": "JIRA-EAPI",
+                    "type": "CONFIG"
+                  }],
+                  "isComponentId": false
+                }
+              ],
+              "exclusiveParametersModels": [],
+              "showInDsl": false
+            },
+            {
+              "name": "Output",
+              "description": "",
+              "modelProperties": {},
+              "parameters": [
+                {
+                  "displayModel": {"displayName": "Target Variable"},
+                  "semanticTerms": [],
+                  "role": "BEHAVIOUR",
+                  "description": "The name of a variable on which the operation's output will be placed",
+                  "modelProperties": {},
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "required": false,
+                  "expressionSupport": "NOT_SUPPORTED",
+                  "fieldValueProviderModels": [],
+                  "hasDynamicType": false,
+                  "isConfigOverride": false,
+                  "dslConfiguration": {
+                    "allowTopLevelDefinition": false,
+                    "allowsInlineDefinition": false,
+                    "allowsReferences": false
+                  },
+                  "name": "target",
+                  "layoutModel": {
+                    "password": false,
+                    "tabName": "Advanced",
+                    "query": false,
+                    "text": false
+                  },
+                  "allowedStereotypeModels": [],
+                  "isComponentId": false
+                },
+                {
+                  "displayModel": {"displayName": "Target Value"},
+                  "semanticTerms": [],
+                  "role": "BEHAVIOUR",
+                  "defaultValue": "#[payload]",
+                  "description": "An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable",
+                  "modelProperties": {},
+                  "type": {
+                    "format": "java",
+                    "type": "String"
+                  },
+                  "required": false,
+                  "expressionSupport": "REQUIRED",
+                  "fieldValueProviderModels": [],
+                  "hasDynamicType": false,
+                  "isConfigOverride": false,
+                  "dslConfiguration": {
+                    "allowTopLevelDefinition": false,
+                    "allowsInlineDefinition": false,
+                    "allowsReferences": false
+                  },
+                  "name": "targetValue",
+                  "layoutModel": {
+                    "password": false,
+                    "tabName": "Advanced",
+                    "query": false,
+                    "text": false
+                  },
+                  "allowedStereotypeModels": [],
+                  "isComponentId": false
+                }
+              ],
+              "exclusiveParametersModels": [],
+              "showInDsl": false
+            },
+            {
+              "name": "Error Mappings",
+              "description": "",
+              "modelProperties": {},
+              "parameters": [{
+                "semanticTerms": [],
+                "role": "BEHAVIOUR",
+                "description": "Set of error mappings",
+                "modelProperties": {
+                  "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {"sequence": 12},
+                  "org.mule.runtime.extension.api.property.QNameModelProperty": {"value": {
+                    "localPart": "error-mappings",
+                    "prefix": "mule",
+                    "namespaceURI": "http://www.mulesoft.org/schema/mule/core"
+                  }},
+                  "sinceMuleVersion": {"version": "4.4.0"}
+                },
+                "type": {
+                  "item": {
+                    "annotations": {
+                      "infrastructureType": {},
+                      "typeId": "errorMapping"
+                    },
+                    "type": "Object",
+                    "fields": [
+                      {
+                        "model": {
+                          "format": {
+                            "validMimeTypes": ["text/plain"],
+                            "id": "text",
+                            "label": "Text"
+                          },
+                          "annotations": {
+                            "typeId": "errorTypeMatcher",
+                            "enum": {
+                              "values": [
+                                "ANY",
+                                "REDELIVERY_EXHAUSTED",
+                                "TRANSFORMATION",
+                                "EXPRESSION",
+                                "SECURITY",
+                                "CLIENT_SECURITY",
+                                "SERVER_SECURITY",
+                                "ROUTING",
+                                "CONNECTIVITY",
+                                "RETRY_EXHAUSTED",
+                                "TIMEOUT"
+                              ],
+                              "type": "[Ljava.lang.String;"
+                            }
+                          },
+                          "type": "String"
+                        },
+                        "key": {"name": "source"}
+                      },
+                      {
+                        "model": {
+                          "format": {
+                            "validMimeTypes": ["text/plain"],
+                            "id": "text",
+                            "label": "Text"
+                          },
+                          "annotations": {"typeId": "errorTypeDefinition"},
+                          "type": "String"
+                        },
+                        "key": {
+                          "name": "target",
+                          "required": "true"
+                        }
+                      }
+                    ]
+                  },
+                  "format": "java",
+                  "annotations": {
+                    "typeDsl": {
+                      "allowTopLevelDefinition": false,
+                      "allowInlineDefinition": true
+                    },
+                    "infrastructureType": {},
+                    "description": {"value": "Determines that an error thrown by this operation should be mapped to another"}
+                  },
+                  "type": "Array"
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED",
+                "fieldValueProviderModels": [],
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": false
+                },
+                "name": "errorMappings",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Error Mapping",
+                  "query": false,
+                  "text": false
+                },
+                "allowedStereotypeModels": [],
+                "isComponentId": false
+              }],
+              "exclusiveParametersModels": [],
+              "showInDsl": false
+            }
+          ],
+          "output": {
+            "hasDynamicType": false,
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "String"
+            }
+          },
+          "outputAttributes": {
+            "hasDynamicType": false,
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "@ref:org.mule.extension.http.api.HttpResponseAttributes"
+            }
+          },
+          "supportsStreaming": false,
+          "requiresConnection": false,
+          "blocking": true,
+          "name": "get-issue-by-issue-id",
+          "stereotype": {
+            "parent": {
+              "parent": {
+                "namespace": "MULE",
+                "type": "PROCESSOR"
+              },
+              "namespace": "JIRA-EAPI",
+              "type": "PROCESSOR"
+            },
+            "namespace": "JIRA-EAPI",
+            "type": "GET-ISSUE-BY-ISSUE-ID"
+          },
+          "nestedComponents": [],
+          "transactional": false,
+          "notifications": [],
+          "errors": [
+            "JIRA-EAPI:PARSING",
+            "JIRA-EAPI:TOO_MANY_REQUESTS",
+            "JIRA-EAPI:TIMEOUT",
+            "JIRA-EAPI:SERVICE_UNAVAILABLE",
+            "JIRA-EAPI:RETRY_EXHAUSTED",
+            "JIRA-EAPI:SECURITY",
+            "JIRA-EAPI:UNAUTHORIZED",
+            "JIRA-EAPI:NOT_ACCEPTABLE",
+            "JIRA-EAPI:INTERNAL_SERVER_ERROR",
+            "JIRA-EAPI:METHOD_NOT_ALLOWED",
+            "JIRA-EAPI:NOT_FOUND",
+            "JIRA-EAPI:UNSUPPORTED_MEDIA_TYPE",
+            "JIRA-EAPI:FORBIDDEN",
+            "JIRA-EAPI:CONNECTIVITY",
+            "JIRA-EAPI:BAD_REQUEST"
+          ]
+        }
+      ],
+      "messageSources": [],
+      "name": "config",
+      "description": "",
+      "modelProperties": {},
+      "stereotype": {
+        "parent": {
+          "namespace": "MULE",
+          "type": "MODULE_CONFIG"
+        },
+        "namespace": "JIRA-EAPI",
+        "type": "CONFIG"
+      },
+      "parameterGroupModels": [{
+        "name": "General",
+        "description": "",
+        "modelProperties": {},
+        "parameters": [
+          {
+            "displayModel": {
+              "summary": "Host for consuming API",
+              "displayName": "host"
+            },
+            "semanticTerms": [],
+            "role": "BEHAVIOUR",
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "String"
+            },
+            "required": true,
+            "expressionSupport": "SUPPORTED",
+            "fieldValueProviderModels": [],
+            "hasDynamicType": false,
+            "isConfigOverride": false,
+            "dslConfiguration": {
+              "allowTopLevelDefinition": false,
+              "allowsInlineDefinition": false,
+              "allowsReferences": false
+            },
+            "name": "property_host",
+            "layoutModel": {
+              "password": false,
+              "tabName": "General",
+              "query": false,
+              "text": false
+            },
+            "allowedStereotypeModels": [],
+            "isComponentId": false
+          },
+          {
+            "displayModel": {
+              "summary": "Port for consuming API",
+              "displayName": "port"
+            },
+            "semanticTerms": [],
+            "role": "BEHAVIOUR",
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "String"
+            },
+            "required": true,
+            "expressionSupport": "SUPPORTED",
+            "fieldValueProviderModels": [],
+            "hasDynamicType": false,
+            "isConfigOverride": false,
+            "dslConfiguration": {
+              "allowTopLevelDefinition": false,
+              "allowsInlineDefinition": false,
+              "allowsReferences": false
+            },
+            "name": "property_port",
+            "layoutModel": {
+              "password": false,
+              "tabName": "General",
+              "query": false,
+              "text": false
+            },
+            "allowedStereotypeModels": [],
+            "isComponentId": false
+          },
+          {
+            "displayModel": {
+              "summary": "Basepath for consuming API",
+              "displayName": "basePath"
+            },
+            "semanticTerms": [],
+            "role": "BEHAVIOUR",
+            "defaultValue": "/",
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "String"
+            },
+            "required": false,
+            "expressionSupport": "SUPPORTED",
+            "fieldValueProviderModels": [],
+            "hasDynamicType": false,
+            "isConfigOverride": false,
+            "dslConfiguration": {
+              "allowTopLevelDefinition": false,
+              "allowsInlineDefinition": false,
+              "allowsReferences": false
+            },
+            "name": "property_basePath",
+            "layoutModel": {
+              "password": false,
+              "tabName": "General",
+              "query": false,
+              "text": false
+            },
+            "allowedStereotypeModels": [],
+            "isComponentId": false
+          },
+          {
+            "displayModel": {
+              "summary": "Protocol for consuming API",
+              "displayName": "protocol"
+            },
+            "semanticTerms": [],
+            "role": "BEHAVIOUR",
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "String"
+            },
+            "required": true,
+            "expressionSupport": "SUPPORTED",
+            "fieldValueProviderModels": [],
+            "hasDynamicType": false,
+            "isConfigOverride": false,
+            "dslConfiguration": {
+              "allowTopLevelDefinition": false,
+              "allowsInlineDefinition": false,
+              "allowsReferences": false
+            },
+            "name": "property_protocol",
+            "layoutModel": {
+              "password": false,
+              "tabName": "General",
+              "query": false,
+              "text": false
+            },
+            "allowedStereotypeModels": [],
+            "isComponentId": false
+          },
+          {
+            "displayModel": {
+              "summary": "Proxy config reference",
+              "displayName": "Proxy Config Reference"
+            },
+            "semanticTerms": [],
+            "role": "BEHAVIOUR",
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "String"
+            },
+            "required": false,
+            "expressionSupport": "SUPPORTED",
+            "fieldValueProviderModels": [],
+            "hasDynamicType": false,
+            "isConfigOverride": false,
+            "dslConfiguration": {
+              "allowTopLevelDefinition": false,
+              "allowsInlineDefinition": false,
+              "allowsReferences": false
+            },
+            "name": "property_proxyConfig",
+            "layoutModel": {
+              "password": false,
+              "tabName": "Proxy",
+              "query": false,
+              "text": false
+            },
+            "allowedStereotypeModels": [{
+              "namespace": "HTTP",
+              "type": "HTTP_PROXY_CONFIG"
+            }],
+            "isComponentId": false
+          },
+          {
+            "displayModel": {
+              "summary": "Maximum time in milliseconds that the request element will block the execution of the flow waiting for the HTTP response.",
+              "displayName": "Response timeout"
+            },
+            "semanticTerms": [],
+            "role": "BEHAVIOUR",
+            "defaultValue": "10000",
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "String"
+            },
+            "required": false,
+            "expressionSupport": "SUPPORTED",
+            "fieldValueProviderModels": [],
+            "hasDynamicType": false,
+            "isConfigOverride": false,
+            "dslConfiguration": {
+              "allowTopLevelDefinition": false,
+              "allowsInlineDefinition": false,
+              "allowsReferences": false
+            },
+            "name": "property_responseTimeout",
+            "layoutModel": {
+              "password": false,
+              "tabName": "General",
+              "query": false,
+              "text": false
+            },
+            "allowedStereotypeModels": [],
+            "isComponentId": false
+          },
+          {
+            "displayModel": {
+              "summary": "Username",
+              "displayName": "username"
+            },
+            "semanticTerms": [],
+            "role": "BEHAVIOUR",
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "String"
+            },
+            "required": true,
+            "expressionSupport": "SUPPORTED",
+            "fieldValueProviderModels": [],
+            "hasDynamicType": false,
+            "isConfigOverride": false,
+            "dslConfiguration": {
+              "allowTopLevelDefinition": false,
+              "allowsInlineDefinition": false,
+              "allowsReferences": false
+            },
+            "name": "property_username",
+            "layoutModel": {
+              "password": false,
+              "tabName": "General",
+              "query": false,
+              "text": false
+            },
+            "allowedStereotypeModels": [],
+            "isComponentId": false
+          },
+          {
+            "displayModel": {
+              "summary": "Password",
+              "displayName": "password"
+            },
+            "semanticTerms": [],
+            "role": "BEHAVIOUR",
+            "description": "",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "String"
+            },
+            "required": true,
+            "expressionSupport": "SUPPORTED",
+            "fieldValueProviderModels": [],
+            "hasDynamicType": false,
+            "isConfigOverride": false,
+            "dslConfiguration": {
+              "allowTopLevelDefinition": false,
+              "allowsInlineDefinition": false,
+              "allowsReferences": false
+            },
+            "name": "property_password",
+            "layoutModel": {
+              "password": true,
+              "tabName": "General",
+              "query": false,
+              "text": false
+            },
+            "allowedStereotypeModels": [],
+            "isComponentId": false
+          },
+          {
+            "semanticTerms": [],
+            "role": "BEHAVIOUR",
+            "description": "The identifier of this element used to reference it in other components",
+            "modelProperties": {},
+            "type": {
+              "format": "java",
+              "type": "String"
+            },
+            "required": true,
+            "expressionSupport": "NOT_SUPPORTED",
+            "fieldValueProviderModels": [],
+            "hasDynamicType": false,
+            "isConfigOverride": false,
+            "dslConfiguration": {
+              "allowTopLevelDefinition": false,
+              "allowsInlineDefinition": false,
+              "allowsReferences": false
+            },
+            "name": "name",
+            "allowedStereotypeModels": [],
+            "isComponentId": true
+          },
+          {
+            "semanticTerms": [],
+            "role": "BEHAVIOUR",
+            "description": "Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit.",
+            "modelProperties": {
+              "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {"sequence": 4},
+              "org.mule.runtime.extension.api.property.QNameModelProperty": {"value": {
+                "localPart": "expiration-policy",
+                "prefix": "mule",
+                "namespaceURI": "http://www.mulesoft.org/schema/mule/core"
+              }}
+            },
+            "type": {
+              "format": "java",
+              "annotations": {
+                "typeDsl": {
+                  "allowTopLevelDefinition": false,
+                  "allowInlineDefinition": true
+                },
+                "infrastructureType": {},
+                "classInformation": {
+                  "implementedInterfaces": [],
+                  "parent": "",
+                  "classname": "org.mule.runtime.extension.api.runtime.ExpirationPolicy",
+                  "hasDefaultConstructor": false,
+                  "isInstantiable": false,
+                  "isFinal": false,
+                  "genericTypes": [],
+                  "isInterface": true,
+                  "isAbstract": true,
+                  "isMap": false
+                },
+                "description": {"value": "Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit."},
+                "typeId": "org.mule.runtime.extension.api.runtime.ExpirationPolicy"
+              },
+              "type": "Object",
+              "fields": [
+                {
+                  "annotations": {
+                    "description": {"value": "A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it's considered eligible for expiration"},
+                    "expressionSupport": {"value": "NOT_SUPPORTED"}
+                  },
+                  "model": {
+                    "annotations": {
+                      "default": "5",
+                      "classInformation": {
+                        "implementedInterfaces": ["java.lang.Comparable"],
+                        "parent": "java.lang.Number",
+                        "classname": "java.lang.Long",
+                        "hasDefaultConstructor": false,
+                        "isInstantiable": false,
+                        "isFinal": true,
+                        "genericTypes": [],
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isMap": false
+                      },
+                      "int": {}
+                    },
+                    "type": "Number"
+                  },
+                  "key": {"name": "maxIdleTime"}
+                },
+                {
+                  "annotations": {
+                    "description": {"value": "A time unit that qualifies the maxIdleTime attribute"},
+                    "expressionSupport": {"value": "NOT_SUPPORTED"}
+                  },
+                  "model": {
+                    "annotations": {
+                      "default": "MINUTES",
+                      "enum": {
+                        "values": [
+                          "NANOSECONDS",
+                          "MICROSECONDS",
+                          "MILLISECONDS",
+                          "SECONDS",
+                          "MINUTES",
+                          "HOURS",
+                          "DAYS"
+                        ],
+                        "type": "[Ljava.lang.String;"
+                      }
+                    },
+                    "type": "String"
+                  },
+                  "key": {"name": "timeUnit"}
+                }
+              ]
+            },
+            "required": false,
+            "expressionSupport": "NOT_SUPPORTED",
+            "fieldValueProviderModels": [],
+            "hasDynamicType": false,
+            "isConfigOverride": false,
+            "dslConfiguration": {
+              "allowTopLevelDefinition": false,
+              "allowsInlineDefinition": true,
+              "allowsReferences": false
+            },
+            "name": "expirationPolicy",
+            "layoutModel": {
+              "password": false,
+              "tabName": "Advanced",
+              "query": false,
+              "text": false
+            },
+            "allowedStereotypeModels": [],
+            "isComponentId": false
+          }
+        ],
+        "exclusiveParametersModels": [],
+        "showInDsl": false
+      }],
+      "connectionProviders": [{
+        "externalLibraryModels": [],
+        "semanticTerms": [],
+        "connectionManagementType": "NONE",
+        "supportsConnectivityTesting": true,
+        "name": "connection",
+        "description": "",
+        "modelProperties": {},
+        "stereotype": {
+          "parent": {
+            "namespace": "MULE",
+            "type": "CONNECTION"
+          },
+          "namespace": "JIRA-EAPI",
+          "type": "CONNECTION"
+        },
+        "parameterGroupModels": []
+      }]
+    }],
+    "externalLibraries": [],
+    "description": "API to mke REST API calls to JIRA",
+    "resources": [],
+    "subTypes": [],
+    "modelProperties": {"org.mule.runtime.extension.api.property.XmlExtensionModelProperty": {"namespacesDependencies": [
+      "http://www.mulesoft.org/schema/mule/mule-http",
+      "http://www.mulesoft.org/schema/mule/ee/batch",
+      "http://www.mulesoft.org/schema/mule/http",
+      "http://www.mulesoft.org/schema/mule/ee/core",
+      "http://www.mulesoft.org/schema/mule/ee/bti",
+      "http://www.mulesoft.org/schema/mule/module",
+      "http://www.mulesoft.org/schema/mule/tls",
+      "http://www.mulesoft.org/schema/mule/ee/tracking",
+      "http://www.mulesoft.org/schema/mule/kryo",
+      "http://www.mulesoft.org/schema/mule/sockets",
+      "http://www.mulesoft.org/schema/mule/core"
+    ]}},
+    "constructs": [],
+    "connectionProviders": [],
+    "version": "4.0.0",
+    "privilegedArtifacts": [],
+    "importedTypes": [],
+    "xmlDsl": {
+      "schemaVersion": "4.0.0",
+      "prefix": "jira-eapi",
+      "schemaLocation": "http://www.mulesoft.org/schema/mule/jira-eapi/current/mule-jira-eapi.xsd",
+      "namespace": "http://www.mulesoft.org/schema/mule/jira-eapi",
+      "xsdFileName": "mule-jira-eapi.xsd"
+    },
+    "operations": [],
+    "vendor": "MuleSoft",
+    "name": "jira-eapi",
+    "privilegedPackages": [],
+    "category": "COMMUNITY",
+    "notifications": [],
+    "errors": [
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:TIMEOUT",
+        "handleable": true
+      },
+      {
+        "error": "MULE:ANY",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:PARSING",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:RETRY_EXHAUSTED",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:METHOD_NOT_ALLOWED",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:SERVICE_UNAVAILABLE",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:CONNECTIVITY",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:UNSUPPORTED_MEDIA_TYPE",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:UNAUTHORIZED",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:INTERNAL_SERVER_ERROR",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:FORBIDDEN",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:SECURITY",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:BAD_REQUEST",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:NOT_FOUND",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:NOT_ACCEPTABLE",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "JIRA-EAPI:TOO_MANY_REQUESTS",
+        "handleable": true
+      }
+    ]
+  }
+}

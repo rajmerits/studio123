@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/SharePermissionInputBean",
+  "definitions": {"SharePermissionInputBean": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["type"],
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": [
+          "project",
+          "group",
+          "projectRole",
+          "global",
+          "authenticated"
+        ]
+      },
+      "projectId": {"type": "string"},
+      "groupname": {"type": "string"},
+      "projectRoleId": {"type": "string"}
+    }
+  }}
+}

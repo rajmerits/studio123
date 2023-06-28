@@ -1,0 +1,143 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Group",
+  "definitions": {
+    "Group": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "expand": {
+          "xml": {"attribute": true},
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {"type": "string"},
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "users": {
+          "allOf": [{"$ref": "#/definitions/PagedListUserDetailsApplicationUser"}],
+          "readOnly": true
+        }
+      }
+    },
+    "PagedListUserDetailsApplicationUser": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "size": {
+          "xml": {"attribute": true},
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "max-results": {
+          "xml": {
+            "name": "max-results",
+            "attribute": true
+          },
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "end-index": {
+          "xml": {
+            "name": "end-index",
+            "attribute": true
+          },
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "start-index": {
+          "xml": {
+            "name": "start-index",
+            "attribute": true
+          },
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "items": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/UserDetails"}
+        }
+      }
+    },
+    "AvatarUrlsBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "48x48": {
+          "format": "uri",
+          "type": "string"
+        },
+        "24x24": {
+          "format": "uri",
+          "type": "string"
+        },
+        "16x16": {
+          "format": "uri",
+          "type": "string"
+        },
+        "32x32": {
+          "format": "uri",
+          "type": "string"
+        }
+      }
+    },
+    "UserDetails": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "emailAddress": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "avatarUrls": {
+          "allOf": [{"$ref": "#/definitions/AvatarUrlsBean"}],
+          "readOnly": true
+        },
+        "displayName": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "accountType": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "active": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "timeZone": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/UpdateUserToGroupBean",
+  "definitions": {"UpdateUserToGroupBean": {
+    "additionalProperties": true,
+    "type": "object",
+    "properties": {
+      "accountId": {
+        "type": "string",
+        "maxLength": 128
+      },
+      "name": {"type": "string"}
+    }
+  }}
+}

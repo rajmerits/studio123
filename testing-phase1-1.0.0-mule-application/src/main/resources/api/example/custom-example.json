@@ -1,0 +1,31 @@
+{
+  "fields": {
+    "project": {
+      "key": "ITO"
+    },
+    "summary": "Demo Issue in JIRA",
+    "description": "Creating of an issue using project keys and issue type names using the REST API",
+    "issuetype": {
+      "name": "Task"
+    },
+    "customfield_23515": "Brad",
+    "customfield_18127": "costcentre123",
+    "customfield_14511": "test123@gmail.com",
+    "customfield_14512": "+91 9876543210",
+    "customfield_19402": "English",
+    "customfield_14204": "Home",
+    "customfield_18611": "2022-01-01",
+    "customfield_23516": "+91 1234567890",
+    "customfield_24401": "notes abc",
+    "customfield_18610": "ITEquipmentJira",
+    "customfield_18612": "India",
+    "customfield_18613": "Delhi",
+    "customfield_23513": "Brad Pitt",
+    "customfield_18719": "INL123",
+    "customfield_23700": "Mumbai, India",
+    "customfield_23518": "https://jira-uat.spotify.net/rest/api/2/issue/2077009",
+    "customfield_18608": {
+      "id": "Permanent"
+    }
+  }
+}

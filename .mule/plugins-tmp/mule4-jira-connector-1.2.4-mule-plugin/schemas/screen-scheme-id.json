@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ScreenSchemeId",
+  "definitions": {"ScreenSchemeId": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["id"],
+    "properties": {"id": {
+      "maximum": 9.223372036854776E+18,
+      "readOnly": true,
+      "type": "number",
+      "minimum": -9.223372036854776E+18
+    }}
+  }}
+}

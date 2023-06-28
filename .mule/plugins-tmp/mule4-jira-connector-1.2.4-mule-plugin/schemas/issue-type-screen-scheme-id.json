@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueTypeScreenSchemeId",
+  "definitions": {"IssueTypeScreenSchemeId": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["id"],
+    "properties": {"id": {
+      "readOnly": true,
+      "type": "string"
+    }}
+  }}
+}

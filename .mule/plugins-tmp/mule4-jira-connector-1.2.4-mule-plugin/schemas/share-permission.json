@@ -1,0 +1,1147 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/SharePermission",
+  "definitions": {
+    "SharePermission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "group",
+            "project",
+            "projectRole",
+            "global",
+            "loggedin",
+            "authenticated",
+            "project-unknown"
+          ]
+        },
+        "project": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Project"
+            }
+          ]
+        },
+        "role": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProjectRole"
+            }
+          ]
+        },
+        "group": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/GroupName"
+            }
+          ]
+        }
+      }
+    },
+    "Project": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "project"
+      },
+      "properties": {
+        "expand": {
+          "type": "string",
+          "readOnly": true,
+          "xml": {
+            "attribute": true
+          }
+        },
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true
+        },
+        "lead": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/User"
+            }
+          ]
+        },
+        "components": {
+          "items": {
+            "$ref": "#/definitions/Component"
+          },
+          "type": "array",
+          "readOnly": true
+        },
+        "issueTypes": {
+          "items": {
+            "$ref": "#/definitions/IssueTypeDetails"
+          },
+          "type": "array",
+          "readOnly": true
+        },
+        "url": {
+          "type": "string",
+          "readOnly": true
+        },
+        "email": {
+          "type": "string"
+        },
+        "assigneeType": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "PROJECT_LEAD",
+            "UNASSIGNED"
+          ]
+        },
+        "versions": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/Version"
+          }
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "roles": {
+          "type": "object",
+          "readOnly": true,
+          "additionalProperties": true
+        },
+        "avatarUrls": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/AvatarUrlsBean"
+            }
+          ]
+        },
+        "projectCategory": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          ]
+        },
+        "projectTypeKey": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "software",
+            "service_desk",
+            "business"
+          ]
+        },
+        "simplified": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "style": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "classic",
+            "next-gen"
+          ]
+        },
+        "favourite": {
+          "type": "boolean"
+        },
+        "isPrivate": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "issueTypeHierarchy": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/Hierarchy"
+            }
+          ]
+        },
+        "permissions": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProjectPermissions"
+            }
+          ]
+        },
+        "properties": {
+          "type": "object",
+          "readOnly": true,
+          "additionalProperties": true
+        },
+        "uuid": {
+          "type": "string",
+          "format": "uuid",
+          "readOnly": true
+        },
+        "insight": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProjectInsight"
+            }
+          ]
+        },
+        "deleted": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "retentionTillDate": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "deletedDate": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "deletedBy": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/User"
+            }
+          ]
+        },
+        "archived": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "archivedDate": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "archivedBy": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/User"
+            }
+          ]
+        }
+      }
+    },
+    "ProjectRole": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true
+        },
+        "actors": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/RoleActor"
+          }
+        },
+        "scope": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/Scope"
+            }
+          ]
+        },
+        "translatedName": {
+          "type": "string"
+        },
+        "currentUserRole": {
+          "type": "boolean"
+        },
+        "admin": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "roleConfigurable": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "default": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      }
+    },
+    "GroupName": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "user"
+      },
+      "properties": {
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "key": {
+          "type": "string"
+        },
+        "accountId": {
+          "maxLength": 128,
+          "type": "string"
+        },
+        "accountType": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "atlassian",
+            "app",
+            "customer",
+            "unknown"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "emailAddress": {
+          "type": "string",
+          "readOnly": true
+        },
+        "avatarUrls": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/AvatarUrlsBean"
+            }
+          ]
+        },
+        "displayName": {
+          "type": "string",
+          "readOnly": true
+        },
+        "active": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "timeZone": {
+          "type": "string",
+          "readOnly": true
+        },
+        "locale": {
+          "type": "string",
+          "readOnly": true
+        },
+        "groups": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/SimpleListWrapperGroupName"
+            }
+          ]
+        },
+        "applicationRoles": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/SimpleListWrapperApplicationRole"
+            }
+          ]
+        },
+        "expand": {
+          "type": "string",
+          "readOnly": true,
+          "xml": {
+            "attribute": true
+          }
+        }
+      }
+    },
+    "Component": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "component"
+      },
+      "properties": {
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "lead": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/User"
+            }
+          ]
+        },
+        "leadUserName": {
+          "type": "string"
+        },
+        "leadAccountId": {
+          "maxLength": 128,
+          "type": "string"
+        },
+        "assigneeType": {
+          "type": "string",
+          "enum": [
+            "PROJECT_DEFAULT",
+            "COMPONENT_LEAD",
+            "PROJECT_LEAD",
+            "UNASSIGNED"
+          ]
+        },
+        "assignee": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/User"
+            }
+          ]
+        },
+        "realAssigneeType": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "PROJECT_DEFAULT",
+            "COMPONENT_LEAD",
+            "PROJECT_LEAD",
+            "UNASSIGNED"
+          ]
+        },
+        "realAssignee": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/User"
+            }
+          ]
+        },
+        "isAssigneeTypeValid": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "project": {
+          "type": "string"
+        },
+        "projectId": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        }
+      }
+    },
+    "IssueTypeDetails": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true
+        },
+        "iconUrl": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "subtask": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "avatarId": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "entityId": {
+          "type": "string",
+          "format": "uuid",
+          "readOnly": true
+        },
+        "hierarchyLevel": {
+          "type": "integer",
+          "readOnly": true,
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "scope": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/Scope"
+            }
+          ]
+        }
+      }
+    },
+    "Version": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "version"
+      },
+      "properties": {
+        "expand": {
+          "type": "string",
+          "xml": {
+            "attribute": true
+          }
+        },
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "released": {
+          "type": "boolean"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "releaseDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "overdue": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "userStartDate": {
+          "type": "string",
+          "readOnly": true
+        },
+        "userReleaseDate": {
+          "type": "string",
+          "readOnly": true
+        },
+        "project": {
+          "type": "string"
+        },
+        "projectId": {
+          "type": "number",
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "moveUnfixedIssuesTo": {
+          "type": "string",
+          "format": "uri"
+        },
+        "operations": {
+          "items": {
+            "$ref": "#/definitions/SimpleLink"
+          },
+          "type": "array",
+          "readOnly": true
+        },
+        "issuesStatusForFixVersion": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/VersionIssuesStatus"
+            }
+          ]
+        }
+      }
+    },
+    "AvatarUrlsBean": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "16x16": {
+          "type": "string",
+          "format": "uri"
+        },
+        "24x24": {
+          "type": "string",
+          "format": "uri"
+        },
+        "32x32": {
+          "type": "string",
+          "format": "uri"
+        },
+        "48x48": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "ProjectCategory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "Hierarchy": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "hierarchy"
+      },
+      "properties": {
+        "level": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HierarchyLevel"
+          }
+        }
+      }
+    },
+    "ProjectPermissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "canEdit": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      }
+    },
+    "ProjectInsight": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "totalIssueCount": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "lastIssueUpdateTime": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        }
+      }
+    },
+    "RoleActor": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "projectRoleActor"
+      },
+      "properties": {
+        "id": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "displayName": {
+          "type": "string",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "atlassian-group-role-actor",
+            "atlassian-user-role-actor"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "avatarUrl": {
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "actorUser": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProjectRoleUser"
+            }
+          ]
+        },
+        "actorGroup": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProjectRoleGroup"
+            }
+          ]
+        }
+      }
+    },
+    "Scope": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "type": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "PROJECT",
+            "TEMPLATE"
+          ]
+        },
+        "project": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProjectForScope"
+            }
+          ]
+        }
+      }
+    },
+    "SimpleListWrapperGroupName": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "list"
+      },
+      "properties": {
+        "size": {
+          "type": "integer",
+          "xml": {
+            "attribute": true
+          },
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/GroupName"
+          },
+          "type": "array"
+        },
+        "pagingCallback": {
+          "$ref": "#/definitions/ListWrapperCallbackGroupName"
+        },
+        "callback": {
+          "$ref": "#/definitions/ListWrapperCallbackGroupName"
+        },
+        "max-results": {
+          "type": "integer",
+          "xml": {
+            "name": "max-results",
+            "attribute": true
+          },
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        }
+      }
+    },
+    "SimpleListWrapperApplicationRole": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "list"
+      },
+      "properties": {
+        "size": {
+          "type": "integer",
+          "xml": {
+            "attribute": true
+          },
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/ApplicationRole"
+          },
+          "type": "array"
+        },
+        "pagingCallback": {
+          "$ref": "#/definitions/ListWrapperCallbackApplicationRole"
+        },
+        "callback": {
+          "$ref": "#/definitions/ListWrapperCallbackApplicationRole"
+        },
+        "max-results": {
+          "type": "integer",
+          "xml": {
+            "name": "max-results",
+            "attribute": true
+          },
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        }
+      }
+    },
+    "SimpleLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "xml": {
+        "name": "link"
+      },
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "styleClass": {
+          "type": "string"
+        },
+        "iconClass": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        }
+      }
+    },
+    "VersionIssuesStatus": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "unmapped": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "toDo": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "inProgress": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "done": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        }
+      }
+    },
+    "HierarchyLevel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "number",
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "name": {
+          "type": "string"
+        },
+        "aboveLevelId": {
+          "type": "number",
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "belowLevelId": {
+          "type": "number",
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "projectConfigurationId": {
+          "type": "number",
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "level": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "issueTypeIds": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": -9.223372036854776E18,
+            "maximum": 9.223372036854776E18
+          }
+        },
+        "externalUuid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "globalHierarchyLevel": {
+          "type": "string",
+          "enum": [
+            "SUBTASK",
+            "BASE",
+            "EPIC"
+          ]
+        }
+      }
+    },
+    "ProjectRoleUser": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "accountId": {
+          "maxLength": 128,
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "ProjectRoleGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "ProjectForScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "projectTypeKey": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "software",
+            "service_desk",
+            "business"
+          ]
+        },
+        "simplified": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "avatarUrls": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/AvatarUrlsBean"
+            }
+          ]
+        },
+        "projectCategory": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/UpdatedProjectCategory"
+            }
+          ]
+        }
+      }
+    },
+    "ListWrapperCallbackGroupName": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "ListWrapperCallbackApplicationRole": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "ApplicationRole": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "groups": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "defaultGroups": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "selectedByDefault": {
+          "type": "boolean"
+        },
+        "defined": {
+          "type": "boolean"
+        },
+        "numberOfSeats": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "remainingSeats": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "userCount": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "userCountDescription": {
+          "type": "string"
+        },
+        "hasUnlimitedSeats": {
+          "type": "boolean"
+        },
+        "platform": {
+          "type": "boolean"
+        }
+      }
+    },
+    "UpdatedProjectCategory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

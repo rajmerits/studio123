@@ -1,0 +1,389 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "#/properties/worklogs",
+  "type": "array",
+  "title": "The Worklogs Schema",
+  "items": {
+    "$id": "#/properties/worklogs/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "self",
+      "author",
+      "updateAuthor",
+      "created",
+      "updated",
+      "visibility",
+      "started",
+      "timeSpent",
+      "timeSpentSeconds",
+      "id",
+      "issueId",
+      "properties"
+    ],
+    "properties": {
+      "self": {
+        "$id": "#/properties/worklogs/items/properties/self",
+        "type": "string",
+        "title": "The Self Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "author": {
+        "$id": "#/properties/worklogs/items/properties/author",
+        "type": "object",
+        "title": "The Author Schema",
+        "required": [
+          "self",
+          "name",
+          "key",
+          "accountId",
+          "emailAddress",
+          "avatarUrls",
+          "displayName",
+          "active",
+          "timeZone",
+          "accountType"
+        ],
+        "properties": {
+          "self": {
+            "$id": "#/properties/worklogs/items/properties/author/properties/self",
+            "type": "string",
+            "title": "The Self Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/worklogs/items/properties/author/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "key": {
+            "$id": "#/properties/worklogs/items/properties/author/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountId": {
+            "$id": "#/properties/worklogs/items/properties/author/properties/accountId",
+            "type": "string",
+            "title": "The Accountid Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "emailAddress": {
+            "$id": "#/properties/worklogs/items/properties/author/properties/emailAddress",
+            "type": "string",
+            "title": "The Emailaddress Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "avatarUrls": {
+            "$id": "#/properties/worklogs/items/properties/author/properties/avatarUrls",
+            "type": "object",
+            "title": "The Avatarurls Schema"
+          },
+          "displayName": {
+            "$id": "#/properties/worklogs/items/properties/author/properties/displayName",
+            "type": "string",
+            "title": "The Displayname Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "active": {
+            "$id": "#/properties/worklogs/items/properties/author/properties/active",
+            "type": "boolean",
+            "title": "The Active Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "timeZone": {
+            "$id": "#/properties/worklogs/items/properties/author/properties/timeZone",
+            "type": "string",
+            "title": "The Timezone Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountType": {
+            "$id": "#/properties/worklogs/items/properties/author/properties/accountType",
+            "type": "string",
+            "title": "The Accounttype Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "updateAuthor": {
+        "$id": "#/properties/worklogs/items/properties/updateAuthor",
+        "type": "object",
+        "title": "The Updateauthor Schema",
+        "required": [
+          "self",
+          "name",
+          "key",
+          "accountId",
+          "emailAddress",
+          "avatarUrls",
+          "displayName",
+          "active",
+          "timeZone",
+          "accountType"
+        ],
+        "properties": {
+          "self": {
+            "$id": "#/properties/worklogs/items/properties/updateAuthor/properties/self",
+            "type": "string",
+            "title": "The Self Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/worklogs/items/properties/updateAuthor/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "key": {
+            "$id": "#/properties/worklogs/items/properties/updateAuthor/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountId": {
+            "$id": "#/properties/worklogs/items/properties/updateAuthor/properties/accountId",
+            "type": "string",
+            "title": "The Accountid Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "emailAddress": {
+            "$id": "#/properties/worklogs/items/properties/updateAuthor/properties/emailAddress",
+            "type": "string",
+            "title": "The Emailaddress Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "avatarUrls": {
+            "$id": "#/properties/worklogs/items/properties/updateAuthor/properties/avatarUrls",
+            "type": "object",
+            "title": "The Avatarurls Schema"
+          },
+          "displayName": {
+            "$id": "#/properties/worklogs/items/properties/updateAuthor/properties/displayName",
+            "type": "string",
+            "title": "The Displayname Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "active": {
+            "$id": "#/properties/worklogs/items/properties/updateAuthor/properties/active",
+            "type": "boolean",
+            "title": "The Active Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "timeZone": {
+            "$id": "#/properties/worklogs/items/properties/updateAuthor/properties/timeZone",
+            "type": "string",
+            "title": "The Timezone Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountType": {
+            "$id": "#/properties/worklogs/items/properties/updateAuthor/properties/accountType",
+            "type": "string",
+            "title": "The Accounttype Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "created": {
+        "$id": "#/properties/worklogs/items/properties/created",
+        "type": "string",
+        "title": "The Created Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "updated": {
+        "$id": "#/properties/worklogs/items/properties/updated",
+        "type": "string",
+        "title": "The Updated Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "visibility": {
+        "$id": "#/properties/worklogs/items/properties/visibility",
+        "type": "object",
+        "title": "The Visibility Schema",
+        "required": [
+          "type",
+          "value"
+        ],
+        "properties": {
+          "type": {
+            "$id": "#/properties/worklogs/items/properties/visibility/properties/type",
+            "type": "string",
+            "title": "The Type Schema",
+            "default": "",
+            "examples": [
+              "group"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "value": {
+            "$id": "#/properties/worklogs/items/properties/visibility/properties/value",
+            "type": "string",
+            "title": "The Value Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "started": {
+        "$id": "#/properties/worklogs/items/properties/started",
+        "type": "string",
+        "title": "The Started Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "timeSpent": {
+        "$id": "#/properties/worklogs/items/properties/timeSpent",
+        "type": "string",
+        "title": "The Timespent Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "timeSpentSeconds": {
+        "$id": "#/properties/worklogs/items/properties/timeSpentSeconds",
+        "type": "integer",
+        "title": "The Timespentseconds Schema",
+        "default": 0,
+        "examples": [
+          192
+        ]
+      },
+      "id": {
+        "$id": "#/properties/worklogs/items/properties/id",
+        "type": "string",
+        "title": "The Id Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "issueId": {
+        "$id": "#/properties/worklogs/items/properties/issueId",
+        "type": "string",
+        "title": "The Issueid Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "properties": {
+        "$id": "#/properties/worklogs/items/properties/properties",
+        "type": "array",
+        "title": "The Properties Schema",
+        "items": {
+          "$id": "#/properties/worklogs/items/properties/properties/items",
+          "type": "object",
+          "title": "The Items Schema",
+          "required": [
+            "key"
+          ],
+          "properties": {
+            "key": {
+              "$id": "#/properties/worklogs/items/properties/properties/items/properties/key",
+              "type": "string",
+              "title": "The Key Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ProjectIssueTypeMappings",
+  "definitions": {
+    "ProjectIssueTypeMappings": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["mappings"],
+      "properties": {"mappings": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/ProjectIssueTypeMapping"}
+      }}
+    },
+    "ProjectIssueTypeMapping": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "projectId",
+        "issueTypeId"
+      ],
+      "properties": {
+        "issueTypeId": {"type": "string"},
+        "projectId": {"type": "string"}
+      }
+    }
+  }
+}

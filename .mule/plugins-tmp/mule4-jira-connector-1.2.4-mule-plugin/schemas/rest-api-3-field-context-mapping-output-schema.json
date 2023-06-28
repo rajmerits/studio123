@@ -1,0 +1,61 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "issueTypeId": "<string>",
+    "contextId": "<string>",
+    "projectId": "<string>"
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "The root schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "issueTypeId": "<string>",
+        "contextId": "<string>",
+        "projectId": "<string>"
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "projectId",
+        "issueTypeId",
+        "contextId"
+      ],
+      "properties": {
+        "issueTypeId": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The issueTypeId schema",
+          "$id": "#/items/anyOf/0/properties/issueTypeId"
+        },
+        "contextId": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The contextId schema",
+          "$id": "#/items/anyOf/0/properties/contextId"
+        },
+        "projectId": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The projectId schema",
+          "$id": "#/items/anyOf/0/properties/projectId"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

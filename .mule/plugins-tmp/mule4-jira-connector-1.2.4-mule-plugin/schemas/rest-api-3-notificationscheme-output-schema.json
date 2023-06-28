@@ -1,0 +1,202 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "expand": "<string>",
+    "scope": {
+      "project": {},
+      "type": "PROJECT"
+    },
+    "name": "<string>",
+    "self": "<string>",
+    "description": "<string>",
+    "id": 34,
+    "notificationSchemeEvents": [{
+      "event": {},
+      "notifications": [{}]
+    }]
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "The root schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "expand": "<string>",
+        "scope": {
+          "project": {},
+          "type": "PROJECT"
+        },
+        "name": "<string>",
+        "self": "<string>",
+        "description": "<string>",
+        "id": 34,
+        "notificationSchemeEvents": [{
+          "event": {},
+          "notifications": [{}]
+        }]
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "expand",
+        "id",
+        "self",
+        "name",
+        "description",
+        "notificationSchemeEvents",
+        "scope"
+      ],
+      "properties": {
+        "expand": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The expand schema",
+          "$id": "#/items/anyOf/0/properties/expand"
+        },
+        "scope": {
+          "default": {},
+          "examples": [{
+            "project": {},
+            "type": "PROJECT"
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The scope schema",
+          "required": [
+            "type",
+            "project"
+          ],
+          "properties": {
+            "project": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The project schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/scope/properties/project"
+            },
+            "type": {
+              "default": "",
+              "examples": ["PROJECT"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The type schema",
+              "$id": "#/items/anyOf/0/properties/scope/properties/type"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/scope"
+        },
+        "name": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The name schema",
+          "$id": "#/items/anyOf/0/properties/name"
+        },
+        "self": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The self schema",
+          "$id": "#/items/anyOf/0/properties/self"
+        },
+        "description": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The description schema",
+          "$id": "#/items/anyOf/0/properties/description"
+        },
+        "id": {
+          "default": 0,
+          "examples": [34],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "integer",
+          "title": "The id schema",
+          "$id": "#/items/anyOf/0/properties/id"
+        },
+        "notificationSchemeEvents": {
+          "default": [],
+          "examples": [[{
+            "event": {},
+            "notifications": [{}]
+          }]],
+          "additionalItems": true,
+          "description": "An explanation about the purpose of this instance.",
+          "type": "array",
+          "title": "The notificationSchemeEvents schema",
+          "items": {
+            "anyOf": [{
+              "default": {},
+              "examples": [{
+                "event": {},
+                "notifications": [{}]
+              }],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The first anyOf schema",
+              "required": [
+                "event",
+                "notifications"
+              ],
+              "properties": {
+                "event": {
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The event schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/notificationSchemeEvents/items/anyOf/0/properties/event"
+                },
+                "notifications": {
+                  "default": [],
+                  "examples": [[{}]],
+                  "additionalItems": true,
+                  "description": "An explanation about the purpose of this instance.",
+                  "type": "array",
+                  "title": "The notifications schema",
+                  "items": {
+                    "anyOf": [{
+                      "default": {},
+                      "examples": [{}],
+                      "description": "An explanation about the purpose of this instance.",
+                      "additionalProperties": true,
+                      "type": "object",
+                      "title": "The first anyOf schema",
+                      "required": [],
+                      "$id": "#/items/anyOf/0/properties/notificationSchemeEvents/items/anyOf/0/properties/notifications/items/anyOf/0"
+                    }],
+                    "$id": "#/items/anyOf/0/properties/notificationSchemeEvents/items/anyOf/0/properties/notifications/items"
+                  },
+                  "$id": "#/items/anyOf/0/properties/notificationSchemeEvents/items/anyOf/0/properties/notifications"
+                }
+              },
+              "$id": "#/items/anyOf/0/properties/notificationSchemeEvents/items/anyOf/0"
+            }],
+            "$id": "#/items/anyOf/0/properties/notificationSchemeEvents/items"
+          },
+          "$id": "#/items/anyOf/0/properties/notificationSchemeEvents"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

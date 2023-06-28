@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ApplicationRole",
+  "definitions": {
+    "ApplicationRole": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "groups": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "defaultGroups": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "selectedByDefault": {
+          "type": "boolean"
+        },
+        "defined": {
+          "type": "boolean"
+        },
+        "numberOfSeats": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "remainingSeats": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "userCount": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "userCountDescription": {
+          "type": "string"
+        },
+        "hasUnlimitedSeats": {
+          "type": "boolean"
+        },
+        "platform": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

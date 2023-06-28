@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/JiraExpressionEvalRequestBean",
+  "definitions": {
+    "JexpIssues": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"jql": {"allOf": [{"$ref": "#/definitions/JexpJqlIssues"}]}}
+    },
+    "JiraExpressionEvalContextBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "issue": {"allOf": [{"$ref": "#/definitions/IdOrKeyBean"}]},
+        "sprint": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "project": {"allOf": [{"$ref": "#/definitions/IdOrKeyBean"}]},
+        "serviceDesk": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "issues": {"allOf": [{"$ref": "#/definitions/JexpIssues"}]},
+        "board": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "customerRequest": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "IdOrKeyBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "key": {"type": "string"}
+      }
+    },
+    "JiraExpressionEvalRequestBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["expression"],
+      "properties": {
+        "expression": {"type": "string"},
+        "context": {"allOf": [{"$ref": "#/definitions/JiraExpressionEvalContextBean"}]}
+      }
+    },
+    "JexpJqlIssues": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "maxResults": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "query": {"type": "string"},
+        "startAt": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "validation": {
+          "type": "string",
+          "enum": [
+            "strict",
+            "warn",
+            "none"
+          ]
+        }
+      }
+    }
+  }
+}

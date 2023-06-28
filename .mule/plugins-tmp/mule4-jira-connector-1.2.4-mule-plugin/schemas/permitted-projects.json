@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PermittedProjects",
+  "definitions": {
+    "ProjectIdentifierBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "PermittedProjects": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"projects": {
+        "readOnly": true,
+        "type": "array",
+        "items": {"$ref": "#/definitions/ProjectIdentifierBean"}
+      }}
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/UpdateCustomFieldOption",
+  "definitions": {
+    "UpdateCustomFieldOption": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"options": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/RenamedOption"}
+      }}
+    },
+    "RenamedOption": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "value",
+        "newValue"
+      ],
+      "properties": {
+        "cascadingOptions": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/RenamedCascadingOption"}
+        },
+        "newValue": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "value": {"type": "string"}
+      }
+    },
+    "RenamedCascadingOption": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "value",
+        "newValue"
+      ],
+      "properties": {
+        "newValue": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "value": {"type": "string"}
+      }
+    }
+  }
+}

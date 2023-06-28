@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension-documentation>
+    <configs>
+        <config name="config">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="expirationPolicy">
+                    <description><![CDATA[Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit.]]></description>
+                </parameter>
+            </parameters>
+        </config>
+    </configs>
+    <connections>
+        <connection name="basic-connection">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="serviceAddress">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="serviceNowVersion">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="userTables">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="encoding">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="username">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="password">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="transport">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="signSecurityStrategy">
+                    <description><![CDATA[a sign WSS configuration]]></description>
+                </parameter>
+                <parameter name="usernameTokenSecurityStrategy">
+                    <description><![CDATA[a usernameToken WSS configuration]]></description>
+                </parameter>
+                <parameter name="reconnection">
+                    <description><![CDATA[When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy]]></description>
+                </parameter>
+                <parameter name="poolingProfile">
+                    <description><![CDATA[Characteristics of the connection pool]]></description>
+                </parameter>
+            </parameters>
+        </connection>
+        <connection name="oauth2-auth-code-connection">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="serviceAddress">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="serviceNowVersion">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="userTables">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="encoding">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="oauthTransport">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="signSecurityStrategy">
+                    <description><![CDATA[a sign WSS configuration]]></description>
+                </parameter>
+                <parameter name="usernameTokenSecurityStrategy">
+                    <description><![CDATA[a usernameToken WSS configuration]]></description>
+                </parameter>
+                <parameter name="reconnection">
+                    <description><![CDATA[When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy]]></description>
+                </parameter>
+                <parameter name="consumerKey">
+                    <description><![CDATA[The OAuth consumerKey as registered with the service provider]]></description>
+                </parameter>
+                <parameter name="consumerSecret">
+                    <description><![CDATA[The OAuth consumerSecret as registered with the service provider]]></description>
+                </parameter>
+                <parameter name="authorizationUrl">
+                    <description><![CDATA[The service provider's authorization endpoint URL]]></description>
+                </parameter>
+                <parameter name="accessTokenUrl">
+                    <description><![CDATA[The service provider's accessToken endpoint URL]]></description>
+                </parameter>
+                <parameter name="scopes">
+                    <description><![CDATA[The OAuth scopes to be requested during the dance. If not provided, it will default to those in the annotation]]></description>
+                </parameter>
+                <parameter name="resourceOwnerId">
+                    <description><![CDATA[The resourceOwnerId which each component should use if it doesn't reference otherwise.]]></description>
+                </parameter>
+                <parameter name="before">
+                    <description><![CDATA[The name of a flow to be executed right before starting the OAuth dance]]></description>
+                </parameter>
+                <parameter name="after">
+                    <description><![CDATA[The name of a flow to be executed right after an accessToken has been received]]></description>
+                </parameter>
+                <parameter name="listenerConfig">
+                    <description><![CDATA[A reference to a <http:listener-config /> to be used in order to create the listener that will catch the access token callback endpoint.]]></description>
+                </parameter>
+                <parameter name="callbackPath">
+                    <description><![CDATA[The path of the access token callback endpoint]]></description>
+                </parameter>
+                <parameter name="authorizePath">
+                    <description><![CDATA[The path of the local http endpoint which triggers the OAuth dance]]></description>
+                </parameter>
+                <parameter name="externalCallbackUrl">
+                    <description><![CDATA[If the callback endpoint is behind a proxy or should be accessed through a non direct URL, use this parameter to tell the OAuth provider the URL it should use to access the callback]]></description>
+                </parameter>
+                <parameter name="objectStore">
+                    <description><![CDATA[A reference to the object store that should be used to store each resource owner id's data. If not specified, runtime will automatically provision the default one.]]></description>
+                </parameter>
+            </parameters>
+        </connection>
+    </connections>
+    <extension name="ServiceNow">
+        <description><![CDATA[]]></description>
+        <parameters/>
+    </extension>
+    <operations>
+        <operation name="invoke">
+            <description><![CDATA[This is the default operation for ServiceNow SOAP invocations]]></description>
+            <parameters>
+                <parameter name="service">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="operation">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="showReferenceValues">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="body">
+                    <description><![CDATA[The XML body to include in the SOAP message, with all the required parameters, or null if no params are required.]]></description>
+                </parameter>
+                <parameter name="headers">
+                    <description><![CDATA[The XML headers to include in the SOAP message.]]></description>
+                </parameter>
+                <parameter name="attachments">
+                    <description><![CDATA[The attachments to include in the SOAP request.]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="unauthorize">
+            <description><![CDATA[Deletes all the access token information of a given resource owner id so that it's impossible to execute any operation for that user without doing the authorization dance again]]></description>
+            <parameters>
+                <parameter name="resourceOwnerId">
+                    <description><![CDATA[The id of the resource owner which access should be invalidated]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+    </operations>
+    <sources>
+        <source name="new-or-updated-record-listener">
+            <description><![CDATA[Efficiently poll for changes in the selected table periodically and accept only new records into the flow.]]></description>
+            <parameters>
+                <parameter name="serviceNowZoneId">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="tableName">
+                    <description><![CDATA[Name of the table from which to retrieve the records.]]></description>
+                </parameter>
+                <parameter name="serviceNowQuery">
+                    <description><![CDATA[Optional query used to filter the result set. Syntax: sysparm_query=<col_name><operator><value>. All parameters are case-sensitive. Queries can contain more than one entry, such as <col_name><operator><value>[<operator><col_name><operator><value>].]]></description>
+                </parameter>
+                <parameter name="displaySystemRefs">
+                    <description><![CDATA[Data retrieval operation for reference and choice fields. Based on this value, retrieves the display value and/or the actual value from the database. Valid values: true: returns the display values for all fields. false: returns the actual values from the database. all: returns both actual and display values. Default: false]]></description>
+                </parameter>
+                <parameter name="excludeRefLinks">
+                    <description><![CDATA[Flag that indicates whether to exclude Table API links for reference fields.]]></description>
+                </parameter>
+                <parameter name="primaryNodeOnly">
+                    <description><![CDATA[Whether this source should only be executed on the primary node when runnning in Cluster]]></description>
+                </parameter>
+                <parameter name="schedulingStrategy">
+                    <description><![CDATA[Configures the scheduler that triggers the polling]]></description>
+                </parameter>
+                <parameter name="redeliveryPolicy">
+                    <description><![CDATA[Defines a policy for processing the redelivery of the same message]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </source>
+    </sources>
+    <types>
+        <type name="com.mulesoft.connectors.servicenow.api.SoapAttributes">
+            <description><![CDATA[The attributes returned by the consume operation, it carries the protocol specific headers (i.e. HTTP headers) and
+ additional transport data (for example HTTP status line) bounded to the response.]]></description>
+            <parameters>
+                <parameter name="additionalTransportData">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="protocolHeaders">
+                    <description><![CDATA[]]></description>
+                </parameter>
+            </parameters>
+        </type>
+        <type name="com.mulesoft.connectors.servicenow.api.SoapOutputEnvelope">
+            <description><![CDATA[Represents the response of the consume operation. Bundles the SOAP body, SOAP Headers and Mime Attachments if there are any.]]></description>
+            <parameters>
+                <parameter name="attachments">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="body">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="headers">
+                    <description><![CDATA[]]></description>
+                </parameter>
+            </parameters>
+        </type>
+        <type name="com.mulesoft.connectors.servicenow.api.security.WssSignSecurityStrategyAdapter">
+            <description><![CDATA[Signs the SOAP request that is being sent, using the private key of the key-store in the provided TLS context.
+
+ @since 1.0]]></description>
+            <parameters>
+                <parameter name="keyStoreConfiguration">
+                    <description><![CDATA[The keystore to use when signing the message.]]></description>
+                </parameter>
+                <parameter name="signAlgorithmConfiguration">
+                    <description><![CDATA[The algorithms to use on the signing.]]></description>
+                </parameter>
+            </parameters>
+        </type>
+        <type name="com.mulesoft.connectors.servicenow.api.security.WssUsernameTokenSecurityStrategyAdapter">
+            <description><![CDATA[Provides the capability to authenticate using Username and Password with a SOAP service by adding the UsernameToken
+ element in the SOAP request.
+
+ @since 1.0]]></description>
+            <parameters>
+                <parameter name="username">
+                    <description><![CDATA[The username required to authenticate with the service.]]></description>
+                </parameter>
+                <parameter name="password">
+                    <description><![CDATA[The password for the provided username required to authenticate with the service.]]></description>
+                </parameter>
+                <parameter name="passwordType">
+                    <description><![CDATA[A #password parameter.]]></description>
+                </parameter>
+            </parameters>
+        </type>
+        <type name="com.mulesoft.connectors.servicenow.api.transport.DefaultOAuthTransportConfiguration">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="readTimeout">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="readTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+            </parameters>
+        </type>
+        <type name="com.mulesoft.connectors.servicenow.internal.transport.CustomHttpTransportConfiguration">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="requesterConfig">
+                    <description><![CDATA[]]></description>
+                </parameter>
+            </parameters>
+        </type>
+        <type name="com.mulesoft.connectors.servicenow.internal.transport.CustomTransportConfiguration">
+            <description><![CDATA[Contract for objects that enables the use of a custom transport executing operations of other plugins by
+ using the ExtensionsClient to send soap the messages.]]></description>
+            <parameters/>
+        </type>
+        <type name="com.mulesoft.connectors.servicenow.internal.transport.DefaultHttpTransportConfiguration">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="readTimeout">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="readTimeoutUnit">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="username">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="password">
+                    <description><![CDATA[]]></description>
+                </parameter>
+            </parameters>
+        </type>
+    </types>
+</extension-documentation>

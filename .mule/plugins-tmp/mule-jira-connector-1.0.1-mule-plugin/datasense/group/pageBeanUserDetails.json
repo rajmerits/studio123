@@ -1,0 +1,169 @@
+
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "#/properties/values",
+  "type": "array",
+  "title": "The Values Schema",
+  "items": {
+    "$id": "#/properties/values/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "self",
+      "name",
+      "key",
+      "accountId",
+      "emailAddress",
+      "avatarUrls",
+      "displayName",
+      "active",
+      "timeZone",
+      "accountType"
+    ],
+    "properties": {
+      "self": {
+        "$id": "#/properties/values/items/properties/self",
+        "type": "string",
+        "title": "The Self Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "name": {
+        "$id": "#/properties/values/items/properties/name",
+        "type": "string",
+        "title": "The Name Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "key": {
+        "$id": "#/properties/values/items/properties/key",
+        "type": "string",
+        "title": "The Key Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "accountId": {
+        "$id": "#/properties/values/items/properties/accountId",
+        "type": "string",
+        "title": "The Accountid Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "emailAddress": {
+        "$id": "#/properties/values/items/properties/emailAddress",
+        "type": "string",
+        "title": "The Emailaddress Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "avatarUrls": {
+        "$id": "#/properties/values/items/properties/avatarUrls",
+        "type": "object",
+        "title": "The Avatarurls Schema",
+        "required": [
+          "16x16",
+          "24x24",
+          "32x32",
+          "48x48"
+        ],
+        "properties": {
+          "16x16": {
+            "$id": "#/properties/values/items/properties/avatarUrls/properties/16x16",
+            "type": "string",
+            "title": "The 16x16 Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "24x24": {
+            "$id": "#/properties/values/items/properties/avatarUrls/properties/24x24",
+            "type": "string",
+            "title": "The 24x24 Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "32x32": {
+            "$id": "#/properties/values/items/properties/avatarUrls/properties/32x32",
+            "type": "string",
+            "title": "The 32x32 Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "48x48": {
+            "$id": "#/properties/values/items/properties/avatarUrls/properties/48x48",
+            "type": "string",
+            "title": "The 48x48 Schema",
+            "default": "",
+            "examples": [
+              "<string>"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "displayName": {
+        "$id": "#/properties/values/items/properties/displayName",
+        "type": "string",
+        "title": "The Displayname Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "active": {
+        "$id": "#/properties/values/items/properties/active",
+        "type": "boolean",
+        "title": "The Active Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "timeZone": {
+        "$id": "#/properties/values/items/properties/timeZone",
+        "type": "string",
+        "title": "The Timezone Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "accountType": {
+        "$id": "#/properties/values/items/properties/accountType",
+        "type": "string",
+        "title": "The Accounttype Schema",
+        "default": "",
+        "examples": [
+          "<string>"
+        ],
+        "pattern": "^(.*)$"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/TimeTrackingProvider",
+  "definitions": {"TimeTrackingProvider": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["key"],
+    "properties": {
+      "name": {"type": "string"},
+      "key": {"type": "string"},
+      "url": {
+        "readOnly": true,
+        "type": "string"
+      }
+    }
+  }}
+}

@@ -1,0 +1,290 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "Create IssueLink Input Schema",
+  "required": [
+    "outwardIssue",
+    "inwardIssue",
+    "type"
+  ],
+  "properties": {
+    "outwardIssue": {
+      "$id": "#/properties/outwardIssue",
+      "type": "object",
+      "title": "The Outwardissue Schema",
+      "required": [
+        "id",
+        "key"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/outwardIssue/properties/id",
+          "type": "string",
+          "title": "The Id Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "key": {
+          "$id": "#/properties/outwardIssue/properties/key",
+          "type": "string",
+          "title": "The Key Schema",
+          "default": "",
+          "examples": [
+            "MKY-1"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "comment": {
+      "$id": "#/properties/comment",
+      "type": "object",
+      "title": "The Comment Schema",
+      "required": [
+        "visibility",
+        "body",
+        "properties"
+      ],
+      "properties": {
+        "visibility": {
+          "$id": "#/properties/comment/properties/visibility",
+          "type": "object",
+          "title": "The Visibility Schema",
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "$id": "#/properties/comment/properties/visibility/properties/type",
+              "type": "string",
+              "title": "The Type Schema",
+              "default": "",
+              "examples": [
+                "group"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "value": {
+              "$id": "#/properties/comment/properties/visibility/properties/value",
+              "type": "string",
+              "title": "The Value Schema",
+              "default": "",
+              "examples": [
+                "jira-software-users"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "body": {
+          "$id": "#/properties/comment/properties/body",
+          "type": "object",
+          "title": "The Body Schema",
+          "required": [
+            "type",
+            "version",
+            "content"
+          ],
+          "properties": {
+            "type": {
+              "$id": "#/properties/comment/properties/body/properties/type",
+              "type": "string",
+              "title": "The Type Schema",
+              "default": "",
+              "examples": [
+                "doc"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "version": {
+              "$id": "#/properties/comment/properties/body/properties/version",
+              "type": "integer",
+              "title": "The Version Schema",
+              "default": 0,
+              "examples": [
+                1
+              ]
+            },
+            "content": {
+              "$id": "#/properties/comment/properties/body/properties/content",
+              "type": "array",
+              "title": "The Content Schema",
+              "items": {
+                "$id": "#/properties/comment/properties/body/properties/content/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "type",
+                  "content"
+                ],
+                "properties": {
+                  "type": {
+                    "$id": "#/properties/comment/properties/body/properties/content/items/properties/type",
+                    "type": "string",
+                    "title": "The Type Schema",
+                    "default": "",
+                    "examples": [
+                      "paragraph"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "content": {
+                    "$id": "#/properties/comment/properties/body/properties/content/items/properties/content",
+                    "type": "array",
+                    "title": "The Content Schema",
+                    "items": {
+                      "$id": "#/properties/comment/properties/body/properties/content/items/properties/content/items",
+                      "type": "object",
+                      "title": "The Items Schema",
+                      "required": [
+                        "text",
+                        "type"
+                      ],
+                      "properties": {
+                        "text": {
+                          "$id": "#/properties/comment/properties/body/properties/content/items/properties/content/items/properties/text",
+                          "type": "string",
+                          "title": "The Text Schema",
+                          "default": "",
+                          "examples": [
+                            "Linked related issue!"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "type": {
+                          "$id": "#/properties/comment/properties/body/properties/content/items/properties/content/items/properties/type",
+                          "type": "string",
+                          "title": "The Type Schema",
+                          "default": "",
+                          "examples": [
+                            "text"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "properties": {
+          "$id": "#/properties/comment/properties/properties",
+          "type": "array",
+          "title": "The Properties Schema",
+          "items": {
+            "$id": "#/properties/comment/properties/properties/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "key"
+            ],
+            "properties": {
+              "key": {
+                "$id": "#/properties/comment/properties/properties/items/properties/key",
+                "type": "string",
+                "title": "The Key Schema",
+                "default": "",
+                "examples": [
+                  "string"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "inwardIssue": {
+      "$id": "#/properties/inwardIssue",
+      "type": "object",
+      "title": "The Inwardissue Schema",
+      "required": [
+        "id",
+        "key"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/inwardIssue/properties/id",
+          "type": "string",
+          "title": "The Id Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "key": {
+          "$id": "#/properties/inwardIssue/properties/key",
+          "type": "string",
+          "title": "The Key Schema",
+          "default": "",
+          "examples": [
+            "HSP-1"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "type": {
+      "$id": "#/properties/type",
+      "type": "object",
+      "title": "The Type Schema",
+      "required": [
+        "id",
+        "name",
+        "inward",
+        "outward"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/type/properties/id",
+          "type": "string",
+          "title": "The Id Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/type/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "Duplicate"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "inward": {
+          "$id": "#/properties/type/properties/inward",
+          "type": "string",
+          "title": "The Inward Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "outward": {
+          "$id": "#/properties/type/properties/outward",
+          "type": "string",
+          "title": "The Outward Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  }
+}

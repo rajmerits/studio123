@@ -1,0 +1,35 @@
+%dw 2.0
+
+type auto_23c49bd9_817b_41fd_ab34_9e38e304f044_Input_Attributes = {|
+  clientCertificate?: {|
+    publicKey?: {|  |}, 
+    "type"?: String, 
+    encoded?: Binary
+  |}, 
+  headers: {|
+    "X-Cms-TransactionId": String, 
+    "X-Cms-Channel": "web" | "mobile", 
+    "X-Cms-OriginLanguage": "Telugu" | "english", 
+    "X-Cms-OriginMarket": "uk" | "india", 
+    "X-Cms-ClientId": String, 
+    "X-Cms-ClientSecret": String
+  |}, 
+  listenerPath: String, 
+  method: String, 
+  queryParams: {|
+    email?: String, 
+    phoneCountry?: String, 
+    phoneNumber?: String, 
+    registrationDate?: String
+  |}, 
+  queryString: String, 
+  relativePath: String, 
+  remoteAddress: String, 
+  requestPath: String, 
+  requestUri: String, 
+  scheme: String, 
+  uriParams: {|  |}, 
+  version: String, 
+  localAddress: String
+|}
+

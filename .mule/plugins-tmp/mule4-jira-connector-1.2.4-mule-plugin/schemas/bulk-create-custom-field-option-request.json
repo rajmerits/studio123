@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/BulkCreateCustomFieldOptionRequest",
+  "definitions": {
+    "CustomFieldOptionValue": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "cascadingOptions": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "value": {
+          "type": "string",
+          "maxLength": 255
+        }
+      }
+    },
+    "BulkCreateCustomFieldOptionRequest": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"options": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/CustomFieldOptionValue"}
+      }}
+    }
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PageBeanWorkflow",
+  "definitions": {
+    "WorkflowStatusProperties": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["issueEditable"],
+      "properties": {"issueEditable": {"type": "boolean"}}
+    },
+    "WorkflowSimpleCondition": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "type",
+        "nodeType"
+      ],
+      "properties": {
+        "configuration": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "type": {"type": "string"},
+        "nodeType": {"type": "string"}
+      }
+    },
+    "PageBeanWorkflow": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "total": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "isLast": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "nextPage": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "values": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/Workflow"}
+        },
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "startAt": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "PublishedWorkflowId": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string"},
+        "entityId": {"type": "string"}
+      }
+    },
+    "WorkflowRules": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "conditions",
+        "validators",
+        "postFunctions"
+      ],
+      "properties": {
+        "conditionsTree": {"$ref": "#/definitions/WorkflowConditionBean"},
+        "postFunctions": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/WorkflowTransitionRule"}
+        },
+        "validators": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/WorkflowTransitionRule"}
+        },
+        "conditions": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/WorkflowTransitionRule"}
+        }
+      }
+    },
+    "WorkflowCompoundCondition": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "operator",
+        "conditions",
+        "nodeType"
+      ],
+      "properties": {
+        "conditions": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/WorkflowConditionBean"}
+        },
+        "nodeType": {"type": "string"},
+        "operator": {
+          "type": "string",
+          "enum": [
+            "AND",
+            "OR"
+          ]
+        }
+      }
+    },
+    "ScreenID": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["id"],
+      "properties": {"id": {"type": "string"}}
+    },
+    "WorkflowConditionBean": {
+      "oneOf": [
+        {"$ref": "#/definitions/WorkflowSimpleCondition"},
+        {"$ref": "#/definitions/WorkflowCompoundCondition"}
+      ],
+      "additionalProperties": false,
+      "type": "object",
+      "discriminator": "nodeType"
+    },
+    "Transition": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "description",
+        "from",
+        "to",
+        "type"
+      ],
+      "properties": {
+        "name": {"type": "string"},
+        "description": {"type": "string"},
+        "screen": {"$ref": "#/definitions/ScreenID"},
+        "from": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "rules": {"$ref": "#/definitions/WorkflowRules"},
+        "id": {"type": "string"},
+        "to": {"type": "string"},
+        "type": {
+          "type": "string",
+          "enum": [
+            "global",
+            "initial",
+            "directed"
+          ]
+        }
+      }
+    },
+    "Workflow": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "description"
+      ],
+      "properties": {
+        "description": {"type": "string"},
+        "statuses": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/WorkflowStatus"}
+        },
+        "id": {"$ref": "#/definitions/PublishedWorkflowId"},
+        "transitions": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/Transition"}
+        }
+      }
+    },
+    "WorkflowTransitionRule": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "configuration": {},
+        "type": {"type": "string"}
+      }
+    },
+    "WorkflowStatus": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "name": {"type": "string"},
+        "id": {"type": "string"},
+        "properties": {"$ref": "#/definitions/WorkflowStatusProperties"}
+      }
+    }
+  }
+}

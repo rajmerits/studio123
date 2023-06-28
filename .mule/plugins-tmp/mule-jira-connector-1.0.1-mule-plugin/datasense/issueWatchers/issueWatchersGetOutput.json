@@ -1,0 +1,203 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "Get IssueWatchers output schema",
+  "properties": {
+    "self": {
+      "$id": "#/properties/self",
+      "type": "string",
+      "title": "The Self Schema",
+      "default": "",
+      "examples": [
+        "http://your-domain.atlassian.net/rest/api/3/issue/EX-1/watchers"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "isWatching": {
+      "$id": "#/properties/isWatching",
+      "type": "boolean",
+      "title": "The Iswatching Schema",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "watchCount": {
+      "$id": "#/properties/watchCount",
+      "type": "integer",
+      "title": "The Watchcount Schema",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "watchers": {
+      "$id": "#/properties/watchers",
+      "type": "array",
+      "title": "The Watchers Schema",
+      "items": {
+        "$id": "#/properties/watchers/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "self",
+          "name",
+          "key",
+          "accountId",
+          "displayName",
+          "emailAddress",
+          "avatarUrls",
+          "active",
+          "timeZone",
+          "accountType"
+        ],
+        "properties": {
+          "self": {
+            "$id": "#/properties/watchers/items/properties/self",
+            "type": "string",
+            "title": "The Self Schema",
+            "default": "",
+            "examples": [
+              "http://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/watchers/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "string"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "key": {
+            "$id": "#/properties/watchers/items/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+              "string"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountId": {
+            "$id": "#/properties/watchers/items/properties/accountId",
+            "type": "string",
+            "title": "The Accountid Schema",
+            "default": "",
+            "examples": [
+              "5b10a2844c20165700ede21g"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "displayName": {
+            "$id": "#/properties/watchers/items/properties/displayName",
+            "type": "string",
+            "title": "The Displayname Schema",
+            "default": "",
+            "examples": [
+              "Mia Krystof"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "emailAddress": {
+            "$id": "#/properties/watchers/items/properties/emailAddress",
+            "type": "string",
+            "title": "The Emailaddress Schema",
+            "default": "",
+            "examples": [
+              "string"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "avatarUrls": {
+            "$id": "#/properties/watchers/items/properties/avatarUrls",
+            "type": "object",
+            "title": "The Avatarurls Schema",
+            "required": [
+              "16x16",
+              "24x24",
+              "32x32",
+              "48x48"
+            ],
+            "properties": {
+              "16x16": {
+                "$id": "#/properties/watchers/items/properties/avatarUrls/properties/16x16",
+                "type": "string",
+                "title": "The 16x16 Schema",
+                "default": "",
+                "examples": [
+                  "string"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "24x24": {
+                "$id": "#/properties/watchers/items/properties/avatarUrls/properties/24x24",
+                "type": "string",
+                "title": "The 24x24 Schema",
+                "default": "",
+                "examples": [
+                  "string"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "32x32": {
+                "$id": "#/properties/watchers/items/properties/avatarUrls/properties/32x32",
+                "type": "string",
+                "title": "The 32x32 Schema",
+                "default": "",
+                "examples": [
+                  "string"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "48x48": {
+                "$id": "#/properties/watchers/items/properties/avatarUrls/properties/48x48",
+                "type": "string",
+                "title": "The 48x48 Schema",
+                "default": "",
+                "examples": [
+                  "string"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "active": {
+            "$id": "#/properties/watchers/items/properties/active",
+            "type": "boolean",
+            "title": "The Active Schema",
+            "default": false,
+            "examples": [
+              false
+            ]
+          },
+          "timeZone": {
+            "$id": "#/properties/watchers/items/properties/timeZone",
+            "type": "string",
+            "title": "The Timezone Schema",
+            "default": "",
+            "examples": [
+              "string"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountType": {
+            "$id": "#/properties/watchers/items/properties/accountType",
+            "type": "string",
+            "title": "The Accounttype Schema",
+            "default": "",
+            "examples": [
+              "string"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

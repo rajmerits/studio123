@@ -1,0 +1,197 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "IssueType Get Schema",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "self": {
+      "$id": "#/properties/self",
+      "type": "string",
+      "title": "The Self Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The Id Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "The Description Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "iconUrl": {
+      "$id": "#/properties/iconUrl",
+      "type": "string",
+      "title": "The Iconurl Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "subtask": {
+      "$id": "#/properties/subtask",
+      "type": "boolean",
+      "title": "The Subtask Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "avatarId": {
+      "$id": "#/properties/avatarId",
+      "type": "integer",
+      "title": "The Avatarid Schema",
+      "default": 0,
+      "examples": [
+        34
+      ]
+    },
+    "entityId": {
+      "$id": "#/properties/entityId",
+      "type": "string",
+      "title": "The Entityid Schema",
+      "default": "",
+      "examples": [
+        "<string>"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "scope": {
+      "$id": "#/properties/scope",
+      "type": "object",
+      "title": "The Scope Schema",
+      "required": [
+        "type",
+        "project"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/scope/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "PROJECT"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "project": {
+          "$id": "#/properties/scope/properties/project",
+          "type": "object",
+          "title": "The Project Schema",
+          "required": [
+            "self",
+            "id",
+            "key",
+            "name",
+            "projectTypeKey",
+            "simplified",
+            "avatarUrls",
+            "projectCategory"
+          ],
+          "properties": {
+            "self": {
+              "$id": "#/properties/scope/properties/project/properties/self",
+              "type": "string",
+              "title": "The Self Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "id": {
+              "$id": "#/properties/scope/properties/project/properties/id",
+              "type": "string",
+              "title": "The Id Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "key": {
+              "$id": "#/properties/scope/properties/project/properties/key",
+              "type": "string",
+              "title": "The Key Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "name": {
+              "$id": "#/properties/scope/properties/project/properties/name",
+              "type": "string",
+              "title": "The Name Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "projectTypeKey": {
+              "$id": "#/properties/scope/properties/project/properties/projectTypeKey",
+              "type": "string",
+              "title": "The Projecttypekey Schema",
+              "default": "",
+              "examples": [
+                "software"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "simplified": {
+              "$id": "#/properties/scope/properties/project/properties/simplified",
+              "type": "boolean",
+              "title": "The Simplified Schema",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "avatarUrls": {
+              "$id": "#/properties/scope/properties/project/properties/avatarUrls",
+              "type": "object",
+              "title": "The Avatarurls Schema"
+            },
+            "projectCategory": {
+              "$id": "#/properties/scope/properties/project/properties/projectCategory",
+              "type": "object",
+              "title": "The Projectcategory Schema"
+            }
+          }
+        }
+      }
+    }
+  }
+}

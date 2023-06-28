@@ -1,0 +1,252 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "schema": {
+      "system": "<string>",
+      "configuration": {},
+      "custom": "<string>",
+      "type": "<string>",
+      "items": "<string>",
+      "customId": 59
+    },
+    "screensCount": 42,
+    "lastUsed": {
+      "type": "TRACKED",
+      "value": "<string>"
+    },
+    "contextsCount": 43,
+    "searcherKey": "<string>",
+    "isLocked": true,
+    "name": "<string>",
+    "description": "<string>",
+    "id": "<string>",
+    "key": "<string>"
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "The root schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "schema": {
+          "system": "<string>",
+          "configuration": {},
+          "custom": "<string>",
+          "type": "<string>",
+          "items": "<string>",
+          "customId": 59
+        },
+        "screensCount": 42,
+        "lastUsed": {
+          "type": "TRACKED",
+          "value": "<string>"
+        },
+        "contextsCount": 43,
+        "searcherKey": "<string>",
+        "isLocked": true,
+        "name": "<string>",
+        "description": "<string>",
+        "id": "<string>",
+        "key": "<string>"
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "id",
+        "name",
+        "schema",
+        "description",
+        "key",
+        "isLocked",
+        "searcherKey",
+        "screensCount",
+        "contextsCount",
+        "lastUsed"
+      ],
+      "properties": {
+        "schema": {
+          "default": {},
+          "examples": [{
+            "system": "<string>",
+            "configuration": {},
+            "custom": "<string>",
+            "type": "<string>",
+            "items": "<string>",
+            "customId": 59
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The schema schema",
+          "required": [
+            "type",
+            "items",
+            "system",
+            "custom",
+            "customId",
+            "configuration"
+          ],
+          "properties": {
+            "system": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The system schema",
+              "$id": "#/items/anyOf/0/properties/schema/properties/system"
+            },
+            "configuration": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The configuration schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/schema/properties/configuration"
+            },
+            "custom": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The custom schema",
+              "$id": "#/items/anyOf/0/properties/schema/properties/custom"
+            },
+            "type": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The type schema",
+              "$id": "#/items/anyOf/0/properties/schema/properties/type"
+            },
+            "items": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The items schema",
+              "$id": "#/items/anyOf/0/properties/schema/properties/items"
+            },
+            "customId": {
+              "default": 0,
+              "examples": [59],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "integer",
+              "title": "The customId schema",
+              "$id": "#/items/anyOf/0/properties/schema/properties/customId"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/schema"
+        },
+        "screensCount": {
+          "default": 0,
+          "examples": [42],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "integer",
+          "title": "The screensCount schema",
+          "$id": "#/items/anyOf/0/properties/screensCount"
+        },
+        "lastUsed": {
+          "default": {},
+          "examples": [{
+            "type": "TRACKED",
+            "value": "<string>"
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The lastUsed schema",
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "default": "",
+              "examples": ["TRACKED"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The type schema",
+              "$id": "#/items/anyOf/0/properties/lastUsed/properties/type"
+            },
+            "value": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The value schema",
+              "$id": "#/items/anyOf/0/properties/lastUsed/properties/value"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/lastUsed"
+        },
+        "contextsCount": {
+          "default": 0,
+          "examples": [43],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "integer",
+          "title": "The contextsCount schema",
+          "$id": "#/items/anyOf/0/properties/contextsCount"
+        },
+        "searcherKey": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The searcherKey schema",
+          "$id": "#/items/anyOf/0/properties/searcherKey"
+        },
+        "isLocked": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The isLocked schema",
+          "$id": "#/items/anyOf/0/properties/isLocked"
+        },
+        "name": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The name schema",
+          "$id": "#/items/anyOf/0/properties/name"
+        },
+        "description": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The description schema",
+          "$id": "#/items/anyOf/0/properties/description"
+        },
+        "id": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The id schema",
+          "$id": "#/items/anyOf/0/properties/id"
+        },
+        "key": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The key schema",
+          "$id": "#/items/anyOf/0/properties/key"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

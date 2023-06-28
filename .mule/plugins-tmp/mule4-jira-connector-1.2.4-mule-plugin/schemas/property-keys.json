@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PropertyKeys",
+  "definitions": {
+    "PropertyKeys": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"keys": {
+        "readOnly": true,
+        "type": "array",
+        "items": {"$ref": "#/definitions/PropertyKey"}
+      }}
+    },
+    "PropertyKey": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    }
+  }
+}

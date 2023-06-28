@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/ApplicationRole"}
+    },
+    "ApplicationRole": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "numberOfSeats": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "userCount": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "userCountDescription": {"type": "string"},
+        "defaultGroups": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "hasUnlimitedSeats": {"type": "boolean"},
+        "name": {"type": "string"},
+        "groups": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "remainingSeats": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "key": {"type": "string"},
+        "selectedByDefault": {"type": "boolean"},
+        "defined": {"type": "boolean"},
+        "platform": {"type": "boolean"}
+      }
+    }
+  }
+}

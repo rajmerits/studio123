@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ComponentIssuesCount",
+  "definitions": {"ComponentIssuesCount": {
+    "xml": {"name": "component"},
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "self": {
+        "format": "uri",
+        "readOnly": true,
+        "type": "string"
+      },
+      "issueCount": {
+        "maximum": 9.223372036854776E+18,
+        "readOnly": true,
+        "type": "number",
+        "minimum": -9.223372036854776E+18
+      }
+    }
+  }}
+}

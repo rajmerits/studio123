@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/WorkflowTransitionProperty",
+  "definitions": {"WorkflowTransitionProperty": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": ["value"],
+    "properties": {
+      "id": {
+        "readOnly": true,
+        "type": "string"
+      },
+      "value": {"type": "string"},
+      "key": {
+        "readOnly": true,
+        "type": "string"
+      }
+    }
+  }}
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AttachmentArchiveMetadataReadable",
+  "definitions": {
+    "AttachmentArchiveItemReadable": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "path": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "size": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "index": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "mediaType": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "label": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "AttachmentArchiveMetadataReadable": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "totalEntryCount": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "entries": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/AttachmentArchiveItemReadable"}
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "mediaType": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    }
+  }
+}

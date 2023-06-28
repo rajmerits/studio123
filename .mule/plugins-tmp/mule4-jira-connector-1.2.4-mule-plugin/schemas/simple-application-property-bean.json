@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/SimpleApplicationPropertyBean",
+  "definitions": {"SimpleApplicationPropertyBean": {
+    "xml": {"name": "applicationProperty"},
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "id": {"type": "string"},
+      "value": {"type": "string"}
+    }
+  }}
+}

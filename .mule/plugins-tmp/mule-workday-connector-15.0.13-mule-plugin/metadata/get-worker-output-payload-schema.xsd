@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Worker">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Worker_First_Name" type="xs:string" minOccurs="0"/>
+                <xs:element name="Worker_Last_Name" type="xs:string" minOccurs="0"/>
+                <xs:element name="Worker_Id" type="xs:unsignedInt" minOccurs="0"/>
+                <xs:element name="Worker_Status" type="xs:boolean" minOccurs="0"/>
+                <xs:element name="Resignation_Date" type="xs:date" minOccurs="0"/>
+                <xs:element name="Retired" type="xs:boolean" minOccurs="0"/>
+                <xs:element name="Terminated" type="xs:boolean" minOccurs="0"/>
+                <xs:element name="Termination_Date" type="xs:date" minOccurs="0"/>
+                <xs:element name="Termination_Reason" type="xs:string" minOccurs="0"/>
+                <xs:element name="Date_Of_Birth" type="xs:date" minOccurs="0"/>
+                <xs:element name="Business_Title" type="xs:string" minOccurs="0"/>
+                <xs:element name="Email_Address" type="xs:string" minOccurs="0"/>
+                <xs:element name="Email_Addresses" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Email_Address" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Email_Comment" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Usage_Data" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Type_Data" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Type_Reference">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                                            maxOccurs="unbounded"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Use_For_Reference" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                                maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Use_For_Tenanted_Reference" minOccurs="0"
+                                                    maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                                maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Comments" type="xs:string" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Email_Reference" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ID" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Phone_Number" type="xs:string" minOccurs="0"/>
+                <xs:element name="Address" type="xs:string" minOccurs="0"/>
+                <xs:element name="Job_Addresses">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Country_Reference" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                    maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Last_Modified" type="xs:date" minOccurs="0"/>
+                            <xs:element name="Address_Line_Data" type="xs:string" minOccurs="0"
+                                        maxOccurs="unbounded"/>
+                            <xs:element name="Municipality" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Country_City_Reference" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                    maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Submunicipality_Data" type="xs:string" minOccurs="0"
+                                        maxOccurs="unbounded"/>
+                            <xs:element name="Country_Region_Reference" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                    maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Country_Region_Descriptor" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Subregion_Data" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="Postal_Code" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="Usage_Data" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Type_Data" minOccurs="1" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Type_Reference" minOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="ID" type="xs:string"
+                                                                            minOccurs="0"
+                                                                            maxOccurs="unbounded"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Use_For_Reference" minOccurs="0"
+                                                    maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                                maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Use_For_Tenanted_Reference" minOccurs="0"
+                                                    maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                                maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Comments" type="xs:string" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Number_of_Days" type="xs:decimal" minOccurs="0"/>
+                            <xs:element name="Municipality_Local" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Address_Reference" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                    maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Address_ID" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Personal_Addresses">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Country_Reference" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                    maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Last_Modified" type="xs:date" minOccurs="0"/>
+                            <xs:element name="Address_Line_Data" type="xs:string" minOccurs="0"
+                                        maxOccurs="unbounded"/>
+                            <xs:element name="Municipality" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Country_City_Reference" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                    maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Submunicipality_Data" type="xs:string" minOccurs="0"
+                                        maxOccurs="unbounded"/>
+                            <xs:element name="Country_Region_Reference" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                    maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Country_Region_Descriptor" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Subregion_Data" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="Postal_Code" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="Usage_Data" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Type_Data" minOccurs="1" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Type_Reference" minOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="ID" type="xs:string"
+                                                                            minOccurs="0"
+                                                                            maxOccurs="unbounded"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Use_For_Reference" minOccurs="0"
+                                                    maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                                maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Use_For_Tenanted_Reference" minOccurs="0"
+                                                    maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                                maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Comments" type="xs:string" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Number_of_Days" type="xs:decimal" minOccurs="0"/>
+                            <xs:element name="Municipality_Local" type="xs:string" minOccurs="0"/>
+                            <xs:element name="Address_Reference" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                    maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Address_ID" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Country" type="xs:string" minOccurs="0"/>
+                <xs:element name="Position_Title" type="xs:string" minOccurs="0"/>
+                <xs:element name="Position_Id" type="xs:string" minOccurs="0"/>
+                <xs:element name="Position_Start_Date" type="xs:date" minOccurs="0"/>
+                <xs:element name="Hire_Date" type="xs:date" minOccurs="0"/>
+                <xs:element name="Supervisory_Organization" type="xs:string" minOccurs="0"/>
+                <xs:element name="Supervisory_Organization_Chain">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Organization_Reference" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                    maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Manager_Reference" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                    maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Manager" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Worker_Reference" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ID" type="xs:string" minOccurs="0"
+                                                                maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Worker_Descriptor" type="xs:string"
+                                                    minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Worker_Type" type="xs:string" minOccurs="0"/>
+                <xs:element name="Position_Time_Type" type="xs:string" minOccurs="0"/>
+                <xs:element name="Scheduled_Weekly_Hours" type="xs:unsignedInt" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

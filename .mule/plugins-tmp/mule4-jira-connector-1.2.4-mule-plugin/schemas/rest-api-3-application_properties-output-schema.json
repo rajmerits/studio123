@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/schema",
+  "definitions": {
+    "schema": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/ApplicationProperty"}
+    },
+    "ApplicationProperty": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "allowedValues": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "defaultValue": {"type": "string"},
+        "name": {"type": "string"},
+        "id": {"type": "string"},
+        "type": {"type": "string"},
+        "value": {"type": "string"},
+        "key": {"type": "string"},
+        "desc": {"type": "string"},
+        "example": {"type": "string"}
+      }
+    }
+  }
+}

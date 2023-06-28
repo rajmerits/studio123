@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/DefaultWorkflow",
+  "definitions": {"DefaultWorkflow": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["workflow"],
+    "properties": {
+      "workflow": {"type": "string"},
+      "updateDraftIfNeeded": {"type": "boolean"}
+    }
+  }}
+}

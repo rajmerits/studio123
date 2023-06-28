@@ -1,0 +1,218 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "htmlBody",
+    "subject",
+    "textBody",
+    "to",
+    "restrict"
+  ],
+  "properties": {
+    "htmlBody": {
+      "$id": "#/properties/htmlBody",
+      "type": "string",
+      "title": "The Htmlbody Schema",
+      "default": "",
+      "examples": [
+        "The <strong>latest</strong> test results for this ticket are now available."
+      ],
+      "pattern": "^(.*)$"
+    },
+    "subject": {
+      "$id": "#/properties/subject",
+      "type": "string",
+      "title": "The Subject Schema",
+      "default": "",
+      "examples": [
+        "Latest test results"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "textBody": {
+      "$id": "#/properties/textBody",
+      "type": "string",
+      "title": "The Textbody Schema",
+      "default": "",
+      "examples": [
+        "The latest test results for this ticket are now available."
+      ],
+      "pattern": "^(.*)$"
+    },
+    "to": {
+      "$id": "#/properties/to",
+      "type": "object",
+      "title": "The To Schema",
+      "required": [
+        "voters",
+        "watchers",
+        "groups",
+        "reporter",
+        "assignee",
+        "users"
+      ],
+      "properties": {
+        "voters": {
+          "$id": "#/properties/to/properties/voters",
+          "type": "boolean",
+          "title": "The Voters Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "watchers": {
+          "$id": "#/properties/to/properties/watchers",
+          "type": "boolean",
+          "title": "The Watchers Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "groups": {
+          "$id": "#/properties/to/properties/groups",
+          "type": "array",
+          "title": "The Groups Schema",
+          "items": {
+            "$id": "#/properties/to/properties/groups/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "$id": "#/properties/to/properties/groups/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "examples": [
+                  "notification-group"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        },
+        "reporter": {
+          "$id": "#/properties/to/properties/reporter",
+          "type": "boolean",
+          "title": "The Reporter Schema",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "assignee": {
+          "$id": "#/properties/to/properties/assignee",
+          "type": "boolean",
+          "title": "The Assignee Schema",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "users": {
+          "$id": "#/properties/to/properties/users",
+          "type": "array",
+          "title": "The Users Schema",
+          "items": {
+            "$id": "#/properties/to/properties/users/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "accountId",
+              "active"
+            ],
+            "properties": {
+              "accountId": {
+                "$id": "#/properties/to/properties/users/items/properties/accountId",
+                "type": "string",
+                "title": "The Accountid Schema",
+                "default": "",
+                "examples": [
+                  "5b10a2844c20165700ede21g"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "active": {
+                "$id": "#/properties/to/properties/users/items/properties/active",
+                "type": "boolean",
+                "title": "The Active Schema",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "restrict": {
+      "$id": "#/properties/restrict",
+      "type": "object",
+      "title": "The Restrict Schema",
+      "required": [
+        "permissions",
+        "groups"
+      ],
+      "properties": {
+        "permissions": {
+          "$id": "#/properties/restrict/properties/permissions",
+          "type": "array",
+          "title": "The Permissions Schema",
+          "items": {
+            "$id": "#/properties/restrict/properties/permissions/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "key"
+            ],
+            "properties": {
+              "key": {
+                "$id": "#/properties/restrict/properties/permissions/items/properties/key",
+                "type": "string",
+                "title": "The Key Schema",
+                "default": "",
+                "examples": [
+                  "BROWSE"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        },
+        "groups": {
+          "$id": "#/properties/restrict/properties/groups",
+          "type": "array",
+          "title": "The Groups Schema",
+          "items": {
+            "$id": "#/properties/restrict/properties/groups/items",
+            "type": "object",
+            "title": "Notification",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "$id": "#/properties/restrict/properties/groups/items/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "examples": [
+                  "notification-group"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

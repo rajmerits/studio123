@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ScreenSchemeDetails",
+  "definitions": {
+    "ScreenTypes": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "view": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "default": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "edit": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "create": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "ScreenSchemeDetails": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "name",
+        "screens"
+      ],
+      "properties": {
+        "screens": {"allOf": [{"$ref": "#/definitions/ScreenTypes"}]},
+        "name": {"type": "string"},
+        "description": {"type": "string"}
+      }
+    }
+  }
+}

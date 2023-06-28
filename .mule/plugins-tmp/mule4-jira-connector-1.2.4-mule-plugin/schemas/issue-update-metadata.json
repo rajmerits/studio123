@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueUpdateMetadata",
+  "definitions": {"IssueUpdateMetadata": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {"fields": {
+      "readOnly": true,
+      "additionalProperties": true,
+      "type": "object"
+    }}
+  }}
+}

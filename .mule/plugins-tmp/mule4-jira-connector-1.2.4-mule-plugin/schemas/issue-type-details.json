@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueTypeDetails",
+  "definitions": {
+    "IssueTypeDetails": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true
+        },
+        "iconUrl": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "subtask": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "avatarId": {
+          "type": "number",
+          "readOnly": true,
+          "minimum": -9.223372036854776E18,
+          "maximum": 9.223372036854776E18
+        },
+        "entityId": {
+          "type": "string",
+          "format": "uuid",
+          "readOnly": true
+        },
+        "hierarchyLevel": {
+          "type": "integer",
+          "readOnly": true,
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "scope": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/Scope"
+            }
+          ]
+        }
+      }
+    },
+    "Scope": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "type": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "PROJECT",
+            "TEMPLATE"
+          ]
+        },
+        "project": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProjectForScope"
+            }
+          ]
+        }
+      }
+    },
+    "ProjectForScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "projectTypeKey": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "software",
+            "service_desk",
+            "business"
+          ]
+        },
+        "simplified": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "avatarUrls": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/AvatarUrlsBean"
+            }
+          ]
+        },
+        "projectCategory": {
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "#/definitions/UpdatedProjectCategory"
+            }
+          ]
+        }
+      }
+    },
+    "AvatarUrlsBean": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "16x16": {
+          "type": "string",
+          "format": "uri"
+        },
+        "24x24": {
+          "type": "string",
+          "format": "uri"
+        },
+        "32x32": {
+          "type": "string",
+          "format": "uri"
+        },
+        "48x48": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "UpdatedProjectCategory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string",
+          "readOnly": true
+        },
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

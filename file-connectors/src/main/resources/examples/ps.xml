@@ -1,0 +1,128 @@
+<bsvc:Change_Passports_and_Visas_Request xmlns:bsvc="urn:com.workday/bsvc" bsvc:version="string">
+<!-- Optional: -->
+<bsvc:Business_Process_Parameters>
+<!-- Optional: -->
+<bsvc:Auto_Complete>false</bsvc:Auto_Complete>
+<!-- Optional: -->
+<bsvc:Run_Now>true</bsvc:Run_Now>
+<!-- Optional: -->
+<bsvc:Discard_On_Exit_Validation_Error>true</bsvc:Discard_On_Exit_Validation_Error>
+<!-- Optional: -->
+<bsvc:Comment_Data>
+<!-- Optional: -->
+<bsvc:Comment>string</bsvc:Comment>
+<!-- Optional: -->
+<bsvc:Worker_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Worker_Reference>
+</bsvc:Comment_Data>
+<!-- Zero or more repetitions: -->
+<bsvc:Business_Process_Attachment_Data>
+<bsvc:File_Name>string</bsvc:File_Name>
+<!-- Optional: -->
+<bsvc:Event_Attachment_Description>string</bsvc:Event_Attachment_Description>
+<!-- Optional: -->
+<bsvc:Event_Attachment_Category_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Event_Attachment_Category_Reference>
+<!-- Optional: -->
+<bsvc:File>c29ub3Jhcw==</bsvc:File>
+<!-- Optional: -->
+<bsvc:Content_Type>string</bsvc:Content_Type>
+</bsvc:Business_Process_Attachment_Data>
+</bsvc:Business_Process_Parameters>
+<bsvc:Change_Passports_and_Visas_Data>
+<!-- Optional: -->
+<bsvc:Person_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Person_Reference>
+<!-- Optional: -->
+<bsvc:Universal_ID_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Universal_ID_Reference>
+<bsvc:Passports_and_Visas_Identification_Data bsvc:Replace_All="true">
+<!-- Zero or more repetitions: -->
+<bsvc:Passport_ID bsvc:Delete="true">
+<!-- Optional: -->
+<bsvc:Passport_ID_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Passport_ID_Reference>
+<!-- Optional: -->
+<bsvc:Passport_ID_Data>
+<!-- Optional: -->
+<bsvc:ID>string</bsvc:ID>
+<!-- Optional: -->
+<bsvc:ID_Type_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:ID_Type_Reference>
+<!-- Optional: -->
+<bsvc:Country_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Country_Reference>
+<!-- Optional: -->
+<bsvc:Issued_Date>2006-08-19+00:00</bsvc:Issued_Date>
+<!-- Optional: -->
+<bsvc:Expiration_Date>2009-05-16</bsvc:Expiration_Date>
+<!-- Optional: -->
+<bsvc:Verification_Date>2003-08-09+00:00</bsvc:Verification_Date>
+<!-- Optional: -->
+<bsvc:Verified_By_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Verified_By_Reference>
+</bsvc:Passport_ID_Data>
+<!-- Optional: -->
+<bsvc:Passport_ID_Shared_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Passport_ID_Shared_Reference>
+</bsvc:Passport_ID>
+<!-- Zero or more repetitions: -->
+<bsvc:Visa_ID bsvc:Delete="false">
+<!-- Optional: -->
+<bsvc:Visa_ID_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Visa_ID_Reference>
+<!-- Optional: -->
+<bsvc:Visa_ID_Data>
+<!-- Optional: -->
+<bsvc:ID>string</bsvc:ID>
+<!-- Optional: -->
+<bsvc:ID_Type_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:ID_Type_Reference>
+<!-- Optional: -->
+<bsvc:Country_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Country_Reference>
+<!-- Optional: -->
+<bsvc:Issued_Date>2002-06-24+00:00</bsvc:Issued_Date>
+<!-- Optional: -->
+<bsvc:Expiration_Date>2016-02-20+00:00</bsvc:Expiration_Date>
+<!-- Optional: -->
+<bsvc:Verification_Date>2019-08-19</bsvc:Verification_Date>
+<!-- Optional: -->
+<bsvc:Verified_By_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Verified_By_Reference>
+</bsvc:Visa_ID_Data>
+<!-- Optional: -->
+<bsvc:Visa_ID_Shared_Reference bsvc:Descriptor="string">
+<!-- Zero or more repetitions: -->
+<bsvc:ID bsvc:type="string">string</bsvc:ID>
+</bsvc:Visa_ID_Shared_Reference>
+</bsvc:Visa_ID>
+</bsvc:Passports_and_Visas_Identification_Data>
+</bsvc:Change_Passports_and_Visas_Data>
+</bsvc:Change_Passports_and_Visas_Request>

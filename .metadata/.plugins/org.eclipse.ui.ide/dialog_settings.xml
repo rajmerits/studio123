@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="org.eclipse.draw2d:3.10.100.201606061308"/>
+		<item value="org.eclipse.egit:5.11.0.202103091610-r"/>
+		<item value="org.eclipse.emf.common:2.25.0.v20220123-0838"/>
+		<item value="org.eclipse.emf.ecore:2.27.0.v20220123-0838"/>
+		<item value="org.eclipse.gef:3.11.0.201606061308"/>
+		<item value="org.eclipse.help:2.3.500.v20210303-1800"/>
+		<item value="org.eclipse.jdt:3.18.700.v20210303-1800"/>
+		<item value="org.eclipse.jgit.gpg.bc:5.11.0.202103091610-r"/>
+		<item value="org.eclipse.jgit.http.apache:5.11.0.202103091610-r"/>
+		<item value="org.eclipse.jgit.ssh.apache:5.11.0.202103091610-r"/>
+		<item value="org.eclipse.jgit:5.11.0.202103091610-r"/>
+		<item value="org.eclipse.platform:4.19.0.v20210303-1800"/>
+		<item value="org.eclipse.rcp:4.19.0.v20210303-1800"/>
+		<item value="org.eclipse.wst.xml_ui.feature:3.21.0.v202102222242"/>
+		<item value="org.eclipse.xsd.edit:2.13.0.v20200723-0820"/>
+		<item value="org.eclipse.xsd:2.19.0.v20201230-0836"/>
+		<item value="org.mule.apieditor:3.2.0"/>
+		<item value="org.mule.tooling.extension.server.4.1.1.ee:7.1.3.202201121813"/>
+		<item value="org.mule.tooling.extension.server.4.1.2.ee:7.1.3.202201121813"/>
+		<item value="org.mule.tooling.extension.server.4.1.3.ee:7.3.1.202201121813"/>
+		<item value="org.mule.tooling.extension.server.4.1.4.ee:7.3.0.202201121813"/>
+		<item value="org.mule.tooling.extension.server.4.1.5.ee:7.3.1.202201121813"/>
+		<item value="org.mule.tooling.extension.server.4.1.6.ee:7.3.1.202201121813"/>
+		<item value="org.mule.tooling.extension.server.4.2.0.ee:7.3.4.202201130215"/>
+		<item value="org.mule.tooling.extension.server.4.2.1.ee:7.3.3.202201130215"/>
+		<item value="org.mule.tooling.extension.server.4.2.2.ee:7.3.5.202201130215"/>
+		<item value="org.mule.tooling.extension.server.4.3.0.ee:7.3.5.202212161259"/>
+		<item value="org.mule.tooling.extension.server.4.4.0.ee:7.11.0.202212161259"/>
+		<item value="org.mule.tooling.munit.extension:2.7.5.202203081707"/>
+		<item value="org.mule.tooling.studio:7.11.1.202201060124"/>
+		<item value="org.mule.tooling:7.11.1.202201060124"/>
+	</list>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="533"/>
+		<item key="DIALOG_Y_ORIGIN" value="203"/>
+	</section>
+</section>

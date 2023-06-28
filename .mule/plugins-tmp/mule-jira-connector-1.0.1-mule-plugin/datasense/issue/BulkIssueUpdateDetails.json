@@ -1,0 +1,832 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "title": "BulkIssueUpdate",
+    "required": [
+        "issueUpdates"
+    ],
+    "properties": {
+        "issueUpdates": {
+            "$id": "#/properties/issueUpdates",
+            "type": "array",
+            "title": "The Issueupdates Schema",
+            "items": {
+                "$id": "#/properties/issueUpdates/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                    "update",
+                    "fields"
+                ],
+                "properties": {
+                    "update": {
+                        "$id": "#/properties/issueUpdates/items/properties/update",
+                        "type": "object",
+                        "title": "The Update Schema",
+                        "required": [
+                            "worklog"
+                        ],
+                        "properties": {
+                            "worklog": {
+                                "$id": "#/properties/issueUpdates/items/properties/update/properties/worklog",
+                                "type": "array",
+                                "title": "The Worklog Schema",
+                                "items": {
+                                    "$id": "#/properties/issueUpdates/items/properties/update/properties/worklog/items",
+                                    "type": "object",
+                                    "title": "The Items Schema",
+                                    "required": [
+                                        "add"
+                                    ],
+                                    "properties": {
+                                        "add": {
+                                            "$id": "#/properties/issueUpdates/items/properties/update/properties/worklog/items/properties/add",
+                                            "type": "object",
+                                            "title": "The Add Schema",
+                                            "required": [
+                                                "timeSpent",
+                                                "started"
+                                            ],
+                                            "properties": {
+                                                "timeSpent": {
+                                                    "$id": "#/properties/issueUpdates/items/properties/update/properties/worklog/items/properties/add/properties/timeSpent",
+                                                    "type": "string",
+                                                    "title": "The Timespent Schema",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "60m"
+                                                    ],
+                                                    "pattern": "^(.*)$"
+                                                },
+                                                "started": {
+                                                    "$id": "#/properties/issueUpdates/items/properties/update/properties/worklog/items/properties/add/properties/started",
+                                                    "type": "string",
+                                                    "title": "The Started Schema",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "2019-07-05T11:05:00.000+0000"
+                                                    ],
+                                                    "pattern": "^(.*)$"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "fields": {
+                        "$id": "#/properties/issueUpdates/items/properties/fields",
+                        "type": "object",
+                        "title": "The Fields Schema",
+                        "required": [
+                            "summary",
+                            "issuetype",
+                            "components",
+                            "customfield_20000",
+                            "customfield_40000",
+                            "customfield_70000",
+                            "project",
+                            "description",
+                            "reporter",
+                            "fixVersions",
+                            "customfield_10000",
+                            "priority",
+                            "labels",
+                            "timetracking",
+                            "customfield_30000",
+                            "customfield_80000",
+                            "security",
+                            "environment",
+                            "versions",
+                            "duedate",
+                            "customfield_60000",
+                            "customfield_50000",
+                            "assignee"
+                        ],
+                        "properties": {
+                            "summary": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/summary",
+                                "type": "string",
+                                "title": "The Summary Schema",
+                                "default": "",
+                                "examples": [
+                                    "Main order flow broken"
+                                ],
+                                "pattern": "^(.*)$"
+                            },
+                            "issuetype": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/issuetype",
+                                "type": "object",
+                                "title": "The Issuetype Schema",
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/issuetype/properties/id",
+                                        "type": "string",
+                                        "title": "The Id Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "10000"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    }
+                                }
+                            },
+                            "components": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/components",
+                                "type": "array",
+                                "title": "The Components Schema",
+                                "items": {
+                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/components/items",
+                                    "type": "object",
+                                    "title": "The Items Schema",
+                                    "required": [
+                                        "id"
+                                    ],
+                                    "properties": {
+                                        "id": {
+                                            "$id": "#/properties/issueUpdates/items/properties/fields/properties/components/items/properties/id",
+                                            "type": "string",
+                                            "title": "The Id Schema",
+                                            "default": "",
+                                            "examples": [
+                                                "10000"
+                                            ],
+                                            "pattern": "^(.*)$"
+                                        }
+                                    }
+                                }
+                            },
+                            "customfield_20000": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_20000",
+                                "type": "string",
+                                "title": "The Customfield_20000 Schema",
+                                "default": "",
+                                "examples": [
+                                    "06/Jul/19 3:25 PM"
+                                ],
+                                "pattern": "^(.*)$"
+                            },
+                            "customfield_40000": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_40000",
+                                "type": "object",
+                                "title": "The Customfield_40000 Schema",
+                                "required": [
+                                    "type",
+                                    "version",
+                                    "content"
+                                ],
+                                "properties": {
+                                    "type": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_40000/properties/type",
+                                        "type": "string",
+                                        "title": "The Type Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "doc"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    },
+                                    "version": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_40000/properties/version",
+                                        "type": "integer",
+                                        "title": "The Version Schema",
+                                        "default": 0,
+                                        "examples": [
+                                            1
+                                        ]
+                                    },
+                                    "content": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_40000/properties/content",
+                                        "type": "array",
+                                        "title": "The Content Schema",
+                                        "items": {
+                                            "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_40000/properties/content/items",
+                                            "type": "object",
+                                            "title": "The Items Schema",
+                                            "required": [
+                                                "type",
+                                                "content"
+                                            ],
+                                            "properties": {
+                                                "type": {
+                                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_40000/properties/content/items/properties/type",
+                                                    "type": "string",
+                                                    "title": "The Type Schema",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "paragraph"
+                                                    ],
+                                                    "pattern": "^(.*)$"
+                                                },
+                                                "content": {
+                                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_40000/properties/content/items/properties/content",
+                                                    "type": "array",
+                                                    "title": "The Content Schema",
+                                                    "items": {
+                                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_40000/properties/content/items/properties/content/items",
+                                                        "type": "object",
+                                                        "title": "The Items Schema",
+                                                        "required": [
+                                                            "text",
+                                                            "type"
+                                                        ],
+                                                        "properties": {
+                                                            "text": {
+                                                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_40000/properties/content/items/properties/content/items/properties/text",
+                                                                "type": "string",
+                                                                "title": "The Text Schema",
+                                                                "default": "",
+                                                                "examples": [
+                                                                    "Occurs on all orders"
+                                                                ],
+                                                                "pattern": "^(.*)$"
+                                                            },
+                                                            "type": {
+                                                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_40000/properties/content/items/properties/content/items/properties/type",
+                                                                "type": "string",
+                                                                "title": "The Type Schema",
+                                                                "default": "",
+                                                                "examples": [
+                                                                    "text"
+                                                                ],
+                                                                "pattern": "^(.*)$"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "customfield_70000": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_70000",
+                                "type": "array",
+                                "title": "The Customfield_70000 Schema",
+                                "items": {
+                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_70000/items",
+                                    "type": "string",
+                                    "title": "The Items Schema",
+                                    "default": "",
+                                    "examples": [
+                                        "jira-administrators",
+                                        "jira-software-users"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                }
+                            },
+                            "project": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/project",
+                                "type": "object",
+                                "title": "The Project Schema",
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/project/properties/id",
+                                        "type": "string",
+                                        "title": "The Id Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "10000"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    }
+                                }
+                            },
+                            "description": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/description",
+                                "type": "object",
+                                "title": "The Description Schema",
+                                "required": [
+                                    "type",
+                                    "version",
+                                    "content"
+                                ],
+                                "properties": {
+                                    "type": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/description/properties/type",
+                                        "type": "string",
+                                        "title": "The Type Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "doc"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    },
+                                    "version": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/description/properties/version",
+                                        "type": "integer",
+                                        "title": "The Version Schema",
+                                        "default": 0,
+                                        "examples": [
+                                            1
+                                        ]
+                                    },
+                                    "content": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/description/properties/content",
+                                        "type": "array",
+                                        "title": "The Content Schema",
+                                        "items": {
+                                            "$id": "#/properties/issueUpdates/items/properties/fields/properties/description/properties/content/items",
+                                            "type": "object",
+                                            "title": "The Items Schema",
+                                            "required": [
+                                                "type",
+                                                "content"
+                                            ],
+                                            "properties": {
+                                                "type": {
+                                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/description/properties/content/items/properties/type",
+                                                    "type": "string",
+                                                    "title": "The Type Schema",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "paragraph"
+                                                    ],
+                                                    "pattern": "^(.*)$"
+                                                },
+                                                "content": {
+                                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/description/properties/content/items/properties/content",
+                                                    "type": "array",
+                                                    "title": "The Content Schema",
+                                                    "items": {
+                                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/description/properties/content/items/properties/content/items",
+                                                        "type": "object",
+                                                        "title": "The Items Schema",
+                                                        "required": [
+                                                            "text",
+                                                            "type"
+                                                        ],
+                                                        "properties": {
+                                                            "text": {
+                                                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/description/properties/content/items/properties/content/items/properties/text",
+                                                                "type": "string",
+                                                                "title": "The Text Schema",
+                                                                "default": "",
+                                                                "examples": [
+                                                                    "Order entry fails when selecting supplier."
+                                                                ],
+                                                                "pattern": "^(.*)$"
+                                                            },
+                                                            "type": {
+                                                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/description/properties/content/items/properties/content/items/properties/type",
+                                                                "type": "string",
+                                                                "title": "The Type Schema",
+                                                                "default": "",
+                                                                "examples": [
+                                                                    "text"
+                                                                ],
+                                                                "pattern": "^(.*)$"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reporter": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/reporter",
+                                "type": "object",
+                                "title": "The Reporter Schema",
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/reporter/properties/id",
+                                        "type": "string",
+                                        "title": "The Id Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "5b10a2844c20165700ede21g"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    }
+                                }
+                            },
+                            "fixVersions": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/fixVersions",
+                                "type": "array",
+                                "title": "The Fixversions Schema",
+                                "items": {
+                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/fixVersions/items",
+                                    "type": "object",
+                                    "title": "The Items Schema",
+                                    "required": [
+                                        "id"
+                                    ],
+                                    "properties": {
+                                        "id": {
+                                            "$id": "#/properties/issueUpdates/items/properties/fields/properties/fixVersions/items/properties/id",
+                                            "type": "string",
+                                            "title": "The Id Schema",
+                                            "default": "",
+                                            "examples": [
+                                                "10001"
+                                            ],
+                                            "pattern": "^(.*)$"
+                                        }
+                                    }
+                                }
+                            },
+                            "customfield_10000": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_10000",
+                                "type": "string",
+                                "title": "The Customfield_10000 Schema",
+                                "default": "",
+                                "examples": [
+                                    "09/Jun/19"
+                                ],
+                                "pattern": "^(.*)$"
+                            },
+                            "priority": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/priority",
+                                "type": "object",
+                                "title": "The Priority Schema",
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/priority/properties/id",
+                                        "type": "string",
+                                        "title": "The Id Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "20000"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    }
+                                }
+                            },
+                            "labels": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/labels",
+                                "type": "array",
+                                "title": "The Labels Schema",
+                                "items": {
+                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/labels/items",
+                                    "type": "string",
+                                    "title": "The Items Schema",
+                                    "default": "",
+                                    "examples": [
+                                        "bugfix",
+                                        "blitz_test"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                }
+                            },
+                            "timetracking": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/timetracking",
+                                "type": "object",
+                                "title": "The Timetracking Schema",
+                                "required": [
+                                    "remainingEstimate",
+                                    "originalEstimate"
+                                ],
+                                "properties": {
+                                    "remainingEstimate": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/timetracking/properties/remainingEstimate",
+                                        "type": "string",
+                                        "title": "The Remainingestimate Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "5"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    },
+                                    "originalEstimate": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/timetracking/properties/originalEstimate",
+                                        "type": "string",
+                                        "title": "The Originalestimate Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "10"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    }
+                                }
+                            },
+                            "customfield_30000": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_30000",
+                                "type": "array",
+                                "title": "The Customfield_30000 Schema",
+                                "items": {
+                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_30000/items",
+                                    "type": "string",
+                                    "title": "The Items Schema",
+                                    "default": "",
+                                    "examples": [
+                                        "10000",
+                                        "10002"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                }
+                            },
+                            "customfield_80000": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_80000",
+                                "type": "object",
+                                "title": "The Customfield_80000 Schema",
+                                "required": [
+                                    "value"
+                                ],
+                                "properties": {
+                                    "value": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_80000/properties/value",
+                                        "type": "string",
+                                        "title": "The Value Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "red"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    }
+                                }
+                            },
+                            "security": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/security",
+                                "type": "object",
+                                "title": "The Security Schema",
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/security/properties/id",
+                                        "type": "string",
+                                        "title": "The Id Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "10000"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    }
+                                }
+                            },
+                            "environment": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/environment",
+                                "type": "object",
+                                "title": "The Environment Schema",
+                                "required": [
+                                    "type",
+                                    "version",
+                                    "content"
+                                ],
+                                "properties": {
+                                    "type": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/environment/properties/type",
+                                        "type": "string",
+                                        "title": "The Type Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "doc"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    },
+                                    "version": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/environment/properties/version",
+                                        "type": "integer",
+                                        "title": "The Version Schema",
+                                        "default": 0,
+                                        "examples": [
+                                            1
+                                        ]
+                                    },
+                                    "content": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/environment/properties/content",
+                                        "type": "array",
+                                        "title": "The Content Schema",
+                                        "items": {
+                                            "$id": "#/properties/issueUpdates/items/properties/fields/properties/environment/properties/content/items",
+                                            "type": "object",
+                                            "title": "The Items Schema",
+                                            "required": [
+                                                "type",
+                                                "content"
+                                            ],
+                                            "properties": {
+                                                "type": {
+                                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/environment/properties/content/items/properties/type",
+                                                    "type": "string",
+                                                    "title": "The Type Schema",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "paragraph"
+                                                    ],
+                                                    "pattern": "^(.*)$"
+                                                },
+                                                "content": {
+                                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/environment/properties/content/items/properties/content",
+                                                    "type": "array",
+                                                    "title": "The Content Schema",
+                                                    "items": {
+                                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/environment/properties/content/items/properties/content/items",
+                                                        "type": "object",
+                                                        "title": "The Items Schema",
+                                                        "required": [
+                                                            "text",
+                                                            "type"
+                                                        ],
+                                                        "properties": {
+                                                            "text": {
+                                                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/environment/properties/content/items/properties/content/items/properties/text",
+                                                                "type": "string",
+                                                                "title": "The Text Schema",
+                                                                "default": "",
+                                                                "examples": [
+                                                                    "UAT"
+                                                                ],
+                                                                "pattern": "^(.*)$"
+                                                            },
+                                                            "type": {
+                                                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/environment/properties/content/items/properties/content/items/properties/type",
+                                                                "type": "string",
+                                                                "title": "The Type Schema",
+                                                                "default": "",
+                                                                "examples": [
+                                                                    "text"
+                                                                ],
+                                                                "pattern": "^(.*)$"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "versions": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/versions",
+                                "type": "array",
+                                "title": "The Versions Schema",
+                                "items": {
+                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/versions/items",
+                                    "type": "object",
+                                    "title": "The Items Schema",
+                                    "required": [
+                                        "id"
+                                    ],
+                                    "properties": {
+                                        "id": {
+                                            "$id": "#/properties/issueUpdates/items/properties/fields/properties/versions/items/properties/id",
+                                            "type": "string",
+                                            "title": "The Id Schema",
+                                            "default": "",
+                                            "examples": [
+                                                "10000"
+                                            ],
+                                            "pattern": "^(.*)$"
+                                        }
+                                    }
+                                }
+                            },
+                            "duedate": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/duedate",
+                                "type": "string",
+                                "title": "The Duedate Schema",
+                                "default": "",
+                                "examples": [
+                                    "2011-03-11T00:00:00.000Z"
+                                ],
+                                "pattern": "^(.*)$"
+                            },
+                            "customfield_60000": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_60000",
+                                "type": "string",
+                                "title": "The Customfield_60000 Schema",
+                                "default": "",
+                                "examples": [
+                                    "jira-software-users"
+                                ],
+                                "pattern": "^(.*)$"
+                            },
+                            "customfield_50000": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_50000",
+                                "type": "object",
+                                "title": "The Customfield_50000 Schema",
+                                "required": [
+                                    "type",
+                                    "version",
+                                    "content"
+                                ],
+                                "properties": {
+                                    "type": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_50000/properties/type",
+                                        "type": "string",
+                                        "title": "The Type Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "doc"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    },
+                                    "version": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_50000/properties/version",
+                                        "type": "integer",
+                                        "title": "The Version Schema",
+                                        "default": 0,
+                                        "examples": [
+                                            1
+                                        ]
+                                    },
+                                    "content": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_50000/properties/content",
+                                        "type": "array",
+                                        "title": "The Content Schema",
+                                        "items": {
+                                            "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_50000/properties/content/items",
+                                            "type": "object",
+                                            "title": "The Items Schema",
+                                            "required": [
+                                                "type",
+                                                "content"
+                                            ],
+                                            "properties": {
+                                                "type": {
+                                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_50000/properties/content/items/properties/type",
+                                                    "type": "string",
+                                                    "title": "The Type Schema",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "paragraph"
+                                                    ],
+                                                    "pattern": "^(.*)$"
+                                                },
+                                                "content": {
+                                                    "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_50000/properties/content/items/properties/content",
+                                                    "type": "array",
+                                                    "title": "The Content Schema",
+                                                    "items": {
+                                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_50000/properties/content/items/properties/content/items",
+                                                        "type": "object",
+                                                        "title": "The Items Schema",
+                                                        "required": [
+                                                            "text",
+                                                            "type"
+                                                        ],
+                                                        "properties": {
+                                                            "text": {
+                                                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_50000/properties/content/items/properties/content/items/properties/text",
+                                                                "type": "string",
+                                                                "title": "The Text Schema",
+                                                                "default": "",
+                                                                "examples": [
+                                                                    "Could impact day-to-day work."
+                                                                ],
+                                                                "pattern": "^(.*)$"
+                                                            },
+                                                            "type": {
+                                                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/customfield_50000/properties/content/items/properties/content/items/properties/type",
+                                                                "type": "string",
+                                                                "title": "The Type Schema",
+                                                                "default": "",
+                                                                "examples": [
+                                                                    "text"
+                                                                ],
+                                                                "pattern": "^(.*)$"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "assignee": {
+                                "$id": "#/properties/issueUpdates/items/properties/fields/properties/assignee",
+                                "type": "object",
+                                "title": "The Assignee Schema",
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "$id": "#/properties/issueUpdates/items/properties/fields/properties/assignee/properties/id",
+                                        "type": "string",
+                                        "title": "The Id Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "5b109f2e9729b51b54dc274d"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

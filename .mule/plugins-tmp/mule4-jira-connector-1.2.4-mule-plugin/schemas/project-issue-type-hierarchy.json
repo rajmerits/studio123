@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ProjectIssueTypeHierarchy",
+  "definitions": {
+    "ProjectIssueTypeHierarchy": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "hierarchy": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/ProjectIssueTypesHierarchyLevel"}
+        },
+        "projectId": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "ProjectIssueTypesHierarchyLevel": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "level": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "entityId": {
+          "format": "uuid",
+          "readOnly": true,
+          "type": "string"
+        },
+        "issueTypes": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/IssueTypeInfo"}
+        }
+      }
+    },
+    "IssueTypeInfo": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "avatarId": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    }
+  }
+}

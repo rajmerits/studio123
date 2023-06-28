@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/WorkflowTransitionRulesUpdateErrors",
+  "definitions": {
+    "WorkflowTransitionRulesUpdateErrors": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["updateResults"],
+      "properties": {"updateResults": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/WorkflowTransitionRulesUpdateErrorDetails"}
+      }}
+    },
+    "WorkflowTransitionRulesUpdateErrorDetails": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "workflowId",
+        "ruleUpdateErrors",
+        "updateErrors"
+      ],
+      "properties": {
+        "updateErrors": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "workflowId": {"$ref": "#/definitions/WorkflowId"},
+        "ruleUpdateErrors": {
+          "additionalProperties": true,
+          "type": "object"
+        }
+      }
+    },
+    "WorkflowId": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "name",
+        "draft"
+      ],
+      "properties": {
+        "draft": {"type": "boolean"},
+        "name": {"type": "string"}
+      }
+    }
+  }
+}

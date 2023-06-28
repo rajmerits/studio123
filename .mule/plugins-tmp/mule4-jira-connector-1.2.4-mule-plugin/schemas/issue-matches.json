@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueMatches",
+  "definitions": {
+    "IssueMatchesForJQL": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "matchedIssues",
+        "errors"
+      ],
+      "properties": {
+        "matchedIssues": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "maximum": 9.223372036854776E+18,
+            "type": "number",
+            "minimum": -9.223372036854776E+18
+          }
+        },
+        "errors": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "IssueMatches": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["matches"],
+      "properties": {"matches": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/IssueMatchesForJQL"}
+      }}
+    }
+  }
+}

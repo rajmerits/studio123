@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/DeleteAndReplaceVersionBean",
+  "definitions": {
+    "CustomFieldReplacement": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "customFieldId": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "moveTo": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "DeleteAndReplaceVersionBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "moveAffectedIssuesTo": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "moveFixIssuesTo": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "customFieldReplacementList": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/CustomFieldReplacement"}
+        }
+      }
+    }
+  }
+}

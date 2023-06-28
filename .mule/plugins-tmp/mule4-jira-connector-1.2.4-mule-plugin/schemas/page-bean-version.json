@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PageBeanVersion",
+  "definitions": {
+    "Version": {
+      "xml": {"name": "version"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "releaseDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "description": {"type": "string"},
+        "project": {"type": "string"},
+        "archived": {"type": "boolean"},
+        "expand": {
+          "xml": {"attribute": true},
+          "type": "string"
+        },
+        "operations": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/SimpleLink"}
+        },
+        "overdue": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "name": {"type": "string"},
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "moveUnfixedIssuesTo": {
+          "format": "uri",
+          "type": "string"
+        },
+        "userReleaseDate": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "userStartDate": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "projectId": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "released": {"type": "boolean"},
+        "startDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "issuesStatusForFixVersion": {
+          "allOf": [{"$ref": "#/definitions/VersionIssuesStatus"}],
+          "readOnly": true
+        }
+      }
+    },
+    "SimpleLink": {
+      "xml": {"name": "link"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "weight": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "id": {"type": "string"},
+        "label": {"type": "string"},
+        "href": {"type": "string"},
+        "styleClass": {"type": "string"},
+        "title": {"type": "string"},
+        "iconClass": {"type": "string"}
+      }
+    },
+    "PageBeanVersion": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "total": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "isLast": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "nextPage": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "values": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/Version"}
+        },
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "startAt": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "VersionIssuesStatus": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "toDo": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "inProgress": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "done": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "unmapped": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    }
+  }
+}

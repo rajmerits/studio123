@@ -1,0 +1,61 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "contextId": "<string>",
+    "projectId": "<string>",
+    "isGlobalContext": true
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "The root schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "contextId": "<string>",
+        "projectId": "<string>",
+        "isGlobalContext": true
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "contextId",
+        "projectId",
+        "isGlobalContext"
+      ],
+      "properties": {
+        "contextId": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The contextId schema",
+          "$id": "#/items/anyOf/0/properties/contextId"
+        },
+        "projectId": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The projectId schema",
+          "$id": "#/items/anyOf/0/properties/projectId"
+        },
+        "isGlobalContext": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The isGlobalContext schema",
+          "$id": "#/items/anyOf/0/properties/isGlobalContext"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

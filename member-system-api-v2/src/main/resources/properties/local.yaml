@@ -1,0 +1,11 @@
+http:
+  listener:
+    host: "localhost"
+    port: "8081"
+    
+sfdc:
+  security:
+    username: "rajasekhar@swalov.com"
+    
+api:
+  instanceId: "18390359"

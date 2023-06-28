@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/SearchRequestBean",
+  "definitions": {"SearchRequestBean": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "expand": {
+        "type": "array",
+        "items": {"type": "string"}
+      },
+      "jql": {"type": "string"},
+      "maxResults": {
+        "maximum": 2147483647,
+        "type": "integer",
+        "minimum": -2147483648
+      },
+      "validateQuery": {
+        "type": "string",
+        "enum": [
+          "strict",
+          "warn",
+          "none",
+          "true",
+          "false"
+        ]
+      },
+      "fieldsByKeys": {"type": "boolean"},
+      "fields": {
+        "type": "array",
+        "items": {"type": "string"}
+      },
+      "startAt": {
+        "maximum": 2147483647,
+        "type": "integer",
+        "minimum": -2147483648
+      },
+      "properties": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    }
+  }}
+}

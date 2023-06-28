@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/MoveFieldBean",
+  "definitions": {"MoveFieldBean": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "after": {
+        "format": "uri",
+        "type": "string"
+      },
+      "position": {
+        "type": "string",
+        "enum": [
+          "Earlier",
+          "Later",
+          "First",
+          "Last"
+        ]
+      }
+    }
+  }}
+}

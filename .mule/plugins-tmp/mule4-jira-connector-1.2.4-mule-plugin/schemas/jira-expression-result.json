@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/JiraExpressionResult",
+  "definitions": {
+    "IssuesMetaBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"jql": {"$ref": "#/definitions/IssuesJqlMetaDataBean"}}
+    },
+    "IssuesJqlMetaDataBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "startAt",
+        "maxResults",
+        "count",
+        "totalCount"
+      ],
+      "properties": {
+        "validationWarnings": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "maxResults": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "count": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "totalCount": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "startAt": {
+          "maximum": 9.223372036854776E+18,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    },
+    "JiraExpressionEvaluationMetaDataBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "complexity": {"allOf": [{"$ref": "#/definitions/JiraExpressionsComplexityBean"}]},
+        "issues": {"allOf": [{"$ref": "#/definitions/IssuesMetaBean"}]}
+      }
+    },
+    "JiraExpressionsComplexityValueBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "value",
+        "limit"
+      ],
+      "properties": {
+        "limit": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "value": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        }
+      }
+    },
+    "JiraExpressionResult": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["value"],
+      "properties": {
+        "meta": {"allOf": [{"$ref": "#/definitions/JiraExpressionEvaluationMetaDataBean"}]},
+        "value": {}
+      }
+    },
+    "JiraExpressionsComplexityBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "steps",
+        "expensiveOperations",
+        "beans",
+        "primitiveValues"
+      ],
+      "properties": {
+        "beans": {"allOf": [{"$ref": "#/definitions/JiraExpressionsComplexityValueBean"}]},
+        "expensiveOperations": {"allOf": [{"$ref": "#/definitions/JiraExpressionsComplexityValueBean"}]},
+        "steps": {"allOf": [{"$ref": "#/definitions/JiraExpressionsComplexityValueBean"}]},
+        "primitiveValues": {"allOf": [{"$ref": "#/definitions/JiraExpressionsComplexityValueBean"}]}
+      }
+    }
+  }
+}

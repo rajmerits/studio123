@@ -1,0 +1,39 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "Update IssueLinkType schema",
+  "properties": {
+    "inward": {
+      "$id": "#/properties/inward",
+      "type": "string",
+      "title": "The Inward Schema",
+      "default": "",
+      "examples": [
+        "Duplicated by"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "Duplicate"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "outward": {
+      "$id": "#/properties/outward",
+      "type": "string",
+      "title": "The Outward Schema",
+      "default": "",
+      "examples": [
+        "Duplicates"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

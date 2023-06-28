@@ -1,0 +1,410 @@
+{
+  "default": [],
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "examples": [[{
+    "avatarUrls": {
+      "48x48": "<string>",
+      "24x24": "<string>",
+      "16x16": "<string>",
+      "32x32": "<string>"
+    },
+    "displayName": "<string>",
+    "accountType": "atlassian",
+    "active": true,
+    "timeZone": "<string>",
+    "groups": {
+      "pagingCallback": {},
+      "size": 2154,
+      "max-results": 2154,
+      "callback": {},
+      "items": [{}]
+    },
+    "locale": "<string>",
+    "accountId": "<string>",
+    "emailAddress": "<string>",
+    "expand": "<string>",
+    "name": "<string>",
+    "self": "<string>",
+    "key": "<string>",
+    "applicationRoles": {
+      "pagingCallback": {},
+      "size": 2154,
+      "max-results": 2154,
+      "callback": {},
+      "items": [{}]
+    }
+  }]],
+  "additionalItems": true,
+  "description": "The root schema comprises the entire JSON document.",
+  "type": "array",
+  "title": "The root schema",
+  "items": {
+    "anyOf": [{
+      "default": {},
+      "examples": [{
+        "avatarUrls": {
+          "48x48": "<string>",
+          "24x24": "<string>",
+          "16x16": "<string>",
+          "32x32": "<string>"
+        },
+        "displayName": "<string>",
+        "accountType": "atlassian",
+        "active": true,
+        "timeZone": "<string>",
+        "groups": {
+          "pagingCallback": {},
+          "size": 2154,
+          "max-results": 2154,
+          "callback": {},
+          "items": [{}]
+        },
+        "locale": "<string>",
+        "accountId": "<string>",
+        "emailAddress": "<string>",
+        "expand": "<string>",
+        "name": "<string>",
+        "self": "<string>",
+        "key": "<string>",
+        "applicationRoles": {
+          "pagingCallback": {},
+          "size": 2154,
+          "max-results": 2154,
+          "callback": {},
+          "items": [{}]
+        }
+      }],
+      "description": "An explanation about the purpose of this instance.",
+      "additionalProperties": true,
+      "type": "object",
+      "title": "The first anyOf schema",
+      "required": [
+        "self",
+        "key",
+        "accountId",
+        "accountType",
+        "name",
+        "emailAddress",
+        "avatarUrls",
+        "displayName",
+        "active",
+        "timeZone",
+        "locale",
+        "groups",
+        "applicationRoles",
+        "expand"
+      ],
+      "properties": {
+        "avatarUrls": {
+          "default": {},
+          "examples": [{
+            "48x48": "<string>",
+            "24x24": "<string>",
+            "16x16": "<string>",
+            "32x32": "<string>"
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The avatarUrls schema",
+          "required": [
+            "16x16",
+            "24x24",
+            "32x32",
+            "48x48"
+          ],
+          "properties": {
+            "48x48": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The 48x48 schema",
+              "$id": "#/items/anyOf/0/properties/avatarUrls/properties/48x48"
+            },
+            "24x24": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The 24x24 schema",
+              "$id": "#/items/anyOf/0/properties/avatarUrls/properties/24x24"
+            },
+            "16x16": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The 16x16 schema",
+              "$id": "#/items/anyOf/0/properties/avatarUrls/properties/16x16"
+            },
+            "32x32": {
+              "default": "",
+              "examples": ["<string>"],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "string",
+              "title": "The 32x32 schema",
+              "$id": "#/items/anyOf/0/properties/avatarUrls/properties/32x32"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/avatarUrls"
+        },
+        "displayName": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The displayName schema",
+          "$id": "#/items/anyOf/0/properties/displayName"
+        },
+        "accountType": {
+          "default": "",
+          "examples": ["atlassian"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The accountType schema",
+          "$id": "#/items/anyOf/0/properties/accountType"
+        },
+        "active": {
+          "default": false,
+          "examples": [true],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "boolean",
+          "title": "The active schema",
+          "$id": "#/items/anyOf/0/properties/active"
+        },
+        "timeZone": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The timeZone schema",
+          "$id": "#/items/anyOf/0/properties/timeZone"
+        },
+        "groups": {
+          "default": {},
+          "examples": [{
+            "pagingCallback": {},
+            "size": 2154,
+            "max-results": 2154,
+            "callback": {},
+            "items": [{}]
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The groups schema",
+          "required": [
+            "size",
+            "items",
+            "pagingCallback",
+            "callback",
+            "max-results"
+          ],
+          "properties": {
+            "pagingCallback": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The pagingCallback schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/groups/properties/pagingCallback"
+            },
+            "size": {
+              "default": 0,
+              "examples": [2154],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "integer",
+              "title": "The size schema",
+              "$id": "#/items/anyOf/0/properties/groups/properties/size"
+            },
+            "max-results": {
+              "default": 0,
+              "examples": [2154],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "integer",
+              "title": "The max-results schema",
+              "$id": "#/items/anyOf/0/properties/groups/properties/max-results"
+            },
+            "callback": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The callback schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/groups/properties/callback"
+            },
+            "items": {
+              "default": [],
+              "examples": [[{}]],
+              "additionalItems": true,
+              "description": "An explanation about the purpose of this instance.",
+              "type": "array",
+              "title": "The items schema",
+              "items": {
+                "anyOf": [{
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The first anyOf schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/groups/properties/items/items/anyOf/0"
+                }],
+                "$id": "#/items/anyOf/0/properties/groups/properties/items/items"
+              },
+              "$id": "#/items/anyOf/0/properties/groups/properties/items"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/groups"
+        },
+        "locale": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The locale schema",
+          "$id": "#/items/anyOf/0/properties/locale"
+        },
+        "accountId": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The accountId schema",
+          "$id": "#/items/anyOf/0/properties/accountId"
+        },
+        "emailAddress": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The emailAddress schema",
+          "$id": "#/items/anyOf/0/properties/emailAddress"
+        },
+        "expand": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The expand schema",
+          "$id": "#/items/anyOf/0/properties/expand"
+        },
+        "name": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The name schema",
+          "$id": "#/items/anyOf/0/properties/name"
+        },
+        "self": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The self schema",
+          "$id": "#/items/anyOf/0/properties/self"
+        },
+        "key": {
+          "default": "",
+          "examples": ["<string>"],
+          "description": "An explanation about the purpose of this instance.",
+          "type": "string",
+          "title": "The key schema",
+          "$id": "#/items/anyOf/0/properties/key"
+        },
+        "applicationRoles": {
+          "default": {},
+          "examples": [{
+            "pagingCallback": {},
+            "size": 2154,
+            "max-results": 2154,
+            "callback": {},
+            "items": [{}]
+          }],
+          "description": "An explanation about the purpose of this instance.",
+          "additionalProperties": true,
+          "type": "object",
+          "title": "The applicationRoles schema",
+          "required": [
+            "size",
+            "items",
+            "pagingCallback",
+            "callback",
+            "max-results"
+          ],
+          "properties": {
+            "pagingCallback": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The pagingCallback schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/applicationRoles/properties/pagingCallback"
+            },
+            "size": {
+              "default": 0,
+              "examples": [2154],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "integer",
+              "title": "The size schema",
+              "$id": "#/items/anyOf/0/properties/applicationRoles/properties/size"
+            },
+            "max-results": {
+              "default": 0,
+              "examples": [2154],
+              "description": "An explanation about the purpose of this instance.",
+              "type": "integer",
+              "title": "The max-results schema",
+              "$id": "#/items/anyOf/0/properties/applicationRoles/properties/max-results"
+            },
+            "callback": {
+              "default": {},
+              "examples": [{}],
+              "description": "An explanation about the purpose of this instance.",
+              "additionalProperties": true,
+              "type": "object",
+              "title": "The callback schema",
+              "required": [],
+              "$id": "#/items/anyOf/0/properties/applicationRoles/properties/callback"
+            },
+            "items": {
+              "default": [],
+              "examples": [[{}]],
+              "additionalItems": true,
+              "description": "An explanation about the purpose of this instance.",
+              "type": "array",
+              "title": "The items schema",
+              "items": {
+                "anyOf": [{
+                  "default": {},
+                  "examples": [{}],
+                  "description": "An explanation about the purpose of this instance.",
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "The first anyOf schema",
+                  "required": [],
+                  "$id": "#/items/anyOf/0/properties/applicationRoles/properties/items/items/anyOf/0"
+                }],
+                "$id": "#/items/anyOf/0/properties/applicationRoles/properties/items/items"
+              },
+              "$id": "#/items/anyOf/0/properties/applicationRoles/properties/items"
+            }
+          },
+          "$id": "#/items/anyOf/0/properties/applicationRoles"
+        }
+      },
+      "$id": "#/items/anyOf/0"
+    }],
+    "$id": "#/items"
+  },
+  "$id": "http://example.com/example.json"
+}

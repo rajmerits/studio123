@@ -1,0 +1,430 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "Issue Comment Output Schema",
+  "properties": {
+    "self": {
+      "$id": "#/properties/self",
+      "type": "string",
+      "title": "The Self Schema",
+      "default": "",
+      "examples": [
+        "http://your-domain.atlassian.net/rest/api/3/issue/10010/comment/10000"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The Id Schema",
+      "default": "",
+      "examples": [
+        "10000"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "author": {
+      "$id": "#/properties/author",
+      "type": "object",
+      "title": "The Author Schema",
+      "required": [
+        "self",
+        "accountId",
+        "name",
+        "key",
+        "displayName",
+        "emailAddress",
+        "active",
+        "avatarUrls",
+        "timeZone",
+        "accountType"
+      ],
+      "properties": {
+        "self": {
+          "$id": "#/properties/author/properties/self",
+          "type": "string",
+          "title": "The Self Schema",
+          "default": "",
+          "examples": [
+            "http://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "accountId": {
+          "$id": "#/properties/author/properties/accountId",
+          "type": "string",
+          "title": "The Accountid Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/author/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "key": {
+          "$id": "#/properties/author/properties/key",
+          "type": "string",
+          "title": "The Key Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "displayName": {
+          "$id": "#/properties/author/properties/displayName",
+          "type": "string",
+          "title": "The Displayname Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "emailAddress": {
+          "$id": "#/properties/author/properties/emailAddress",
+          "type": "string",
+          "title": "The Emailaddress Schema",
+          "default": "",
+          "examples": [
+            "string"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "active": {
+          "$id": "#/properties/author/properties/active",
+          "type": "boolean",
+          "title": "The Active Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "avatarUrls": {
+          "$id": "#/properties/author/properties/avatarUrls",
+          "type": "object",
+          "title": "The Avatarurls Schema",
+          "required": [
+            "16x16",
+            "24x24",
+            "32x32",
+            "48x48"
+          ],
+          "properties": {
+            "16x16": {
+              "$id": "#/properties/author/properties/avatarUrls/properties/16x16",
+              "type": "string",
+              "title": "The 16x16 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "24x24": {
+              "$id": "#/properties/author/properties/avatarUrls/properties/24x24",
+              "type": "string",
+              "title": "The 24x24 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "32x32": {
+              "$id": "#/properties/author/properties/avatarUrls/properties/32x32",
+              "type": "string",
+              "title": "The 32x32 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "48x48": {
+              "$id": "#/properties/author/properties/avatarUrls/properties/48x48",
+              "type": "string",
+              "title": "The 48x48 Schema",
+              "default": "",
+              "examples": [
+                "<string>"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "timeZone": {
+          "$id": "#/properties/author/properties/timeZone",
+          "type": "string",
+          "title": "The Timezone Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "accountType": {
+          "$id": "#/properties/author/properties/accountType",
+          "type": "string",
+          "title": "The Accounttype Schema",
+          "default": "",
+          "examples": [
+            "<string>"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "body": {
+      "$id": "#/properties/body",
+      "type": "object",
+      "title": "The Body Schema",
+      "required": [
+        "type",
+        "version",
+        "content"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/body/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "doc"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "version": {
+          "$id": "#/properties/body/properties/version",
+          "type": "integer",
+          "title": "The Version Schema",
+          "default": 0,
+          "examples": [
+            1
+          ]
+        },
+        "content": {
+          "$id": "#/properties/body/properties/content",
+          "type": "array",
+          "title": "The Content Schema",
+          "items": {
+            "$id": "#/properties/body/properties/content/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "type",
+              "content"
+            ],
+            "properties": {
+              "type": {
+                "$id": "#/properties/body/properties/content/items/properties/type",
+                "type": "string",
+                "title": "The Type Schema",
+                "default": "",
+                "examples": [
+                  "paragraph"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "content": {
+                "$id": "#/properties/body/properties/content/items/properties/content",
+                "type": "array",
+                "title": "The Content Schema",
+                "items": {
+                  "$id": "#/properties/body/properties/content/items/properties/content/items",
+                  "type": "object",
+                  "title": "The Items Schema",
+                  "required": [
+                    "type",
+                    "text"
+                  ],
+                  "properties": {
+                    "type": {
+                      "$id": "#/properties/body/properties/content/items/properties/content/items/properties/type",
+                      "type": "string",
+                      "title": "The Type Schema",
+                      "default": "",
+                      "examples": [
+                        "text"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "text": {
+                      "$id": "#/properties/body/properties/content/items/properties/content/items/properties/text",
+                      "type": "string",
+                      "title": "The Text Schema",
+                      "default": "",
+                      "examples": [
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper."
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "renderedBody": {
+      "$id": "#/properties/renderedBody",
+      "type": "string",
+      "title": "The Renderedbody Schema",
+      "default": "",
+      "examples": [
+        "string"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "updateAuthor": {
+      "$id": "#/properties/updateAuthor",
+      "type": "object",
+      "title": "The Updateauthor Schema",
+      "required": [
+        "self",
+        "accountId",
+        "displayName",
+        "active"
+      ],
+      "properties": {
+        "self": {
+          "$id": "#/properties/updateAuthor/properties/self",
+          "type": "string",
+          "title": "The Self Schema",
+          "default": "",
+          "examples": [
+            "http://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "accountId": {
+          "$id": "#/properties/updateAuthor/properties/accountId",
+          "type": "string",
+          "title": "The Accountid Schema",
+          "default": "",
+          "examples": [
+            "5b10a2844c20165700ede21g"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "displayName": {
+          "$id": "#/properties/updateAuthor/properties/displayName",
+          "type": "string",
+          "title": "The Displayname Schema",
+          "default": "",
+          "examples": [
+            "Mia Krystof"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "active": {
+          "$id": "#/properties/updateAuthor/properties/active",
+          "type": "boolean",
+          "title": "The Active Schema",
+          "default": false,
+          "examples": [
+            false
+          ]
+        }
+      }
+    },
+    "created": {
+      "$id": "#/properties/created",
+      "type": "string",
+      "title": "The Created Schema",
+      "default": "",
+      "examples": [
+        "2019-10-09T02:41:10.681+0000"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "updated": {
+      "$id": "#/properties/updated",
+      "type": "string",
+      "title": "The Updated Schema",
+      "default": "",
+      "examples": [
+        "2019-10-09T02:41:10.681+0000"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "visibility": {
+      "$id": "#/properties/visibility",
+      "type": "object",
+      "title": "The Visibility Schema",
+      "required": [
+        "type",
+        "value"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/visibility/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "role"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "value": {
+          "$id": "#/properties/visibility/properties/value",
+          "type": "string",
+          "title": "The Value Schema",
+          "default": "",
+          "examples": [
+            "Administrators"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "jsdPublic": {
+      "$id": "#/properties/jsdPublic",
+      "type": "boolean",
+      "title": "The Jsdpublic Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "properties": {
+      "$id": "#/properties/properties",
+      "type": "array",
+      "title": "The Properties Schema",
+      "items": {
+        "$id": "#/properties/properties/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "key"
+        ],
+        "properties": {
+          "key": {
+            "$id": "#/properties/properties/items/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+              "string"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

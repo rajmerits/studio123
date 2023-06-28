@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/FoundUsers",
+  "definitions": {
+    "FoundUsers": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "total": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "header": {"type": "string"},
+        "users": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/UserPickerUser"}
+        }
+      }
+    },
+    "UserPickerUser": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "accountId": {"type": "string"},
+        "avatarUrl": {
+          "format": "uri",
+          "type": "string"
+        },
+        "displayName": {"type": "string"},
+        "name": {"type": "string"},
+        "html": {"type": "string"},
+        "key": {"type": "string"}
+      }
+    }
+  }
+}

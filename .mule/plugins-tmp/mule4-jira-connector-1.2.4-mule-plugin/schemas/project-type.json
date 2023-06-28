@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ProjectType",
+  "definitions": {
+    "ProjectType": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string",
+          "readOnly": true
+        },
+        "formattedKey": {
+          "type": "string",
+          "readOnly": true
+        },
+        "descriptionI18nKey": {
+          "type": "string",
+          "readOnly": true
+        },
+        "icon": {
+          "type": "string",
+          "readOnly": true
+        },
+        "color": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

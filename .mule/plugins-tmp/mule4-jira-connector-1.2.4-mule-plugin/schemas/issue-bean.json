@@ -1,0 +1,451 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueBean",
+  "definitions": {
+    "IncludedFields": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "excluded": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "actuallyIncluded": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "included": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "HistoryMetadataParticipant": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "avatarUrl": {"type": "string"},
+        "displayName": {"type": "string"},
+        "id": {"type": "string"},
+        "type": {"type": "string"},
+        "displayNameKey": {"type": "string"},
+        "url": {"type": "string"}
+      }
+    },
+    "IssueBean": {
+      "xml": {"name": "issue"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "schema": {
+          "readOnly": true,
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "editmeta": {
+          "allOf": [{"$ref": "#/definitions/IssueUpdateMetadata"}],
+          "readOnly": true
+        },
+        "fieldsToInclude": {"$ref": "#/definitions/IncludedFields"},
+        "changelog": {
+          "allOf": [{"$ref": "#/definitions/PageOfChangelogs"}],
+          "readOnly": true
+        },
+        "transitions": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/IssueTransition"}
+        },
+        "renderedFields": {
+          "readOnly": true,
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "expand": {
+          "xml": {"attribute": true},
+          "readOnly": true,
+          "type": "string"
+        },
+        "names": {
+          "readOnly": true,
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "operations": {
+          "allOf": [{"$ref": "#/definitions/Operations"}],
+          "readOnly": true
+        },
+        "versionedRepresentations": {
+          "readOnly": true,
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "fields": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "properties": {
+          "readOnly": true,
+          "additionalProperties": true,
+          "type": "object"
+        }
+      }
+    },
+    "PageOfChangelogs": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "total": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "maxResults": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "histories": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/Changelog"}
+        },
+        "startAt": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        }
+      }
+    },
+    "HistoryMetadata": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "emailDescription": {"type": "string"},
+        "actor": {"allOf": [{"$ref": "#/definitions/HistoryMetadataParticipant"}]},
+        "extraData": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "activityDescriptionKey": {"type": "string"},
+        "emailDescriptionKey": {"type": "string"},
+        "descriptionKey": {"type": "string"},
+        "description": {"type": "string"},
+        "generator": {"allOf": [{"$ref": "#/definitions/HistoryMetadataParticipant"}]},
+        "cause": {"allOf": [{"$ref": "#/definitions/HistoryMetadataParticipant"}]},
+        "activityDescription": {"type": "string"},
+        "type": {"type": "string"}
+      }
+    },
+    "IssueTransition": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "hasScreen": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "isAvailable": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "expand": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "isGlobal": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "isInitial": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "looped": {"type": "boolean"},
+        "id": {"type": "string"},
+        "to": {
+          "allOf": [{"$ref": "#/definitions/StatusDetails"}],
+          "readOnly": true
+        },
+        "isConditional": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "fields": {
+          "readOnly": true,
+          "additionalProperties": true,
+          "type": "object"
+        }
+      }
+    },
+    "IssueUpdateMetadata": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"fields": {
+        "readOnly": true,
+        "additionalProperties": true,
+        "type": "object"
+      }}
+    },
+    "LinkGroup": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "header": {"$ref": "#/definitions/SimpleLink"},
+        "weight": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "groups": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/LinkGroup"}
+        },
+        "links": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/SimpleLink"}
+        },
+        "id": {"type": "string"},
+        "styleClass": {"type": "string"}
+      }
+    },
+    "ChangeDetails": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "field": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "from": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "toString": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "fromString": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "to": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "fieldtype": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "fieldId": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "AvatarUrlsBean": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "48x48": {
+          "format": "uri",
+          "type": "string"
+        },
+        "24x24": {
+          "format": "uri",
+          "type": "string"
+        },
+        "16x16": {
+          "format": "uri",
+          "type": "string"
+        },
+        "32x32": {
+          "format": "uri",
+          "type": "string"
+        }
+      }
+    },
+    "StatusCategory": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "colorName": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "UserDetails": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "emailAddress": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "avatarUrls": {
+          "allOf": [{"$ref": "#/definitions/AvatarUrlsBean"}],
+          "readOnly": true
+        },
+        "displayName": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "accountType": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "active": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "timeZone": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        }
+      }
+    },
+    "SimpleLink": {
+      "xml": {"name": "link"},
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "weight": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "id": {"type": "string"},
+        "label": {"type": "string"},
+        "href": {"type": "string"},
+        "styleClass": {"type": "string"},
+        "title": {"type": "string"},
+        "iconClass": {"type": "string"}
+      }
+    },
+    "StatusDetails": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {
+        "name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "self": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "description": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "iconUrl": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "statusCategory": {
+          "allOf": [{"$ref": "#/definitions/StatusCategory"}],
+          "readOnly": true
+        }
+      }
+    },
+    "Changelog": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "historyMetadata": {
+          "allOf": [{"$ref": "#/definitions/HistoryMetadata"}],
+          "readOnly": true
+        },
+        "author": {
+          "allOf": [{"$ref": "#/definitions/UserDetails"}],
+          "readOnly": true
+        },
+        "created": {
+          "format": "date-time",
+          "readOnly": true,
+          "type": "string"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "items": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/ChangeDetails"}
+        }
+      }
+    },
+    "Operations": {
+      "additionalProperties": true,
+      "type": "object",
+      "properties": {"linkGroups": {
+        "readOnly": true,
+        "type": "array",
+        "items": {"$ref": "#/definitions/LinkGroup"}
+      }}
+    }
+  }
+}

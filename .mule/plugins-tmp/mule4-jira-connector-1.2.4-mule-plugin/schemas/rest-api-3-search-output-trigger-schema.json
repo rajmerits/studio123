@@ -1,0 +1,327 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/OutputTrigger",
+  "definitions": {
+    "OutputTrigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "expand": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "self": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "renderedFields": {
+          "$ref": "#/definitions/Fields"
+        },
+        "properties": {
+          "$ref": "#/definitions/Fields"
+        },
+        "names": {
+          "$ref": "#/definitions/Fields"
+        },
+        "schema": {
+          "$ref": "#/definitions/Fields"
+        },
+        "transitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Transition"
+          }
+        },
+        "operations": {
+          "$ref": "#/definitions/Operations"
+        },
+        "editmeta": {
+          "$ref": "#/definitions/Editmeta"
+        },
+        "changelog": {
+          "$ref": "#/definitions/Changelog"
+        },
+        "versionedRepresentations": {
+          "$ref": "#/definitions/Fields"
+        },
+        "fieldsToInclude": {
+          "$ref": "#/definitions/FieldsToInclude"
+        },
+        "fields": {
+          "$ref": "#/definitions/Fields"
+        }
+      },
+      "required": [
+        "changelog",
+        "editmeta",
+        "expand",
+        "fields",
+        "fieldsToInclude",
+        "id",
+        "key",
+        "names",
+        "operations",
+        "properties",
+        "renderedFields",
+        "schema",
+        "self",
+        "transitions",
+        "versionedRepresentations"
+      ],
+      "title": "OutputTrigger"
+    },
+    "Changelog": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "startAt": {
+          "type": "integer"
+        },
+        "maxResults": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        },
+        "histories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/History"
+          }
+        }
+      },
+      "required": [
+        "histories",
+        "maxResults",
+        "startAt",
+        "total"
+      ],
+      "title": "Changelog"
+    },
+    "History": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "author": {
+          "$ref": "#/definitions/Fields"
+        },
+        "created": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Fields"
+          }
+        },
+        "historyMetadata": {
+          "$ref": "#/definitions/Fields"
+        }
+      },
+      "required": [
+        "author",
+        "created",
+        "historyMetadata",
+        "id",
+        "items"
+      ],
+      "title": "History"
+    },
+    "Fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Fields"
+    },
+    "Editmeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "$ref": "#/definitions/Fields"
+        }
+      },
+      "required": [
+        "fields"
+      ],
+      "title": "Editmeta"
+    },
+    "FieldsToInclude": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "included": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excluded": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actuallyIncluded": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "actuallyIncluded",
+        "excluded",
+        "included"
+      ],
+      "title": "FieldsToInclude"
+    },
+    "Operations": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "linkGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LinkGroup"
+          }
+        }
+      },
+      "required": [
+        "linkGroups"
+      ],
+      "title": "Operations"
+    },
+    "LinkGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "styleClass": {
+          "type": "string"
+        },
+        "header": {
+          "$ref": "#/definitions/Fields"
+        },
+        "weight": {
+          "type": "integer"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Fields"
+          }
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LinkGroup"
+          }
+        }
+      },
+      "required": [
+        "groups",
+        "header",
+        "id",
+        "links",
+        "styleClass",
+        "weight"
+      ],
+      "title": "LinkGroup"
+    },
+    "Transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "to": {
+          "$ref": "#/definitions/To"
+        },
+        "hasScreen": {
+          "type": "boolean"
+        },
+        "isGlobal": {
+          "type": "boolean"
+        },
+        "isInitial": {
+          "type": "boolean"
+        },
+        "isAvailable": {
+          "type": "boolean"
+        },
+        "isConditional": {
+          "type": "boolean"
+        },
+        "fields": {
+          "$ref": "#/definitions/Fields"
+        },
+        "expand": {
+          "type": "string"
+        },
+        "looped": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "expand",
+        "fields",
+        "hasScreen",
+        "id",
+        "isAvailable",
+        "isConditional",
+        "isGlobal",
+        "isInitial",
+        "looped",
+        "name",
+        "to"
+      ],
+      "title": "Transition"
+    },
+    "To": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "statusCategory": {
+          "$ref": "#/definitions/Fields"
+        }
+      },
+      "required": [
+        "description",
+        "iconUrl",
+        "id",
+        "name",
+        "self",
+        "statusCategory"
+      ],
+      "title": "To"
+    }
+  }
+}

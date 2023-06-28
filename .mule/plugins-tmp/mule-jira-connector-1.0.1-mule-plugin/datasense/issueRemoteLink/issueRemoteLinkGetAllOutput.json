@@ -1,0 +1,229 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "Issue Remote Link Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "id",
+      "self",
+      "globalId",
+      "application",
+      "relationship",
+      "object"
+    ],
+    "properties": {
+      "id": {
+        "$id": "#/items/properties/id",
+        "type": "integer",
+        "title": "The Id Schema",
+        "default": 0,
+        "examples": [
+          10000
+        ]
+      },
+      "self": {
+        "$id": "#/items/properties/self",
+        "type": "string",
+        "title": "The Self Schema",
+        "default": "",
+        "examples": [
+          "http://www.example.com/jira/rest/api/issue/MKY-1/remotelink/10000"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "globalId": {
+        "$id": "#/items/properties/globalId",
+        "type": "string",
+        "title": "The Globalid Schema",
+        "default": "",
+        "examples": [
+          "system=http://www.mycompany.com/support&id=1"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "application": {
+        "$id": "#/items/properties/application",
+        "type": "object",
+        "title": "The Application Schema",
+        "required": [
+          "type",
+          "name"
+        ],
+        "properties": {
+          "type": {
+            "$id": "#/items/properties/application/properties/type",
+            "type": "string",
+            "title": "The Type Schema",
+            "default": "",
+            "examples": [
+              "com.acme.tracker"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/items/properties/application/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "My Acme Tracker"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "relationship": {
+        "$id": "#/items/properties/relationship",
+        "type": "string",
+        "title": "The Relationship Schema",
+        "default": "",
+        "examples": [
+          "causes"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "object": {
+        "$id": "#/items/properties/object",
+        "type": "object",
+        "title": "The Object Schema",
+        "required": [
+          "url",
+          "title",
+          "summary",
+          "icon",
+          "status"
+        ],
+        "properties": {
+          "url": {
+            "$id": "#/items/properties/object/properties/url",
+            "type": "string",
+            "title": "The Url Schema",
+            "default": "",
+            "examples": [
+              "http://www.mycompany.com/support?id=1"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "title": {
+            "$id": "#/items/properties/object/properties/title",
+            "type": "string",
+            "title": "The Title Schema",
+            "default": "",
+            "examples": [
+              "TSTSUP-111"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "summary": {
+            "$id": "#/items/properties/object/properties/summary",
+            "type": "string",
+            "title": "The Summary Schema",
+            "default": "",
+            "examples": [
+              "Customer support issue"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "icon": {
+            "$id": "#/items/properties/object/properties/icon",
+            "type": "object",
+            "title": "The Icon Schema",
+            "required": [
+              "url16x16",
+              "title"
+            ],
+            "properties": {
+              "url16x16": {
+                "$id": "#/items/properties/object/properties/icon/properties/url16x16",
+                "type": "string",
+                "title": "The Url16x16 Schema",
+                "default": "",
+                "examples": [
+                  "http://www.mycompany.com/support/ticket.png"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "title": {
+                "$id": "#/items/properties/object/properties/icon/properties/title",
+                "type": "string",
+                "title": "The Title Schema",
+                "default": "",
+                "examples": [
+                  "Support Ticket"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "status": {
+            "$id": "#/items/properties/object/properties/status",
+            "type": "object",
+            "title": "The Status Schema",
+            "required": [
+              "resolved",
+              "icon"
+            ],
+            "properties": {
+              "resolved": {
+                "$id": "#/items/properties/object/properties/status/properties/resolved",
+                "type": "boolean",
+                "title": "The Resolved Schema",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              },
+              "icon": {
+                "$id": "#/items/properties/object/properties/status/properties/icon",
+                "type": "object",
+                "title": "The Icon Schema",
+                "required": [
+                  "url16x16",
+                  "title",
+                  "link"
+                ],
+                "properties": {
+                  "url16x16": {
+                    "$id": "#/items/properties/object/properties/status/properties/icon/properties/url16x16",
+                    "type": "string",
+                    "title": "The Url16x16 Schema",
+                    "default": "",
+                    "examples": [
+                      "http://www.mycompany.com/support/resolved.png"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "title": {
+                    "$id": "#/items/properties/object/properties/status/properties/icon/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema",
+                    "default": "",
+                    "examples": [
+                      "Case Closed"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "link": {
+                    "$id": "#/items/properties/object/properties/status/properties/icon/properties/link",
+                    "type": "string",
+                    "title": "The Link Schema",
+                    "default": "",
+                    "examples": [
+                      "http://www.mycompany.com/support?id=1&details=closed"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

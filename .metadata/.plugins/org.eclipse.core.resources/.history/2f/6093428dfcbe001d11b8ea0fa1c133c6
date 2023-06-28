@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:custom-connecter="http://www.mulesoft.org/schema/mule/custom-connecter"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/custom-connecter http://www.mulesoft.org/schema/mule/custom-connecter/current/mule-custom-connecter.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="c86b19eb-915e-458b-8e05-40e2548cc8d1" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<custom-connecter:config name="Custom_connecter_Config" doc:name="Custom-connecter Config" doc:id="43e827dd-7f30-4769-85f6-c088d29a900b" />
+	<flow name="testing-phase2Flow" doc:id="56bf409a-1c22-49a9-a183-5bb5e8a92efb" >
+		<http:listener doc:name="Listener" doc:id="ee4c2915-0ab3-4a98-a530-d3e6e02b70cd" config-ref="HTTP_Listener_config" path="/test"/>
+		<custom-connecter:create-issue-by-id doc:name="Create issue by id" doc:id="2db59bf8-e64d-45c4-b936-e3b66d99cf31" config-ref="Custom_connecter_Config" id="2" username="jaffa" password="kdlkjgflkksd"/>
+		<ee:transform doc:name="Transform Message" doc:id="7af47d59-81ac-49a3-99e9-0b2824c1ce49" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

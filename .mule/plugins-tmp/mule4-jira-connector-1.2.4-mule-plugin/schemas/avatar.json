@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Avatar",
+  "definitions": {"Avatar": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["id"],
+    "properties": {
+      "owner": {
+        "readOnly": true,
+        "type": "string"
+      },
+      "isDeletable": {
+        "readOnly": true,
+        "type": "boolean"
+      },
+      "fileName": {
+        "readOnly": true,
+        "type": "string"
+      },
+      "urls": {
+        "readOnly": true,
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "isSystemAvatar": {
+        "readOnly": true,
+        "type": "boolean"
+      },
+      "isSelected": {
+        "readOnly": true,
+        "type": "boolean"
+      },
+      "id": {"type": "string"}
+    }
+  }}
+}

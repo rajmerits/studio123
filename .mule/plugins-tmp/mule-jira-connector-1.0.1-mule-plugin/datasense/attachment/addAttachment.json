@@ -1,0 +1,232 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "Add Attachment output",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "self",
+      "id",
+      "filename",
+      "author",
+      "created",
+      "size",
+      "mimeType",
+      "content",
+      "thumbnail"
+    ],
+    "properties": {
+      "self": {
+        "$id": "#/items/properties/self",
+        "type": "string",
+        "title": "The Self Schema",
+        "default": "",
+        "examples": [
+          "http://www.example.com/jira/rest/api/3/attachments/10000"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "id": {
+        "$id": "#/items/properties/id",
+        "type": "string",
+        "title": "The Id Schema",
+        "default": "",
+        "examples": [
+          "10001"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "filename": {
+        "$id": "#/items/properties/filename",
+        "type": "string",
+        "title": "The Filename Schema",
+        "default": "",
+        "examples": [
+          "picture.jpg"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "author": {
+        "$id": "#/items/properties/author",
+        "type": "object",
+        "title": "The Author Schema",
+        "required": [
+          "self",
+          "accountId",
+          "emailAddress",
+          "avatarUrls",
+          "displayName",
+          "active",
+          "timeZone"
+        ],
+        "properties": {
+          "self": {
+            "$id": "#/items/properties/author/properties/self",
+            "type": "string",
+            "title": "The Self Schema",
+            "default": "",
+            "examples": [
+              "http://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "accountId": {
+            "$id": "#/items/properties/author/properties/accountId",
+            "type": "string",
+            "title": "The Accountid Schema",
+            "default": "",
+            "examples": [
+              "5b10a2844c20165700ede21g"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "emailAddress": {
+            "$id": "#/items/properties/author/properties/emailAddress",
+            "type": "string",
+            "title": "The Emailaddress Schema",
+            "default": "",
+            "examples": [
+              "mia@example.com"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "avatarUrls": {
+            "$id": "#/items/properties/author/properties/avatarUrls",
+            "type": "object",
+            "title": "The Avatarurls Schema",
+            "required": [
+              "48x48",
+              "24x24",
+              "16x16",
+              "32x32"
+            ],
+            "properties": {
+              "48x48": {
+                "$id": "#/items/properties/author/properties/avatarUrls/properties/48x48",
+                "type": "string",
+                "title": "The 48x48 Schema",
+                "default": "",
+                "examples": [
+                  "https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=48&s=48"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "24x24": {
+                "$id": "#/items/properties/author/properties/avatarUrls/properties/24x24",
+                "type": "string",
+                "title": "The 24x24 Schema",
+                "default": "",
+                "examples": [
+                  "https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=24&s=24"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "16x16": {
+                "$id": "#/items/properties/author/properties/avatarUrls/properties/16x16",
+                "type": "string",
+                "title": "The 16x16 Schema",
+                "default": "",
+                "examples": [
+                  "https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=16&s=16"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "32x32": {
+                "$id": "#/items/properties/author/properties/avatarUrls/properties/32x32",
+                "type": "string",
+                "title": "The 32x32 Schema",
+                "default": "",
+                "examples": [
+                  "https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=32&s=32"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "displayName": {
+            "$id": "#/items/properties/author/properties/displayName",
+            "type": "string",
+            "title": "The Displayname Schema",
+            "default": "",
+            "examples": [
+              "Mia Krystof"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "active": {
+            "$id": "#/items/properties/author/properties/active",
+            "type": "boolean",
+            "title": "The Active Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "timeZone": {
+            "$id": "#/items/properties/author/properties/timeZone",
+            "type": "string",
+            "title": "The Timezone Schema",
+            "default": "",
+            "examples": [
+              "Australia/Sydney"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "created": {
+        "$id": "#/items/properties/created",
+        "type": "string",
+        "title": "The Created Schema",
+        "default": "",
+        "examples": [
+          "2019-12-03T06:07:59.718+0000"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "size": {
+        "$id": "#/items/properties/size",
+        "type": "integer",
+        "title": "The Size Schema",
+        "default": 0,
+        "examples": [
+          23123
+        ]
+      },
+      "mimeType": {
+        "$id": "#/items/properties/mimeType",
+        "type": "string",
+        "title": "The Mimetype Schema",
+        "default": "",
+        "examples": [
+          "image/jpeg"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "content": {
+        "$id": "#/items/properties/content",
+        "type": "string",
+        "title": "The Content Schema",
+        "default": "",
+        "examples": [
+          "http://www.example.com/jira/attachments/10000"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "thumbnail": {
+        "$id": "#/items/properties/thumbnail",
+        "type": "string",
+        "title": "The Thumbnail Schema",
+        "default": "",
+        "examples": [
+          "http://www.example.com/jira/secure/thumbnail/10000"
+        ],
+        "pattern": "^(.*)$"
+      }
+    }
+  }
+}

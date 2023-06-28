@@ -1,0 +1,66 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "moveFixIssuesTo",
+    "moveAffectedIssuesTo",
+    "customFieldReplacementList"
+  ],
+  "properties": {
+    "moveFixIssuesTo": {
+      "$id": "#/properties/moveFixIssuesTo",
+      "type": "integer",
+      "title": "The Movefixissuesto Schema",
+      "default": 0,
+      "examples": [
+        92
+      ]
+    },
+    "moveAffectedIssuesTo": {
+      "$id": "#/properties/moveAffectedIssuesTo",
+      "type": "integer",
+      "title": "The Moveaffectedissuesto Schema",
+      "default": 0,
+      "examples": [
+        97
+      ]
+    },
+    "customFieldReplacementList": {
+      "$id": "#/properties/customFieldReplacementList",
+      "type": "array",
+      "title": "The Customfieldreplacementlist Schema",
+      "items": {
+        "$id": "#/properties/customFieldReplacementList/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "customFieldId",
+          "moveTo"
+        ],
+        "properties": {
+          "customFieldId": {
+            "$id": "#/properties/customFieldReplacementList/items/properties/customFieldId",
+            "type": "integer",
+            "title": "The Customfieldid Schema",
+            "default": 0,
+            "examples": [
+              66
+            ]
+          },
+          "moveTo": {
+            "$id": "#/properties/customFieldReplacementList/items/properties/moveTo",
+            "type": "integer",
+            "title": "The Moveto Schema",
+            "default": 0,
+            "examples": [
+              67
+            ]
+          }
+        }
+      }
+    }
+  }
+}

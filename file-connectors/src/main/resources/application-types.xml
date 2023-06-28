@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="passportjson" format="json">
+      <types:shape format="weave" example="examples/passport.json"><![CDATA[%dw 2.0
+
+type passportjson = {|
+  employeeId: String, 
+  visaDetails: {|
+    visaId: String, 
+    visaIdType: String, 
+    countryCode: String, 
+    issuedDate: String, 
+    expirationDate: String
+  |}, 
+  passportDetails: {|
+    passportId: String, 
+    passportIdType: String, 
+    countryCode: String, 
+    issuedDate: String, 
+    expirationDate: String
+  |}
+|} {"example": "{\\\"employeeId\\\":\\\"113949\\\",\\\"visaDetails\\\":{\\\"visaId\\\":\\\"7895763933\\\",\\\"visaIdType\\\":\\\"Work Permit\\\",\\\"countryCode\\\":\\\"SWE\\\",\\\"issuedDate\\\":\\\"2017-03-04\\\",\\\"expirationDate\\\":\\\"2024-03-03\\\"},\\\"passportDetails\\\":{\\\"passportId\\\":\\\"734899123\\\",\\\"passportIdType\\\":\\\"Regular_blue_cover\\\",\\\"countryCode\\\":\\\"SWE\\\",\\\"issuedDate\\\":\\\"2018-03-04\\\",\\\"expirationDate\\\":\\\"2024-03-03\\\"}}"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="psxml" format="xml">
+      <types:example format="xml" element="{urn:com.workday/bsvc}Change_Passports_and_Visas_Request" location="examples/ps.xml"/>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#126a0ebd-f044-4d32-8b48-68cbe3bcd1c7">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="passportjson"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="psxml"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

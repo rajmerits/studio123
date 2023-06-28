@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/AddGroupBean",
+  "definitions": {"AddGroupBean": {
+    "additionalProperties": true,
+    "type": "object",
+    "required": ["name"],
+    "properties": {"name": {"type": "string"}}
+  }}
+}

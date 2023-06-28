@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Attachments"
+  },
+  "definitions": {
+    "Attachments": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "format": "integer"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "author": {
+          "$ref": "#/definitions/Author"
+        },
+        "created": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        }
+      },
+      "required": [
+        "author",
+        "content",
+        "created",
+        "filename",
+        "id",
+        "mimeType",
+        "self",
+        "size"
+      ],
+      "title": "Attachments"
+    },
+    "Author": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "accountId": {
+          "type": "string"
+        },
+        "emailAddress": {
+          "type": "string"
+        },
+        "avatarUrls": {
+          "$ref": "#/definitions/AvatarUrls"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "timeZone": {
+          "type": "string"
+        },
+        "accountType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "accountId",
+        "accountType",
+        "active",
+        "avatarUrls",
+        "displayName",
+        "emailAddress",
+        "self",
+        "timeZone"
+      ],
+      "title": "Author"
+    },
+    "AvatarUrls": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "48x48": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "24x24": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "16x16": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        },
+        "32x32": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ]
+        }
+      },
+      "required": [
+        "16x16",
+        "24x24",
+        "32x32",
+        "48x48"
+      ],
+      "title": "AvatarUrls"
+    }
+  }
+}

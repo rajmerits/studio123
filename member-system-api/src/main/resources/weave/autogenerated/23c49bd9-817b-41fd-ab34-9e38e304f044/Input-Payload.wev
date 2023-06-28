@@ -1,0 +1,7 @@
+%dw 2.0
+
+type auto_23c49bd9_817b_41fd_ab34_9e38e304f044_Input_Payload = {
+  memberList: Array<{    firstName: String,     lastName?: String,     occupation?: String,     address: {      area: String,       country: String,       province: String,       city: String,       placeOfResidence: String,       _?: Any    },     gender: String,     identity: {      password: String,       phoneNumber: String,       email: String,       phoneCountry: String,       _?: Any    },     preferredName?: String,     title: String,     maritalStatus?: String,     registrationChannel: String,     _?: Any  }>, 
+  _?: Any
+}
+

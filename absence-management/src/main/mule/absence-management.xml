@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:workday="http://www.mulesoft.org/schema/mule/workday" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/workday http://www.mulesoft.org/schema/mule/workday/current/mule-workday.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="78ecd116-aaa3-488d-824d-9ab93d7cc411" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<workday:config name="Workday_Config" doc:name="Workday Config" doc:id="5d43c7d7-6b21-45ee-bad8-858099f95bba" >
+		<workday:basic-authentication-api-connection password="joanPass123" hostName="your_impl-cc.workday.com" tenantName="acme_pt1" userName="joan" />
+	</workday:config>
+	<flow name="absence-managementFlow" doc:id="5faeddc7-578f-4183-a425-9565b7f2d38c" >
+		<http:listener doc:name="Listener" doc:id="30e3739e-4335-4f02-9813-36f7031ad929" config-ref="HTTP_Listener_config" path="/api"/>
+		<logger level="INFO" doc:name="Logger" doc:id="9c9864e1-e377-4179-9ab0-db8165ddad5c" />
+		<ee:transform doc:name="Transform Message" doc:id="775a6f94-40a6-4b27-a0cb-b615f492ab23" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 urn:com.workday/bsvc
+---
+{
+	ns0#Adjust_Time_Off_Request @(ns0version: "v38.2"): ({
+		
+		ns0#Business_Process_Parameters: {
+			ns0#Auto_Complete: "false",
+			ns0#Run_now: "true",
+			ns0#Discard_On_Exit_Validation_Error: "false",
+			ns0#Comment_Data: {
+				ns0#Comment: "",
+				ns0#Worker_Reference: {
+					ns0#ID @(ns0# "type": "Employee_ID"): payload.Employee_ID
+				}
+			} 
+			
+		},
+		ns0#Adjust_Time_Off_Data: {
+			ns0#Run_Time_Off_Validations: "false",
+			ns0#Worker_Reference: {
+				ns0#ID @(ns0# "type": "Employee_ID"): payload.Employee_ID
+				
+			},  
+			ns0#Adjust_Time_Off_Entry_Data: {
+				ns0#Time_Off_Entry_ID: payload.Time_Off_Entry_ID,
+				ns0#Time_Off_Entry_Reference: {
+					ns0#ID @(ns0# "type": "Time_Off_Entry_ID"): payload.Time_Off_Entry_ID 
+				},
+				ns0#Adjustment_to_Requested: 1000,
+				ns0#Comment: "sick leave"   	 		
+			}
+		}
+	})
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<workday:absence-management doc:name="Absence management" doc:id="c5968b21-7b6b-4556-8bcf-154d850861db" config-ref="Workday_Config" operation="Adjust_Time_Off"/>
+		<logger level="INFO" doc:name="Logger" doc:id="998bf4e1-1acf-441b-857b-7ac1e6c2834a" message="#[payload]"/>
+	</flow>
+</mule>

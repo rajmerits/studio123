@@ -1,0 +1,24 @@
+#%RAML 1.0 DataType
+
+type: object
+properties:
+  msg:
+    type: string
+    required: true
+    example: "successful operation"
+  code:
+    type: integer
+    required: true
+    example: 200
+  data:
+    type: object
+    required: true
+    properties:
+      memberId:
+        type: string
+        required: true
+        example: "Mdsah8734873"
+  success:
+    type: boolean
+    required: true
+    example: false

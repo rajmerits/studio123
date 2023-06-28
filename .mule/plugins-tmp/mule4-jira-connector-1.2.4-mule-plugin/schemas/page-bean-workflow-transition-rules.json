@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PageBeanWorkflowTransitionRules",
+  "definitions": {
+    "WorkflowTransitionRules": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "workflowId",
+        "postFunctions",
+        "conditions",
+        "validators"
+      ],
+      "properties": {
+        "postFunctions": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/ConnectWorkflowTransitionRule"}
+        },
+        "validators": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/ConnectWorkflowTransitionRule"}
+        },
+        "conditions": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/ConnectWorkflowTransitionRule"}
+        },
+        "workflowId": {"$ref": "#/definitions/WorkflowId"}
+      }
+    },
+    "WorkflowTransition": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "name": {"type": "string"},
+        "id": {
+          "maximum": 2147483647,
+          "type": "integer",
+          "minimum": -2147483648
+        }
+      }
+    },
+    "ConnectWorkflowTransitionRule": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "key",
+        "configuration"
+      ],
+      "properties": {
+        "configuration": {"$ref": "#/definitions/RuleConfiguration"},
+        "id": {"type": "string"},
+        "key": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "transition": {
+          "allOf": [{"$ref": "#/definitions/WorkflowTransition"}],
+          "readOnly": true
+        }
+      }
+    },
+    "WorkflowId": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "name",
+        "draft"
+      ],
+      "properties": {
+        "draft": {"type": "boolean"},
+        "name": {"type": "string"}
+      }
+    },
+    "RuleConfiguration": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["value"],
+      "properties": {"value": {"type": "string"}}
+    },
+    "PageBeanWorkflowTransitionRules": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "total": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        },
+        "isLast": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "nextPage": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "maximum": 2147483647,
+          "readOnly": true,
+          "type": "integer",
+          "minimum": -2147483648
+        },
+        "values": {
+          "readOnly": true,
+          "type": "array",
+          "items": {"$ref": "#/definitions/WorkflowTransitionRules"}
+        },
+        "self": {
+          "format": "uri",
+          "readOnly": true,
+          "type": "string"
+        },
+        "startAt": {
+          "maximum": 9.223372036854776E+18,
+          "readOnly": true,
+          "type": "number",
+          "minimum": -9.223372036854776E+18
+        }
+      }
+    }
+  }
+}

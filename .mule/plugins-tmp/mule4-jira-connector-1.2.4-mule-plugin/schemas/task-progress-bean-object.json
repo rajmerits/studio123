@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/TaskProgressBeanObject",
+  "definitions": {"TaskProgressBeanObject": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+      "self",
+      "id",
+      "status",
+      "submittedBy",
+      "progress",
+      "elapsedRuntime",
+      "submitted",
+      "lastUpdate"
+    ],
+    "properties": {
+      "submittedBy": {
+        "maximum": 9.223372036854776E+18,
+        "type": "number",
+        "minimum": -9.223372036854776E+18
+      },
+      "description": {"type": "string"},
+      "started": {
+        "maximum": 9.223372036854776E+18,
+        "type": "number",
+        "minimum": -9.223372036854776E+18
+      },
+      "finished": {
+        "maximum": 9.223372036854776E+18,
+        "type": "number",
+        "minimum": -9.223372036854776E+18
+      },
+      "message": {"type": "string"},
+      "result": {},
+      "submitted": {
+        "maximum": 9.223372036854776E+18,
+        "type": "number",
+        "minimum": -9.223372036854776E+18
+      },
+      "lastUpdate": {
+        "maximum": 9.223372036854776E+18,
+        "type": "number",
+        "minimum": -9.223372036854776E+18
+      },
+      "self": {
+        "format": "uri",
+        "type": "string"
+      },
+      "progress": {
+        "maximum": 9.223372036854776E+18,
+        "type": "number",
+        "minimum": -9.223372036854776E+18
+      },
+      "id": {"type": "string"},
+      "elapsedRuntime": {
+        "maximum": 9.223372036854776E+18,
+        "type": "number",
+        "minimum": -9.223372036854776E+18
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "ENQUEUED",
+          "RUNNING",
+          "COMPLETE",
+          "FAILED",
+          "CANCEL_REQUESTED",
+          "CANCELLED",
+          "DEAD"
+        ]
+      }
+    }
+  }}
+}

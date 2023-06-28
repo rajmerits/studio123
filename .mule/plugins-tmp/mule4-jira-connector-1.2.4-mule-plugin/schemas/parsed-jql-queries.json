@@ -1,0 +1,287 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/ParsedJqlQueries",
+  "definitions": {
+    "JqlQueryOrderByClause": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["fields"],
+      "properties": {"fields": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/JqlQueryOrderByClauseElement"}
+      }}
+    },
+    "FieldValueClause": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "field",
+        "operator",
+        "operand"
+      ],
+      "properties": {
+        "field": {"$ref": "#/definitions/JqlQueryField"},
+        "operator": {
+          "type": "string",
+          "enum": [
+            "=",
+            "!=",
+            ">",
+            "<",
+            ">=",
+            "<=",
+            "in",
+            "not in",
+            "~",
+            "~=",
+            "is",
+            "is not"
+          ]
+        },
+        "operand": {"$ref": "#/definitions/JqlQueryClauseOperand"}
+      }
+    },
+    "ParsedJqlQuery": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["query"],
+      "properties": {
+        "query": {"type": "string"},
+        "structure": {"allOf": [{"$ref": "#/definitions/JqlQuery"}]},
+        "errors": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "ParsedJqlQueries": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["queries"],
+      "properties": {"queries": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/ParsedJqlQuery"}
+      }}
+    },
+    "ValueOperand": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": ["value"],
+      "properties": {"value": {"type": "string"}}
+    },
+    "FieldWasClause": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "field",
+        "operator",
+        "operand",
+        "predicates"
+      ],
+      "properties": {
+        "predicates": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/JqlQueryClauseTimePredicate"}
+        },
+        "field": {"$ref": "#/definitions/JqlQueryField"},
+        "operator": {
+          "type": "string",
+          "enum": [
+            "was",
+            "was in",
+            "was not in",
+            "was not"
+          ]
+        },
+        "operand": {"$ref": "#/definitions/JqlQueryClauseOperand"}
+      }
+    },
+    "FunctionOperand": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "function",
+        "arguments"
+      ],
+      "properties": {
+        "function": {"type": "string"},
+        "arguments": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "KeywordOperand": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": ["keyword"],
+      "properties": {"keyword": {
+        "type": "string",
+        "enum": ["empty"]
+      }}
+    },
+    "CompoundClause": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "clauses",
+        "operator"
+      ],
+      "properties": {
+        "clauses": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/JqlQueryClause"}
+        },
+        "operator": {
+          "type": "string",
+          "enum": [
+            "and",
+            "or",
+            "not"
+          ]
+        }
+      }
+    },
+    "JqlQuery": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "orderBy": {"$ref": "#/definitions/JqlQueryOrderByClause"},
+        "where": {"$ref": "#/definitions/JqlQueryClause"}
+      }
+    },
+    "JqlQueryClause": {
+      "anyOf": [
+        {"$ref": "#/definitions/CompoundClause"},
+        {"$ref": "#/definitions/FieldValueClause"},
+        {"$ref": "#/definitions/FieldWasClause"},
+        {"$ref": "#/definitions/FieldChangedClause"}
+      ],
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ListOperand": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": ["values"],
+      "properties": {"values": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/JqlQueryUnitaryOperand"}
+      }}
+    },
+    "JqlQueryFieldEntityProperty": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "entity",
+        "key",
+        "path"
+      ],
+      "properties": {
+        "path": {"type": "string"},
+        "type": {
+          "type": "string",
+          "enum": [
+            "number",
+            "string",
+            "text",
+            "date",
+            "user"
+          ]
+        },
+        "entity": {"type": "string"},
+        "key": {"type": "string"}
+      }
+    },
+    "JqlQueryOrderByClauseElement": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["field"],
+      "properties": {
+        "field": {"$ref": "#/definitions/JqlQueryField"},
+        "direction": {
+          "type": "string",
+          "enum": [
+            "asc",
+            "desc"
+          ]
+        }
+      }
+    },
+    "JqlQueryClauseOperand": {
+      "anyOf": [
+        {"$ref": "#/definitions/ListOperand"},
+        {"$ref": "#/definitions/ValueOperand"},
+        {"$ref": "#/definitions/FunctionOperand"},
+        {"$ref": "#/definitions/KeywordOperand"}
+      ],
+      "additionalProperties": true,
+      "type": "object"
+    },
+    "JqlQueryClauseTimePredicate": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "operator",
+        "operand"
+      ],
+      "properties": {
+        "operator": {
+          "type": "string",
+          "enum": [
+            "before",
+            "after",
+            "from",
+            "to",
+            "on",
+            "during",
+            "by"
+          ]
+        },
+        "operand": {"$ref": "#/definitions/JqlQueryClauseOperand"}
+      }
+    },
+    "FieldChangedClause": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "field",
+        "operator",
+        "predicates"
+      ],
+      "properties": {
+        "predicates": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/JqlQueryClauseTimePredicate"}
+        },
+        "field": {"$ref": "#/definitions/JqlQueryField"},
+        "operator": {
+          "type": "string",
+          "enum": ["changed"]
+        }
+      }
+    },
+    "JqlQueryUnitaryOperand": {
+      "anyOf": [
+        {"$ref": "#/definitions/ValueOperand"},
+        {"$ref": "#/definitions/FunctionOperand"},
+        {"$ref": "#/definitions/KeywordOperand"}
+      ],
+      "additionalProperties": true,
+      "type": "object"
+    },
+    "JqlQueryField": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string"},
+        "property": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/JqlQueryFieldEntityProperty"}
+        }
+      }
+    }
+  }
+}

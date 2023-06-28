@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/CustomFieldContextDefaultValueUpdate",
+  "definitions": {
+    "CustomFieldContextDefaultValueUpdate": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {"defaultValues": {
+        "type": "array",
+        "items": {"$ref": "#/definitions/CustomFieldContextDefaultValue"}
+      }}
+    },
+    "CustomFieldContextDefaultValueSingleOption": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "contextId",
+        "optionId",
+        "type"
+      ],
+      "properties": {
+        "contextId": {"type": "string"},
+        "optionId": {"type": "string"},
+        "type": {"type": "string"}
+      }
+    },
+    "CustomFieldContextDefaultValueMultipleOption": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "contextId",
+        "optionIds",
+        "type"
+      ],
+      "properties": {
+        "contextId": {"type": "string"},
+        "type": {"type": "string"},
+        "optionIds": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "CustomFieldContextDefaultValue": {
+      "oneOf": [
+        {"$ref": "#/definitions/CustomFieldContextDefaultValueCascadingOption"},
+        {"$ref": "#/definitions/CustomFieldContextDefaultValueMultipleOption"},
+        {"$ref": "#/definitions/CustomFieldContextDefaultValueSingleOption"}
+      ],
+      "additionalProperties": false,
+      "type": "object",
+      "discriminator": "type"
+    },
+    "CustomFieldContextDefaultValueCascadingOption": {
+      "additionalProperties": true,
+      "type": "object",
+      "required": [
+        "contextId",
+        "optionId",
+        "type"
+      ],
+      "properties": {
+        "contextId": {"type": "string"},
+        "optionId": {"type": "string"},
+        "type": {"type": "string"},
+        "cascadingOptionId": {"type": "string"}
+      }
+    }
+  }
+}

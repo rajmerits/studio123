@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:jira="http://www.mulesoft.org/schema/mule/jira" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:jira-eapi="http://www.mulesoft.org/schema/mule/jira-eapi" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd 
+http://www.mulesoft.org/schema/mule/jira-eapi http://www.mulesoft.org/schema/mule/jira-eapi/current/mule-jira-eapi.xsd
+http://www.mulesoft.org/schema/mule/jira http://www.mulesoft.org/schema/mule/jira/current/mule-jira.xsd">
+    <http:listener-config name="jira-eapi-httpListenerConfig">
+        <http:listener-connection host="${http.listener.host}" port="${http.listener.port}" readTimeout="100000"/>
+    </http:listener-config>
+    <apikit:config name="jira-eapi-config" api="resource::9c42c2aa-566b-418f-9a67-b1a30be436d6:jira-eapi:1.0.0:raml:zip:jira-eapi.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+    <jira-eapi:config name="Jira_eapi_Config" doc:name="Jira-eapi Config" doc:id="ba92c9fa-61dd-4005-a632-ce51ea21990d" property_host="jira-uat.spotify.net" property_port="443" property_protocol="HTTPS" property_username="#[vars.jira_username]" property_password="#[vars.jira_password]" property_responseTimeout="100000"/>
+	<global-property doc:name="Global Property" doc:id="db3786f6-2bde-4030-bcb0-4a3dde4e6bf8" name="env" value="local" />
+	<configuration-properties doc:name="Configuration properties" doc:id="d7099837-05be-4cf0-84b3-f8b49f26c476" file="${env}.yaml" />
+	<flow name="jira-eapi-main">
+        <http:listener config-ref="jira-eapi-httpListenerConfig" path="${http.listener.path}">
+            <http:response statusCode="#[vars.httpStatus default 200]">
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:response>
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body><![CDATA[#[output application/json
+---
+error.detailedDescription]]]></http:body>
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:error-response>
+        </http:listener>
+        <ee:transform doc:name="Transform Message" doc:id="2eb98380-c112-43a5-a332-57dd55dca3cd" >
+			<ee:message >
+			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="jira_username" ><![CDATA[%dw 2.0
+import * from dw::core::Binaries
+import * from dw::core::Strings
+output text/plain
+---
+((fromBase64(substringAfter(attributes.headers.Authorization,"Basic ")) splitBy ":"))[0]]]></ee:set-variable>
+				<ee:set-variable variableName="jira_password" ><![CDATA[%dw 2.0
+import * from dw::core::Binaries
+import * from dw::core::Strings
+output text/plain
+---
+((fromBase64(substringAfter(attributes.headers.Authorization,"Basic ")) splitBy ":"))[1]
+]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+		<apikit:router config-ref="jira-eapi-config" />
+		<error-handler>
+            <on-error-propagate type="APIKIT:BAD_REQUEST">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Bad request"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">400</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:NOT_FOUND">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Resource not found"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">404</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:METHOD_NOT_ALLOWED">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Method not allowed"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">405</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:NOT_ACCEPTABLE">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Not acceptable"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">406</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:UNSUPPORTED_MEDIA_TYPE">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Unsupported media type"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">415</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:NOT_IMPLEMENTED">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Not Implemented"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">501</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+        </error-handler>
+    </flow>
+    <flow name="jira-eapi-console">
+        <http:listener config-ref="jira-eapi-httpListenerConfig" path="/console/*">
+            <http:response statusCode="#[vars.httpStatus default 200]">
+                <http:headers>#[vars.outboundHeaders default {}]</http:headers>
+            </http:response>
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body>#[payload]</http:body>
+                <http:headers>#[vars.outboundHeaders default {}]</http:headers>
+            </http:error-response>
+        </http:listener>
+        <apikit:console config-ref="jira-eapi-config" />
+        <error-handler>
+            <on-error-propagate type="APIKIT:NOT_FOUND">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Resource not found"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">404</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+        </error-handler>
+    </flow>
+    <flow name="get:\rest\api\2\issue\(issueID):jira-eapi-config">
+        <ee:transform>
+            <ee:variables>
+                <ee:set-variable variableName="issueID">attributes.uriParams.'issueID'</ee:set-variable>
+            </ee:variables>
+        </ee:transform>
+		<jira-eapi:get-issue-by-issue-id doc:name="Get issue by issue id" doc:id="f46a5680-e4a5-4a74-a6e9-c8a8967625b5" issue-id="#[vars.issueID]" config-ref="Jira_eapi_Config"/>
+    </flow>
+    <flow name="post:\rest\api\2\issue:application\json:jira-eapi-config">
+        <jira-eapi:create-issue doc:name="Create issue" doc:id="334e5d38-2635-461d-88a7-6138fa796c7b" config-ref="Jira_eapi_Config"/>
+    </flow>
+</mule>

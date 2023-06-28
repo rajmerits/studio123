@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/IssueTypesWorkflowMapping",
+  "definitions": {"IssueTypesWorkflowMapping": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "workflow": {"type": "string"},
+      "updateDraftIfNeeded": {"type": "boolean"},
+      "defaultMapping": {"type": "boolean"},
+      "issueTypes": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    }
+  }}
+}

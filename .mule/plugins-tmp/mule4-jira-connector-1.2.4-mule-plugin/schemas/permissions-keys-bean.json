@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/PermissionsKeysBean",
+  "definitions": {"PermissionsKeysBean": {
+    "additionalProperties": false,
+    "type": "object",
+    "required": ["permissions"],
+    "properties": {"permissions": {
+      "type": "array",
+      "items": {"type": "string"}
+    }}
+  }}
+}

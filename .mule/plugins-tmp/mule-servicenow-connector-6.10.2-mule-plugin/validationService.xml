@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sys="http://www.service-now.com/sys_user">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <sys:getKeys>
+            <!--Optional:-->
+            <__limit>1</__limit>
+        </sys:getKeys>
+    </soapenv:Body>
+</soapenv:Envelope>

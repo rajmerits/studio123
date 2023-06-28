@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Configuration",
+  "definitions": {
+    "TimeTrackingConfiguration": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "workingHoursPerDay",
+        "workingDaysPerWeek",
+        "timeFormat",
+        "defaultUnit"
+      ],
+      "properties": {
+        "defaultUnit": {
+          "type": "string",
+          "enum": [
+            "minute",
+            "hour",
+            "day",
+            "week"
+          ]
+        },
+        "workingHoursPerDay": {"type": "number"},
+        "workingDaysPerWeek": {"type": "number"},
+        "timeFormat": {
+          "type": "string",
+          "enum": [
+            "pretty",
+            "days",
+            "hours"
+          ]
+        }
+      }
+    },
+    "Configuration": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "unassignedIssuesAllowed": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "watchingEnabled": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "timeTrackingEnabled": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "attachmentsEnabled": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "subTasksEnabled": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "issueLinkingEnabled": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "votingEnabled": {
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "timeTrackingConfiguration": {
+          "allOf": [{"$ref": "#/definitions/TimeTrackingConfiguration"}],
+          "readOnly": true
+        }
+      }
+    }
+  }
+}
